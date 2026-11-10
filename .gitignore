@@ -1,0 +1,13 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.idea/
+.vscode/
+node_modules/
+.duckdb/
+work/
+npm-debug.log*
+~$*.docx
+.~lock.*#

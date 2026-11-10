@@ -1,0 +1,16 @@
+{
+  "name": "texmind-ai-r1",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "collect:hf": "node ./src/collect_hf_samples.mjs --count 100 --type \"Quyết định\"",
+    "shortlist:hf": "node ./src/shortlist_hf_samples.mjs",
+    "extract:ai": "node ./src/extract_with_ai.mjs",
+    "evaluate:ai": "node ./src/evaluate_structured.mjs",
+    "test": "node --test ./tests/*.mjs"
+  },
+  "dependencies": {
+    "@duckdb/node-api": "2.0.0-r.1"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "sample_id": "qd_066",
+  "source_id": "184046",
+  "document_type": "quyet_dinh",
+  "template_id": "TM-QD-001",
+  "template_version": "0.1",
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "input_01.txt",
+  "structured_file": "structured_01.json",
+  "schema_file": "../../schemas/texmind-document.schema.json",
+  "source_clean_text_file": "../hf_quyet_dinh/shortlist_10/clean_text/qd_066.txt",
+  "source_html_file": "../hf_quyet_dinh/shortlist_10/raw_html/qd_066.html",
+  "expected_output_file": "output_01.docx",
+  "preserve_original_content": true,
+  "normalizations": [
+    {
+      "source_text": "t rên địa bàn tỉnh Gia Lai",
+      "normalized_text": "trên địa bàn tỉnh Gia Lai",
+      "reason": "Ranh giới hai thẻ HTML tạo khoảng trắng giả giữa chữ t và rên."
+    }
+  ],
+  "formatting_rules": {
+    "page_size": "A4",
+    "orientation": "portrait",
+    "margins_cm": {
+      "top": 2.0,
+      "bottom": 2.0,
+      "left": 3.0,
+      "right": 2.0
+    },
+    "font_family": "Times New Roman",
+    "body_font_size_pt": 14,
+    "table_font_size_pt": 10.5,
+    "line_spacing": 1.15,
+    "header_layout": "two_columns",
+    "signature_layout": "two_columns",
+    "price_table_columns": 4
+  },
+  "quality_assurance": {
+    "verified_on": "2026-11-10",
+    "render_engine": "LibreOffice 26.2.6.3",
+    "render_page_count": 3,
+    "visual_review": "passed_no_clipping_overlap_or_broken_table",
+    "content_validation": "passed_required_fragments_and_16_price_values",
+    "automated_test": "tests/validate_output_01.py"
+  },
+  "intermediate_data": {
+    "schema_version": "1.0",
+    "status": "validated",
+    "automated_test": "tests/validate_structured_01.mjs"
+  },
+  "status": "validated_sample_pair_with_structured_data",
+  "review_status": "render_verified"
+}

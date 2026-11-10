@@ -1,0 +1,41 @@
+{
+  "sample_id": "qd_021",
+  "source_id": "172883",
+  "document_type": "quyet_dinh",
+  "template_id": null,
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "input_02.txt",
+  "structured_file": "structured_02.json",
+  "schema_file": "../../schemas/texmind-document.schema.json",
+  "expected_output_file": null,
+  "preserve_original_content": true,
+  "source_anomalies": [
+    {
+      "source_text": "Như Diều 3;",
+      "note": "Có khả năng là lỗi OCR của 'Như Điều 3'; giữ nguyên vì chưa đối chiếu bản gốc chính thức."
+    },
+    {
+      "source_text": "BT, cac PRT Quận ủy;",
+      "note": "Có dấu hiệu lỗi OCR/dấu tiếng Việt; giữ nguyên theo TXT nguồn."
+    },
+    {
+      "source_text": "UBMTTOVN và các đoàn thể quận,",
+      "note": "Có dấu hiệu lỗi OCR ở chữ viết tắt; giữ nguyên theo TXT nguồn."
+    }
+  ],
+  "intermediate_data": {
+    "schema_version": "1.0",
+    "status": "validated",
+    "automated_test": "tests/validate_structured_02.mjs"
+  },
+  "quality_assurance": {
+    "verified_on": "2026-11-10",
+    "content_validation": "passed_articles_legal_bases_recipients_signature_and_legal_effect",
+    "source_hash_match": "input_02.txt_matches_shortlist_qd_021"
+  },
+  "status": "structured_validated_no_docx",
+  "review_status": "not_expert_reviewed"
+}

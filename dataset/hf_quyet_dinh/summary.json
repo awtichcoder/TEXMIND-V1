@@ -1,0 +1,15 @@
+{
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "requested_document_type": "Quyết định",
+  "requested_count": 100,
+  "collected_count": 100,
+  "min_chars": 500,
+  "max_chars": 30000,
+  "metadata_rows_examined": 500,
+  "skipped_missing_content": 0,
+  "skipped_by_length": 15,
+  "review_status": "unreviewed",
+  "collected_at": "2026-11-10T13:02:57.719Z"
+}

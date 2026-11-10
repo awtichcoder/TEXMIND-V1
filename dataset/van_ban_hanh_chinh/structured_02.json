@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0",
+  "sample_id": "qd_021",
+  "document_type": "quyet_dinh",
+  "language": "vi",
+  "template": null,
+  "source": {
+    "source_id": "172883",
+    "dataset": "th1nhng0/vietnamese-legal-documents",
+    "license": "CC BY 4.0",
+    "input_file": "input_02.txt",
+    "preserve_original_content": true
+  },
+  "header": {
+    "issuer": "ỦY BAN NHÂN DÂN QUẬN BÌNH THẠNH",
+    "national_heading": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM",
+    "motto": "Độc lập – Tự do – Hạnh phúc",
+    "document_number": "01/2023/QĐ-UBND",
+    "issue_place": "Bình Thạnh",
+    "issue_date": "2023-10-05",
+    "issue_date_text": "Bình Thạnh, ngày 5 tháng 10 năm 2023"
+  },
+  "title": {
+    "document_name": "QUYẾT ĐỊNH",
+    "subject": "Ban hành Quy định về chức năng, nhiệm vụ, chế độ làm việc và quan hệ phối hợp công tác của Phòng Tư pháp quận Bình Thạnh"
+  },
+  "legal_bases": [
+    "Căn cứ Luật Tổ chức chính quyền địa phương ngày 19 tháng 6 năm 2015 và Luật sửa đổi, bổ sung một số điều của Luật Tổ chức Chính phủ và Luật Tổ chức chính quyền địa phương ngày 22 tháng 11 năm 2019;",
+    "Căn cứ Luật Ban hành văn bản quy phạm pháp luật ngày 22 tháng 6 năm 2015 và Luật sửa đổi, bổ sung một số điều của Luật Ban hành văn bản quy phạm pháp luật ngày 18 tháng 6 năm 2020;",
+    "Căn cứ Nghị quyết số 131/2020/QH14 ngày 16 tháng 11 năm 2020 của Quốc hội về tổ chức chính quyền đô thị tại Thành phố Hồ Chí Minh;",
+    "Căn cứ Nghị định số 37/2014/NĐ-CP ngày 05 tháng 5 năm 2014 của Chính phủ quy định tổ chức các cơ quan chuyên môn thuộc Ủy ban nhân dân huyện, quận, thị xã, thành phố thuộc tỉnh và Nghị định số 108/2020/NĐ-CP ngày 14 tháng 9 năm 2020 của Chính phủ sửa đổi, bổ sung một số điều của Nghị định số 37/2014/NĐ-CP ngày 05 tháng 5 năm 2014 của Chính phủ;",
+    "Căn cứ Nghị định số 33/2021/NĐ-CP ngày 29 tháng 3 năm 2021 của Chính phủ quy định chi tiết và biện pháp thi hành Nghị quyết số 131/2020/QH14 ngày 16 tháng 11 năm 2020 của Quốc hội về tổ chức chính quyền đô thị tại Thành phố Hồ Chí Minh;",
+    "Căn cứ Quyết định số 25/2021/QĐ-TTg ngày 22 tháng 7 năm 2021 của Thủ tướng Chính phủ quy định về xã, phường, thị trấn đạt chuẩn tiếp cận pháp luật;",
+    "Căn cứ Thông tư số 07/2020/TT-BTP ngày 21 tháng 12 năm 2020 của Bộ trưởng Bộ Tư pháp hướng dẫn chức năng, nhiệm vụ và quyền hạn của Sở Tư pháp thuộc Ủy ban nhân dân cấp tỉnh, Phòng Tư pháp thuộc Ủy ban nhân dân cấp huyện;",
+    "Căn cứ Quyết định số 11/2022/QĐ-UBND ngày 15 tháng 4 năm 2022 của Ủy ban nhân dân Thành phố Hồ Chí Minh ban hành về quy trình xây dựng văn bản quy phạm pháp luật trên địa bàn Thành phố Hồ Chí Minh;",
+    "Căn cứ Quyết định số 30/2023/QĐ-UBND ngày 18 tháng 7 năm 2023 của Ủy ban nhân dân Thành phố Hồ Chí Minh về ban hành quy định về hướng dẫn chức năng, nhiệm vụ, quyền hạn và tổ chức của Phòng Tư pháp thuộc Ủy ban nhân dân thành phố Thủ Đức và các quận - huyện;",
+    "Theo đề nghị của Trưởng Phòng Tư pháp quận tại Tờ trình số 139/TTr-TP ngày 18 tháng 9 năm 2023 về việc ký Quyết định ban hành Quy định chức năng, nhiệm vụ, chế độ làm việc và quan hệ công tác của Phòng Tư pháp quận Bình Thạnh."
+  ],
+  "enactment": "QUYẾT ĐỊNH:",
+  "articles": [
+    {
+      "number": 1,
+      "heading": "Ban hành quy định",
+      "clauses": [
+        {
+          "number": null,
+          "text": "Ban hành kèm theo Quyết định này là Quy định về chức năng, nhiệm vụ, chế độ làm việc và quan hệ công tác của Phòng Tư pháp quận Bình Thạnh."
+        }
+      ],
+      "related_table_ids": []
+    },
+    {
+      "number": 2,
+      "heading": "Hiệu lực thi hành",
+      "clauses": [
+        {
+          "number": null,
+          "text": "Quyết định này có hiệu lực kể từ ngày 12 tháng 10 năm 2023. Quyết định này thay thế Quyết định số 03/2020/QĐ-UBND ngày 17 tháng 12 năm 2020 của Ủy ban nhân dân quận Bình Thạnh ban hành Quy chế về tổ chức và hoạt động của Phòng Tư pháp quận Bình Thạnh."
+        }
+      ],
+      "related_table_ids": []
+    },
+    {
+      "number": 3,
+      "heading": "Trách nhiệm thi hành",
+      "clauses": [
+        {
+          "number": null,
+          "text": "Chánh Văn phòng Ủy ban nhân dân quận, Trưởng Phòng Tư pháp, Trưởng phòng Nội vụ, Thủ trưởng các phòng, ban, đơn vị trực thuộc Ủy ban nhân dân quận, các Chủ tịch Ủy ban nhân dân phường và tổ chức, cá nhân có liên quan chịu trách nhiệm thi hành Quyết định này./."
+        }
+      ],
+      "related_table_ids": []
+    }
+  ],
+  "data_tables": [],
+  "recipients": [
+    "Như Diều 3;",
+    "Sở Tư pháp;",
+    "Sở Nội vụ;",
+    "Trung tâm Công báo;",
+    "BT, cac PRT Quận ủy;",
+    "CT, các PCT UBND quận;",
+    "UBMTTOVN và các đoàn thể quận,",
+    "VP. UBND/Q;",
+    "Ban Biên tập Cổng TTĐT/Q;",
+    "Các đơn vị quận;",
+    "Các UBND Phường;",
+    "Lưu: VT, TP."
+  ],
+  "signature": {
+    "authority": "TM. ỦY BAN NHÂN DÂN",
+    "delegation": null,
+    "position": "CHỦ TỊCH",
+    "signed_status": "(Đã ký)",
+    "signer_name": "Đinh Khắc Huy"
+  },
+  "legal_effect": {
+    "effective_from": "2023-10-12",
+    "supersedes": ["03/2020/QĐ-UBND ngày 17 tháng 12 năm 2020 của Ủy ban nhân dân quận Bình Thạnh"],
+    "review_note": "Trích xuất từ nội dung nguồn; chưa được chuyên gia pháp lý kiểm duyệt và không dùng thay tư vấn pháp lý."
+  },
+  "provenance": {
+    "normalizations": [],
+    "source_anomalies": [
+      {
+        "source_text": "Như Diều 3;",
+        "note": "Có khả năng là lỗi OCR của 'Như Điều 3'; giữ nguyên vì chưa đối chiếu bản gốc chính thức."
+      },
+      {
+        "source_text": "BT, cac PRT Quận ủy;",
+        "note": "Có dấu hiệu lỗi OCR/dấu tiếng Việt; giữ nguyên theo TXT nguồn."
+      },
+      {
+        "source_text": "UBMTTOVN và các đoàn thể quận,",
+        "note": "Có dấu hiệu lỗi OCR ở chữ viết tắt; giữ nguyên theo TXT nguồn."
+      }
+    ]
+  },
+  "quality": {
+    "extraction_status": "verified",
+    "content_status": "source_preserved",
+    "legal_review_status": "not_expert_reviewed"
+  }
+}

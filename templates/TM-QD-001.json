@@ -1,0 +1,58 @@
+{
+  "template_id": "TM-QD-001",
+  "name": "Quyết định hành chính có bảng dữ liệu",
+  "version": "0.1",
+  "document_type": "quyet_dinh",
+  "source_sample": "qd_066",
+  "page": {
+    "size": "A4",
+    "orientation": "portrait",
+    "margins_cm": {
+      "top": 2.0,
+      "bottom": 2.0,
+      "left": 3.0,
+      "right": 2.0
+    }
+  },
+  "typography": {
+    "font_family": "Times New Roman",
+    "body_size_pt": 14,
+    "table_size_pt": 10.5,
+    "line_spacing": 1.15,
+    "text_color": "000000"
+  },
+  "blocks": [
+    "issuer_and_national_header",
+    "document_number_and_date",
+    "document_title",
+    "legal_bases",
+    "articles",
+    "data_table",
+    "recipients_and_signature"
+  ],
+  "required_fields": [
+    "issuer",
+    "document_number",
+    "issuing_place_and_date",
+    "title",
+    "legal_bases",
+    "articles",
+    "recipients",
+    "signer_title",
+    "signer"
+  ],
+  "quality_checks": [
+    "preserve_all_source_content",
+    "no_invented_facts",
+    "table_values_match_source",
+    "render_has_no_clipping_or_overlap",
+    "docx_is_editable"
+  ],
+  "validation": {
+    "sample_pair": "input_01.txt -> output_01.docx",
+    "verified_on": "2026-11-10",
+    "render_page_count": 3,
+    "result": "prototype_verified"
+  },
+  "review_status": "prototype_verified"
+}

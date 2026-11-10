@@ -1,0 +1,40 @@
+{
+  "sample_id": "qd_067",
+  "source_id": "185483",
+  "document_type": "quyet_dinh",
+  "template_id": null,
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "input_03.txt",
+  "structured_file": "structured_03.json",
+  "schema_file": "../../schemas/texmind-document.schema.json",
+  "expected_output_file": null,
+  "preserve_original_content": true,
+  "selection_reason": "Có cấu trúc khoản lồng nhau, tham chiếu nhiều phụ lục và mâu thuẫn ngày hiệu lực để kiểm tra cơ chế cảnh báo.",
+  "source_metadata_effective_date": "2026-01-08",
+  "source_text_effective_date": "2025-01-08",
+  "source_anomalies": [
+    {
+      "source_text": "trên địa bàn thành phố Hà Nộ",
+      "note": "Tiêu đề trong TXT có khả năng thiếu chữ 'i'; giữ nguyên theo nguồn."
+    },
+    {
+      "source_text": "Quyết định này có hiệu lực kể từ ngày 08 tháng 01 năm 2025./.",
+      "note": "Ngày hiệu lực trong TXT sớm hơn ngày ban hành và khác metadata 08/01/2026; cần đối chiếu văn bản chính thức."
+    }
+  ],
+  "intermediate_data": {
+    "schema_version": "1.0",
+    "status": "validated_with_source_warning",
+    "automated_test": "tests/validate_structured_03.mjs"
+  },
+  "quality_assurance": {
+    "verified_on": "2026-11-10",
+    "content_validation": "passed_nested_clauses_attachments_recipients_signature",
+    "source_hash_match": "input_03.txt_matches_shortlist_qd_067"
+  },
+  "status": "structured_validated_no_docx",
+  "review_status": "not_expert_reviewed"
+}
