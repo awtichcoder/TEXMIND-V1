@@ -1,6 +1,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { dirname, resolve } from "node:path";
+import { basename, dirname, resolve } from "node:path";
+import { normalizeExtraction } from "./normalize_extraction.mjs";
 import { validateAgainstSchema } from "./validate_json_schema.mjs";
 
 const loadLocalEnv = () => {
@@ -30,6 +31,9 @@ const args = parseArgs();
 const inputPath = resolve(args.get("--input") ?? "dataset/van_ban_hanh_chinh/input_03.txt");
 const schemaPath = resolve(args.get("--schema") ?? "schemas/texmind-document.schema.json");
 const outputPath = resolve(args.get("--output") ?? "work/ai_extraction/qd_067.predicted.json");
+const outputName = basename(outputPath);
+const inferredSampleId = outputName.match(/^(.+?)\.predicted(?:\.|$)/u)?.[1] ?? null;
+const sampleId = args.get("--sample-id") ?? inferredSampleId;
 const apiKey = process.env.DEEPSEEK_API_KEY;
 const configuredBaseUrl = new URL(process.env.DEEPSEEK_BASE_URL ?? "https://api.deepseek.com");
 configuredBaseUrl.search = "";
@@ -56,7 +60,9 @@ const systemPrompt = [
   "Nếu khoản không có số/ký hiệu thì đặt number=null.",
   "Dùng children cho khoản/điểm lồng nhau.",
   "Phụ lục chỉ được tham chiếu nhưng không có nội dung phải có included_in_source=false.",
+  "Với phụ lục đánh số, source_reference phải có dạng chính xác 'Phụ lục N'.",
   "Ghi mâu thuẫn hoặc lỗi nghi ngờ vào provenance.source_anomalies và quality.warnings.",
+  ...(sampleId ? [`sample_id bắt buộc là '${sampleId}' theo ngữ cảnh công việc.`] : []),
 ].join("\n");
 
 const userPrompt = [
@@ -126,15 +132,42 @@ try {
   }
 }
 
-const schemaErrors = validateAgainstSchema(schema, candidate);
+const siblingPath = (suffix) =>
+  outputPath.toLowerCase().endsWith(".json")
+    ? `${outputPath.slice(0, -5)}${suffix}`
+    : `${outputPath}${suffix}`;
+const rawPath = siblingPath(".raw.json");
+await writeFile(rawPath, `${JSON.stringify(candidate, null, 2)}\n`, "utf8");
+
+const rawSchemaErrors = validateAgainstSchema(schema, candidate);
+const { normalized, changes } = normalizeExtraction(candidate, { sampleId });
+const schemaErrors = validateAgainstSchema(schema, normalized);
+const postprocessPath = siblingPath(".postprocess.json");
+await writeFile(
+  postprocessPath,
+  `${JSON.stringify(
+    {
+      sample_id_from_job_context: sampleId,
+      raw_schema_error_count: rawSchemaErrors.length,
+      normalized_schema_error_count: schemaErrors.length,
+      changes,
+    },
+    null,
+    2,
+  )}\n`,
+  "utf8",
+);
+
 if (schemaErrors.length > 0) {
   const invalidPath = outputPath.replace(/\.json$/i, ".invalid.json");
   const errorPath = outputPath.replace(/\.json$/i, ".schema-errors.json");
-  await writeFile(invalidPath, `${JSON.stringify(candidate, null, 2)}\n`, "utf8");
+  await writeFile(invalidPath, `${JSON.stringify(normalized, null, 2)}\n`, "utf8");
   await writeFile(errorPath, `${JSON.stringify(schemaErrors, null, 2)}\n`, "utf8");
   throw new Error(`Kết quả AI sai schema (${schemaErrors.length} lỗi). Xem ${errorPath}`);
 }
 
-await writeFile(outputPath, `${JSON.stringify(candidate, null, 2)}\n`, "utf8");
+await writeFile(outputPath, `${JSON.stringify(normalized, null, 2)}\n`, "utf8");
 console.log(`PASS: AI extraction hợp lệ theo schema -> ${outputPath}`);
+console.log(`Bản thô: ${rawPath}`);
+console.log(`Hậu xử lý: ${postprocessPath} (${changes.length} thay đổi)`);
 console.log(`Model: ${model}`);
