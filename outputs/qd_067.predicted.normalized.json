@@ -1,0 +1,338 @@
+{
+  "schema_version": "1.0",
+  "sample_id": "qd_067",
+  "document_type": "quyet_dinh",
+  "language": "vi",
+  "template": null,
+  "source": {
+    "source_id": "86-2025-QD-UBND",
+    "dataset": "administrative_documents_vi",
+    "license": "unknown",
+    "input_file": "inline_source.txt",
+    "preserve_original_content": true
+  },
+  "header": {
+    "issuer": "ỦY BAN NHÂN DÂN THÀNH PHỐ HÀ NỘI",
+    "national_heading": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM",
+    "motto": "Độc lập - Tự do - Hạnh phúc",
+    "document_number": "86/2025/QĐ-UBND",
+    "issue_place": "Hà Nội",
+    "issue_date": "2025-12-29",
+    "issue_date_text": "ngày 29 tháng 12 năm 2025"
+  },
+  "title": {
+    "document_name": "QUYẾT ĐỊNH",
+    "subject": "Ban hành định mức kinh tế - kỹ thuật dịch vụ sự nghiệp công sử dụng ngân sách nhà nước lĩnh vực trợ giúp xã hội và bảo vệ chăm sóc trẻ em trên địa bàn thành phố Hà Nộ"
+  },
+  "legal_bases": [
+    "Căn cứ Luật Tổ chức chính quyền địa phương số 72/2025/QH15;",
+    "Căn cứ Luật Ngân sách nhà nước số 83/2015/QH13;",
+    "Nghị định số 163/2016/NĐ-CP quy định chi tiết một số điều của Luật Ngân sách nhà nước;",
+    "Căn cứ Nghị định số 32/2019/NĐ-CP quy định giao nhiệm vụ, đặt hàng hoặc đấu thầu cung cấp sản phẩm dịch vụ công sử dụng ngân sách Nhà nước từ nguồn kinh phí chi thường xuyên;",
+    "Căn cứ Nghị định số 60/2021/NĐ-CP của Chính phủ quy định cơ chế tự chủ tài chính của đơn vị sự nghiệp công lập;",
+    "Thông tư 02/2018/TT-BLĐTBXH của Bộ Lao động Thương binh và Xã hội quy định định mức kinh tế - kỹ thuật làm cơ sở xây dựng giá dịch vụ trợ giúp xã hội.",
+    "Căn cứ Thông tư số 56/2022/TT-BTC của Bộ Tài chính hướng dẫn một số nội dung về cơ chế tự chủ tài chính của đơn vị sự nghiệp công lập; xử lý tài sản, tài chính khi tổ chức lại, giải thể đơn vị sự nghiệp công lập;",
+    "Thực hiện Nghị quyết số 32/NQ-HĐND ngày 06 tháng 12 năm 2023 của Hội đồng nhân dân thành phố Hà Nội ban hành Danh mục dịch vụ sự nghiệp công sử dụng ngân sách nhà nước trong các lĩnh vực văn hóa, gia đình, thể dục, thể thao; lao động, thương binh và xã hội; thông tin và truyền thông; nông nghiệp và phát triển nông thôn của thành phố Hà Nội;",
+    "Theo đề nghị của Giám đốc Sở Y tế tại Tờ trình số 7705/TTr-SYT ngày 26 tháng 12 năm 2025 về việc ban hành định mức kinh tế - kỹ thuật dịch vụ sự nghiệp công sử dụng ngân sách nhà nước lĩnh vực trợ giúp xã hội và bảo vệ chăm sóc trẻ em trên địa bàn thành phố Hà Nội."
+  ],
+  "enactment": "Ủy ban nhân dân thành phố Hà Nội ban hành Quyết định ban hành định mức kinh tế - kỹ thuật dịch vụ công sử dụng ngân sách nhà nước lĩnh vực trợ giúp xã hội và bảo vệ chăm sóc trẻ em trên địa bàn thành phố Hà Nội .",
+  "articles": [
+    {
+      "number": 1,
+      "heading": "Phạm vi điều chỉnh",
+      "clauses": [
+        {
+          "number": null,
+          "text": "Quyết định này quy định về định mức kinh tế - kỹ thuật dịch vụ sự nghiệp công sử dụng ngân sách nhà nước trong lĩnh vực trợ giúp xã hội và bảo vệ chăm sóc trẻ em thuộc phạm vi quản lý của thành phố Hà Nội."
+        }
+      ],
+      "related_table_ids": []
+    },
+    {
+      "number": 2,
+      "heading": "Đối tượng áp dụng",
+      "clauses": [
+        {
+          "number": "a",
+          "text": "Các cơ sở trợ giúp xã hội công lập thuộc thành phố Hà Nội."
+        },
+        {
+          "number": "b",
+          "text": "Các cơ quan, tổ chức, cá nhân có liên quan đến cung cấp dịch vụ sự nghiệp công sử dụng ngân sách nhà nước lĩnh vực trợ giúp xã hội và bảo vệ chăm sóc trẻ em trên địa bàn thành phố Hà Nội."
+        }
+      ],
+      "related_table_ids": []
+    },
+    {
+      "number": 3,
+      "heading": "Nội dung định mức kinh tế - kỹ thuật",
+      "clauses": [
+        {
+          "number": null,
+          "text": "Định mức kinh tế - kỹ thuật dịch vụ sự nghiệp công sử dụng ngân sách nhà nước lĩnh vực trợ giúp xã hội và bảo vệ chăm sóc trẻ em trên địa bàn thành phố Hà Nội, cụ thể:"
+        },
+        {
+          "number": "1",
+          "text": "Nhóm Dịch vụ chăm sóc đối tượng cần sự bảo vệ khẩn cấp (gồm 2 dịch vụ)",
+          "children": [
+            {
+              "number": "a",
+              "text": "Dịch vụ tiếp nhận, quản lý đối tượng cần sự bảo vệ khẩn cấp (Phụ lục 2)."
+            },
+            {
+              "number": "b",
+              "text": "Dịch vụ tập trung, tiếp nhận, quản lý người lang thang (Phụ lục 3) ."
+            }
+          ]
+        },
+        {
+          "number": "2",
+          "text": "Nhóm Dịch vụ chăm sóc dài hạn cho đối tượng bảo trợ xã hội (gồm 9 dịch vụ)",
+          "children": [
+            {
+              "number": "a",
+              "text": "Dịch vụ chăm sóc đối tượng bảo trợ xã hội là trẻ em không có nguồn nuôi dưỡng (Phụ lục 4) ."
+            },
+            {
+              "number": "b",
+              "text": "Dịch vụ chăm sóc đối tượng bảo trợ xã hội là trẻ em khuyết tật (Phụ lục 5) ."
+            },
+            {
+              "number": "c",
+              "text": "Dịch vụ chăm sóc đối tượng bảo trợ xã hội là trẻ em tâm thần (Phụ lục 6) ."
+            },
+            {
+              "number": "d",
+              "text": "Dịch vụ chăm sóc đối tượng bảo trợ xã hội là trẻ em và người từ 16 tuổi đến dưới 22 tuổi nhiễm HIV/AIDS (Phụ lục 7) ."
+            },
+            {
+              "number": "đ",
+              "text": "Dịch vụ hỗ trợ trẻ em bị mắc bệnh hiểm nghèo hoặc bệnh phải điều trị dài ngày theo Nghị quyết số 13/2023/NQ-HĐND ngày 06/12/2023 của HĐND thành phố Hà Nội (Phụ lục 8) ."
+            },
+            {
+              "number": "e",
+              "text": "Dịch vụ chăm sóc người cao tuổi không có người có nghĩa vụ và quyền phụng dưỡng (Phụ lục 9) ."
+            },
+            {
+              "number": "g",
+              "text": "Dịch vụ nuôi dưỡng, chăm sóc người khuyết tật (Phụ lục 10) ."
+            },
+            {
+              "number": "h",
+              "text": "Dịch vụ chăm sóc đối tượng bảo trợ xã hội là người bị nhiễm HIV/AIDS (Phụ lục 11) ."
+            },
+            {
+              "number": "i",
+              "text": "Dịch vụ nuôi dưỡng, chăm sóc, điều trị đối tượng bảo trợ xã hội là người tâm thần (Phụ lục 12) ."
+            }
+          ]
+        },
+        {
+          "number": "3",
+          "text": "Nhóm Dịch vụ công tác xã hội (gồm 1 dịch vụ)",
+          "children": [
+            {
+              "number": null,
+              "text": "Dịch vụ công tác xã hội và phát triển cộng đồng (Phụ lục 13) ."
+            }
+          ]
+        },
+        {
+          "number": null,
+          "text": "(Phụ lục chi tiết kèm theo)"
+        }
+      ],
+      "related_table_ids": []
+    },
+    {
+      "number": 4,
+      "heading": "Tổ chức thực hiện",
+      "clauses": [
+        {
+          "number": "1",
+          "text": "Căn cứ định mức kinh tế - kỹ thuật quy định tại Quyết định này, Sở Y tế có trách nhiệm chủ trì, phối hợp các Sở, ngành có liên quan xây dựng các đơn giá dịch vụ sự nghiệp công sử dụng ngân sách nhà nước lĩnh vực trợ giúp xã hội và bảo vệ chăm sóc trẻ em trên địa bàn thành phố Hà Nội, trình UBND Thành phố ban hành theo quy định của pháp luật."
+        },
+        {
+          "number": "2",
+          "text": "Trong quá trình thực hiện, Sở Y tế có trách nhiệm chủ trì, phối hợp các sở, ngành, đơn vị liên quan tổ chức rà soát, đánh giá, báo cáo UBND Thành phố xem xét, điều chỉnh, bổ sung kịp thời bảo đảm phù hợp thực tế và quy định pháp luật."
+        },
+        {
+          "number": "3",
+          "text": "Chánh Văn phòng UBND Thành phố, Giám đốc các Sở: Y tế, Tài chính, Giám đốc Kho bạc Nhà nước khu vực I; Thủ trưởng các cơ quan, tổ chức, đơn vị có liên quan chịu trách nhiệm thi hành Quyết định này."
+        }
+      ],
+      "related_table_ids": []
+    },
+    {
+      "number": 5,
+      "heading": "Hiệu lực thi hành",
+      "clauses": [
+        {
+          "number": null,
+          "text": "Quyết định này có hiệu lực kể từ ngày 08 tháng 01 năm 2025./."
+        }
+      ],
+      "related_table_ids": []
+    }
+  ],
+  "data_tables": [],
+  "attachments": [
+    {
+      "id": "phu_luc_2",
+      "title": "Phụ lục 2",
+      "source_reference": "Phụ lục 2",
+      "included_in_source": false
+    },
+    {
+      "id": "phu_luc_3",
+      "title": "Phụ lục 3",
+      "source_reference": "Phụ lục 3",
+      "included_in_source": false
+    },
+    {
+      "id": "phu_luc_4",
+      "title": "Phụ lục 4",
+      "source_reference": "Phụ lục 4",
+      "included_in_source": false
+    },
+    {
+      "id": "phu_luc_5",
+      "title": "Phụ lục 5",
+      "source_reference": "Phụ lục 5",
+      "included_in_source": false
+    },
+    {
+      "id": "phu_luc_6",
+      "title": "Phụ lục 6",
+      "source_reference": "Phụ lục 6",
+      "included_in_source": false
+    },
+    {
+      "id": "phu_luc_7",
+      "title": "Phụ lục 7",
+      "source_reference": "Phụ lục 7",
+      "included_in_source": false
+    },
+    {
+      "id": "phu_luc_8",
+      "title": "Phụ lục 8",
+      "source_reference": "Phụ lục 8",
+      "included_in_source": false
+    },
+    {
+      "id": "phu_luc_9",
+      "title": "Phụ lục 9",
+      "source_reference": "Phụ lục 9",
+      "included_in_source": false
+    },
+    {
+      "id": "phu_luc_10",
+      "title": "Phụ lục 10",
+      "source_reference": "Phụ lục 10",
+      "included_in_source": false
+    },
+    {
+      "id": "phu_luc_11",
+      "title": "Phụ lục 11",
+      "source_reference": "Phụ lục 11",
+      "included_in_source": false
+    },
+    {
+      "id": "phu_luc_12",
+      "title": "Phụ lục 12",
+      "source_reference": "Phụ lục 12",
+      "included_in_source": false
+    },
+    {
+      "id": "phu_luc_13",
+      "title": "Phụ lục 13",
+      "source_reference": "Phụ lục 13",
+      "included_in_source": false
+    }
+  ],
+  "recipients": [
+    "Như Điều 4;",
+    "Bộ Y tế;",
+    "Thường trực: Thành ủy, HĐND Thành phố;",
+    "Các PCT UBND Thành phố;",
+    "Cục KTVB&QLXLVPHC - Bộ Tư pháp;",
+    "Cổng TTĐT Chính phủ;",
+    "Công báo Thành phố;",
+    "Các sở, ban, ngành Thành phố;",
+    "VPUB: CVP, các PCVP, các phòng chuyên môn;",
+    "Lưu: VT, KGVX (Nhung) ."
+  ],
+  "signature": {
+    "authority": "TM. ỦY BAN NHÂN DÂN",
+    "delegation": "KT. CHỦ TỊCH",
+    "position": "PHÓ CHỦ TỊCH",
+    "signed_status": "(đã ký)",
+    "signer_name": "Vũ Thu Hà"
+  },
+  "legal_effect": {
+    "effective_from": "2025-01-08",
+    "supersedes": [],
+    "review_note": "Quyết định này có hiệu lực kể từ ngày 08 tháng 01 năm 2025."
+  },
+  "provenance": {
+    "normalizations": [
+      {
+        "source_text": "ngân\nsách",
+        "normalized_text": "ngân sách",
+        "reason": "Nối dòng bị ngắt trong tiêu đề."
+      },
+      {
+        "source_text": "ỦY BAN NHÂN DÂN\n\nTHÀNH PHỐ HÀ NỘI",
+        "normalized_text": "ỦY BAN NHÂN DÂN THÀNH PHỐ HÀ NỘI",
+        "reason": "Gộp dòng tiêu đề cơ quan."
+      }
+    ],
+    "source_anomalies": [
+      {
+        "source_text": "trên địa bàn thành phố Hà Nộ",
+        "note": "Có thể thiếu chữ 'i' trong 'Hà Nội'; giữ nguyên theo nguồn."
+      },
+      {
+        "source_text": "Quyết định này có hiệu lực kể từ ngày 08 tháng 01 năm 2025./.",
+        "note": "Ngày hiệu lực 08/01/2025 trước ngày ban hành 29/12/2025; cần kiểm tra."
+      },
+      {
+        "source_text": "Nghị định số 163/2016/NĐ-CP quy định chi tiết một số điều của Luật Ngân sách nhà nước;",
+        "note": "Không có cụm 'Căn cứ' mở đầu; có thể do lỗi trình bày."
+      },
+      {
+        "source_text": "Thông tư 02/2018/TT-BLĐTBXH của Bộ Lao động Thương binh và Xã hội quy định định mức kinh tế - kỹ thuật làm cơ sở xây dựng giá dịch vụ trợ giúp xã hội.",
+        "note": "Không có cụm 'Căn cứ' mở đầu; có thể do lỗi trình bày."
+      },
+      {
+        "source_text": "a) Các cơ sở trợ giúp xã hội công lập thuộc thành phố Hà Nội.",
+        "note": "Điều 2 dùng ký hiệu a), b) thay vì khoản 1, 2."
+      },
+      {
+        "source_text": "Dịch vụ tập trung, tiếp nhận, quản lý người lang thang (Phụ lục 3) .",
+        "note": "Có khoảng trắng trước dấu chấm."
+      },
+      {
+        "source_text": "Lưu: VT, KGVX (Nhung) .",
+        "note": "Có khoảng trắng trước dấu chấm."
+      },
+      {
+        "source_text": "trên địa bàn thành phố Hà Nội .",
+        "note": "Có khoảng trắng trước dấu chấm trong câu ban hành."
+      }
+    ]
+  },
+  "quality": {
+    "extraction_status": "verified",
+    "content_status": "source_preserved",
+    "legal_review_status": "not_expert_reviewed",
+    "source_consistency": "warning",
+    "warnings": [
+      "Tiêu đề có 'Hà Nộ' thay vì 'Hà Nội'.",
+      "Ngày hiệu lực 08/01/2025 trước ngày ban hành 29/12/2025.",
+      "Các phụ lục 2-13 chỉ được tham chiếu, không có nội dung trong nguồn.",
+      "Một số dòng không có cụm 'Căn cứ' hoặc dùng ký hiệu a), b) không thống nhất.",
+      "Có khoảng trắng trước dấu chấm trong một số câu."
+    ]
+  }
+}

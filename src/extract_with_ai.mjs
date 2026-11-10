@@ -31,7 +31,10 @@ const inputPath = resolve(args.get("--input") ?? "dataset/van_ban_hanh_chinh/inp
 const schemaPath = resolve(args.get("--schema") ?? "schemas/texmind-document.schema.json");
 const outputPath = resolve(args.get("--output") ?? "work/ai_extraction/qd_067.predicted.json");
 const apiKey = process.env.DEEPSEEK_API_KEY;
-const baseUrl = (process.env.DEEPSEEK_BASE_URL ?? "https://api.deepseek.com").replace(/\/$/, "");
+const configuredBaseUrl = new URL(process.env.DEEPSEEK_BASE_URL ?? "https://api.deepseek.com");
+configuredBaseUrl.search = "";
+configuredBaseUrl.hash = "";
+const baseUrl = configuredBaseUrl.toString().replace(/\/$/, "");
 const model = args.get("--model") ?? process.env.DEEPSEEK_MODEL ?? "deepseek-flash";
 
 if (!apiKey) {
@@ -63,42 +66,67 @@ const userPrompt = [
   sourceText,
 ].join("\n\n");
 
-const response = await fetch(`${baseUrl}/chat/completions`, {
-  method: "POST",
-  headers: {
-    Authorization: `Bearer ${apiKey}`,
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    model,
-    messages: [
-      { role: "system", content: systemPrompt },
-      { role: "user", content: userPrompt },
-    ],
-    response_format: { type: "json_object" },
-    stream: false,
-    max_tokens: 16000,
-  }),
-});
+const requestCompletion = async (messages) => {
+  const response = await fetch(`${baseUrl}/chat/completions`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model,
+      messages,
+      response_format: { type: "json_object" },
+      stream: false,
+      temperature: 0,
+      max_tokens: 16000,
+    }),
+  });
+  const payload = await response.json().catch(() => null);
+  if (!response.ok) {
+    const message = payload?.error?.message ?? `HTTP ${response.status}`;
+    throw new Error(`DeepSeek API thất bại: ${message}`);
+  }
+  const choice = payload?.choices?.[0];
+  if (!choice?.message?.content?.trim()) throw new Error("DeepSeek trả về nội dung JSON rỗng.");
+  if (choice.finish_reason === "length") throw new Error("Kết quả bị cắt do giới hạn token.");
+  return choice.message.content;
+};
 
-const payload = await response.json().catch(() => null);
-if (!response.ok) {
-  const message = payload?.error?.message ?? `HTTP ${response.status}`;
-  throw new Error(`DeepSeek API thất bại: ${message}`);
-}
-const choice = payload?.choices?.[0];
-if (!choice?.message?.content?.trim()) throw new Error("DeepSeek trả về nội dung JSON rỗng.");
-if (choice.finish_reason === "length") throw new Error("Kết quả bị cắt do giới hạn token.");
-
+await mkdir(dirname(outputPath), { recursive: true });
+let rawContent = await requestCompletion([
+  { role: "system", content: systemPrompt },
+  { role: "user", content: userPrompt },
+]);
 let candidate;
 try {
-  candidate = JSON.parse(choice.message.content);
-} catch (error) {
-  throw new Error("DeepSeek không trả về JSON hợp lệ.", { cause: error });
+  candidate = JSON.parse(rawContent);
+} catch (firstError) {
+  const rawPath = outputPath.replace(/\.json$/i, ".invalid-response.txt");
+  await writeFile(rawPath, rawContent, "utf8");
+  const repairPrompt = [
+    "Sửa nội dung bên dưới thành đúng một JSON object hợp lệ theo JSON Schema.",
+    "Không thêm Markdown hoặc giải thích. Không thay đổi dữ kiện đã trích xuất.",
+    `Lỗi parse: ${firstError.message}`,
+    "JSON SCHEMA:",
+    JSON.stringify(schema),
+    "NỘI DUNG JSON BỊ LỖI:",
+    rawContent,
+  ].join("\n\n");
+  rawContent = await requestCompletion([
+    { role: "system", content: "Bạn là bộ sửa JSON. Chỉ trả về JSON object hợp lệ." },
+    { role: "user", content: repairPrompt },
+  ]);
+  try {
+    candidate = JSON.parse(rawContent);
+  } catch (secondError) {
+    const retryPath = outputPath.replace(/\.json$/i, ".repair-failed.txt");
+    await writeFile(retryPath, rawContent, "utf8");
+    throw new Error("DeepSeek vẫn trả về JSON sai cú pháp sau một lần sửa.", { cause: secondError });
+  }
 }
 
 const schemaErrors = validateAgainstSchema(schema, candidate);
-await mkdir(dirname(outputPath), { recursive: true });
 if (schemaErrors.length > 0) {
   const invalidPath = outputPath.replace(/\.json$/i, ".invalid.json");
   const errorPath = outputPath.replace(/\.json$/i, ".schema-errors.json");

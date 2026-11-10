@@ -1,0 +1,53 @@
+{
+  "experiment_id": "ai_extract_qd_067_001",
+  "run_date": "2026-11-10",
+  "model": "oc/deepseek-v4.1-flash-free",
+  "input": "dataset/van_ban_hanh_chinh/input_03.txt",
+  "gold": "dataset/van_ban_hanh_chinh/structured_03.json",
+  "prediction": "outputs/qd_067.predicted.normalized.json",
+  "api_key_exposed": false,
+  "validation": {
+    "initial_response": "invalid_json",
+    "json_repair_retry": "succeeded",
+    "schema_repair": {
+      "count": 1,
+      "action": "removed_exact_duplicate_of_root_quality",
+      "path": "$.provenance.quality"
+    },
+    "final_schema_valid": true
+  },
+  "strict_evaluation_before_normalization": {
+    "scalar_accuracy": 0.9285714285714286,
+    "article_headings_f1": 1.0,
+    "legal_bases_f1": 1.0,
+    "clauses_f1": 1.0,
+    "recipients_f1": 1.0,
+    "attachments_f1": 0.0,
+    "overall_score": 0.8214285714285715,
+    "differences": [
+      "Model tự đặt sample_id là vi_001 thay vì nhận qd_067 từ ngữ cảnh công việc.",
+      "Model ghi source_reference của phụ lục theo vị trí Điều/Khoản/Điểm thay vì nhãn Phụ lục N."
+    ]
+  },
+  "deterministic_normalization": [
+    {
+      "field": "sample_id",
+      "rule": "lấy từ ngữ cảnh công việc",
+      "value": "qd_067"
+    },
+    {
+      "field": "attachments[].source_reference",
+      "rule": "chuẩn hóa từ attachment id sang nhãn Phụ lục N"
+    }
+  ],
+  "evaluation_after_normalization": {
+    "scalar_accuracy": 1.0,
+    "article_headings_f1": 1.0,
+    "legal_bases_f1": 1.0,
+    "clauses_f1": 1.0,
+    "recipients_f1": 1.0,
+    "attachments_f1": 1.0,
+    "overall_score": 1.0
+  },
+  "interpretation": "Nội dung chính được trích xuất đầy đủ. Pipeline cần giữ bước sửa JSON, kiểm tra schema và chuẩn hóa các trường vận hành/quy ước; không nên dùng trực tiếp phản hồi thô của model."
+}

@@ -10,14 +10,17 @@ Khung thử nghiệm cho luồng chuyển nội dung thô thành tài liệu the
 - Đã tạo ba mẫu chuẩn `structured_01.json` đến `structured_03.json` theo JSON Schema phiên bản 1.0.
 - Schema hỗ trợ khoản lồng nhau, tham chiếu phụ lục, điều không đánh số khoản, chữ ký không có dòng ủy quyền và văn bản chưa chọn template.
 - Dữ liệu có cơ chế giữ nguyên và cảnh báo lỗi/mâu thuẫn từ nguồn thay vì âm thầm sửa.
-- Đã chuẩn bị bộ gọi DeepSeek JSON Output và bộ chấm điểm; chưa chạy API vì chưa có khóa/cấu hình model trên máy.
+- Đã chạy thử trích xuất AI đầu tiên trên `qd_067` bằng `oc/deepseek-v4.1-flash-free`.
+- Điểm nghiêm ngặt trước chuẩn hóa là 82,14%; nội dung điều, căn cứ, khoản/điểm và nơi nhận đạt 100%.
+- Sau hai quy tắc chuẩn hóa xác định trước (`sample_id` từ ngữ cảnh và nhãn `Phụ lục N`), điểm đạt 100%.
+- Phản hồi thô không được dùng trực tiếp: lần thử cần sửa cú pháp JSON một lần và loại một trường trùng lặp trước khi qua schema.
 
 ## Bước tiếp theo
 
-1. Sao chép `.env.example` thành `.env` và điền `DEEPSEEK_API_KEY` cục bộ.
-2. Chạy `npm run extract:ai` để trích xuất `input_03.txt` mà không đưa mẫu chuẩn vào prompt.
-3. Chạy `npm run evaluate:ai` để so sánh kết quả AI với `structured_03.json`.
-4. Chỉ cân nhắc fine-tuning sau khi đo trên nhiều mẫu chưa thấy trước.
+1. Đưa hai quy tắc chuẩn hóa đã xác minh vào pipeline chính thức và ghi rõ mọi hậu xử lý.
+2. Cập nhật prompt/schema để `source_reference` luôn dùng đúng nhãn `Phụ lục N`.
+3. Chạy benchmark trên nhiều mẫu chưa thấy trước, lưu cả điểm thô và điểm sau chuẩn hóa.
+4. Chỉ cân nhắc fine-tuning sau khi có đủ kết quả benchmark.
 
 ## Thử trích xuất bằng DeepSeek
 
