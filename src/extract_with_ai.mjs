@@ -1,6 +1,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { basename, dirname, resolve } from "node:path";
+import { buildExtractionSystemPrompt } from "./extraction_prompt.mjs";
 import { normalizeExtraction } from "./normalize_extraction.mjs";
 import { validateAgainstSchema } from "./validate_json_schema.mjs";
 
@@ -51,26 +52,7 @@ const [sourceText, schema] = await Promise.all([
   readFile(schemaPath, "utf8").then(JSON.parse),
 ]);
 
-const systemPrompt = [
-  "Bạn là bộ trích xuất dữ liệu văn bản hành chính tiếng Việt.",
-  "Chỉ trả về đúng một JSON object, không Markdown, không giải thích.",
-  "JSON phải tuân thủ schema được cung cấp, không thêm trường ngoài schema.",
-  "Mọi trường required trong schema phải xuất hiện; không dùng chuỗi rỗng cho trường có minLength=1.",
-  "Các mảng bắt buộc phải được xuất ngay cả khi rỗng, gồm data_tables, recipients, supersedes và related_table_ids.",
-  "Mỗi phần tử articles bắt buộc có related_table_ids; đặt [] khi điều không liên kết bảng.",
-  "Giữ nguyên câu chữ nguồn; không sửa lỗi nghi OCR và không bịa dữ liệu thiếu.",
-  "Chỉ điền motto bằng đúng tiêu ngữ có trong nguồn; không tìm thấy thì phải xem lại nguồn, không trả chuỗi rỗng.",
-  "Nếu nguồn không có tiêu đề 'Nơi nhận:' hoặc 'Nơi gửi:' thì recipients phải là []; không lấy danh sách người chịu trách nhiệm thi hành làm nơi nhận.",
-  "Nếu nguồn không có bảng thì data_tables phải là [].",
-  "review_note phải nêu rõ kết quả chưa được chuyên gia pháp lý kiểm duyệt và không thay thế tư vấn pháp lý.",
-  "Nếu chưa chọn template thì đặt template=null.",
-  "Nếu khoản không có số/ký hiệu thì đặt number=null.",
-  "Dùng children cho khoản/điểm lồng nhau.",
-  "Phụ lục chỉ được tham chiếu nhưng không có nội dung phải có included_in_source=false.",
-  "Với phụ lục đánh số, source_reference phải có dạng chính xác 'Phụ lục N'.",
-  "Ghi mâu thuẫn hoặc lỗi nghi ngờ vào provenance.source_anomalies và quality.warnings.",
-  ...(sampleId ? [`sample_id bắt buộc là '${sampleId}' theo ngữ cảnh công việc.`] : []),
-].join("\n");
+const systemPrompt = buildExtractionSystemPrompt(sampleId);
 
 const userPrompt = [
   "JSON SCHEMA:",

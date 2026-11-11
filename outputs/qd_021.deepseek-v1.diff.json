@@ -1,0 +1,296 @@
+{
+  "sample_id": "qd_021",
+  "comparison_rules": {
+    "strict": "Unicode NFC + chuẩn hóa khoảng trắng",
+    "formatting_only": "Không phân biệt hoa/thường, dấu câu và ký hiệu",
+    "near_match": "Độ tương đồng Levenshtein sau chuẩn hóa >= 0.90",
+    "clause_alignment": "Căn theo đường dẫn Điều/Khoản/Điểm, không ghép tiêu đề điều vào khóa"
+  },
+  "summary": {
+    "article_headings": {
+      "expected_total": 3,
+      "actual_total": 3,
+      "exact": 3,
+      "formatting_only": 0,
+      "near_match": 0,
+      "content_mismatch": 0,
+      "missing": 0,
+      "extra": 0,
+      "strict_accuracy": 1,
+      "tolerant_accuracy": 1
+    },
+    "legal_bases": {
+      "expected_total": 10,
+      "actual_total": 10,
+      "exact": 10,
+      "formatting_only": 0,
+      "near_match": 0,
+      "content_mismatch": 0,
+      "missing": 0,
+      "extra": 0,
+      "strict_accuracy": 1,
+      "tolerant_accuracy": 1
+    },
+    "clauses": {
+      "expected_total": 3,
+      "actual_total": 3,
+      "exact": 3,
+      "formatting_only": 0,
+      "near_match": 0,
+      "content_mismatch": 0,
+      "missing": 0,
+      "extra": 0,
+      "strict_accuracy": 1,
+      "tolerant_accuracy": 1,
+      "number_mismatches": 0
+    },
+    "recipients": {
+      "expected_total": 12,
+      "actual_total": 12,
+      "exact": 2,
+      "formatting_only": 10,
+      "near_match": 0,
+      "content_mismatch": 0,
+      "missing": 0,
+      "extra": 0,
+      "strict_accuracy": 0.16666666666666666,
+      "tolerant_accuracy": 1
+    },
+    "attachments": {
+      "expected_total": 1,
+      "actual_total": 1,
+      "exact": 1,
+      "formatting_only": 0,
+      "near_match": 0,
+      "content_mismatch": 0,
+      "missing": 0,
+      "extra": 0,
+      "strict_accuracy": 1,
+      "tolerant_accuracy": 1
+    }
+  },
+  "details": {
+    "article_headings": [
+      {
+        "key": "1",
+        "expected": "Ban hành quy định",
+        "actual": "Ban hành quy định",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "2",
+        "expected": "Hiệu lực thi hành",
+        "actual": "Hiệu lực thi hành",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "3",
+        "expected": "Trách nhiệm thi hành",
+        "actual": "Trách nhiệm thi hành",
+        "status": "exact",
+        "similarity": 1
+      }
+    ],
+    "legal_bases": [
+      {
+        "key": "expected_4_actual_4",
+        "expected": "Căn cứ Nghị định số 37/2014/NĐ-CP ngày 05 tháng 5 năm 2014 của Chính phủ quy định tổ chức các cơ quan chuyên môn thuộc Ủy ban nhân dân huyện, quận, thị xã, thành phố thuộc tỉnh và Nghị định số 108/2020/NĐ-CP ngày 14 tháng 9 năm 2020 của Chính phủ sửa đổi, bổ sung một số điều của Nghị định số 37/2014/NĐ-CP ngày 05 tháng 5 năm 2014 của Chính phủ;",
+        "actual": "Căn cứ Nghị định số 37/2014/NĐ-CP ngày 05 tháng 5 năm 2014 của Chính phủ quy định tổ chức các cơ quan chuyên môn thuộc Ủy ban nhân dân huyện, quận, thị xã, thành phố thuộc tỉnh và Nghị định số 108/2020/NĐ-CP ngày 14 tháng 9 năm 2020 của Chính phủ sửa đổi, bổ sung một số điều của Nghị định số 37/2014/NĐ-CP ngày 05 tháng 5 năm 2014 của Chính phủ;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_5_actual_5",
+        "expected": "Căn cứ Nghị định số 33/2021/NĐ-CP ngày 29 tháng 3 năm 2021 của Chính phủ quy định chi tiết và biện pháp thi hành Nghị quyết số 131/2020/QH14 ngày 16 tháng 11 năm 2020 của Quốc hội về tổ chức chính quyền đô thị tại Thành phố Hồ Chí Minh;",
+        "actual": "Căn cứ Nghị định số 33/2021/NĐ-CP ngày 29 tháng 3 năm 2021 của Chính phủ quy định chi tiết và biện pháp thi hành Nghị quyết số 131/2020/QH14 ngày 16 tháng 11 năm 2020 của Quốc hội về tổ chức chính quyền đô thị tại Thành phố Hồ Chí Minh;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_3_actual_3",
+        "expected": "Căn cứ Nghị quyết số 131/2020/QH14 ngày 16 tháng 11 năm 2020 của Quốc hội về tổ chức chính quyền đô thị tại Thành phố Hồ Chí Minh;",
+        "actual": "Căn cứ Nghị quyết số 131/2020/QH14 ngày 16 tháng 11 năm 2020 của Quốc hội về tổ chức chính quyền đô thị tại Thành phố Hồ Chí Minh;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_6_actual_6",
+        "expected": "Căn cứ Quyết định số 25/2021/QĐ-TTg ngày 22 tháng 7 năm 2021 của Thủ tướng Chính phủ quy định về xã, phường, thị trấn đạt chuẩn tiếp cận pháp luật;",
+        "actual": "Căn cứ Quyết định số 25/2021/QĐ-TTg ngày 22 tháng 7 năm 2021 của Thủ tướng Chính phủ quy định về xã, phường, thị trấn đạt chuẩn tiếp cận pháp luật;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_7_actual_7",
+        "expected": "Căn cứ Thông tư số 07/2020/TT-BTP ngày 21 tháng 12 năm 2020 của Bộ trưởng Bộ Tư pháp hướng dẫn chức năng, nhiệm vụ và quyền hạn của Sở Tư pháp thuộc Ủy ban nhân dân cấp tỉnh, Phòng Tư pháp thuộc Ủy ban nhân dân cấp huyện;",
+        "actual": "Căn cứ Thông tư số 07/2020/TT-BTP ngày 21 tháng 12 năm 2020 của Bộ trưởng Bộ Tư pháp hướng dẫn chức năng, nhiệm vụ và quyền hạn của Sở Tư pháp thuộc Ủy ban nhân dân cấp tỉnh, Phòng Tư pháp thuộc Ủy ban nhân dân cấp huyện;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_8_actual_8",
+        "expected": "Căn cứ Quyết định số 11/2022/QĐ-UBND ngày 15 tháng 4 năm 2022 của Ủy ban nhân dân Thành phố Hồ Chí Minh ban hành về quy trình xây dựng văn bản quy phạm pháp luật trên địa bàn Thành phố Hồ Chí Minh;",
+        "actual": "Căn cứ Quyết định số 11/2022/QĐ-UBND ngày 15 tháng 4 năm 2022 của Ủy ban nhân dân Thành phố Hồ Chí Minh ban hành về quy trình xây dựng văn bản quy phạm pháp luật trên địa bàn Thành phố Hồ Chí Minh;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_9_actual_9",
+        "expected": "Căn cứ Quyết định số 30/2023/QĐ-UBND ngày 18 tháng 7 năm 2023 của Ủy ban nhân dân Thành phố Hồ Chí Minh về ban hành quy định về hướng dẫn chức năng, nhiệm vụ, quyền hạn và tổ chức của Phòng Tư pháp thuộc Ủy ban nhân dân thành phố Thủ Đức và các quận - huyện;",
+        "actual": "Căn cứ Quyết định số 30/2023/QĐ-UBND ngày 18 tháng 7 năm 2023 của Ủy ban nhân dân Thành phố Hồ Chí Minh về ban hành quy định về hướng dẫn chức năng, nhiệm vụ, quyền hạn và tổ chức của Phòng Tư pháp thuộc Ủy ban nhân dân thành phố Thủ Đức và các quận - huyện;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_10_actual_10",
+        "expected": "Theo đề nghị của Trưởng Phòng Tư pháp quận tại Tờ trình số 139/TTr-TP ngày 18 tháng 9 năm 2023 về việc ký Quyết định ban hành Quy định chức năng, nhiệm vụ, chế độ làm việc và quan hệ công tác của Phòng Tư pháp quận Bình Thạnh.",
+        "actual": "Theo đề nghị của Trưởng Phòng Tư pháp quận tại Tờ trình số 139/TTr-TP ngày 18 tháng 9 năm 2023 về việc ký Quyết định ban hành Quy định chức năng, nhiệm vụ, chế độ làm việc và quan hệ công tác của Phòng Tư pháp quận Bình Thạnh.",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_1_actual_1",
+        "expected": "Căn cứ Luật Tổ chức chính quyền địa phương ngày 19 tháng 6 năm 2015 và Luật sửa đổi, bổ sung một số điều của Luật Tổ chức Chính phủ và Luật Tổ chức chính quyền địa phương ngày 22 tháng 11 năm 2019;",
+        "actual": "Căn cứ Luật Tổ chức chính quyền địa phương ngày 19 tháng 6 năm 2015 và Luật sửa đổi, bổ sung một số điều của Luật Tổ chức Chính phủ và Luật Tổ chức chính quyền địa phương ngày 22 tháng 11 năm 2019;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_2_actual_2",
+        "expected": "Căn cứ Luật Ban hành văn bản quy phạm pháp luật ngày 22 tháng 6 năm 2015 và Luật sửa đổi, bổ sung một số điều của Luật Ban hành văn bản quy phạm pháp luật ngày 18 tháng 6 năm 2020;",
+        "actual": "Căn cứ Luật Ban hành văn bản quy phạm pháp luật ngày 22 tháng 6 năm 2015 và Luật sửa đổi, bổ sung một số điều của Luật Ban hành văn bản quy phạm pháp luật ngày 18 tháng 6 năm 2020;",
+        "status": "exact",
+        "similarity": 1
+      }
+    ],
+    "clauses": [
+      {
+        "key": "Điều 1 / #1",
+        "expected": "Ban hành kèm theo Quyết định này là Quy định về chức năng, nhiệm vụ, chế độ làm việc và quan hệ công tác của Phòng Tư pháp quận Bình Thạnh.",
+        "actual": "Ban hành kèm theo Quyết định này là Quy định về chức năng, nhiệm vụ, chế độ làm việc và quan hệ công tác của Phòng Tư pháp quận Bình Thạnh.",
+        "status": "exact",
+        "similarity": 1,
+        "expected_number": null,
+        "actual_number": null,
+        "number_matches": true
+      },
+      {
+        "key": "Điều 2 / #1",
+        "expected": "Quyết định này có hiệu lực kể từ ngày 12 tháng 10 năm 2023. Quyết định này thay thế Quyết định số 03/2020/QĐ-UBND ngày 17 tháng 12 năm 2020 của Ủy ban nhân dân quận Bình Thạnh ban hành Quy chế về tổ chức và hoạt động của Phòng Tư pháp quận Bình Thạnh.",
+        "actual": "Quyết định này có hiệu lực kể từ ngày 12 tháng 10 năm 2023. Quyết định này thay thế Quyết định số 03/2020/QĐ-UBND ngày 17 tháng 12 năm 2020 của Ủy ban nhân dân quận Bình Thạnh ban hành Quy chế về tổ chức và hoạt động của Phòng Tư pháp quận Bình Thạnh.",
+        "status": "exact",
+        "similarity": 1,
+        "expected_number": null,
+        "actual_number": null,
+        "number_matches": true
+      },
+      {
+        "key": "Điều 3 / #1",
+        "expected": "Chánh Văn phòng Ủy ban nhân dân quận, Trưởng Phòng Tư pháp, Trưởng phòng Nội vụ, Thủ trưởng các phòng, ban, đơn vị trực thuộc Ủy ban nhân dân quận, các Chủ tịch Ủy ban nhân dân phường và tổ chức, cá nhân có liên quan chịu trách nhiệm thi hành Quyết định này./.",
+        "actual": "Chánh Văn phòng Ủy ban nhân dân quận, Trưởng Phòng Tư pháp, Trưởng phòng Nội vụ, Thủ trưởng các phòng, ban, đơn vị trực thuộc Ủy ban nhân dân quận, các Chủ tịch Ủy ban nhân dân phường và tổ chức, cá nhân có liên quan chịu trách nhiệm thi hành Quyết định này./.",
+        "status": "exact",
+        "similarity": 1,
+        "expected_number": null,
+        "actual_number": null,
+        "number_matches": true
+      }
+    ],
+    "recipients": [
+      {
+        "key": "expected_1_actual_1",
+        "expected": "Như Diều 3;",
+        "actual": "Như Diều 3",
+        "status": "formatting_only",
+        "similarity": 1
+      },
+      {
+        "key": "expected_2_actual_2",
+        "expected": "Sở Tư pháp;",
+        "actual": "Sở Tư pháp",
+        "status": "formatting_only",
+        "similarity": 1
+      },
+      {
+        "key": "expected_3_actual_3",
+        "expected": "Sở Nội vụ;",
+        "actual": "Sở Nội vụ",
+        "status": "formatting_only",
+        "similarity": 1
+      },
+      {
+        "key": "expected_4_actual_4",
+        "expected": "Trung tâm Công báo;",
+        "actual": "Trung tâm Công báo",
+        "status": "formatting_only",
+        "similarity": 1
+      },
+      {
+        "key": "expected_5_actual_5",
+        "expected": "BT, cac PRT Quận ủy;",
+        "actual": "BT, cac PRT Quận ủy",
+        "status": "formatting_only",
+        "similarity": 1
+      },
+      {
+        "key": "expected_6_actual_6",
+        "expected": "CT, các PCT UBND quận;",
+        "actual": "CT, các PCT UBND quận",
+        "status": "formatting_only",
+        "similarity": 1
+      },
+      {
+        "key": "expected_7_actual_7",
+        "expected": "UBMTTOVN và các đoàn thể quận,",
+        "actual": "UBMTTOVN và các đoàn thể quận,",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_8_actual_8",
+        "expected": "VP. UBND/Q;",
+        "actual": "VP. UBND/Q",
+        "status": "formatting_only",
+        "similarity": 1
+      },
+      {
+        "key": "expected_9_actual_9",
+        "expected": "Ban Biên tập Cổng TTĐT/Q;",
+        "actual": "Ban Biên tập Cổng TTĐT/Q",
+        "status": "formatting_only",
+        "similarity": 1
+      },
+      {
+        "key": "expected_10_actual_10",
+        "expected": "Các đơn vị quận;",
+        "actual": "Các đơn vị quận",
+        "status": "formatting_only",
+        "similarity": 1
+      },
+      {
+        "key": "expected_11_actual_11",
+        "expected": "Các UBND Phường;",
+        "actual": "Các UBND Phường",
+        "status": "formatting_only",
+        "similarity": 1
+      },
+      {
+        "key": "expected_12_actual_12",
+        "expected": "Lưu: VT, TP.",
+        "actual": "Lưu: VT, TP.",
+        "status": "exact",
+        "similarity": 1
+      }
+    ],
+    "attachments": [
+      {
+        "key": "expected_1_actual_1",
+        "expected": "Ban hành kèm theo Quyết định này",
+        "actual": "Ban hành kèm theo Quyết định này",
+        "status": "exact",
+        "similarity": 1
+      }
+    ]
+  }
+}

@@ -64,6 +64,60 @@ test("chỉ xóa provenance.quality khi trùng chính xác quality gốc", () =>
   assert.equal(different.changes.length, 0);
 });
 
+test("di chuyển provenance.quality khi quality gốc bị thiếu", () => {
+  const misplacedQuality = {
+    extraction_status: "verified",
+    content_status: "source_preserved",
+    legal_review_status: "not_expert_reviewed",
+    warnings: ["Chưa kiểm duyệt pháp lý."],
+  };
+  const result = normalizeExtraction({
+    sample_id: "qd_014",
+    provenance: {
+      normalizations: [],
+      source_anomalies: [],
+      quality: structuredClone(misplacedQuality),
+    },
+  });
+
+  assert.deepEqual(result.normalized.quality, misplacedQuality);
+  assert.equal(Object.hasOwn(result.normalized.provenance, "quality"), false);
+  assert.equal(result.changes[0].rule, "move_provenance_quality_to_root_when_missing");
+});
+
+test("chuyển TM. từ delegation sang authority theo quy ước dữ liệu", () => {
+  const result = normalizeExtraction({
+    signature: {
+      authority: "ỦY BAN NHÂN DÂN",
+      delegation: "TM.",
+      position: "CHỦ TỊCH",
+    },
+  });
+
+  assert.equal(result.normalized.signature.authority, "TM. ỦY BAN NHÂN DÂN");
+  assert.equal(result.normalized.signature.delegation, null);
+  assert.deepEqual(
+    result.changes.map((change) => change.rule),
+    ["move_tm_prefix_from_delegation_to_authority", "clear_delegation_after_tm_prefix_move"],
+  );
+});
+
+test("chỉ xóa provenance.source_consistency khi trùng quality", () => {
+  const duplicate = normalizeExtraction({
+    provenance: { source_consistency: "warning" },
+    quality: { source_consistency: "warning" },
+  });
+  assert.equal(Object.hasOwn(duplicate.normalized.provenance, "source_consistency"), false);
+  assert.equal(duplicate.changes[0].rule, "remove_exact_duplicate_provenance_source_consistency");
+
+  const conflicting = normalizeExtraction({
+    provenance: { source_consistency: "passed" },
+    quality: { source_consistency: "warning" },
+  });
+  assert.equal(conflicting.normalized.provenance.source_consistency, "passed");
+  assert.equal(conflicting.changes.length, 0);
+});
+
 test("sửa có kiểm soát các lỗi schema của bản raw qd_014 từ ngữ cảnh nguồn", async () => {
   const [candidate, schema, sourceText] = await Promise.all([
     readFile("outputs/qd_014.predicted.raw.json", "utf8").then(JSON.parse),

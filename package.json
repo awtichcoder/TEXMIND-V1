@@ -7,7 +7,11 @@
     "collect:hf": "node ./src/collect_hf_samples.mjs --count 100 --type \"Quyết định\"",
     "shortlist:hf": "node ./src/shortlist_hf_samples.mjs",
     "extract:ai": "node ./src/extract_with_ai.mjs",
+    "normalize:saved": "node ./src/normalize_saved_extraction.mjs",
+    "build:colab:qd021": "node ./src/build_colab_qd021.mjs",
     "evaluate:ai": "node ./src/evaluate_structured.mjs",
+    "analyze:diff": "node ./src/analyze_extraction_diff.mjs",
+    "render:docx": "node ./src/render_structured_docx.mjs",
     "test": "node --test ./tests/*.mjs"
   },
   "dependencies": {

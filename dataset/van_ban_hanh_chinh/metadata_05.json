@@ -1,0 +1,39 @@
+{
+  "sample_id": "qd_030",
+  "source_id": "158971",
+  "document_type": "quyet_dinh",
+  "template_id": null,
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "input_05.txt",
+  "structured_file": "structured_05.json",
+  "schema_file": "../../schemas/texmind-document.schema.json",
+  "expected_output_file": null,
+  "preserve_original_content": true,
+  "selection_reason": "Quyết định công bố kết quả rà soát có số liệu tổng hợp, khoản/điểm lồng nhau và tham chiếu bốn danh mục kèm theo; dùng để mở rộng gold sang cấu trúc khác bốn mẫu hiện có.",
+  "source_anomalies": [
+    {
+      "source_text": "1 . Tổng văn bản được rà soát",
+      "note": "Nguồn có khoảng trắng trước dấu chấm trong số thứ tự; giữ nguyên khi trích nội dung."
+    },
+    {
+      "source_text": "2 . Các văn bản này được đăng tải",
+      "note": "Nguồn có khoảng trắng trước dấu chấm trong số thứ tự; giữ nguyên khi trích nội dung."
+    }
+  ],
+  "intermediate_data": {
+    "schema_version": "1.0",
+    "status": "validated_with_source_warning",
+    "automated_test": "tests/validate_structured_05.mjs"
+  },
+  "quality_assurance": {
+    "prepared_on": "2026-11-11",
+    "verified_on": "2026-11-11",
+    "content_validation": "passed_nested_clauses_four_referenced_lists_signature_and_effective_date",
+    "source_hash_match": "input_05.txt_matches_shortlist_qd_030"
+  },
+  "status": "structured_validated_no_docx",
+  "review_status": "not_expert_reviewed"
+}

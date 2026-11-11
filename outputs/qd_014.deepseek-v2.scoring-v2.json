@@ -1,0 +1,140 @@
+{
+  "schema_valid": true,
+  "schema_errors": [],
+  "scoring_version": "2.0",
+  "scalar_accuracy": 1,
+  "article_headings": {
+    "expected": 6,
+    "actual": 6,
+    "matches": 6,
+    "precision": 1,
+    "recall": 1,
+    "f1": 1
+  },
+  "legal_bases": {
+    "expected": 4,
+    "actual": 4,
+    "matches": 4,
+    "precision": 1,
+    "recall": 1,
+    "f1": 1
+  },
+  "clauses": {
+    "expected": 29,
+    "actual": 29,
+    "matches": 29,
+    "precision": 1,
+    "recall": 1,
+    "f1": 1
+  },
+  "recipients": {
+    "expected": 0,
+    "actual": 0,
+    "matches": 0,
+    "precision": 1,
+    "recall": 1,
+    "f1": 1
+  },
+  "attachments": {
+    "expected": 0,
+    "actual": 0,
+    "matches": 0,
+    "precision": 1,
+    "recall": 1,
+    "f1": 1
+  },
+  "overall_score": 1,
+  "strict_evaluation": {
+    "scalar_accuracy": 1,
+    "article_headings": {
+      "expected": 6,
+      "actual": 6,
+      "matches": 6,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "legal_bases": {
+      "expected": 4,
+      "actual": 4,
+      "matches": 4,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "clauses": {
+      "expected": 29,
+      "actual": 29,
+      "matches": 29,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "recipients": {
+      "expected": 0,
+      "actual": 0,
+      "matches": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "attachments": {
+      "expected": 0,
+      "actual": 0,
+      "matches": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "overall_score": 1
+  },
+  "tolerant_evaluation": {
+    "scalar_accuracy": 1,
+    "article_headings": {
+      "expected": 6,
+      "actual": 6,
+      "matches": 6,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "legal_bases": {
+      "expected": 4,
+      "actual": 4,
+      "matches": 4,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "clauses": {
+      "expected": 29,
+      "actual": 29,
+      "matches": 29,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "recipients": {
+      "expected": 0,
+      "actual": 0,
+      "matches": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "attachments": {
+      "expected": 0,
+      "actual": 0,
+      "matches": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "overall_score": 1
+  },
+  "diagnostics": {
+    "clause_number_mismatches": [],
+    "legal_basis_issues": []
+  },
+  "warnings": []
+}

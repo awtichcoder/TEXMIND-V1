@@ -1,0 +1,314 @@
+{
+  "sample_id": "qd_030",
+  "comparison_rules": {
+    "strict": "Unicode NFC + chuẩn hóa khoảng trắng",
+    "formatting_only": "Không phân biệt hoa/thường, dấu câu và ký hiệu",
+    "near_match": "Độ tương đồng Levenshtein sau chuẩn hóa >= 0.90",
+    "clause_alignment": "Căn theo đường dẫn Điều/Khoản/Điểm, không ghép tiêu đề điều vào khóa"
+  },
+  "summary": {
+    "article_headings": {
+      "expected_total": 4,
+      "actual_total": 4,
+      "exact": 4,
+      "formatting_only": 0,
+      "near_match": 0,
+      "content_mismatch": 0,
+      "missing": 0,
+      "extra": 0,
+      "strict_accuracy": 1,
+      "tolerant_accuracy": 1
+    },
+    "legal_bases": {
+      "expected_total": 5,
+      "actual_total": 5,
+      "exact": 5,
+      "formatting_only": 0,
+      "near_match": 0,
+      "content_mismatch": 0,
+      "missing": 0,
+      "extra": 0,
+      "strict_accuracy": 1,
+      "tolerant_accuracy": 1
+    },
+    "clauses": {
+      "expected_total": 14,
+      "actual_total": 14,
+      "exact": 14,
+      "formatting_only": 0,
+      "near_match": 0,
+      "content_mismatch": 0,
+      "missing": 0,
+      "extra": 0,
+      "strict_accuracy": 1,
+      "tolerant_accuracy": 1,
+      "number_mismatches": 0
+    },
+    "recipients": {
+      "expected_total": 0,
+      "actual_total": 0,
+      "exact": 0,
+      "formatting_only": 0,
+      "near_match": 0,
+      "content_mismatch": 0,
+      "missing": 0,
+      "extra": 0,
+      "strict_accuracy": 1,
+      "tolerant_accuracy": 1
+    },
+    "attachments": {
+      "expected_total": 4,
+      "actual_total": 0,
+      "exact": 0,
+      "formatting_only": 0,
+      "near_match": 0,
+      "content_mismatch": 0,
+      "missing": 4,
+      "extra": 0,
+      "strict_accuracy": 0,
+      "tolerant_accuracy": 0
+    }
+  },
+  "details": {
+    "article_headings": [
+      {
+        "key": "1",
+        "expected": "Công bố kết quả rà soát văn bản quy phạm pháp luật của HĐND, UBND tỉnh năm 2022, cụ thể:",
+        "actual": "Công bố kết quả rà soát văn bản quy phạm pháp luật của HĐND, UBND tỉnh năm 2022, cụ thể:",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "2",
+        "expected": "Tổ chức thực hiện",
+        "actual": "Tổ chức thực hiện",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "3",
+        "expected": "Giao Giám đốc Sở Tư pháp chủ trì, phối hợp cùng Chánh Văn phòng UBND tỉnh theo dõi, hướng dẫn, đôn đốc, kiểm tra việc thực hiện Quyết định này.",
+        "actual": "Giao Giám đốc Sở Tư pháp chủ trì, phối hợp cùng Chánh Văn phòng UBND tỉnh theo dõi, hướng dẫn, đôn đốc, kiểm tra việc thực hiện Quyết định này.",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "4",
+        "expected": "Chánh Văn phòng UBND tỉnh, Giám đốc Sở Tư pháp, Thủ trưởng các cơ quan, đơn vị có liên quan ở tỉnh; Chủ tịch HĐND, UBND các huyện, thị xã, thành phố; Chủ tịch HĐND, UBND các xã, phường, thị trấn có trách nhiệm thi hành Quyết định này.",
+        "actual": "Chánh Văn phòng UBND tỉnh, Giám đốc Sở Tư pháp, Thủ trưởng các cơ quan, đơn vị có liên quan ở tỉnh; Chủ tịch HĐND, UBND các huyện, thị xã, thành phố; Chủ tịch HĐND, UBND các xã, phường, thị trấn có trách nhiệm thi hành Quyết định này.",
+        "status": "exact",
+        "similarity": 1
+      }
+    ],
+    "legal_bases": [
+      {
+        "key": "expected_4_actual_4",
+        "expected": "Căn cứ Nghị định số 154/2020/NĐ-CP ngày 31 tháng 12 năm 2020 của Chính phủ về việc sửa đổi, bổ sung một số điều của Nghị định số 34/2016/NĐ-CP ngày 14 tháng 5 năm 2016 của Chính phủ quy định chi tiết một số điều và biện pháp thi hành luật ban hành văn bản quy phạm pháp luật;",
+        "actual": "Căn cứ Nghị định số 154/2020/NĐ-CP ngày 31 tháng 12 năm 2020 của Chính phủ về việc sửa đổi, bổ sung một số điều của Nghị định số 34/2016/NĐ-CP ngày 14 tháng 5 năm 2016 của Chính phủ quy định chi tiết một số điều và biện pháp thi hành luật ban hành văn bản quy phạm pháp luật;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_3_actual_3",
+        "expected": "Căn cứ Nghị định số 34/2016/NĐ-CP ngày 14 tháng 5 năm 2016 của Chính phủ quy định chi tiết một số điều và biện pháp thi hành Luật Ban hành văn bản quy phạm pháp luật;",
+        "actual": "Căn cứ Nghị định số 34/2016/NĐ-CP ngày 14 tháng 5 năm 2016 của Chính phủ quy định chi tiết một số điều và biện pháp thi hành Luật Ban hành văn bản quy phạm pháp luật;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_5_actual_5",
+        "expected": "Theo đề nghị của Giám đốc Sở Tư pháp tại Tờ trình số 02/TTr-STP ngày 11 tháng 01 năm 2023.",
+        "actual": "Theo đề nghị của Giám đốc Sở Tư pháp tại Tờ trình số 02/TTr-STP ngày 11 tháng 01 năm 2023.",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_1_actual_1",
+        "expected": "Căn cứ Luật Tổ chức chính quyền địa phương ngày 19 tháng 6 năm 2015; Luật sửa đổi, bổ sung một số điều của Luật Tổ chức Chính phủ và Luật Tổ chức chính quyền địa phương ngày 22 tháng 11 năm 2019;",
+        "actual": "Căn cứ Luật Tổ chức chính quyền địa phương ngày 19 tháng 6 năm 2015; Luật sửa đổi, bổ sung một số điều của Luật Tổ chức Chính phủ và Luật Tổ chức chính quyền địa phương ngày 22 tháng 11 năm 2019;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_2_actual_2",
+        "expected": "Căn cứ Luật Ban hành văn bản quy phạm pháp luật ngày 22 tháng 6 năm 2015; Luật sửa đổi, bổ sung một số điều của Luật Ban hành văn bản quy phạm pháp luật ngày 18 tháng 6 năm 2020;",
+        "actual": "Căn cứ Luật Ban hành văn bản quy phạm pháp luật ngày 22 tháng 6 năm 2015; Luật sửa đổi, bổ sung một số điều của Luật Ban hành văn bản quy phạm pháp luật ngày 18 tháng 6 năm 2020;",
+        "status": "exact",
+        "similarity": 1
+      }
+    ],
+    "clauses": [
+      {
+        "key": "Điều 1 / #1",
+        "expected": "Tổng văn bản được rà soát: 438 văn bản quy phạm pháp luật của HĐND, UBND tỉnh (138 nghị quyết, 298 quyết định, 02 chỉ thị) ; trong đó: 36 văn bản hết hiệu lực toàn bộ, 402 văn bản còn hiệu lực (bao gồm cả văn bản hết hiệu lực một phần và văn bản cần xử lý qua rà soát) , được lập thành 04 danh mục, gồm:",
+        "actual": "Tổng văn bản được rà soát: 438 văn bản quy phạm pháp luật của HĐND, UBND tỉnh (138 nghị quyết, 298 quyết định, 02 chỉ thị) ; trong đó: 36 văn bản hết hiệu lực toàn bộ, 402 văn bản còn hiệu lực (bao gồm cả văn bản hết hiệu lực một phần và văn bản cần xử lý qua rà soát) , được lập thành 04 danh mục, gồm:",
+        "status": "exact",
+        "similarity": 1,
+        "expected_number": "1",
+        "actual_number": "1",
+        "number_matches": true
+      },
+      {
+        "key": "Điều 1 / #1 / #1",
+        "expected": "Danh mục văn bản hết hiệu lực, ngưng hiệu lực toàn bộ sau rà soát năm 2022: 36 văn bản hết hiệu lực toàn bộ (11 nghị quyết, 25 quyết định) do đã được thay thế, sửa đổi, bãi bỏ bởi văn bản khác hoặc hết thời hạn thực hiện quy định tại văn bản; 0 văn bản ngưng hiệu lực toàn bộ.",
+        "actual": "Danh mục văn bản hết hiệu lực, ngưng hiệu lực toàn bộ sau rà soát năm 2022: 36 văn bản hết hiệu lực toàn bộ (11 nghị quyết, 25 quyết định) do đã được thay thế, sửa đổi, bãi bỏ bởi văn bản khác hoặc hết thời hạn thực hiện quy định tại văn bản; 0 văn bản ngưng hiệu lực toàn bộ.",
+        "status": "exact",
+        "similarity": 1,
+        "expected_number": "a",
+        "actual_number": "a",
+        "number_matches": true
+      },
+      {
+        "key": "Điều 1 / #1 / #2",
+        "expected": "Danh mục văn bản còn hiệu lực sau rà soát năm 2022: 402 văn bản (127 nghị quyết, 273 quyết định, 02 chỉ thị) .",
+        "actual": "Danh mục văn bản còn hiệu lực sau rà soát năm 2022: 402 văn bản (127 nghị quyết, 273 quyết định, 02 chỉ thị) .",
+        "status": "exact",
+        "similarity": 1,
+        "expected_number": "b",
+        "actual_number": "b",
+        "number_matches": true
+      },
+      {
+        "key": "Điều 1 / #1 / #3",
+        "expected": "Danh mục văn bản hết hiệu lực, ngưng hiệu lực một phần năm 2022: 14 văn bản hết hiệu lực một phần (03 nghị quyết, 11 quyết định) do phần nội dung đó đã được thay thế, sửa đổi, bãi bỏ bởi văn bản khác hoặc hết thời hạn thực hiện tại văn bản. 0 văn bản ngưng hiệu lực một phần.",
+        "actual": "Danh mục văn bản hết hiệu lực, ngưng hiệu lực một phần năm 2022: 14 văn bản hết hiệu lực một phần (03 nghị quyết, 11 quyết định) do phần nội dung đó đã được thay thế, sửa đổi, bãi bỏ bởi văn bản khác hoặc hết thời hạn thực hiện tại văn bản. 0 văn bản ngưng hiệu lực một phần.",
+        "status": "exact",
+        "similarity": 1,
+        "expected_number": "c",
+        "actual_number": "c",
+        "number_matches": true
+      },
+      {
+        "key": "Điều 1 / #1 / #4",
+        "expected": "Danh mục văn bản cần đình chỉ thi hành, sửa đổi, bổ sung, thay thế, bãi bỏ, ban hành mới: 53 văn bản (13 nghị quyết, 39 quyết định, 01 chỉ thị) .",
+        "actual": "Danh mục văn bản cần đình chỉ thi hành, sửa đổi, bổ sung, thay thế, bãi bỏ, ban hành mới: 53 văn bản (13 nghị quyết, 39 quyết định, 01 chỉ thị) .",
+        "status": "exact",
+        "similarity": 1,
+        "expected_number": "d",
+        "actual_number": "d",
+        "number_matches": true
+      },
+      {
+        "key": "Điều 1 / #2",
+        "expected": "Các văn bản này được đăng tải tại Cơ sở dữ liệu Quốc gia về văn bản pháp luật tỉnh Đắk Lắk (http://vbpl.vn/daklak) .",
+        "actual": "Các văn bản này được đăng tải tại Cơ sở dữ liệu Quốc gia về văn bản pháp luật tỉnh Đắk Lắk (http://vbpl.vn/daklak) .",
+        "status": "exact",
+        "similarity": 1,
+        "expected_number": "2",
+        "actual_number": "2",
+        "number_matches": true
+      },
+      {
+        "key": "Điều 2 / #1",
+        "expected": "Đăng tải kết quả rà soát",
+        "actual": "Đăng tải kết quả rà soát",
+        "status": "exact",
+        "similarity": 1,
+        "expected_number": "1",
+        "actual_number": "1",
+        "number_matches": true
+      },
+      {
+        "key": "Điều 2 / #1 / #1",
+        "expected": "Chánh Văn phòng UBND tỉnh có trách nhiệm chỉ đạo thực hiện việc đăng tải kết quả rà soát trên Công báo của UBND tỉnh.",
+        "actual": "Chánh Văn phòng UBND tỉnh có trách nhiệm chỉ đạo thực hiện việc đăng tải kết quả rà soát trên Công báo của UBND tỉnh.",
+        "status": "exact",
+        "similarity": 1,
+        "expected_number": "a",
+        "actual_number": "a",
+        "number_matches": true
+      },
+      {
+        "key": "Điều 2 / #1 / #2",
+        "expected": "Giám đốc Sở Tư pháp có trách nhiệm chỉ đạo đăng tải kết quả rà soát trên Cơ sở dữ liệu văn bản pháp luật tỉnh Đắk Lắk, Trang tin điện tử Sở Tư pháp theo quy định.",
+        "actual": "Giám đốc Sở Tư pháp có trách nhiệm chỉ đạo đăng tải kết quả rà soát trên Cơ sở dữ liệu văn bản pháp luật tỉnh Đắk Lắk, Trang tin điện tử Sở Tư pháp theo quy định.",
+        "status": "exact",
+        "similarity": 1,
+        "expected_number": "b",
+        "actual_number": "b",
+        "number_matches": true
+      },
+      {
+        "key": "Điều 2 / #2",
+        "expected": "Đối với các văn bản tại Danh mục văn bản cần ngưng hiệu lực, sửa đổi, bổ sung, thay thế, bãi bỏ, ban hành mới tại điểm d khoản 1 Điều 1 Quyết định",
+        "actual": "Đối với các văn bản tại Danh mục văn bản cần ngưng hiệu lực, sửa đổi, bổ sung, thay thế, bãi bỏ, ban hành mới tại điểm d khoản 1 Điều 1 Quyết định",
+        "status": "exact",
+        "similarity": 1,
+        "expected_number": "2",
+        "actual_number": "2",
+        "number_matches": true
+      },
+      {
+        "key": "Điều 2 / #2 / #1",
+        "expected": "Thủ trưởng các cơ quan chuyên môn:",
+        "actual": "Thủ trưởng các cơ quan chuyên môn:",
+        "status": "exact",
+        "similarity": 1,
+        "expected_number": "a",
+        "actual_number": "a",
+        "number_matches": true
+      },
+      {
+        "key": "Điều 2 / #2 / #1 / #1",
+        "expected": "- Khẩn trương soạn thảo, tham mưu UBND tỉnh ban hành, trình HĐND tỉnh ban hành đối với những văn bản cần bãi bỏ, sửa đổi, bổ sung, thay thế thuộc Danh mục này trong lĩnh vực quản lý nhà nước được giao phù hợp quy định hiện hành trong năm 2023.",
+        "actual": "- Khẩn trương soạn thảo, tham mưu UBND tỉnh ban hành, trình HĐND tỉnh ban hành đối với những văn bản cần bãi bỏ, sửa đổi, bổ sung, thay thế thuộc Danh mục này trong lĩnh vực quản lý nhà nước được giao phù hợp quy định hiện hành trong năm 2023.",
+        "status": "exact",
+        "similarity": 1,
+        "expected_number": null,
+        "actual_number": null,
+        "number_matches": true
+      },
+      {
+        "key": "Điều 2 / #2 / #1 / #2",
+        "expected": "- Khẩn trương tổng kết, đánh giá đối với những văn bản cần xem xét lại việc thực hiện để tham mưu UBND, đề nghị HĐND tỉnh ban hành văn bản sửa đổi, bổ sung, thay thế, bãi bỏ hoặc ban hành mới theo thẩm quyền (nếu cần).",
+        "actual": "- Khẩn trương tổng kết, đánh giá đối với những văn bản cần xem xét lại việc thực hiện để tham mưu UBND, đề nghị HĐND tỉnh ban hành văn bản sửa đổi, bổ sung, thay thế, bãi bỏ hoặc ban hành mới theo thẩm quyền (nếu cần).",
+        "status": "exact",
+        "similarity": 1,
+        "expected_number": null,
+        "actual_number": null,
+        "number_matches": true
+      },
+      {
+        "key": "Điều 2 / #2 / #2",
+        "expected": "Giám đốc Sở Tư pháp có trách nhiệm phối hợp với Thủ trưởng các sở, ban, ngành liên quan tham mưu UBND tỉnh xử lý, trình HĐND tỉnh xử lý đối với các văn bản cần bãi bỏ, sửa đổi, bổ sung, thay thế.",
+        "actual": "Giám đốc Sở Tư pháp có trách nhiệm phối hợp với Thủ trưởng các sở, ban, ngành liên quan tham mưu UBND tỉnh xử lý, trình HĐND tỉnh xử lý đối với các văn bản cần bãi bỏ, sửa đổi, bổ sung, thay thế.",
+        "status": "exact",
+        "similarity": 1,
+        "expected_number": "b",
+        "actual_number": "b",
+        "number_matches": true
+      }
+    ],
+    "recipients": [],
+    "attachments": [
+      {
+        "key": "expected_1",
+        "expected": "Điều 1 khoản 1 điểm a",
+        "actual": null,
+        "status": "missing",
+        "similarity": 0
+      },
+      {
+        "key": "expected_2",
+        "expected": "Điều 1 khoản 1 điểm b",
+        "actual": null,
+        "status": "missing",
+        "similarity": 0
+      },
+      {
+        "key": "expected_3",
+        "expected": "Điều 1 khoản 1 điểm c",
+        "actual": null,
+        "status": "missing",
+        "similarity": 0
+      },
+      {
+        "key": "expected_4",
+        "expected": "Điều 1 khoản 1 điểm d",
+        "actual": null,
+        "status": "missing",
+        "similarity": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "schema_valid": true,
+  "schema_errors": [],
+  "scoring_version": "2.0",
+  "scalar_accuracy": 0.7142857142857143,
+  "article_headings": {
+    "expected": 6,
+    "actual": 6,
+    "matches": 0,
+    "precision": 0,
+    "recall": 0,
+    "f1": 0
+  },
+  "legal_bases": {
+    "expected": 4,
+    "actual": 3,
+    "matches": 0,
+    "precision": 0,
+    "recall": 0,
+    "f1": 0
+  },
+  "clauses": {
+    "expected": 29,
+    "actual": 29,
+    "matches": 28,
+    "precision": 0.9655172413793104,
+    "recall": 0.9655172413793104,
+    "f1": 0.9655172413793104
+  },
+  "recipients": {
+    "expected": 0,
+    "actual": 0,
+    "matches": 0,
+    "precision": 1,
+    "recall": 1,
+    "f1": 1
+  },
+  "attachments": {
+    "expected": 0,
+    "actual": 0,
+    "matches": 0,
+    "precision": 1,
+    "recall": 1,
+    "f1": 1
+  },
+  "overall_score": 0.6133004926108375,
+  "strict_evaluation": {
+    "scalar_accuracy": 0.7142857142857143,
+    "article_headings": {
+      "expected": 6,
+      "actual": 6,
+      "matches": 0,
+      "precision": 0,
+      "recall": 0,
+      "f1": 0
+    },
+    "legal_bases": {
+      "expected": 4,
+      "actual": 3,
+      "matches": 0,
+      "precision": 0,
+      "recall": 0,
+      "f1": 0
+    },
+    "clauses": {
+      "expected": 29,
+      "actual": 29,
+      "matches": 28,
+      "precision": 0.9655172413793104,
+      "recall": 0.9655172413793104,
+      "f1": 0.9655172413793104
+    },
+    "recipients": {
+      "expected": 0,
+      "actual": 0,
+      "matches": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "attachments": {
+      "expected": 0,
+      "actual": 0,
+      "matches": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "overall_score": 0.6133004926108375
+  },
+  "tolerant_evaluation": {
+    "scalar_accuracy": 0.7142857142857143,
+    "article_headings": {
+      "expected": 6,
+      "actual": 6,
+      "matches": 5,
+      "precision": 0.8333333333333334,
+      "recall": 0.8333333333333334,
+      "f1": 0.8333333333333334
+    },
+    "legal_bases": {
+      "expected": 4,
+      "actual": 3,
+      "matches": 0,
+      "precision": 0,
+      "recall": 0,
+      "f1": 0
+    },
+    "clauses": {
+      "expected": 29,
+      "actual": 29,
+      "matches": 29,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "recipients": {
+      "expected": 0,
+      "actual": 0,
+      "matches": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "attachments": {
+      "expected": 0,
+      "actual": 0,
+      "matches": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "overall_score": 0.7579365079365079
+  },
+  "diagnostics": {
+    "clause_number_mismatches": [
+      {
+        "path": "Điều 4 / #1",
+        "expected_number": null,
+        "actual_number": "1"
+      },
+      {
+        "path": "Điều 5 / #1",
+        "expected_number": null,
+        "actual_number": "1"
+      }
+    ],
+    "legal_basis_issues": [
+      {
+        "key": "expected_1_actual_1",
+        "status": "content_mismatch",
+        "similarity": 0.8793103448275862
+      },
+      {
+        "key": "expected_2_actual_2",
+        "status": "content_mismatch",
+        "similarity": 0.1071428571428571
+      },
+      {
+        "key": "expected_3_actual_3",
+        "status": "content_mismatch",
+        "similarity": 0.09404388714733547
+      },
+      {
+        "key": "expected_4",
+        "status": "missing",
+        "similarity": 0
+      }
+    ]
+  },
+  "warnings": [
+    {
+      "code": "legal_bases_incomplete_or_changed",
+      "count": 4,
+      "message": "Có căn cứ pháp lý bị thiếu, rút ngắn hoặc thay đổi nội dung."
+    },
+    {
+      "code": "article_headings_content_mismatch",
+      "count": 1,
+      "message": "Có tiêu đề điều sai hoặc thiếu nội dung, không chỉ khác định dạng."
+    },
+    {
+      "code": "clause_number_mismatch",
+      "count": 2,
+      "message": "Có khoản/điểm được gán số khác với nguồn."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "sample_id": "qd_010",
+  "source_id": "168554",
+  "document_type": "quyet_dinh",
+  "template_id": null,
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "input_06.txt",
+  "structured_file": "structured_06.json",
+  "schema_file": "../../schemas/texmind-document.schema.json",
+  "expected_output_file": null,
+  "preserve_original_content": true,
+  "selection_reason": "Quyết định của Thủ tướng có ba điều, nhiều nơi nhận và một đoạn trách nhiệm thi hành không mang tiêu đề điều; dùng để kiểm tra việc giữ nguyên cấu trúc thiếu trong nguồn.",
+  "source_anomalies": [
+    {
+      "source_text": "Că n cứ Luật Phí và l ệ phí",
+      "note": "Nguồn có lỗi nghi OCR làm tách khoảng trắng trong từ; giữ nguyên khi trích nội dung."
+    },
+    {
+      "source_text": "Bộ trưởng các Bộ: Thông tin và Truyền thông, Tài chính, Kế hoạch và Đầu tư, Nội vụ, Cục trưởng Cục Viễn thông và Thủ trưởng các cơ quan liên quan chịu trách nhiệm thi hành Quyết định này./.",
+      "note": "Đoạn trách nhiệm thi hành nằm sau Điều 3 nhưng không có tiêu đề Điều 4 trong nguồn."
+    }
+  ],
+  "intermediate_data": {
+    "schema_version": "1.0",
+    "status": "validated_with_source_warning",
+    "automated_test": "tests/validate_structured_06.mjs"
+  },
+  "quality_assurance": {
+    "prepared_on": "2026-11-11",
+    "verified_on": "2026-11-11",
+    "content_validation": "passed_three_articles_unnumbered_execution_paragraph_nineteen_recipients_signature_and_effective_date",
+    "source_hash_match": "input_06.txt_matches_shortlist_qd_010"
+  },
+  "status": "structured_validated_no_docx",
+  "review_status": "not_expert_reviewed"
+}

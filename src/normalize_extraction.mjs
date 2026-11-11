@@ -106,6 +106,28 @@ export function normalizeExtraction(candidate, { sampleId = null, sourceText = n
     normalized.legal_effect.review_note = DEFAULT_REVIEW_NOTE;
   }
 
+  const authority = normalizedText(normalized.signature?.authority);
+  const delegation = normalizedText(normalized.signature?.delegation);
+  if (authority && /^TM\.?$/iu.test(delegation) && !/^TM\./iu.test(authority)) {
+    const canonicalAuthority = `TM. ${authority}`;
+    recordChange(
+      changes,
+      "move_tm_prefix_from_delegation_to_authority",
+      "$.signature.authority",
+      normalized.signature.authority,
+      canonicalAuthority,
+    );
+    recordChange(
+      changes,
+      "clear_delegation_after_tm_prefix_move",
+      "$.signature.delegation",
+      normalized.signature.delegation,
+      null,
+    );
+    normalized.signature.authority = canonicalAuthority;
+    normalized.signature.delegation = null;
+  }
+
   for (const [index, attachment] of (normalized.attachments ?? []).entries()) {
     const number = appendixNumber(attachment);
     if (number === null) continue;
@@ -120,19 +142,43 @@ export function normalizeExtraction(candidate, { sampleId = null, sourceText = n
     attachment.source_reference = canonicalReference;
   }
 
-  // Chỉ xóa trường sai vị trí khi nó là bản sao byte-for-byte của quality gốc.
-  // Trường hợp không giống nhau vẫn được giữ để schema validator báo lỗi.
+  // Di chuyển quality từ provenance khi trường gốc hoàn toàn vắng mặt.
+  // Nếu quality gốc đã tồn tại, chỉ xóa bản sai vị trí khi hai object giống hệt nhau.
+  // Hai object khác nhau vẫn được giữ để schema validator báo lỗi, tránh mất dữ liệu.
+  if (normalized.provenance?.quality !== undefined) {
+    if (normalized.quality === undefined) {
+      const misplacedQuality = normalized.provenance.quality;
+      changes.push({
+        rule: "move_provenance_quality_to_root_when_missing",
+        path: "$.quality",
+        before: null,
+        after: misplacedQuality,
+      });
+      normalized.quality = misplacedQuality;
+      delete normalized.provenance.quality;
+    } else if (exactJsonMatch(normalized.provenance.quality, normalized.quality)) {
+      changes.push({
+        rule: "remove_exact_duplicate_provenance_quality",
+        path: "$.provenance.quality",
+        before: normalized.provenance.quality,
+        after: null,
+      });
+      delete normalized.provenance.quality;
+    }
+  }
+
   if (
-    normalized.provenance?.quality !== undefined &&
-    exactJsonMatch(normalized.provenance.quality, normalized.quality)
+    normalized.provenance?.source_consistency !== undefined &&
+    normalized.quality?.source_consistency !== undefined &&
+    normalized.provenance.source_consistency === normalized.quality.source_consistency
   ) {
     changes.push({
-      rule: "remove_exact_duplicate_provenance_quality",
-      path: "$.provenance.quality",
-      before: normalized.provenance.quality,
+      rule: "remove_exact_duplicate_provenance_source_consistency",
+      path: "$.provenance.source_consistency",
+      before: normalized.provenance.source_consistency,
       after: null,
     });
-    delete normalized.provenance.quality;
+    delete normalized.provenance.source_consistency;
   }
 
   return { normalized, changes };
