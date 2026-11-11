@@ -1,0 +1,15 @@
+{
+  "raw_path": "C:\\CNPM\\AI-r1-2026\\outputs\\qd_030.deepseek-draft.predicted.raw.json",
+  "sample_id_from_job_context": "qd_030",
+  "raw_schema_error_count": 1,
+  "normalized_schema_error_count": 0,
+  "normalized_schema_errors": [],
+  "changes": [
+    {
+      "rule": "remove_exact_duplicate_provenance_source_consistency",
+      "path": "$.provenance.source_consistency",
+      "before": "warning",
+      "after": null
+    }
+  ]
+}

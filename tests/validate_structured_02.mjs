@@ -28,6 +28,9 @@ test("structured_02 tổng quát hóa schema và giữ nguyên qd_021", async ()
   assert.ok(data.articles.every((article) => article.clauses.length === 1));
   assert.ok(data.articles.every((article) => article.clauses[0].number === null));
   assert.deepEqual(data.data_tables, []);
+  assert.equal(data.attachments.length, 1);
+  assert.equal(data.attachments[0].included_in_source, false);
+  assert.ok(sourceText.includes(data.attachments[0].title));
   assert.equal(data.recipients.length, 12);
   assert.equal(data.signature.delegation, null);
   assert.equal(data.signature.signer_name, "Đinh Khắc Huy");

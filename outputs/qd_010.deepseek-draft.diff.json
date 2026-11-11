@@ -1,0 +1,333 @@
+{
+  "sample_id": "qd_010",
+  "comparison_rules": {
+    "strict": "Unicode NFC + chuẩn hóa khoảng trắng",
+    "formatting_only": "Không phân biệt hoa/thường, dấu câu và ký hiệu",
+    "near_match": "Độ tương đồng Levenshtein sau chuẩn hóa >= 0.90",
+    "clause_alignment": "Căn theo đường dẫn Điều/Khoản/Điểm, không ghép tiêu đề điều vào khóa"
+  },
+  "summary": {
+    "article_headings": {
+      "expected_total": 3,
+      "actual_total": 3,
+      "exact": 3,
+      "formatting_only": 0,
+      "near_match": 0,
+      "content_mismatch": 0,
+      "missing": 0,
+      "extra": 0,
+      "strict_accuracy": 1,
+      "tolerant_accuracy": 1
+    },
+    "legal_bases": {
+      "expected_total": 8,
+      "actual_total": 8,
+      "exact": 8,
+      "formatting_only": 0,
+      "near_match": 0,
+      "content_mismatch": 0,
+      "missing": 0,
+      "extra": 0,
+      "strict_accuracy": 1,
+      "tolerant_accuracy": 1
+    },
+    "clauses": {
+      "expected_total": 1,
+      "actual_total": 4,
+      "exact": 0,
+      "formatting_only": 0,
+      "near_match": 0,
+      "content_mismatch": 1,
+      "missing": 0,
+      "extra": 3,
+      "strict_accuracy": 0,
+      "tolerant_accuracy": 0,
+      "number_mismatches": 0
+    },
+    "recipients": {
+      "expected_total": 19,
+      "actual_total": 19,
+      "exact": 19,
+      "formatting_only": 0,
+      "near_match": 0,
+      "content_mismatch": 0,
+      "missing": 0,
+      "extra": 0,
+      "strict_accuracy": 1,
+      "tolerant_accuracy": 1
+    },
+    "attachments": {
+      "expected_total": 0,
+      "actual_total": 0,
+      "exact": 0,
+      "formatting_only": 0,
+      "near_match": 0,
+      "content_mismatch": 0,
+      "missing": 0,
+      "extra": 0,
+      "strict_accuracy": 1,
+      "tolerant_accuracy": 1
+    }
+  },
+  "details": {
+    "article_headings": [
+      {
+        "key": "1",
+        "expected": "Cục Viễn thông được áp dụng cơ chế tự chủ tài chính như đơn vị sự nghiệp kinh tế, sự nghiệp khác tự bảo đảm chi thường xuyên và chi đầu tư theo quy định tại Nghị định số 16/2015/NĐ-CP ngày 14 tháng 02 năm 2015 của Chính phủ quy định cơ chế tự chủ của đơn vị sự nghiệp công lập và Nghị định số 141/2016/NĐ-CP ngày 10 tháng 10 năm 2016 của Chính phủ quy định cơ chế tự chủ của đơn vị sự nghiệp công lập trong lĩnh vực kinh tế và sự nghiệp khác và các văn bản hướng dẫn thi hành Nghị định này.",
+        "actual": "Cục Viễn thông được áp dụng cơ chế tự chủ tài chính như đơn vị sự nghiệp kinh tế, sự nghiệp khác tự bảo đảm chi thường xuyên và chi đầu tư theo quy định tại Nghị định số 16/2015/NĐ-CP ngày 14 tháng 02 năm 2015 của Chính phủ quy định cơ chế tự chủ của đơn vị sự nghiệp công lập và Nghị định số 141/2016/NĐ-CP ngày 10 tháng 10 năm 2016 của Chính phủ quy định cơ chế tự chủ của đơn vị sự nghiệp công lập trong lĩnh vực kinh tế và sự nghiệp khác và các văn bản hướng dẫn thi hành Nghị định này.",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "2",
+        "expected": "Cục Viễn thông được sử dụng nguồn thu phí được để lại để chi cho các hoạt động của Cục, trong đó có: chi đầu tư; chi mua sắm, sửa chữa lớn tài sản, máy móc, thiết bị; chi bổ sung thu nhập cho người lao động; chi các nhiệm vụ đặc thù theo chức năng, nhiệm vụ, quyền hạn của Cục Viễn thông.",
+        "actual": "Cục Viễn thông được sử dụng nguồn thu phí được để lại để chi cho các hoạt động của Cục, trong đó có: chi đầu tư; chi mua sắm, sửa chữa lớn tài sản, máy móc, thiết bị; chi bổ sung thu nhập cho người lao động; chi các nhiệm vụ đặc thù theo chức năng, nhiệm vụ, quyền hạn của Cục Viễn thông.",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "3",
+        "expected": "Quyết định này có hiệu lực kể từ ngày 15 tháng 11 năm 2017 và áp dụng từ năm ngân sách 2017; thay thế Quyết định số 35/2011/QĐ-TTg ngày 27 tháng 6 năm 2011 của Thủ tướng Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Cục Viễn thông trực thuộc Bộ Thông tin và Truyền thông.",
+        "actual": "Quyết định này có hiệu lực kể từ ngày 15 tháng 11 năm 2017 và áp dụng từ năm ngân sách 2017; thay thế Quyết định số 35/2011/QĐ-TTg ngày 27 tháng 6 năm 2011 của Thủ tướng Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Cục Viễn thông trực thuộc Bộ Thông tin và Truyền thông.",
+        "status": "exact",
+        "similarity": 1
+      }
+    ],
+    "legal_bases": [
+      {
+        "key": "expected_5_actual_5",
+        "expected": "Că n cứ Nghị định số 120/2016/NĐ-CP ngày 23 tháng 8 năm 2016 của Chính phủ quy định chi tiết và hướng dẫn thi hành một số điều của Luật Phí và lệ phí;",
+        "actual": "Că n cứ Nghị định số 120/2016/NĐ-CP ngày 23 tháng 8 năm 2016 của Chính phủ quy định chi tiết và hướng dẫn thi hành một số điều của Luật Phí và lệ phí;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_6_actual_6",
+        "expected": "Căn cứ Nghị định số 16/2015/NĐ-CP ngày 14 tháng 02 năm 2015 của Chính phủ quy định cơ chế tự chủ của đơn vị sự nghiệp công l ập;",
+        "actual": "Căn cứ Nghị định số 16/2015/NĐ-CP ngày 14 tháng 02 năm 2015 của Chính phủ quy định cơ chế tự chủ của đơn vị sự nghiệp công l ập;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_7_actual_7",
+        "expected": "Căn cứ Nghị định số 141/2016/NĐ-CP ngày 10 tháng 10 năm 2016 của Chính phủ quy định cơ chế tự chủ của đơn vị sự nghiệp công l ập trong lĩnh vực kinh tế và sự nghiệp khác;",
+        "actual": "Căn cứ Nghị định số 141/2016/NĐ-CP ngày 10 tháng 10 năm 2016 của Chính phủ quy định cơ chế tự chủ của đơn vị sự nghiệp công l ập trong lĩnh vực kinh tế và sự nghiệp khác;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_1_actual_1",
+        "expected": "Căn cứ Luật Tổ chức Chính phủ ngày 19 tháng 6 năm 2015;",
+        "actual": "Căn cứ Luật Tổ chức Chính phủ ngày 19 tháng 6 năm 2015;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_2_actual_2",
+        "expected": "Căn cứ Luật Ngân sách nhà nước ngày 25 tháng 6 năm 2015;",
+        "actual": "Căn cứ Luật Ngân sách nhà nước ngày 25 tháng 6 năm 2015;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_3_actual_3",
+        "expected": "Căn cứ Luật Thực hành tiết kiệm, chố ng lãng phí ngày 26 tháng 11 năm 2013;",
+        "actual": "Căn cứ Luật Thực hành tiết kiệm, chố ng lãng phí ngày 26 tháng 11 năm 2013;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_4_actual_4",
+        "expected": "Că n cứ Luật Phí và l ệ phí ngày 25 tháng 11 năm 2015;",
+        "actual": "Că n cứ Luật Phí và l ệ phí ngày 25 tháng 11 năm 2015;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_8_actual_8",
+        "expected": "Theo đề nghị của Bộ trưởng Bộ Thông tin và Truyền thông;",
+        "actual": "Theo đề nghị của Bộ trưởng Bộ Thông tin và Truyền thông;",
+        "status": "exact",
+        "similarity": 1
+      }
+    ],
+    "clauses": [
+      {
+        "key": "Điều 3 / #1",
+        "expected": "Bộ trưởng các Bộ: Thông tin và Truyền thông, Tài chính, Kế hoạch và Đầu tư, Nội vụ, Cục trưởng Cục Viễn thông và Thủ trưởng các cơ quan liên quan chịu trách nhiệm thi hành Quyết định này./.",
+        "actual": "Quyết định này có hiệu lực kể từ ngày 15 tháng 11 năm 2017 và áp dụng từ năm ngân sách 2017; thay thế Quyết định số 35/2011/QĐ-TTg ngày 27 tháng 6 năm 2011 của Thủ tướng Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Cục Viễn thông trực thuộc Bộ Thông tin và Truyền thông.",
+        "status": "content_mismatch",
+        "similarity": 0.2798634812286689,
+        "expected_number": null,
+        "actual_number": null,
+        "number_matches": true
+      },
+      {
+        "key": "Điều 1 / #1",
+        "expected": null,
+        "actual": "Cục Viễn thông được áp dụng cơ chế tự chủ tài chính như đơn vị sự nghiệp kinh tế, sự nghiệp khác tự bảo đảm chi thường xuyên và chi đầu tư theo quy định tại Nghị định số 16/2015/NĐ-CP ngày 14 tháng 02 năm 2015 của Chính phủ quy định cơ chế tự chủ của đơn vị sự nghiệp công lập và Nghị định số 141/2016/NĐ-CP ngày 10 tháng 10 năm 2016 của Chính phủ quy định cơ chế tự chủ của đơn vị sự nghiệp công lập trong lĩnh vực kinh tế và sự nghiệp khác và các văn bản hướng dẫn thi hành Nghị định này.",
+        "status": "extra",
+        "similarity": 0,
+        "expected_number": null,
+        "actual_number": null,
+        "number_matches": false
+      },
+      {
+        "key": "Điều 2 / #1",
+        "expected": null,
+        "actual": "Cục Viễn thông được sử dụng nguồn thu phí được để lại để chi cho các hoạt động của Cục, trong đó có: chi đầu tư; chi mua sắm, sửa chữa lớn tài sản, máy móc, thiết bị; chi bổ sung thu nhập cho người lao động; chi các nhiệm vụ đặc thù theo chức năng, nhiệm vụ, quyền hạn của Cục Viễn thông.",
+        "status": "extra",
+        "similarity": 0,
+        "expected_number": null,
+        "actual_number": null,
+        "number_matches": false
+      },
+      {
+        "key": "Điều 3 / #2",
+        "expected": null,
+        "actual": "Bộ trưởng các Bộ: Thông tin và Truyền thông, Tài chính, Kế hoạch và Đầu tư, Nội vụ, Cục trưởng Cục Viễn thông và Thủ trưởng các cơ quan liên quan chịu trách nhiệm thi hành Quyết định này./.",
+        "status": "extra",
+        "similarity": 0,
+        "expected_number": null,
+        "actual_number": null,
+        "number_matches": false
+      }
+    ],
+    "recipients": [
+      {
+        "key": "expected_1_actual_1",
+        "expected": "Ban Bí thư Trung ương Đảng;",
+        "actual": "Ban Bí thư Trung ương Đảng;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_2_actual_2",
+        "expected": "Thủ tướng, các Phó Thủ tướng Chính phủ;",
+        "actual": "Thủ tướng, các Phó Thủ tướng Chính phủ;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_3_actual_3",
+        "expected": "Các bộ, cơ quan ngang bộ, cơ quan thuộc Chính phủ;",
+        "actual": "Các bộ, cơ quan ngang bộ, cơ quan thuộc Chính phủ;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_4_actual_4",
+        "expected": "HĐND, UBND các tỉnh, thành phố trực thuộc TW;",
+        "actual": "HĐND, UBND các tỉnh, thành phố trực thuộc TW;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_5_actual_5",
+        "expected": "Văn phòng Trung ương và các Ban của Đảng;",
+        "actual": "Văn phòng Trung ương và các Ban của Đảng;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_6_actual_6",
+        "expected": "Văn phòng Tổng bí thư;",
+        "actual": "Văn phòng Tổng bí thư;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_7_actual_7",
+        "expected": "Văn phòng Chủ tịch nước;",
+        "actual": "Văn phòng Chủ tịch nước;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_8_actual_8",
+        "expected": "Hội đồng dân tộc và các Ủy ban của Quốc hội;",
+        "actual": "Hội đồng dân tộc và các Ủy ban của Quốc hội;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_9_actual_9",
+        "expected": "Văn phòng Quốc hội;",
+        "actual": "Văn phòng Quốc hội;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_10_actual_10",
+        "expected": "Tòa án nhân dân tối cao;",
+        "actual": "Tòa án nhân dân tối cao;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_11_actual_11",
+        "expected": "Viện Kiểm sát nhân dân tối cao;",
+        "actual": "Viện Kiểm sát nhân dân tối cao;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_12_actual_12",
+        "expected": "Kiểm toán Nhà nước;",
+        "actual": "Kiểm toán Nhà nước;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_13_actual_13",
+        "expected": "Ủy ban giám sát tài chính quốc gia;",
+        "actual": "Ủy ban giám sát tài chính quốc gia;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_14_actual_14",
+        "expected": "Ngân hàng Chính sách xã hội;",
+        "actual": "Ngân hàng Chính sách xã hội;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_15_actual_15",
+        "expected": "Ngân hàng Phát triển Việt Nam;",
+        "actual": "Ngân hàng Phát triển Việt Nam;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_16_actual_16",
+        "expected": "Ủy ban Trung ương Mặt trận Tổ quốc Việt Nam;",
+        "actual": "Ủy ban Trung ương Mặt trận Tổ quốc Việt Nam;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_17_actual_17",
+        "expected": "Cơ quan Trung ương của các đoàn thể;",
+        "actual": "Cơ quan Trung ương của các đoàn thể;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_18_actual_18",
+        "expected": "VPCP: BTCN, các PCN, Trợ lý TTg, TGĐ Cổng TTĐT, các Vụ, Cục, đơn vị trực thuộc, Công báo;",
+        "actual": "VPCP: BTCN, các PCN, Trợ lý TTg, TGĐ Cổng TTĐT, các Vụ, Cục, đơn vị trực thuộc, Công báo;",
+        "status": "exact",
+        "similarity": 1
+      },
+      {
+        "key": "expected_19_actual_19",
+        "expected": "Lưu: Văn thư, KTTH (3).",
+        "actual": "Lưu: Văn thư, KTTH (3).",
+        "status": "exact",
+        "similarity": 1
+      }
+    ],
+    "attachments": []
+  }
+}

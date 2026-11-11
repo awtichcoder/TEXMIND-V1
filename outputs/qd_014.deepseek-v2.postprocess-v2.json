@@ -1,0 +1,40 @@
+{
+  "raw_path": "C:\\CNPM\\AI-r1-2026\\outputs\\qd_014.deepseek-v2.predicted.raw.json",
+  "sample_id_from_job_context": "qd_014",
+  "raw_schema_error_count": 2,
+  "normalized_schema_error_count": 0,
+  "normalized_schema_errors": [],
+  "changes": [
+    {
+      "rule": "move_tm_prefix_from_delegation_to_authority",
+      "path": "$.signature.authority",
+      "before": "ỦY BAN NHÂN DÂN",
+      "after": "TM. ỦY BAN NHÂN DÂN"
+    },
+    {
+      "rule": "clear_delegation_after_tm_prefix_move",
+      "path": "$.signature.delegation",
+      "before": "TM.",
+      "after": null
+    },
+    {
+      "rule": "move_provenance_quality_to_root_when_missing",
+      "path": "$.quality",
+      "before": null,
+      "after": {
+        "extraction_status": "verified",
+        "content_status": "source_preserved",
+        "legal_review_status": "not_expert_reviewed",
+        "source_consistency": "warning",
+        "warnings": [
+          "Nguồn không có mục \"Nơi nhận:\" nên recipients là mảng rỗng.",
+          "Nguồn không có bảng dữ liệu nên data_tables là mảng rỗng.",
+          "Khoản 2 Điều 6 có cụm từ \"nhiệm vụ, nhiệm vụ\" lặp lại, nghi lỗi nguồn, giữ nguyên nguyên văn.",
+          "Điều 4 và Điều 5 không đánh số khoản trong nguồn nên number của nội dung được đặt là null.",
+          "Các văn bản bị bãi bỏ được ban hành bởi Sở Văn hóa, Thể thao và Du lịch tỉnh Trà Vinh, cần kiểm tra tính phù hợp với địa giới hành chính hiện tại của tỉnh Vĩnh Long.",
+          "Kết quả trích xuất chưa được chuyên gia pháp lý kiểm duyệt và không thay thế tư vấn pháp lý."
+        ]
+      }
+    }
+  ]
+}

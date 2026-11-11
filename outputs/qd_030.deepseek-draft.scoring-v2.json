@@ -1,0 +1,146 @@
+{
+  "schema_valid": true,
+  "schema_errors": [],
+  "scoring_version": "2.0",
+  "scalar_accuracy": 1,
+  "article_headings": {
+    "expected": 4,
+    "actual": 4,
+    "matches": 4,
+    "precision": 1,
+    "recall": 1,
+    "f1": 1
+  },
+  "legal_bases": {
+    "expected": 5,
+    "actual": 5,
+    "matches": 5,
+    "precision": 1,
+    "recall": 1,
+    "f1": 1
+  },
+  "clauses": {
+    "expected": 14,
+    "actual": 14,
+    "matches": 14,
+    "precision": 1,
+    "recall": 1,
+    "f1": 1
+  },
+  "recipients": {
+    "expected": 0,
+    "actual": 0,
+    "matches": 0,
+    "precision": 1,
+    "recall": 1,
+    "f1": 1
+  },
+  "attachments": {
+    "expected": 4,
+    "actual": 0,
+    "matches": 0,
+    "precision": 0,
+    "recall": 0,
+    "f1": 0
+  },
+  "overall_score": 0.8333333333333334,
+  "strict_evaluation": {
+    "scalar_accuracy": 1,
+    "article_headings": {
+      "expected": 4,
+      "actual": 4,
+      "matches": 4,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "legal_bases": {
+      "expected": 5,
+      "actual": 5,
+      "matches": 5,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "clauses": {
+      "expected": 14,
+      "actual": 14,
+      "matches": 14,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "recipients": {
+      "expected": 0,
+      "actual": 0,
+      "matches": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "attachments": {
+      "expected": 4,
+      "actual": 0,
+      "matches": 0,
+      "precision": 0,
+      "recall": 0,
+      "f1": 0
+    },
+    "overall_score": 0.8333333333333334
+  },
+  "tolerant_evaluation": {
+    "scalar_accuracy": 1,
+    "article_headings": {
+      "expected": 4,
+      "actual": 4,
+      "matches": 4,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "legal_bases": {
+      "expected": 5,
+      "actual": 5,
+      "matches": 5,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "clauses": {
+      "expected": 14,
+      "actual": 14,
+      "matches": 14,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "recipients": {
+      "expected": 0,
+      "actual": 0,
+      "matches": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "attachments": {
+      "expected": 4,
+      "actual": 0,
+      "matches": 0,
+      "precision": 0,
+      "recall": 0,
+      "f1": 0
+    },
+    "overall_score": 0.8333333333333334
+  },
+  "diagnostics": {
+    "clause_number_mismatches": [],
+    "legal_basis_issues": []
+  },
+  "warnings": [
+    {
+      "code": "attachment_mismatch",
+      "count": 4,
+      "message": "Có tệp đính kèm bị thiếu, thừa hoặc thay đổi tham chiếu nguồn."
+    }
+  ]
+}
