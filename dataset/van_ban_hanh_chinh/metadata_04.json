@@ -1,0 +1,36 @@
+{
+  "sample_id": "qd_014",
+  "source_id": "181462",
+  "document_type": "quyet_dinh",
+  "template_id": null,
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "input_04.txt",
+  "structured_file": "structured_04.json",
+  "schema_file": "../../schemas/texmind-document.schema.json",
+  "expected_output_file": null,
+  "preserve_original_content": true,
+  "selection_reason": "Có 6 điều, 15 nhiệm vụ, khoản/điểm lồng nhau và không có khối nơi nhận; dùng để kiểm tra danh sách recipients rỗng mà không bịa dữ liệu.",
+  "source_metadata_document_number": "'40/2025/QĐ-UBND",
+  "source_text_document_number": "40/2025/QĐ-UBND",
+  "source_anomalies": [
+    {
+      "source_text": "nhiệm vụ, nhiệm vụ, quyền hạn",
+      "note": "Cụm 'nhiệm vụ' bị lặp trong Điều 6 khoản 2; giữ nguyên theo TXT nguồn."
+    }
+  ],
+  "intermediate_data": {
+    "schema_version": "1.0",
+    "status": "validated_with_source_warning",
+    "automated_test": "tests/validate_structured_04.mjs"
+  },
+  "quality_assurance": {
+    "verified_on": "2026-11-11",
+    "content_validation": "passed_empty_recipients_nested_clauses_signature",
+    "source_hash_match": "input_04.txt_matches_shortlist_qd_014"
+  },
+  "status": "structured_validated_no_docx",
+  "review_status": "not_expert_reviewed"
+}
