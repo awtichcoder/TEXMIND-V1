@@ -1,0 +1,138 @@
+{
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "raw_schema_errors": [
+    "['articles', 0]: 'related_table_ids' is a required property",
+    "['articles', 1]: 'related_table_ids' is a required property",
+    "['articles', 2]: 'related_table_ids' is a required property",
+    "['articles', 3]: 'related_table_ids' is a required property",
+    "['articles', 4]: 'related_table_ids' is a required property",
+    "['articles', 5]: 'related_table_ids' is a required property"
+  ],
+  "normalized_schema_errors": [],
+  "postprocess_changes": [
+    {
+      "rule": "empty_related_table_ids_when_document_has_no_tables",
+      "path": "$.articles[0].related_table_ids",
+      "before": null,
+      "after": []
+    },
+    {
+      "rule": "empty_related_table_ids_when_document_has_no_tables",
+      "path": "$.articles[1].related_table_ids",
+      "before": null,
+      "after": []
+    },
+    {
+      "rule": "empty_related_table_ids_when_document_has_no_tables",
+      "path": "$.articles[2].related_table_ids",
+      "before": null,
+      "after": []
+    },
+    {
+      "rule": "empty_related_table_ids_when_document_has_no_tables",
+      "path": "$.articles[3].related_table_ids",
+      "before": null,
+      "after": []
+    },
+    {
+      "rule": "empty_related_table_ids_when_document_has_no_tables",
+      "path": "$.articles[4].related_table_ids",
+      "before": null,
+      "after": []
+    },
+    {
+      "rule": "empty_related_table_ids_when_document_has_no_tables",
+      "path": "$.articles[5].related_table_ids",
+      "before": null,
+      "after": []
+    }
+  ],
+  "raw_evaluation": {
+    "scalar_accuracy": 0.7142857142857143,
+    "article_headings": {
+      "expected": 6,
+      "actual": 6,
+      "matches": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0
+    },
+    "legal_bases": {
+      "expected": 4,
+      "actual": 3,
+      "matches": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0
+    },
+    "clauses": {
+      "expected": 29,
+      "actual": 29,
+      "matches": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0
+    },
+    "recipients": {
+      "expected": 0,
+      "actual": 0,
+      "matches": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1.0
+    },
+    "attachments": {
+      "expected": 0,
+      "actual": 0,
+      "matches": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1.0
+    },
+    "overall_score": 0.4523809523809524
+  },
+  "normalized_evaluation": {
+    "scalar_accuracy": 0.7142857142857143,
+    "article_headings": {
+      "expected": 6,
+      "actual": 6,
+      "matches": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0
+    },
+    "legal_bases": {
+      "expected": 4,
+      "actual": 3,
+      "matches": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0
+    },
+    "clauses": {
+      "expected": 29,
+      "actual": 29,
+      "matches": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0
+    },
+    "recipients": {
+      "expected": 0,
+      "actual": 0,
+      "matches": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1.0
+    },
+    "attachments": {
+      "expected": 0,
+      "actual": 0,
+      "matches": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1.0
+    },
+    "overall_score": 0.4523809523809524
+  }
+}
