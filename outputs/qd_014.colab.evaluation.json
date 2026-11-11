@@ -1,0 +1,114 @@
+{
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "raw_schema_errors": [
+    "[]: 'data_tables' is a required property",
+    "['header', 'motto']: '' should be non-empty",
+    "['articles', 0]: 'related_table_ids' is a required property",
+    "['articles', 1]: 'related_table_ids' is a required property",
+    "['articles', 2]: 'related_table_ids' is a required property",
+    "['articles', 3]: 'related_table_ids' is a required property",
+    "['articles', 4]: 'related_table_ids' is a required property",
+    "['articles', 5]: 'related_table_ids' is a required property",
+    "['legal_effect', 'review_note']: '' should be non-empty"
+  ],
+  "normalized_schema_errors": [
+    "[]: 'data_tables' is a required property",
+    "['header', 'motto']: '' should be non-empty",
+    "['articles', 0]: 'related_table_ids' is a required property",
+    "['articles', 1]: 'related_table_ids' is a required property",
+    "['articles', 2]: 'related_table_ids' is a required property",
+    "['articles', 3]: 'related_table_ids' is a required property",
+    "['articles', 4]: 'related_table_ids' is a required property",
+    "['articles', 5]: 'related_table_ids' is a required property",
+    "['legal_effect', 'review_note']: '' should be non-empty"
+  ],
+  "postprocess_changes": [],
+  "raw_evaluation": {
+    "scalar_accuracy": 0.7142857142857143,
+    "article_headings": {
+      "expected": 6,
+      "actual": 6,
+      "matches": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0
+    },
+    "legal_bases": {
+      "expected": 4,
+      "actual": 3,
+      "matches": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0
+    },
+    "clauses": {
+      "expected": 29,
+      "actual": 29,
+      "matches": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0
+    },
+    "recipients": {
+      "expected": 0,
+      "actual": 4,
+      "matches": 0,
+      "precision": 0.0,
+      "recall": 1,
+      "f1": 0.0
+    },
+    "attachments": {
+      "expected": 0,
+      "actual": 0,
+      "matches": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1.0
+    },
+    "overall_score": 0.28571428571428575
+  },
+  "normalized_evaluation": {
+    "scalar_accuracy": 0.7142857142857143,
+    "article_headings": {
+      "expected": 6,
+      "actual": 6,
+      "matches": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0
+    },
+    "legal_bases": {
+      "expected": 4,
+      "actual": 3,
+      "matches": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0
+    },
+    "clauses": {
+      "expected": 29,
+      "actual": 29,
+      "matches": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0
+    },
+    "recipients": {
+      "expected": 0,
+      "actual": 4,
+      "matches": 0,
+      "precision": 0.0,
+      "recall": 1,
+      "f1": 0.0
+    },
+    "attachments": {
+      "expected": 0,
+      "actual": 0,
+      "matches": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1.0
+    },
+    "overall_score": 0.28571428571428575
+  }
+}
