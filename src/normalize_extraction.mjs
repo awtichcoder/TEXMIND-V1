@@ -19,7 +19,25 @@ const appendixNumber = (attachment) => {
 
 const exactJsonMatch = (left, right) => JSON.stringify(left) === JSON.stringify(right);
 
-export function normalizeExtraction(candidate, { sampleId = null } = {}) {
+const DEFAULT_REVIEW_NOTE =
+  "Trích xuất tự động từ nội dung nguồn; chưa được chuyên gia pháp lý kiểm duyệt và không dùng thay tư vấn pháp lý.";
+
+const sourceMotto = (sourceText) =>
+  String(sourceText ?? "").match(/Độc\s+lập\s*[–—-]\s*Tự\s+do\s*[–—-]\s*Hạnh\s+phúc/iu)?.[0] ?? null;
+
+const hasRecipientHeading = (sourceText) =>
+  /(?:^|\n)\s*Nơi\s+(?:nhận|gửi)\s*:/imu.test(String(sourceText ?? ""));
+
+const hasDataTableSignal = (sourceText) =>
+  /(?:^|\n)\s*(?:Bảng\b|Đơn\s+vị\s+tính\s*:)|<\/?(?:table|thead|tbody|tr|th|td)\b|\|[^\n]+\|/imu.test(
+    String(sourceText ?? ""),
+  );
+
+const recordChange = (changes, rule, path, before, after) => {
+  changes.push({ rule, path, before: before ?? null, after });
+};
+
+export function normalizeExtraction(candidate, { sampleId = null, sourceText = null } = {}) {
   const normalized = structuredClone(candidate);
   const changes = [];
 
@@ -31,6 +49,61 @@ export function normalizeExtraction(candidate, { sampleId = null } = {}) {
       after: sampleId,
     });
     normalized.sample_id = sampleId;
+  }
+
+  if (
+    sourceText !== null &&
+    !Object.hasOwn(normalized, "data_tables") &&
+    !hasDataTableSignal(sourceText)
+  ) {
+    recordChange(changes, "empty_data_tables_when_source_has_no_table_signal", "$.data_tables", null, []);
+    normalized.data_tables = [];
+  }
+
+  const motto = sourceMotto(sourceText);
+  if (motto && normalized.header && !normalizedText(normalized.header.motto)) {
+    recordChange(changes, "motto_from_exact_source_phrase", "$.header.motto", normalized.header.motto, motto);
+    normalized.header.motto = motto;
+  }
+
+  if (Array.isArray(normalized.data_tables) && normalized.data_tables.length === 0) {
+    for (const [index, article] of (normalized.articles ?? []).entries()) {
+      if (Object.hasOwn(article, "related_table_ids")) continue;
+      recordChange(
+        changes,
+        "empty_related_table_ids_when_document_has_no_tables",
+        `$.articles[${index}].related_table_ids`,
+        null,
+        [],
+      );
+      article.related_table_ids = [];
+    }
+  }
+
+  if (
+    sourceText !== null &&
+    !hasRecipientHeading(sourceText) &&
+    (!Array.isArray(normalized.recipients) || normalized.recipients.length > 0)
+  ) {
+    recordChange(
+      changes,
+      "empty_recipients_when_source_has_no_recipient_heading",
+      "$.recipients",
+      normalized.recipients,
+      [],
+    );
+    normalized.recipients = [];
+  }
+
+  if (normalized.legal_effect && !normalizedText(normalized.legal_effect.review_note)) {
+    recordChange(
+      changes,
+      "default_legal_review_disclaimer",
+      "$.legal_effect.review_note",
+      normalized.legal_effect.review_note,
+      DEFAULT_REVIEW_NOTE,
+    );
+    normalized.legal_effect.review_note = DEFAULT_REVIEW_NOTE;
   }
 
   for (const [index, attachment] of (normalized.attachments ?? []).entries()) {
