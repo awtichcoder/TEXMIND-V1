@@ -3,6 +3,7 @@ import { spawnSync } from "node:child_process";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { mkdir, readFile } from "node:fs/promises";
+import { tableShapeErrors } from "./data_tables.mjs";
 import { validateAgainstSchema } from "./validate_json_schema.mjs";
 
 const scriptDir = dirname(fileURLToPath(import.meta.url));
@@ -90,6 +91,8 @@ export function assertTemplateCompatibility(structured, template) {
       throw new Error(`Template ${template.template_id} không hỗ trợ bảng dữ liệu.`);
     }
   }
+  const tableErrors = (structured.data_tables ?? []).flatMap(tableShapeErrors);
+  if (tableErrors.length > 0) throw new Error(`Bảng dữ liệu sai hình dạng: ${tableErrors.join(" ")}`);
 }
 
 export function rendererCommand({ inputPath, templatePath, referencePath, outputPath, python }) {

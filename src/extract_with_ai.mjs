@@ -3,7 +3,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { basename, dirname, resolve } from "node:path";
 import { requestCodexCliResponseWithRetry } from "./codex_cli_client.mjs";
 import { buildExtractionSystemPrompt } from "./extraction_prompt.mjs";
-import { normalizeExtraction } from "./normalize_extraction.mjs";
+import { normalizeExtraction, sourceInfoFromMetadata } from "./normalize_extraction.mjs";
 import { requestOpenAICompatibleResponse } from "./openai_compatible_client.mjs";
 import { dropNullOptionals, toStrictOutputSchema } from "./strict_output_schema.mjs";
 import { validateAgainstSchema } from "./validate_json_schema.mjs";
@@ -158,7 +158,10 @@ await mkdir(dirname(rawPath), { recursive: true });
 await writeFile(rawPath, `${JSON.stringify(candidate, null, 2)}\n`, "utf8");
 
 const rawSchemaErrors = validateAgainstSchema(schema, candidate);
-const { normalized, changes } = normalizeExtraction(candidate, { sampleId, sourceText });
+const sourceInfo = args.get("--source-metadata")
+  ? sourceInfoFromMetadata(JSON.parse(await readFile(resolve(args.get("--source-metadata")), "utf8")))
+  : null;
+const { normalized, changes } = normalizeExtraction(candidate, { sampleId, sourceText, sourceInfo });
 const schemaErrors = validateAgainstSchema(schema, normalized);
 const postprocessPath = resolve(args.get("--report") ?? siblingPath(".postprocess.json"));
 await mkdir(dirname(postprocessPath), { recursive: true });

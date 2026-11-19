@@ -77,7 +77,9 @@
       "number": 3,
       "heading": "Khung giá thuê nhà ở xã hội do cá nhân tự đầu tư xây dựng",
       "clauses": [],
-      "related_table_ids": ["price_framework"]
+      "related_table_ids": [
+        "price_framework"
+      ]
     },
     {
       "number": 4,
@@ -103,57 +105,70 @@
     {
       "table_id": "price_framework",
       "title": "Khung giá thuê nhà ở xã hội do cá nhân tự đầu tư xây dựng",
-      "unit": "đồng/m² sàn sử dụng/tháng",
-      "columns": ["Stt", "Loại nhà ở xã hội", "Giá cho thuê tối thiểu", "Giá cho thuê tối đa"],
+      "unit": null,
+      "header_rows": [
+        [
+          "Stt",
+          "Loại Nhà ở xã hội",
+          "Giá cho thuê tối thiểu",
+          "Giá cho thuê tối đa"
+        ],
+        [
+          null,
+          null,
+          "(đồng/m² sàn sử dụng/tháng)",
+          "(đồng/m² sàn sử dụng/tháng)"
+        ]
+      ],
       "rows": [
-        {
-          "group": 1,
-          "description": "Nhà 1 tầng, căn hộ khép kín, kết cấu tường gạch chịu lực, mái bê tông cốt thép đổ tại chỗ",
-          "minimum_rent": { "source_text": "14.276", "value_vnd": 14276 },
-          "maximum_rent": { "source_text": "30.915", "value_vnd": 30915 }
-        },
-        {
-          "group": 2,
-          "description": "Nhà riêng lẻ từ 2 đến 3 tầng, kết cấu khung chịu lực bê tông cốt thép; tường bao xây gạch; sàn, mái bê tông cốt thép đổ tại chỗ không có tầng hầm",
-          "minimum_rent": { "source_text": "21.895", "value_vnd": 21895 },
-          "maximum_rent": { "source_text": "47.413", "value_vnd": 47413 }
-        },
-        {
-          "group": 3,
-          "description": "Nhà riêng lẻ từ 4 đến 5 tầng, kết cấu khung chịu lực bê tông cốt thép; tường bao xây gạch; sàn, mái bê tông cốt thép đổ tại chỗ không có tầng hầm",
-          "minimum_rent": { "source_text": "18.523", "value_vnd": 18523 },
-          "maximum_rent": { "source_text": "40.092", "value_vnd": 40092 }
-        },
-        {
-          "group": 4,
-          "description": "Nhà từ 4 đến 5 tầng, kết cấu khung chịu lực bê tông cốt thép; tường bao xây gạch; sàn, mái bê tông cốt thép đổ tại chỗ, có 1 tầng hầm. Diện tích xây dựng từ 180m² trở lên",
-          "minimum_rent": { "source_text": "22.004", "value_vnd": 22004 },
-          "maximum_rent": { "source_text": "47.621", "value_vnd": 47621 }
-        },
-        {
-          "group": 5,
-          "description": "Nhà chung cư có số tầng ≤ 5 không có tầng hầm",
-          "minimum_rent": { "source_text": "20.895", "value_vnd": 20895 },
-          "maximum_rent": { "source_text": "45.250", "value_vnd": 45250 }
-        },
-        {
-          "group": 5,
-          "description": "Có 1 tầng hầm",
-          "minimum_rent": { "source_text": "24.428", "value_vnd": 24428 },
-          "maximum_rent": { "source_text": "52.899", "value_vnd": 52899 }
-        },
-        {
-          "group": 6,
-          "description": "Nhà chung cư từ 5 < số tầng ≤ 7 không có tầng hầm",
-          "minimum_rent": { "source_text": "26.898", "value_vnd": 26898 },
-          "maximum_rent": { "source_text": "58.289", "value_vnd": 58289 }
-        },
-        {
-          "group": 6,
-          "description": "Có 1 tầng hầm",
-          "minimum_rent": { "source_text": "28.770", "value_vnd": 28770 },
-          "maximum_rent": { "source_text": "62.345", "value_vnd": 62345 }
-        }
+        [
+          "1",
+          "Nhà 1 tầng, căn hộ khép kín, kết cấu tường gạch chịu lực, mái bê tông cốt thép đổ tại chỗ",
+          "14.276",
+          "30.915"
+        ],
+        [
+          "2",
+          "Nhà riêng lẻ từ 2 đến 3 tầng, kết cấu khung chịu lực bê tông cốt thép; tường bao xây gạch; sàn, mái bê tông cốt thép đổ tại chỗ không có tầng hầm",
+          "21.895",
+          "47.413"
+        ],
+        [
+          "3",
+          "Nhà riêng lẻ từ 4 đến 5 tầng, kết cấu khung chịu lực bê tông cốt thép; tường bao xây gạch; sàn, mái bê tông cốt thép đổ tại chỗ không có tầng hầm",
+          "18.523",
+          "40.092"
+        ],
+        [
+          "4",
+          "Nhà từ 4 đến 5 tầng, kết cấu khung chịu lực bê tông cốt thép; tường bao xây gạch; sàn, mái bê tông cốt thép đổ tại chỗ, có 1 tầng hầm. Diện tích xây dựng từ 180m² trở lên",
+          "22.004",
+          "47.621"
+        ],
+        [
+          "5",
+          "Nhà chung cư có số tầng ≤ 5 không có tầng hầm",
+          "20.895",
+          "45.250"
+        ],
+        [
+          null,
+          "Có 1 tầng hầm",
+          "24.428",
+          "52.899"
+        ],
+        [
+          "6",
+          "Nhà chung cư từ 5 < số tầng ≤ 7 không có tầng hầm",
+          "26.898",
+          "58.289"
+        ],
+        [
+          null,
+          "Có 1 tầng hầm",
+          "28.770",
+          "62.345"
+        ]
       ]
     }
   ],
@@ -177,7 +192,9 @@
   },
   "legal_effect": {
     "effective_from": "2025-12-10",
-    "supersedes": ["44/2024/QĐ-UBND ngày 17 tháng 8 năm 2024 của Ủy ban nhân dân tỉnh Bình Định"],
+    "supersedes": [
+      "44/2024/QĐ-UBND ngày 17 tháng 8 năm 2024 của Ủy ban nhân dân tỉnh Bình Định"
+    ],
     "review_note": "Trích xuất từ nội dung nguồn; chưa được chuyên gia pháp lý kiểm duyệt và không dùng thay tư vấn pháp lý."
   },
   "provenance": {

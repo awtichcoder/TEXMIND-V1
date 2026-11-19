@@ -1,2 +1,4 @@
-# Mẫu dùng khi chỉnh prompt và normalizer
+# Mẫu dùng khi chỉnh prompt và normalizer (đều đã xem khi phát triển)
 qd_021
+qd_067
+qd_014

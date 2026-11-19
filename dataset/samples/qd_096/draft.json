@@ -209,7 +209,7 @@
   ],
   "legal_effect": {
     "effective_from": "2022-06-01",
-    "review_note": "Kết quả trích xuất chưa được chuyên gia pháp lý kiểm duyệt và không thay thế tư vấn pháp lý.",
+    "review_note": "Kết quả chưa được chuyên gia pháp lý kiểm duyệt và không thay thế tư vấn pháp lý.",
     "supersedes": [
       "Quyết định số 04/2017/QĐ-UBND ngày 23 tháng 01 năm 2017 của Ủy ban nhân dân tỉnh Kiên Giang về việc quy định giá dịch vụ sử dụng cảng cá trên địa bàn tỉnh Kiên Giang"
     ]
@@ -218,31 +218,31 @@
     "normalizations": [
       {
         "normalized_text": "2021-12-10",
-        "reason": "Chuyển ngày ban hành sang định dạng ISO 8601.",
+        "reason": "Biểu diễn ngày ban hành theo định dạng ISO.",
         "source_text": "ngày 10 tháng 12 năm 2021"
       },
       {
         "normalized_text": "2022-06-01",
-        "reason": "Chuyển ngày có hiệu lực sang định dạng ISO 8601.",
+        "reason": "Biểu diễn ngày có hiệu lực theo định dạng ISO.",
         "source_text": "ngày 01 tháng 6 năm 2022"
       }
     ],
     "source_anomalies": [
       {
-        "note": "Có khoảng trắng nghi lỗi OCR trong từ; giữ nguyên nguồn.",
-        "source_text": "q uy định"
-      },
-      {
-        "note": "Có khoảng trắng bất thường trong số, ký hiệu và năm; giữ nguyên nguồn.",
-        "source_text": "565 /TTr- SNNPTNT ngày 30 tháng 11 năm 20 21"
-      },
-      {
-        "note": "Có khoảng trắng trong số văn bản; giữ nguyên nguồn.",
+        "note": "Số văn bản có khoảng trắng bất thường trước dấu gạch chéo.",
         "source_text": "20 /2021/QĐ-UBND"
       },
       {
-        "note": "Nguồn không cung cấp source_id, dataset, license hoặc input_file; các trường tương ứng ghi rõ tình trạng thiếu thông tin.",
-        "source_text": "VĂN BẢN NGUỒN:"
+        "note": "Cụm này xuất hiện ba lần trong phần căn cứ, với khoảng trắng bất thường trong từ.",
+        "source_text": "q uy định"
+      },
+      {
+        "note": "Số tờ trình và năm được ghi với khoảng trắng bất thường.",
+        "source_text": "565 /TTr- SNNPTNT ngày 30 tháng 11 năm 20 21."
+      },
+      {
+        "note": "Căn cứ này kết thúc bằng dấu chấm dù phía sau còn các căn cứ khác.",
+        "source_text": "và biện pháp thi hành Luật Thủy sản."
       }
     ]
   },
@@ -252,8 +252,8 @@
     "legal_review_status": "not_expert_reviewed",
     "source_consistency": "warning",
     "warnings": [
-      "Nguồn có chuỗi nghi lỗi OCR 'q uy định' và khoảng trắng bất thường tại số văn bản, ký hiệu Tờ trình và năm '20 21'; đã giữ nguyên.",
-      "Nguồn không cung cấp thông tin định danh nguồn, tập dữ liệu, giấy phép và tên tệp đầu vào."
+      "Giữ nguyên khoảng trắng bất thường trong «20 /2021/QĐ-UBND», «q uy định», «565 /TTr- SNNPTNT» và «20 21».",
+      "Giữ nguyên dấu chấm kết thúc căn cứ về Nghị định số 26/2019/NĐ-CP."
     ]
   },
   "recipients": [],
@@ -267,11 +267,11 @@
     "signer_name": "Nguyễn Thanh Nhàn"
   },
   "source": {
-    "dataset": "Không được cung cấp trong nguồn",
-    "input_file": "Không được cung cấp trong nguồn",
-    "license": "Không được cung cấp trong nguồn",
+    "dataset": "th1nhng0/vietnamese-legal-documents",
+    "input_file": "source.txt",
+    "license": "CC BY 4.0",
     "preserve_original_content": true,
-    "source_id": "Không được cung cấp trong nguồn"
+    "source_id": "152369"
   },
   "template": null,
   "title": {

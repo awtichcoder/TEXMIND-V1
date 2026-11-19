@@ -20,7 +20,7 @@ Trạng thái và việc đang làm dở: xem `HANDOFF.md` (đọc trước khi 
 ## Lệnh hay dùng (PowerShell, tại thư mục dự án)
 
 ```powershell
-npm test                       # toàn bộ test (hiện 78/78)
+npm test                       # toàn bộ test (hiện 86/86)
 git diff --check               # kiểm tra lỗi khoảng trắng
 npm run smoke:codex            # kiểm tra nhanh đường gọi gpt-6.1-sol qua Codex CLI
 npm run pipeline:e2e -- --input dataset/van_ban_hanh_chinh/input_03.txt --sample-id qd_067 --work-dir work/end_to_end/qd067_openai_codex --output work/end_to_end/qd067_openai_codex/qd_067.rendered.docx

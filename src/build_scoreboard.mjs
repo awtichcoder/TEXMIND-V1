@@ -6,17 +6,19 @@ import { copyFile, mkdir, readdir, readFile, writeFile } from "node:fs/promises"
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { evaluateExtraction } from "./evaluate_structured.mjs";
-import { RUNS_DIR, samplePaths } from "./samples.mjs";
+import { RUNS_DIR, readSplits, samplePaths, splitOf } from "./samples.mjs";
 
 const readJson = async (path) => (existsSync(path) ? JSON.parse(await readFile(path, "utf8")) : null);
 const toNumber = (value) => (typeof value === "number" && Number.isFinite(value) ? value : null);
 
 // Ghép pipeline.json + score.json của một lần chạy thành một dòng bảng điểm.
-export function buildScoreboardRow(runId, pipeline, score) {
+// split lấy theo dataset/splits HIỆN TẠI (currentSplit) nếu có; split ghi trong pipeline.json
+// chỉ là split lúc chạy và có thể đã cũ (vd qd_067 chuyển test → dev ngày 19/11/2026).
+export function buildScoreboardRow(runId, pipeline, score, currentSplit = undefined) {
   return {
     run_id: pipeline?.run_id ?? runId,
     sample_id: pipeline?.sample_id ?? null,
-    split: pipeline?.split ?? null,
+    split: currentSplit === undefined ? (pipeline?.split ?? null) : currentSplit,
     model: pipeline?.model ?? null,
     mode: pipeline?.mode ?? null,
     template_id: pipeline?.selected_template?.templateId ?? null,
@@ -59,13 +61,15 @@ export async function collectScoreboardRows(root = process.cwd()) {
   const runsDir = resolve(root, RUNS_DIR);
   if (!existsSync(runsDir)) return [];
   const entries = await readdir(runsDir, { withFileTypes: true });
+  const splits = await readSplits(root);
   const rows = [];
   for (const entry of entries) {
     if (!entry.isDirectory()) continue;
     const dir = join(runsDir, entry.name);
     const pipeline = await readJson(join(dir, "pipeline.json"));
     if (!pipeline) continue;
-    rows.push(buildScoreboardRow(entry.name, pipeline, await readJson(join(dir, "score.json"))));
+    const currentSplit = pipeline.sample_id ? splitOf(pipeline.sample_id, splits) : undefined;
+    rows.push(buildScoreboardRow(entry.name, pipeline, await readJson(join(dir, "score.json")), currentSplit));
   }
   return rows;
 }
@@ -122,6 +126,19 @@ export function renderScoreboard(rows, { generatedAt = null } = {}) {
     }
   } else {
     lines.push("Chưa có lần chạy nào trên tập test có điểm.");
+  }
+  // Dev: mẫu đã xem khi phát triển prompt/normalizer → chỉ để theo dõi, không phải điểm cuối.
+  const devAverages = averageByModel(sorted, "dev");
+  lines.push("", "## Điểm trung bình theo model (tập dev – chỉ để theo dõi)", "");
+  if (devAverages.length) {
+    lines.push("| Model | Số lần chạy | Số mẫu | Strict TB | Tolerant TB |", "|---|---:|---:|---:|---:|");
+    for (const item of devAverages) {
+      lines.push(
+        `| ${cell(item.model)} | ${item.runs} | ${item.samples} | ${fmt(item.strict)} | ${fmt(item.tolerant)} |`,
+      );
+    }
+  } else {
+    lines.push("Chưa có lần chạy nào trên tập dev có điểm.");
   }
   lines.push("", "## Tất cả lần chạy", "");
   if (sorted.length) {

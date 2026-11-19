@@ -28,10 +28,12 @@
 - [ ] Phụ lục/văn bản kèm theo chỉ tham chiếu, không bịa nội dung
 - [ ] Bất thường của nguồn ghi vào `provenance.source_anomalies`
 
-## Máy kiểm tra sơ bộ (19/11/2026, không thay cho người duyệt)
+## Máy kiểm tra sơ bộ (19/11/2026, theo quy ước mới; không thay cho người duyệt)
 
-- Đã tự so: mọi câu chữ (căn cứ, tiêu đề điều, khoản/điểm, nơi nhận, số hiệu, dòng ngày) đều có nguyên văn trong source.txt; số điều khớp nguồn.
-- Không phát hiện vấn đề rõ ràng; kiểm tra dấu thập phân (3,33) và tham chiếu 'điểm a khoản 2 Điều 1'.
+- Máy đã so: mọi câu chữ (căn cứ, tiêu đề điều, khoản/điểm, nơi nhận, số hiệu, dòng ngày, ô bảng) có nguyên văn trong source.txt; số điều khớp nguồn; ký hiệu khoản/điểm ('-'/null) khớp dòng nguồn; vị trí phụ lục đúng dạng và tồn tại.
+- Khối `source` đã điền từ metadata.json (không do AI). Dòng ngày đã có địa danh.
+- CẤU TRÚC: 16 khoản/điểm; kiểm tra số đo '1.500 m2/hộ', hệ số '3,33' giữ nguyên dấu.
+- CHỮ KÝ: signed_status = '(Đã ký)' (máy đã lấy nguyên văn nguồn); position = 'PHÓ CHỦ TỊCH thường trực' (đúng nguồn).
 
 ## Ghi chú của người duyệt
 
@@ -39,3 +41,9 @@
 ## Lịch sử
 
 - 19/11/2026: AI (gpt-6.1-sol) tạo draft.json từ runs/2026-11-19_0951_gpt-6.1-sol_qd_081/normalized.json. CHƯA DUYỆT.
+- 19/11/2026: xóa draft.json cũ (bản sao còn trong runs/) để tạo lại theo quy ước mới: bảng nguyên văn, vị trí phụ lục 'Điều X, khoản Y, điểm z', đoạn '-' / null.
+- 19/11/2026: AI (gpt-6.1-sol) tạo draft.json từ runs/2026-11-19_1020_gpt-6.1-sol_qd_081/normalized.json. CHƯA DUYỆT.
+- 19/11/2026: thêm luật điền khối source (source_id, dataset, license, input_file) từ metadata.json → tạo lại draft.json từ raw của runs/2026-11-19_1020_gpt-6.1-sol_qd_081 (cùng output gpt-6.1-sol, không gọi AI lại).
+- 19/11/2026: AI (replay) tạo draft.json từ runs/2026-11-19_1030_replay_qd_081/normalized.json. CHƯA DUYỆT.
+- 19/11/2026: quy ước mới signed_status (nguyên văn dòng ký, không có → null + cảnh báo) và supersedes (chỉ văn bản cụ thể) → tạo lại draft.json từ raw của runs/2026-11-19_1020_gpt-6.1-sol_qd_081 (cùng output gpt-6.1-sol, không gọi AI lại).
+- 19/11/2026: AI (replay) tạo draft.json từ runs/2026-11-19_1040_replay_qd_081/normalized.json. CHƯA DUYỆT.

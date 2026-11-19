@@ -29,12 +29,15 @@ Khung giá dịch vụ chung cư có bảng mức giá; con số bị tách ki�
 - [ ] Phụ lục/văn bản kèm theo chỉ tham chiếu, không bịa nội dung
 - [ ] Bất thường của nguồn ghi vào `provenance.source_anomalies`
 
-## Máy kiểm tra sơ bộ (19/11/2026, không thay cho người duyệt)
+## Máy kiểm tra sơ bộ (19/11/2026, theo quy ước mới; không thay cho người duyệt)
 
-- Đã tự so: mọi câu chữ (căn cứ, tiêu đề điều, khoản/điểm, nơi nhận, số hiệu, dòng ngày) đều có nguyên văn trong source.txt; số điều khớp nguồn.
-- BẢNG: AI đổi '1. 200' → '01.200', '4. 000' → '04.000' để khớp mẫu số tiền của schema (^dd.ddd$). Nguồn KHÔNG có số 0 đầu → cần sửa tay; schema hiện chưa biểu diễn đúng bảng này (xem câu hỏi về mở rộng schema).
-- BẢNG: bảng chỉ có 3 cột (Loại nhà, Mức tối thiểu, Mức tối đa), không có cột nhóm; trường `group` là AI tự đánh 1, 2.
-- PHỤ LỤC: attachments có 'Phụ lục VII của Nghị định 95/2024/NĐ-CP' – đây là phụ lục của văn bản KHÁC được trích dẫn, không phải tài liệu kèm theo quyết định này → nên xóa.
+- Máy đã so: mọi câu chữ (căn cứ, tiêu đề điều, khoản/điểm, nơi nhận, số hiệu, dòng ngày, ô bảng) có nguyên văn trong source.txt; số điều khớp nguồn; ký hiệu khoản/điểm ('-'/null) khớp dòng nguồn; vị trí phụ lục đúng dạng và tồn tại.
+- Khối `source` đã điền từ metadata.json (không do AI). Dòng ngày đã có địa danh.
+- BẢNG (Điều 3): 1 dòng tiêu đề × 3 cột (Loại nhà | Mức giá tối thiểu | Mức giá tối đa), 2 dòng dữ liệu, unit = 'đồng/m 2 /tháng'. Đối chiếu từng ô với nguồn dòng 50–68; ô giá giữ nguyên '1. 200', '7. 000', '4. 000', '13. 500'.
+- CẢNH BÁO: có 4 cảnh báo máy tự thêm cho 4 ô giá + 2–3 cảnh báo AI nói cùng ý → giữ một bộ, xóa phần trùng.
+- PHỤ LỤC: attachments = [] là ĐÚNG ('Phụ lục VII của Nghị định 95/2024' là phụ lục của văn bản khác).
+- Điều 1 có 2 đoạn gạch đầu dòng (number '-'); supersedes = Quyết định số 01/2021/QĐ-UBND – đối chiếu Điều 5.
+- Bất thường nguồn: 'Bộ Bộ trưởng Bộ Xây dựng', khoảng trắng trước dấu phẩy – xác nhận đúng là có trong nguồn.
 
 ## Ghi chú của người duyệt
 
@@ -42,3 +45,7 @@ Khung giá dịch vụ chung cư có bảng mức giá; con số bị tách ki�
 ## Lịch sử
 
 - 19/11/2026: AI (gpt-6.1-sol) tạo draft.json từ runs/2026-11-19_1000_gpt-6.1-sol_qd_082/normalized.json. CHƯA DUYỆT.
+- 19/11/2026: xóa draft.json cũ (bản sao còn trong runs/) để tạo lại theo quy ước mới: bảng nguyên văn, vị trí phụ lục 'Điều X, khoản Y, điểm z', đoạn '-' / null.
+- 19/11/2026: AI (gpt-6.1-sol) tạo draft.json từ runs/2026-11-19_1016_gpt-6.1-sol_qd_082/normalized.json. CHƯA DUYỆT.
+- 19/11/2026: thêm luật điền khối source (source_id, dataset, license, input_file) từ metadata.json → tạo lại draft.json từ raw của runs/2026-11-19_1016_gpt-6.1-sol_qd_082 (cùng output gpt-6.1-sol, không gọi AI lại).
+- 19/11/2026: AI (replay) tạo draft.json từ runs/2026-11-19_1030_replay_qd_082/normalized.json. CHƯA DUYỆT.

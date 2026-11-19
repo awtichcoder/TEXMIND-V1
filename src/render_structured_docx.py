@@ -160,64 +160,103 @@ def fill_table_cell(cell, text, *, bold=False, align=WD_ALIGN_PARAGRAPH.CENTER, 
     set_cell_margins(cell)
 
 
-def add_data_table(document, table_data):
-    table = document.add_table(rows=2, cols=4)
+TABLE_TOTAL_WIDTH_CM = 16.0  # A4 21 cm trừ lề trái 3 cm, lề phải 2 cm
+
+
+def table_column_widths(all_rows, total=TABLE_TOTAL_WIDTH_CM):
+    """Chia bề rộng cột theo độ dài chữ: cột rất ngắn (TT, Stt) hẹp, cột số vừa, cột mô tả rộng."""
+    count = len(all_rows[0])
+    longest = [max((len(row[i] or "") for row in all_rows), default=0) for i in range(count)]
+    widths = [None] * count
+    for i, length in enumerate(longest):
+        if length <= 4:
+            widths[i] = 1.2
+        elif length <= 30:
+            widths[i] = 3.0
+    fixed = sum(width for width in widths if width is not None)
+    flexible = [i for i, width in enumerate(widths) if width is None]
+    if flexible:
+        share = max((total - fixed) / len(flexible), 3.0)
+        for i in flexible:
+            widths[i] = share
+    scale = total / sum(widths) if sum(widths) > total else 1.0
+    return [Cm(width * scale) for width in widths]
+
+
+def column_alignments(body_rows):
+    """Cột có ô dữ liệu dài (> 30 ký tự) căn trái toàn cột; cột ngắn (số, STT) căn giữa."""
+    count = len(body_rows[0])
+    return [
+        WD_ALIGN_PARAGRAPH.LEFT
+        if max((len(row[i] or "") for row in body_rows), default=0) > 30
+        else WD_ALIGN_PARAGRAPH.CENTER
+        for i in range(count)
+    ]
+
+
+def merge_null_cells_vertically(table, rows, first_row_index, size, alignments=None):
+    """Ô null gộp với ô gần nhất phía trên có chữ trong cùng nhóm dòng (tiêu đề hoặc dữ liệu)."""
+    for column in range(len(rows[0])):
+        anchor = None
+        for offset, row in enumerate(rows):
+            if row[column] is not None:
+                anchor = offset
+                continue
+            if anchor is None:
+                continue
+            top = table.cell(first_row_index + anchor, column)
+            text = rows[anchor][column]
+            merged = top.merge(table.cell(first_row_index + offset, column))
+            align = alignments[column] if alignments else WD_ALIGN_PARAGRAPH.CENTER
+            fill_table_cell(merged, text, bold=first_row_index == 0, size=size, align=align)
+
+
+def add_data_table(document, table_data, size=10.5):
+    header_rows = table_data["header_rows"]
+    body_rows = table_data["rows"]
+    all_rows = [*header_rows, *body_rows]
+    if table_data.get("unit"):
+        add_text_paragraph(document, f'Đơn vị tính: {table_data["unit"]}', italic=True,
+                           alignment=WD_ALIGN_PARAGRAPH.RIGHT, after=2, keep=True, size=size + 1)
+    count = len(header_rows[0])
+    table = document.add_table(rows=len(all_rows), cols=count)
     table.autofit = False
-    widths = [Cm(1), Cm(9), Cm(3), Cm(3)]
+    widths = table_column_widths(all_rows)
     for index, width in enumerate(widths):
         table.columns[index].width = width
         table._tbl.tblGrid.gridCol_lst[index].w = width
-    for row in table.rows:
-        for index, cell in enumerate(row.cells):
-            cell.width = widths[index]
     set_table_borders(table, "single", "000000", "8")
-    columns = list(table_data["columns"])
-    # Bảng 4 cột: nhóm, mô tả, tối thiểu, tối đa. Nếu chỉ có 3 tiêu đề (thiếu cột nhóm)
-    # thì thêm "TT" ở đầu ("STT" bị gãy dòng trong cột rộng 1 cm); thiếu nữa thì để trống,
-    # không để renderer lỗi IndexError.
-    if len(columns) == 3:
-        columns = ["TT", *columns]
-    columns = (columns + ["", "", "", ""])[:4]
-    fill_table_cell(table.cell(0, 0), columns[0], bold=True)
-    fill_table_cell(table.cell(0, 1), columns[1], bold=True)
-    fill_table_cell(table.cell(0, 2), columns[2], bold=True)
-    fill_table_cell(table.cell(0, 3), columns[3], bold=True)
-    table.cell(0, 0).merge(table.cell(1, 0))
-    table.cell(0, 1).merge(table.cell(1, 1))
-    unit = f'({table_data["unit"]})'
-    fill_table_cell(table.cell(1, 2), unit)
-    fill_table_cell(table.cell(1, 3), unit)
-    mark_repeat_table_header(table.rows[0])
-    mark_repeat_table_header(table.rows[1])
-
-    group_cells = {}
-    for row_data in table_data["rows"]:
-        cells = table.add_row().cells
-        for index, cell in enumerate(cells):
-            cell.width = widths[index]
-        fill_table_cell(cells[0], row_data["group"])
-        fill_table_cell(cells[1], row_data["description"], align=WD_ALIGN_PARAGRAPH.LEFT)
-        fill_table_cell(cells[2], row_data["minimum_rent"]["source_text"])
-        fill_table_cell(cells[3], row_data["maximum_rent"]["source_text"])
-        prevent_row_split(table.rows[-1])
-        group_cells.setdefault(str(row_data["group"]), []).append(cells[0])
-    for group, cells in group_cells.items():
-        if len(cells) > 1:
-            for cell in cells[1:]:
-                cell.text = ""
-            merged = cells[0].merge(cells[-1])
-            fill_table_cell(merged, group)
+    body_alignments = column_alignments(body_rows)
+    for row_index, row in enumerate(all_rows):
+        is_header = row_index < len(header_rows)
+        for column, value in enumerate(row):
+            cell = table.cell(row_index, column)
+            cell.width = widths[column]
+            align = WD_ALIGN_PARAGRAPH.CENTER if is_header else body_alignments[column]
+            fill_table_cell(cell, value or "", bold=is_header, align=align, size=size)
+        if is_header:
+            mark_repeat_table_header(table.rows[row_index])
+        else:
+            prevent_row_split(table.rows[row_index])
+    merge_null_cells_vertically(table, header_rows, 0, size)
+    merge_null_cells_vertically(table, body_rows, len(header_rows), size, body_alignments)
     return table
 
 
-def add_clause(document, clause, level=0):
-    number = clause.get("number")
+def clause_prefix(number, level):
+    """Ký hiệu đứng trước khoản/điểm: số → '1. ', chữ → 'a) ', gạch đầu dòng → '- '."""
     if number is None:
-        prefix = ""
-    elif level == 0:
-        prefix = f"{number}. "
-    else:
-        prefix = f"{number}) "
+        return ""
+    number = str(number)
+    if number in ("-", "–"):
+        return f"{number} "
+    if number[:1].isdigit():
+        return f"{number}. " if level == 0 else f"{number}) "
+    return f"{number}) "
+
+
+def add_clause(document, clause, level=0):
+    prefix = clause_prefix(clause.get("number"), level)
     paragraph = add_text_paragraph(document, f'{prefix}{clause["text"]}')
     if level > 0:
         paragraph.paragraph_format.left_indent = Cm(0.75 * level)

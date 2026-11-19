@@ -104,7 +104,11 @@
         "authority": { "type": "string", "minLength": 1 },
         "delegation": { "type": ["string", "null"], "minLength": 1 },
         "position": { "type": "string", "minLength": 1 },
-        "signed_status": { "type": "string", "minLength": 1 },
+        "signed_status": {
+          "description": "NGUYÊN VĂN dòng ký trong nguồn, giữ ngoặc và hoa/thường (vd '(Đã ký)', '(đã ký)'); null nếu nguồn không có dòng này.",
+          "type": ["string", "null"],
+          "minLength": 1
+        },
         "signer_name": { "type": "string", "minLength": 1 }
       }
     },
@@ -199,38 +203,35 @@
         "included_in_source": { "type": "boolean" }
       }
     },
-    "money_value": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["source_text", "value_vnd"],
-      "properties": {
-        "source_text": { "type": "string", "pattern": "^[0-9]{2}\\.[0-9]{3}$" },
-        "value_vnd": { "type": "integer", "minimum": 0 }
-      }
+    "table_row": {
+      "description": "Một dòng bảng: mỗi phần tử là một ô, chép NGUYÊN VĂN nguồn (không đổi định dạng số, không sửa lỗi gõ). null = ô gộp với ô ngay phía trên (nguồn không ghi chữ riêng cho ô này).",
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": ["string", "null"] }
     },
     "data_table": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["table_id", "title", "unit", "columns", "rows"],
+      "required": ["table_id", "title", "unit", "header_rows", "rows"],
       "properties": {
         "table_id": { "type": "string", "minLength": 1 },
         "title": { "type": "string", "minLength": 1 },
-        "unit": { "type": "string", "minLength": 1 },
-        "columns": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
-        "rows": {
+        "unit": {
+          "description": "Nguyên văn phần đơn vị khi nguồn có dòng riêng kiểu 'Đơn vị tính: ...' (chỉ phần sau dấu hai chấm); null nếu không có hoặc đơn vị đã nằm trong header_rows.",
+          "type": ["string", "null"],
+          "minLength": 1
+        },
+        "header_rows": {
+          "description": "Các dòng tiêu đề theo đúng thứ tự trong nguồn; mọi dòng (kể cả rows) phải có cùng số ô.",
           "type": "array",
           "minItems": 1,
-          "items": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": ["group", "description", "minimum_rent", "maximum_rent"],
-            "properties": {
-              "group": { "type": "integer", "minimum": 1 },
-              "description": { "type": "string", "minLength": 1 },
-              "minimum_rent": { "$ref": "#/$defs/money_value" },
-              "maximum_rent": { "$ref": "#/$defs/money_value" }
-            }
-          }
+          "items": { "$ref": "#/$defs/table_row" }
+        },
+        "rows": {
+          "description": "Các dòng dữ liệu theo đúng thứ tự trong nguồn.",
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/table_row" }
         }
       }
     }

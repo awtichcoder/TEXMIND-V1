@@ -39,7 +39,12 @@ test("structured_03 hỗ trợ khoản lồng nhau, phụ lục và cảnh báo 
 
   assert.equal(data.attachments.length, 12);
   assert.ok(data.attachments.every((attachment) => attachment.included_in_source === false));
-  for (const attachment of data.attachments) assert.ok(sourceText.includes(attachment.source_reference));
+  // Quy ước 19/11/2026: source_reference là vị trí "Điều X, khoản Y, điểm z" nơi nhắc tới phụ lục.
+  for (const attachment of data.attachments) {
+    assert.match(attachment.source_reference, /^Điều \d+(, khoản \d+(, điểm [a-zđ])?)?$/u);
+  }
+  assert.equal(data.attachments[0].source_reference, "Điều 3, khoản 1, điểm a");
+  assert.equal(data.attachments.at(-1).source_reference, "Điều 3, khoản 3");
   assert.equal(data.recipients.length, 10);
   for (const recipient of data.recipients) assert.ok(sourceText.includes(recipient));
   assert.equal(data.signature.signer_name, "Vũ Thu Hà");

@@ -19,3 +19,17 @@
 
 ## Ghi chú
 
+## Lịch sử thay đổi gold
+
+- 19/11/2026 (quy ước do người dùng chốt): attachments appendix_02: source_reference "Phụ lục 2" → "Điều 3, khoản 1, điểm a".
+- 19/11/2026 (quy ước do người dùng chốt): attachments appendix_03: source_reference "Phụ lục 3" → "Điều 3, khoản 1, điểm b".
+- 19/11/2026 (quy ước do người dùng chốt): attachments appendix_04: source_reference "Phụ lục 4" → "Điều 3, khoản 2, điểm a".
+- 19/11/2026 (quy ước do người dùng chốt): attachments appendix_05: source_reference "Phụ lục 5" → "Điều 3, khoản 2, điểm b".
+- 19/11/2026 (quy ước do người dùng chốt): attachments appendix_06: source_reference "Phụ lục 6" → "Điều 3, khoản 2, điểm c".
+- 19/11/2026 (quy ước do người dùng chốt): attachments appendix_07: source_reference "Phụ lục 7" → "Điều 3, khoản 2, điểm d".
+- 19/11/2026 (quy ước do người dùng chốt): attachments appendix_08: source_reference "Phụ lục 8" → "Điều 3, khoản 2, điểm đ".
+- 19/11/2026 (quy ước do người dùng chốt): attachments appendix_09: source_reference "Phụ lục 9" → "Điều 3, khoản 2, điểm e".
+- 19/11/2026 (quy ước do người dùng chốt): attachments appendix_10: source_reference "Phụ lục 10" → "Điều 3, khoản 2, điểm g".
+- 19/11/2026 (quy ước do người dùng chốt): attachments appendix_11: source_reference "Phụ lục 11" → "Điều 3, khoản 2, điểm h".
+- 19/11/2026 (quy ước do người dùng chốt): attachments appendix_12: source_reference "Phụ lục 12" → "Điều 3, khoản 2, điểm i".
+- 19/11/2026 (quy ước do người dùng chốt): attachments appendix_13: source_reference "Phụ lục 13" → "Điều 3, khoản 3".

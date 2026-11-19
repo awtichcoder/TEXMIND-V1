@@ -1,4 +1,9 @@
-# Mẫu dùng để train / làm ví dụ
+# Mẫu dùng để train / làm ví dụ (19/11/2026, người dùng chốt)
 qd_066
 qd_030
 qd_010
+qd_082
+qd_081
+qd_100
+qd_040
+qd_068

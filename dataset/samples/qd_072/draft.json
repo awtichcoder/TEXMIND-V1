@@ -79,8 +79,8 @@
     {
       "id": "phu_luc",
       "included_in_source": false,
-      "source_reference": "Điều 2 khoản 1",
-      "title": "Phụ lục đính kèm"
+      "source_reference": "Điều 2, khoản 1",
+      "title": "Phụ lục"
     }
   ],
   "data_tables": [],
@@ -110,19 +110,29 @@
   "provenance": {
     "normalizations": [
       {
+        "normalized_text": "ỦY BAN NHÂN DÂN TỈNH ĐỒNG THÁP",
+        "reason": "Gộp hai dòng tên cơ quan ở đầu văn bản.",
+        "source_text": "ỦY BAN NHÂN DÂN\n\nTỈNH ĐỒNG THÁP"
+      },
+      {
+        "normalized_text": "Quy định nội dung và mức chi đối với hội thi tay nghề trên địa bàn tỉnh Đồng Tháp",
+        "reason": "Gộp hai dòng trích yếu.",
+        "source_text": "Quy định nội dung và mức chi đối với hội thi tay nghề\n\ntrên địa bàn tỉnh Đồng Tháp"
+      },
+      {
         "normalized_text": "2019-12-16",
-        "reason": "Chuyển ngày ban hành sang định dạng ISO 8601.",
+        "reason": "Biểu diễn ngày ban hành theo định dạng ISO 8601.",
         "source_text": "ngày 16 tháng 12 năm 2019"
       },
       {
         "normalized_text": "2019-12-27",
-        "reason": "Chuyển ngày có hiệu lực sang định dạng ISO 8601.",
+        "reason": "Biểu diễn ngày có hiệu lực theo định dạng ISO 8601.",
         "source_text": "ngày 27 tháng 12 năm 2019"
       }
     ],
     "source_anomalies": [
       {
-        "note": "Nguồn tham chiếu Phụ lục nhưng không cung cấp nội dung Phụ lục.",
+        "note": "Văn bản dẫn chiếu Phụ lục tại Điều 2, khoản 1 nhưng phần nguồn được cung cấp không có nội dung Phụ lục.",
         "source_text": "Hội thi tay nghề cấp tỉnh: Chi tiết theo Phụ lục đính kèm."
       }
     ]
@@ -133,8 +143,8 @@
     "legal_review_status": "not_expert_reviewed",
     "source_consistency": "warning",
     "warnings": [
-      "Nguồn không cung cấp source_id, dataset, license và input_file; các trường này ghi nhận tình trạng không được cung cấp.",
-      "Phụ lục được tham chiếu tại Điều 2 khoản 1 không có nội dung trong nguồn."
+      "Phụ lục được dẫn chiếu tại Điều 2, khoản 1 không có trong phần nguồn được cung cấp.",
+      "Đầu vào không cung cấp mã nguồn riêng, tên bộ dữ liệu, giấy phép hoặc tên tệp."
     ]
   },
   "recipients": [
@@ -160,15 +170,15 @@
     "signer_name": "Phạm Thiện Nghĩa"
   },
   "source": {
-    "dataset": "Không được cung cấp trong nguồn",
-    "input_file": "Không được cung cấp trong nguồn",
-    "license": "Không được cung cấp trong nguồn",
+    "dataset": "th1nhng0/vietnamese-legal-documents",
+    "input_file": "source.txt",
+    "license": "CC BY 4.0",
     "preserve_original_content": true,
-    "source_id": "Không được cung cấp trong nguồn"
+    "source_id": "139832"
   },
   "template": null,
   "title": {
     "document_name": "QUYẾT ĐỊNH",
-    "subject": "Quy định nội dung và mức chi đối với hội thi tay nghề\ntrên địa bàn tỉnh Đồng Tháp"
+    "subject": "Quy định nội dung và mức chi đối với hội thi tay nghề trên địa bàn tỉnh Đồng Tháp"
   }
 }

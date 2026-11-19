@@ -68,6 +68,7 @@ export function buildPipelineStages({
   templatePath = null,
   goldPath = null,
   scorePath = null,
+  sourceMetadataPath = null,
 }) {
   if (!new Set(["ai_extract", "saved_raw"]).has(mode)) {
     throw new Error(`Chế độ pipeline không hợp lệ: ${mode}.`);
@@ -92,6 +93,7 @@ export function buildPipelineStages({
             rawPath,
             "--report",
             postprocessPath,
+            ...(sourceMetadataPath ? ["--source-metadata", sourceMetadataPath] : []),
             ...(model ? ["--model", model] : []),
           ],
         }
@@ -112,6 +114,7 @@ export function buildPipelineStages({
             normalizedPath,
             "--report",
             postprocessPath,
+            ...(sourceMetadataPath ? ["--source-metadata", sourceMetadataPath] : []),
           ],
         };
 
@@ -285,6 +288,7 @@ async function resolveConfig(args) {
     pipelineReportPath: inRun("pipeline.json"),
     goldPath: hasGold ? sample.gold : null,
     scorePath: hasGold ? inRun("score.json") : null,
+    sourceMetadataPath: existsSync(sample.metadata) ? sample.metadata : null,
     samplePathsForDraft: sample,
     saveDraft: args.get("--save-draft") === "true",
     sampleInfo: {
@@ -332,6 +336,7 @@ async function main() {
     templatePath,
     goldPath,
     scorePath,
+    sourceMetadataPath: config.sourceMetadataPath ?? null,
   });
 
   const plan = {

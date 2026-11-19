@@ -9,7 +9,6 @@
     {
       "clauses": [
         {
-          "children": [],
           "number": null,
           "text": "Quyết định này có hiệu lực thi hành kể từ ngày 6/7/2024."
         }
@@ -21,12 +20,10 @@
     {
       "clauses": [
         {
-          "children": [],
           "number": "a",
           "text": "Chánh Văn phòng Ủy ban nhân dân tỉnh; Giám đốc Công an tỉnh; Thủ trưởng cơ quan, ban, ngành, đoàn thể tỉnh và các cơ quan, đơn vị có liên quan; Chủ tịch Ủy ban nhân dân huyện, thị xã, thành phố; Chủ tịch Ủy ban nhân dân xã, phường, thị trấn trên địa bàn tỉnh chịu trách nhiệm thi hành Quyết định này."
         },
         {
-          "children": [],
           "number": "b",
           "text": "Giao Công an tỉnh phối hợp với các cơ quan, đơn vị có liên quan hướng dẫn và kiểm tra việc thực hiện Quyết định này./."
         }
@@ -38,7 +35,7 @@
   ],
   "attachments": [
     {
-      "id": "quy_dinh_kem_theo",
+      "id": "quy_dinh_01",
       "included_in_source": false,
       "source_reference": "Điều 1",
       "title": "quy định vị trí, chức năng, nhiệm vụ, nguyên tắc hoạt động, cơ cấu tổ chức, chế độ chính sách và một số điều kiện đảm bảo hoạt động của tổ bảo vệ an ninh, trật tự trên địa bàn tỉnh Hưng Yên"
@@ -68,35 +65,25 @@
   ],
   "legal_effect": {
     "effective_from": "2024-07-06",
-    "review_note": "Kết quả trích xuất chưa được chuyên gia pháp lý kiểm duyệt và không thay thế tư vấn pháp lý.",
+    "review_note": "Kết quả chưa được chuyên gia pháp lý kiểm duyệt và không thay thế tư vấn pháp lý.",
     "supersedes": []
   },
   "provenance": {
     "normalizations": [
       {
         "normalized_text": "2024-06-26",
-        "reason": "Chuyển ngày ban hành sang định dạng ISO 8601.",
+        "reason": "Biểu diễn ngày ban hành theo ISO 8601.",
         "source_text": "ngày 26 tháng 6 năm 2024"
       },
       {
         "normalized_text": "2024-07-06",
-        "reason": "Chuyển ngày có hiệu lực sang định dạng ISO 8601.",
+        "reason": "Biểu diễn ngày có hiệu lực theo ISO 8601.",
         "source_text": "6/7/2024"
-      },
-      {
-        "normalized_text": "ỦY BAN NHÂN DÂN TỈNH HƯNG YÊN",
-        "reason": "Ghép các dòng trình bày tên cơ quan ban hành.",
-        "source_text": "ỦY BAN NHÂN DÂN\n\nTỈNH HƯNG YÊN"
-      },
-      {
-        "normalized_text": "Quy định vị trí, chức năng, nhiệm vụ, nguyên tắc hoạt động, cơ cấu tổ chức, chế độ chính sách và một số điều kiện đảm bảo hoạt động của tổ bảo vệ an ninh, trật tự trên địa bàn tỉnh Hưng Yên",
-        "reason": "Ghép các dòng trình bày trích yếu bằng khoảng trắng.",
-        "source_text": "Quy định vị trí, chức năng, nhiệm vụ, nguyên tắc hoạt động, cơ cấu tổ chức, chế độ\n\nchính sách và một số điều kiện đảm bảo hoạt động của tổ bảo vệ an\n\nninh, trật tự trên địa bàn tỉnh Hưng Yên"
       }
     ],
     "source_anomalies": [
       {
-        "note": "Cụm từ nghi lỗi nguồn được giữ nguyên, không tự sửa.",
+        "note": "Cụm «đảm bảo vệ» có dấu hiệu lỗi gõ; tên luật ở các căn cứ khác trong cùng nguồn dùng «bảo vệ». Giữ nguyên văn.",
         "source_text": "Luật Lực lượng tham gia đảm bảo vệ an ninh, trật tự ở cơ sở"
       }
     ]
@@ -107,9 +94,7 @@
     "legal_review_status": "not_expert_reviewed",
     "source_consistency": "warning",
     "warnings": [
-      "Nguồn có cụm từ nghi lỗi: 'tham gia đảm bảo vệ'; đã giữ nguyên.",
-      "Nguồn chỉ tham chiếu quy định ban hành kèm theo tại Điều 1, không cung cấp nội dung quy định.",
-      "Không được cung cấp source_id, dataset, license và input_file; các trường này được ghi nhận bằng thông báo thiếu dữ liệu."
+      "Giữ nguyên cụm nghi lỗi gõ «đảm bảo vệ» trong căn cứ dẫn Nghị định số 40/2024/NĐ-CP."
     ]
   },
   "recipients": [
@@ -138,11 +123,11 @@
     "signer_name": "Nguyễn Duy Hưng"
   },
   "source": {
-    "dataset": "Không được cung cấp",
-    "input_file": "Không được cung cấp",
-    "license": "Không được cung cấp",
+    "dataset": "th1nhng0/vietnamese-legal-documents",
+    "input_file": "source.txt",
+    "license": "CC BY 4.0",
     "preserve_original_content": true,
-    "source_id": "Không được cung cấp"
+    "source_id": "168304"
   },
   "template": null,
   "title": {

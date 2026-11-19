@@ -172,14 +172,7 @@
       "related_table_ids": []
     }
   ],
-  "attachments": [
-    {
-      "id": "phu_luc_V",
-      "included_in_source": false,
-      "source_reference": "Phụ lục V",
-      "title": "Phụ lục V ban hành kèm theo Thông tư số 11/2021/TT-BXD ngày 31/8/2021 của Bộ Xây dựng"
-    }
-  ],
+  "attachments": [],
   "data_tables": [],
   "document_type": "quyet_dinh",
   "enactment": "QUYẾT ĐỊNH:",
@@ -204,38 +197,38 @@
   ],
   "legal_effect": {
     "effective_from": "2023-05-15",
-    "review_note": "Kết quả chưa được chuyên gia pháp lý kiểm duyệt và không thay thế tư vấn pháp lý.",
+    "review_note": "Kết quả trích xuất chưa được chuyên gia pháp lý kiểm duyệt và không thay thế tư vấn pháp lý.",
     "supersedes": []
   },
   "provenance": {
     "normalizations": [
       {
         "normalized_text": "2023-04-28",
-        "reason": "Chuyển ngày ban hành sang định dạng ISO 8601.",
+        "reason": "Biểu diễn ngày ban hành theo định dạng ISO.",
         "source_text": "ngày 28 tháng 4 năm 2023"
       },
       {
         "normalized_text": "2023-05-15",
-        "reason": "Chuyển ngày có hiệu lực sang định dạng ISO 8601.",
+        "reason": "Biểu diễn ngày có hiệu lực theo định dạng ISO.",
         "source_text": "ngày 15 tháng 5 năm 2023"
       }
     ],
     "source_anomalies": [
       {
-        "note": "Nguồn có cụm từ lặp nghi lỗi; giữ nguyên.",
-        "source_text": "đối với các đối với dự án"
+        "note": "Nghi lỗi chính tả trong căn cứ viện dẫn Thông tư số 12/2021/TT-BXD.",
+        "source_text": "xây dưng"
       },
       {
-        "note": "Nghi lỗi chính tả trong nguồn; giữ nguyên.",
-        "source_text": "ban hành định mức xây dưng;"
+        "note": "Nghi lặp từ tại Điều 1, khoản 1.",
+        "source_text": "đối với các đối với"
       },
       {
-        "note": "Nghi thiếu từ trong tên phí; giữ nguyên.",
+        "note": "Nghi thiếu từ tại Điều 2, khoản 2, điểm c.",
         "source_text": "phí thẩm dự án đầu tư xây dựng"
       },
       {
-        "note": "Nguồn không cung cấp source_id, dataset, license hoặc input_file; dùng dấu chỉ thiếu thông tin để đáp ứng các trường bắt buộc.",
-        "source_text": "VĂN BẢN NGUỒN:"
+        "note": "Nghi thừa dấu phẩy sau «kiểm tra» tại Điều 4, khoản 2.",
+        "source_text": "giám sát, kiểm tra, tình hình thực hiện"
       }
     ]
   },
@@ -245,9 +238,10 @@
     "legal_review_status": "not_expert_reviewed",
     "source_consistency": "warning",
     "warnings": [
-      "Giữ nguyên cụm từ lặp 'đối với các đối với dự án', từ 'xây dưng' và cụm 'phí thẩm dự án đầu tư xây dựng' trong nguồn.",
-      "Không có thông tin định danh nguồn, bộ dữ liệu, giấy phép hoặc tên tệp đầu vào; các trường tương ứng ghi 'Không được cung cấp'.",
-      "Phụ lục V được viện dẫn nhưng không có nội dung trong nguồn."
+      "Giữ nguyên «xây dưng» trong căn cứ viện dẫn Thông tư số 12/2021/TT-BXD.",
+      "Giữ nguyên cụm nghi lặp «đối với các đối với» tại Điều 1, khoản 1.",
+      "Giữ nguyên cụm nghi thiếu từ «phí thẩm dự án đầu tư xây dựng» tại Điều 2, khoản 2, điểm c.",
+      "Giữ nguyên dấu phẩy nghi thừa sau «kiểm tra» tại Điều 4, khoản 2."
     ]
   },
   "recipients": [],
@@ -261,11 +255,11 @@
     "signer_name": "Lê Thành Đô"
   },
   "source": {
-    "dataset": "Không được cung cấp",
-    "input_file": "Không được cung cấp",
-    "license": "Không được cung cấp",
+    "dataset": "th1nhng0/vietnamese-legal-documents",
+    "input_file": "source.txt",
+    "license": "CC BY 4.0",
     "preserve_original_content": true,
-    "source_id": "Không được cung cấp"
+    "source_id": "160281"
   },
   "template": null,
   "title": {

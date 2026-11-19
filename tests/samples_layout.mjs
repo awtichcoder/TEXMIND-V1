@@ -117,7 +117,12 @@ test("các split train/dev/test không giao nhau và chỉ chứa mẫu có th�
     }
   }
   assert.ok(splits.test.length > 0, "tập test không được rỗng");
-  assert.equal(splitOf("qd_067", splits), "test");
+  assert.equal(splitOf("qd_067", splits), "dev");
+  assert.equal(splitOf("qd_042", splits), "test");
+  // Quy ước 19/11/2026: test chỉ gồm văn bản mới, không chứa 6 mẫu đã xem khi viết prompt.
+  for (const sampleId of Object.keys(LEGACY_MAP)) {
+    assert.notEqual(splitOf(sampleId, splits), "test", `${sampleId} đã xem khi phát triển, không được ở test`);
+  }
   assert.equal(splitOf("qd_khong_co", splits), null);
 });
 
@@ -250,4 +255,41 @@ test("buildScoreboardRow ưu tiên score.json, dự phòng điểm trong pipelin
   });
   assert.equal(fromScore.strict, 0.9);
   assert.equal(fromScore.schema_valid, true);
+});
+
+test("chế độ --sample truyền metadata để điền khối source; normalizer lấy đúng giá trị", async () => {
+  const { normalizeExtraction, sourceInfoFromMetadata } = await import("../src/normalize_extraction.mjs");
+  const stages = buildPipelineStages({
+    mode: "ai_extract",
+    nodePath: "node",
+    sourcePath: "s.txt",
+    schemaPath: "schema.json",
+    sampleId: "qd_042",
+    rawPath: "raw.json",
+    normalizedPath: "n.json",
+    postprocessPath: "p.json",
+    documentPath: "d.docx",
+    referencePath: "r.docx",
+    sourceMetadataPath: "metadata.json",
+  });
+  assert.deepEqual(stages[0].args.slice(-2), ["--source-metadata", "metadata.json"]);
+  const metadata = await readJson(samplePaths("qd_042", root).metadata);
+  const { normalized } = normalizeExtraction(
+    { source: { source_id: "qd_042", dataset: "Không được cung cấp", license: "x", input_file: "y", preserve_original_content: true } },
+    { sourceInfo: sourceInfoFromMetadata(metadata) },
+  );
+  assert.deepEqual(normalized.source, {
+    source_id: metadata.source_id,
+    dataset: "th1nhng0/vietnamese-legal-documents",
+    license: "CC BY 4.0",
+    input_file: "source.txt",
+    preserve_original_content: true,
+  });
+});
+
+test("bảng điểm dùng split hiện tại thay cho split cũ ghi trong pipeline.json", () => {
+  const pipeline = { run_id: "r", sample_id: "qd_067", split: "test", model: "m", status: "completed" };
+  assert.equal(buildScoreboardRow("r", pipeline, null, "dev").split, "dev");
+  assert.equal(buildScoreboardRow("r", pipeline, null, null).split, null);
+  assert.equal(buildScoreboardRow("r", pipeline, null).split, "test");
 });

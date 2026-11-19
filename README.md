@@ -46,7 +46,8 @@ Khung thử nghiệm cho luồng chuyển nội dung thô thành tài liệu the
 - Kiểm thử tại thời điểm chuyển provider: 47/47; số kiểm thử hiện tại xem trong báo cáo tiến độ mới nhất.
 - 19/11/2026: đường Codex CLI chạy thật được. Smoke test đạt; pipeline `qd_067` qua `gpt-6.1-sol` cho raw/normalized 0 lỗi schema, tự chọn `TM-QD-002`, DOCX tạo thành công, manifest `completed`; điểm so gold strict 1.0 / tolerant 1.0 (lưu ý: `qd_067` đã được xem khi viết prompt nên điểm lạc quan). Để chạy được đã phải chuyển schema sang dạng strict cho provider (xem mục "Vì sao dùng `codex_cli`").
 - Đã sắp lại dữ liệu theo `dataset/samples/<mã>/` + `dataset/splits/`, thêm chế độ `--sample` ghi vào `runs/<run_id>/` có chấm điểm tự động và lệnh `npm run scoreboard`.
-- 19/11/2026 (lần 2): chạy thật qd_014 và qd_021; bộ chấm 2.1 (bắt lỗi dòng ngày thiếu địa danh). Điểm gpt-6.1-sol: qd_067 1.0, qd_014 1.0, qd_021 0.8333 (lệch quy ước tham chiếu phụ lục). 10 mẫu mới có `draft.json` chờ người duyệt (đợt `dataset/selection/batch_2026-11-19.json`). Kiểm thử: 78/78.
+- 19/11/2026 (lần 2): chạy thật qd_014 và qd_021; bộ chấm 2.1 (bắt lỗi dòng ngày thiếu địa danh). Điểm gpt-6.1-sol: qd_067 1.0, qd_014 1.0, qd_021 0.8333 (lệch quy ước tham chiếu phụ lục). 10 mẫu mới có `draft.json` chờ người duyệt (đợt `dataset/selection/batch_2026-11-19.json`).
+- 19/11/2026 (lần 3): áp 4 quy ước người dùng chốt (bảng nguyên văn số cột tự do, vị trí phụ lục "Điều X, khoản Y, điểm z", đoạn "-"/null, split mới – xem mục "Quy ước dữ liệu"); chuyển gold cũ theo quy ước; tạo lại 10 draft. Dev (qd_021, qd_067, qd_014) đạt 1.0. Sau đó chốt thêm quy ước dòng ký và supersedes (xem "Quy ước dữ liệu"). Kiểm thử: 86/86.
 
 ## Bước tiếp theo
 
@@ -159,6 +160,16 @@ npm run scoreboard -- --rescore true  # chấm lại mọi lần chạy bằng b
 Quét `runs/*/pipeline.json` + `score.json`, ghi `reports/scoreboard.md`: bảng theo từng lần chạy (có cột phiên bản bộ chấm) và điểm trung bình theo model trên tập test (không tính replay).
 
 Bộ chấm 2.1 (19/11/2026) so thêm `header.issue_date_text`. Lý do: AI hay bỏ địa danh ở dòng ngày ("ngày 5 tháng 10 năm 2023" thay vì "Bình Thạnh, ngày 5 tháng 10 năm 2023"), DOCX in thiếu địa danh mà bản 2.0 không phát hiện. Bước chuẩn hóa nay khôi phục dòng ngày đầy đủ khi nguồn có đúng dòng đó.
+
+### Quy ước dữ liệu (người dùng chốt 19/11/2026)
+
+- **Bảng** (`data_tables`): `header_rows` (các dòng tiêu đề) và `rows` (các dòng dữ liệu), mỗi dòng là mảng ô, số cột tự do nhưng mọi dòng cùng số ô. Ô chép NGUYÊN VĂN nguồn (không thêm số 0, không bỏ khoảng trắng, không quy đổi); `null` = ô gộp với ô ngay phía trên. `unit` = phần sau "Đơn vị tính:" nếu nguồn có dòng riêng, ngược lại `null`. Ô nghi lỗi gõ (vd "1. 200") giữ nguyên và được normalizer ghi vào `quality.warnings`. Renderer TM-QD-001 tự chia bề rộng cột, gộp dọc ô `null`, in dòng "Đơn vị tính" nếu có.
+- **Phụ lục / văn bản ban hành kèm theo** (`attachments[].source_reference`): vị trí chi tiết nhất trong văn bản nhắc tới nó, đúng dạng `Điều X`, `Điều X, khoản Y`, `Điều X, khoản Y, điểm z`. Phụ lục của văn bản khác chỉ được trích dẫn không phải attachment. Normalizer chuẩn hóa định dạng và đổi `Phụ lục N` thành vị trí khi chỉ có đúng một khoản/điểm nhắc tới nó.
+- **Đoạn không số**: nguồn có gạch đầu dòng "-" → `number = "-"`; nguồn không có ký hiệu → `number = null`. Normalizer sửa theo dòng nguồn khi khớp được đúng một dòng.
+- **Dòng ký** (`signature.signed_status`): nguyên văn dòng ký trong nguồn, giữ ngoặc và hoa/thường ("(Đã ký)", "(đã ký)"). Nguồn không có dòng này → `null`, kèm một cảnh báo chuẩn trong `quality.warnings`; DOCX không in gì ở vị trí đó. Không dùng câu thay thế.
+- **Văn bản bị thay thế** (`legal_effect.supersedes`): chỉ văn bản cụ thể xác định được (có số hiệu hoặc tên rõ ràng). Câu chung chung như "các quyết định trước đây trái với Quyết định này" → không đưa vào, không cảnh báo (nội dung vẫn còn nguyên văn trong điều khoản).
+- Gold cũ (qd_066, qd_021, qd_030, qd_067) đã chuyển theo quy ước này; thay đổi ghi trong REVIEW.md từng mẫu. Bản cũ trong `dataset/van_ban_hanh_chinh/structured_*.json` được sửa giống hệt để các test cũ vẫn so được.
+- **Split**: test = qd_042, qd_096, qd_035, qd_022, qd_072 (văn bản mới); dev = qd_021, qd_067, qd_014; train = qd_066, qd_030, qd_010, qd_082, qd_081, qd_100, qd_040, qd_068. Không chỉnh prompt dựa trên lỗi của mẫu test.
 
 ### Làm gold mới: nháp AI → người duyệt → promote
 

@@ -51,7 +51,7 @@
       "heading": "Khung giá dịch vụ quản lý vận hành nhà chung cư",
       "number": 3,
       "related_table_ids": [
-        "khung_gia"
+        "bang_1"
       ]
     },
     {
@@ -99,48 +99,29 @@
       "related_table_ids": []
     }
   ],
-  "attachments": [
-    {
-      "id": "phu_luc_vii",
-      "included_in_source": false,
-      "source_reference": "Phụ lục VII",
-      "title": "Phụ lục VII của Nghị định số 95/2024/NĐ-CP"
-    }
-  ],
+  "attachments": [],
   "data_tables": [
     {
-      "columns": [
-        "Loại nhà",
-        "Mức giá tối thiểu",
-        "Mức giá tối đa"
+      "header_rows": [
+        [
+          "Loại nhà",
+          "Mức giá tối thiểu",
+          "Mức giá tối đa"
+        ]
       ],
       "rows": [
-        {
-          "description": "Nhà chung cư không có thang máy",
-          "group": 1,
-          "maximum_rent": {
-            "source_text": "07.000",
-            "value_vnd": 7000
-          },
-          "minimum_rent": {
-            "source_text": "01.200",
-            "value_vnd": 1200
-          }
-        },
-        {
-          "description": "Nhà chung cư có thang máy",
-          "group": 2,
-          "maximum_rent": {
-            "source_text": "13.500",
-            "value_vnd": 13500
-          },
-          "minimum_rent": {
-            "source_text": "04.000",
-            "value_vnd": 4000
-          }
-        }
+        [
+          "Nhà chung cư không có thang máy",
+          "1. 200",
+          "7. 000"
+        ],
+        [
+          "Nhà chung cư có thang máy",
+          "4. 000",
+          "13. 500"
+        ]
       ],
-      "table_id": "khung_gia",
+      "table_id": "bang_1",
       "title": "Khung giá dịch vụ quản lý vận hành nhà chung cư",
       "unit": "đồng/m 2 /tháng"
     }
@@ -170,47 +151,37 @@
     "effective_from": "2024-10-25",
     "review_note": "Kết quả chưa được chuyên gia pháp lý kiểm duyệt và không thay thế tư vấn pháp lý.",
     "supersedes": [
-      "Quyết định số 01/2021/QĐ-UBND ngày 07 tháng 01 năm 2021 của Ủy ban nhân dân thành phố Đà Nẵng ban hành khung giá dịch vụ quản lý vận hành nhà chung cư trên địa bàn thành phố Đà Nẵng."
+      "Quyết định số 01/2021/QĐ-UBND ngày 07 tháng 01 năm 2021"
     ]
   },
   "provenance": {
     "normalizations": [
       {
-        "normalized_text": "01.200",
-        "reason": "Bỏ khoảng trắng sau dấu chấm và thêm số 0 ở đầu để đáp ứng mẫu định dạng của schema; giữ nguyên giá trị.",
-        "source_text": "1. 200"
+        "normalized_text": "2024-10-15",
+        "reason": "Biểu diễn ngày ban hành theo định dạng ISO của schema.",
+        "source_text": "ngày 15 tháng 10 năm 2024"
       },
       {
-        "normalized_text": "07.000",
-        "reason": "Bỏ khoảng trắng sau dấu chấm và thêm số 0 ở đầu để đáp ứng mẫu định dạng của schema; giữ nguyên giá trị.",
-        "source_text": "7. 000"
-      },
-      {
-        "normalized_text": "04.000",
-        "reason": "Bỏ khoảng trắng sau dấu chấm và thêm số 0 ở đầu để đáp ứng mẫu định dạng của schema; giữ nguyên giá trị.",
-        "source_text": "4. 000"
-      },
-      {
-        "normalized_text": "13.500",
-        "reason": "Bỏ khoảng trắng sau dấu chấm để đáp ứng mẫu định dạng của schema; giữ nguyên giá trị.",
-        "source_text": "13. 500"
+        "normalized_text": "2024-10-25",
+        "reason": "Biểu diễn ngày có hiệu lực theo định dạng ISO của schema.",
+        "source_text": "ngày 25 tháng 10 năm 2024"
       }
     ],
     "source_anomalies": [
       {
-        "note": "Nghi lặp từ «Bộ» trong căn cứ; giữ nguyên.",
+        "note": "Nghi lặp từ «Bộ» trong căn cứ Thông tư; giữ nguyên nguồn.",
         "source_text": "Bộ Bộ trưởng Bộ Xây dựng"
       },
       {
-        "note": "Có khoảng trắng trước dấu phẩy trong căn cứ; giữ nguyên.",
+        "note": "Có khoảng trắng trước dấu phẩy trong căn cứ; giữ nguyên nguồn.",
         "source_text": "31/2024/QH15 , Luật Nhà ở số 27/2023/QH15 ,"
       },
       {
-        "note": "Ký hiệu mét vuông có khoảng trắng bất thường; giữ nguyên.",
+        "note": "Đơn vị có khoảng trắng quanh số 2; giữ nguyên nguồn.",
         "source_text": "đồng/m 2 /tháng"
       },
       {
-        "note": "Các mức giá có khoảng trắng sau dấu chấm phân cách hàng nghìn; dạng nguyên văn được ghi trong normalizations.",
+        "note": "Có khoảng trắng sau dấu chấm ở các ô giá; giữ nguyên nguồn.",
         "source_text": "1. 200\n7. 000\n4. 000\n13. 500"
       }
     ]
@@ -221,8 +192,13 @@
     "legal_review_status": "not_expert_reviewed",
     "source_consistency": "warning",
     "warnings": [
-      "Nguồn có cụm nghi lặp từ «Bộ Bộ trưởng Bộ Xây dựng» và khoảng trắng bất thường trước dấu phẩy trong căn cứ về Luật Nhà ở; các đoạn này được giữ nguyên.",
-      "Nguồn ghi đơn vị «đồng/m 2 /tháng» và có khoảng trắng sau dấu chấm trong các mức giá; đơn vị được giữ nguyên và cách biểu diễn giá được chuẩn hóa theo schema."
+      "Nguồn ghi «Bộ Bộ trưởng Bộ Xây dựng» trong căn cứ Thông tư; giữ nguyên.",
+      "Nguồn có khoảng trắng trước dấu phẩy sau «31/2024/QH15» và «27/2023/QH15»; giữ nguyên.",
+      "Giữ nguyên đơn vị «đồng/m 2 /tháng» và khoảng trắng sau dấu chấm trong các ô giá «1. 200», «7. 000», «4. 000», «13. 500».",
+      "Bảng bang_1: ô \"1. 200\" có khoảng trắng sau dấu chấm phân cách hàng nghìn (nghi lỗi gõ trong nguồn); giữ nguyên văn, không sửa.",
+      "Bảng bang_1: ô \"7. 000\" có khoảng trắng sau dấu chấm phân cách hàng nghìn (nghi lỗi gõ trong nguồn); giữ nguyên văn, không sửa.",
+      "Bảng bang_1: ô \"4. 000\" có khoảng trắng sau dấu chấm phân cách hàng nghìn (nghi lỗi gõ trong nguồn); giữ nguyên văn, không sửa.",
+      "Bảng bang_1: ô \"13. 500\" có khoảng trắng sau dấu chấm phân cách hàng nghìn (nghi lỗi gõ trong nguồn); giữ nguyên văn, không sửa."
     ]
   },
   "recipients": [
@@ -251,11 +227,11 @@
     "signer_name": "Lê Quang Nam"
   },
   "source": {
-    "dataset": "Không được cung cấp",
-    "input_file": "Văn bản nguồn trong yêu cầu; không có tên tệp",
-    "license": "Không được cung cấp",
+    "dataset": "th1nhng0/vietnamese-legal-documents",
+    "input_file": "source.txt",
+    "license": "CC BY 4.0",
     "preserve_original_content": true,
-    "source_id": "49/2024/QĐ-UBND"
+    "source_id": "170673"
   },
   "template": null,
   "title": {

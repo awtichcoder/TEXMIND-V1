@@ -18,3 +18,7 @@
 
 ## Ghi chú
 
+## Lịch sử thay đổi gold
+
+- 19/11/2026 (quy ước do người dùng chốt): tiêu đề cột "Loại nhà ở xã hội" → "Loại Nhà ở xã hội" (nguyên văn nguồn).
+- 19/11/2026 (quy ước do người dùng chốt): bảng chuyển sang dạng header_rows/rows: ô là chuỗi nguyên văn, bỏ value_vnd; dòng đơn vị '(...)' nằm trong header_rows nên unit=null; ô STT của dòng thứ hai cùng nhóm là null (ô gộp).
