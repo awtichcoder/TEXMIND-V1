@@ -1,0 +1,42 @@
+{
+  "sample_id": "qd_096",
+  "source_id": "152369",
+  "document_type": "quyet_dinh",
+  "template_id": null,
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "source.txt",
+  "structured_file": null,
+  "draft_file": "draft.json",
+  "schema_file": "../../../schemas/texmind-document.schema.json",
+  "expected_output_file": null,
+  "preserve_original_content": true,
+  "selection_batch": "batch_2026-11-19",
+  "selection_reason": "Khung giá cảng cá: mỗi khoản có nhiều điểm a) b) c) với khoảng giá; kiểm tra giữ nguyên số tiền và thứ tự điểm. Số hiệu có khoảng trắng lạ '20 /2021/QĐ-UBND'.",
+  "selection_features": [
+    "nhiều điểm dưới khoản (16)",
+    "mức thu 'từ ... đến ...'",
+    "không nơi nhận"
+  ],
+  "proposed_split": "test",
+  "source_metadata": {
+    "title": "Quyết định số 20/2021/QĐ-UBND Quy định khung giá dịch vụ sử dụng cảng cá trên địa bàn tỉnh Kiên Giang",
+    "document_number": "20/2021/QĐ-UBND",
+    "issuing_date": "10/12/2021",
+    "effective_date": "01/06/2022",
+    "issuer": "UBND tỉnh Kiên Giang",
+    "signer_title": "Phó Chủ tịch",
+    "signer": "Nguyễn Thanh Nhàn",
+    "legal_field": "Chưa phân loại",
+    "effect_status": "Còn hiệu lực"
+  },
+  "status": "draft_pending_review",
+  "review_status": "unreviewed",
+  "reviewed_on": null,
+  "hf_files": {
+    "clean_text": "dataset/hf_quyet_dinh/clean_text/qd_096.txt",
+    "raw_html": "dataset/hf_quyet_dinh/raw_html/qd_096.html"
+  }
+}

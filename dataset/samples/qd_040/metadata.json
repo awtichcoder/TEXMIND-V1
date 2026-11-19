@@ -1,0 +1,43 @@
+{
+  "sample_id": "qd_040",
+  "source_id": "144380",
+  "document_type": "quyet_dinh",
+  "template_id": null,
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "source.txt",
+  "structured_file": null,
+  "draft_file": "draft.json",
+  "schema_file": "../../../schemas/texmind-document.schema.json",
+  "expected_output_file": null,
+  "preserve_original_content": true,
+  "selection_batch": "batch_2026-11-19",
+  "selection_reason": "Văn bản ngắn có nơi nhận dài; khoản dạng '1. Phạm vi điều chỉnh: ...' (tiêu đề và nội dung chung dòng). Có lỗi gõ trong nguồn 'p hân cấp' để kiểm tra việc giữ nguyên nguồn.",
+  "selection_features": [
+    "có nơi nhận",
+    "khoản có tiêu đề kèm nội dung cùng dòng",
+    "3 điều",
+    "2020"
+  ],
+  "proposed_split": "train",
+  "source_metadata": {
+    "title": "Quyết định số 21/2020/QĐ-UBND Về việc quy định phân cấp, quản lý và sử dụng Quỹ phòng, chống thiên tai tỉnh Đắk Nông",
+    "document_number": "21/2020/QĐ-UBND",
+    "issuing_date": "13/10/2020",
+    "effective_date": "31/10/2020",
+    "issuer": "UBND tỉnh Đắk Nông",
+    "signer_title": "Phó Chủ tịch",
+    "signer": "Trương Thanh Tùng",
+    "legal_field": "Thủy lợi, đề điều và phòng chống bão lụt",
+    "effect_status": "Hết hiệu lực toàn bộ"
+  },
+  "status": "draft_pending_review",
+  "review_status": "unreviewed",
+  "reviewed_on": null,
+  "hf_files": {
+    "clean_text": "dataset/hf_quyet_dinh/clean_text/qd_040.txt",
+    "raw_html": "dataset/hf_quyet_dinh/raw_html/qd_040.html"
+  }
+}

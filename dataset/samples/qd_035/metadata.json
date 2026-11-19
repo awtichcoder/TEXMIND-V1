@@ -1,0 +1,43 @@
+{
+  "sample_id": "qd_035",
+  "source_id": "160281",
+  "document_type": "quyet_dinh",
+  "template_id": null,
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "source.txt",
+  "structured_file": null,
+  "draft_file": "draft.json",
+  "schema_file": "../../../schemas/texmind-document.schema.json",
+  "expected_output_file": null,
+  "preserve_original_content": true,
+  "selection_batch": "batch_2026-11-19",
+  "selection_reason": "Mẫu dài nhất bộ: 5 điều có tiêu đề, khoản '2. Định mức chi phí...' chứa điểm a) b) c); nhắc 'Phụ lục V ban hành kèm theo Thông tư...' (phụ lục của văn bản khác, không phải attachment của quyết định này).",
+  "selection_features": [
+    "khoản + điểm lồng nhau",
+    "dài (~7.300 ký tự)",
+    "tham chiếu phụ lục của văn bản khác",
+    "2023"
+  ],
+  "proposed_split": "test",
+  "source_metadata": {
+    "title": "Quyết định số 04/2023/QĐ-UBND Quy định nội dung, chi phí hỗ trợ chuẩn bị đầu tư và quản lý dự án đối với dự án đầu tư xây dựng theo cơ chế đặc thù thuộc Chương trình mục tiêu quốc gia giai đoạn 2021-2025 trên địa bàn tỉnh Điện Biên",
+    "document_number": "04/2023/QĐ-UBND",
+    "issuing_date": "28/04/2023",
+    "effective_date": "15/05/2023",
+    "issuer": "UBND Tỉnh Điện Biên",
+    "signer_title": "Chủ tịch",
+    "signer": "Lê Thành Đô",
+    "legal_field": "Chưa phân loại",
+    "effect_status": "Hết hiệu lực một phần"
+  },
+  "status": "draft_pending_review",
+  "review_status": "unreviewed",
+  "reviewed_on": null,
+  "hf_files": {
+    "clean_text": "dataset/hf_quyet_dinh/clean_text/qd_035.txt",
+    "raw_html": "dataset/hf_quyet_dinh/raw_html/qd_035.html"
+  }
+}

@@ -154,3 +154,25 @@ test("không tự đoán mảng rỗng khi nguồn có tín hiệu bảng hoặc
   assert.deepEqual(normalized.recipients, ["Sở Tài chính"]);
   assert.deepEqual(changes, []);
 });
+
+test("khôi phục địa danh ở dòng ngày khi nguồn có đúng dòng đó", async () => {
+  const [gold, sourceText] = await Promise.all([
+    readFile(new URL("../dataset/samples/qd_021/gold.json", import.meta.url), "utf8").then(JSON.parse),
+    readFile(new URL("../dataset/samples/qd_021/source.txt", import.meta.url), "utf8"),
+  ]);
+  const candidate = structuredClone(gold);
+  candidate.header.issue_date_text = "ngày 5 tháng 10 năm 2023";
+  const { normalized, changes } = normalizeExtraction(candidate, { sampleId: "qd_021", sourceText });
+  assert.equal(normalized.header.issue_date_text, "Bình Thạnh, ngày 5 tháng 10 năm 2023");
+  assert.ok(changes.some((change) => change.rule === "issue_date_text_keeps_place_from_source_line"));
+
+  // Đã đúng thì không đổi; nguồn không có dòng khớp thì không tự ghép địa danh.
+  assert.equal(
+    normalizeExtraction(gold, { sampleId: "qd_021", sourceText }).changes.some(
+      (change) => change.rule === "issue_date_text_keeps_place_from_source_line",
+    ),
+    false,
+  );
+  const noPlace = normalizeExtraction(candidate, { sampleId: "qd_021", sourceText: "ngày 5 tháng 10 năm 2023" });
+  assert.equal(noPlace.normalized.header.issue_date_text, "ngày 5 tháng 10 năm 2023");
+});

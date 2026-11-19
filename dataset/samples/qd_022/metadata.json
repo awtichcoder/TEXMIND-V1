@@ -1,0 +1,43 @@
+{
+  "sample_id": "qd_022",
+  "source_id": "6357",
+  "document_type": "quyet_dinh",
+  "template_id": null,
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "source.txt",
+  "structured_file": null,
+  "draft_file": "draft.json",
+  "schema_file": "../../../schemas/texmind-document.schema.json",
+  "expected_output_file": null,
+  "preserve_original_content": true,
+  "selection_batch": "batch_2026-11-19",
+  "selection_reason": "Quyết định của Thủ tướng về cổ phần hóa: nhiều dòng '-' không có số thứ tự (không được tự đánh số), số tiền dạng 11.600.000.000 đồng, tên tiếng Anh viết thường.",
+  "selection_features": [
+    "Thủ tướng Chính phủ (TTg)",
+    "gạch đầu dòng không đánh số",
+    "số tiền lớn",
+    "2000"
+  ],
+  "proposed_split": "test",
+  "source_metadata": {
+    "title": "Quyết định số 85/2000/QĐ-TTg Về việc chuyển Công ty Giấy Viễn Đông thành Công ty cổ phần",
+    "document_number": "85/2000/QĐ-TTg",
+    "issuing_date": "18/07/2000",
+    "effective_date": "18/07/2000",
+    "issuer": "Thủ tướng Chính phủ",
+    "signer_title": "Phó Thủ tướng",
+    "signer": "Nguyễn Tấn Dũng",
+    "legal_field": "Chưa phân loại",
+    "effect_status": "Còn hiệu lực"
+  },
+  "status": "draft_pending_review",
+  "review_status": "unreviewed",
+  "reviewed_on": null,
+  "hf_files": {
+    "clean_text": "dataset/hf_quyet_dinh/clean_text/qd_022.txt",
+    "raw_html": "dataset/hf_quyet_dinh/raw_html/qd_022.html"
+  }
+}

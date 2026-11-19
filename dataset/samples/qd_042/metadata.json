@@ -1,0 +1,43 @@
+{
+  "sample_id": "qd_042",
+  "source_id": "183050",
+  "document_type": "quyet_dinh",
+  "template_id": null,
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "source.txt",
+  "structured_file": null,
+  "draft_file": "draft.json",
+  "schema_file": "../../../schemas/texmind-document.schema.json",
+  "expected_output_file": null,
+  "preserve_original_content": true,
+  "selection_batch": "batch_2026-11-19",
+  "selection_reason": "Văn bản phân cấp mới (2025), 6 điều có tiêu đề, khoản 1/2 chứa điểm a) b) c) d); có nơi nhận. Đại diện văn bản hiện hành có cấu trúc lồng nhau.",
+  "selection_features": [
+    "khoản + điểm lồng nhau",
+    "có nơi nhận",
+    "6 điều",
+    "2025"
+  ],
+  "proposed_split": "test",
+  "source_metadata": {
+    "title": "Quyết định số 96/2025/QĐ-UBND Phân cấp thẩm quyền quyết định xác lập, phê duyệt phương án xử lý tài sản được xác lập quyền sở hữu toàn dân trên địa bàn tỉnh Tuyên Quang",
+    "document_number": "96/2025/QĐ-UBND",
+    "issuing_date": "21/10/2025",
+    "effective_date": "22/10/2025",
+    "issuer": "UBND Tỉnh Tuyên Quang",
+    "signer_title": "Chủ tịch",
+    "signer": "Phan Huy Ngọc",
+    "legal_field": "Chưa phân loại",
+    "effect_status": "Hết hiệu lực toàn bộ"
+  },
+  "status": "draft_pending_review",
+  "review_status": "unreviewed",
+  "reviewed_on": null,
+  "hf_files": {
+    "clean_text": "dataset/hf_quyet_dinh/clean_text/qd_042.txt",
+    "raw_html": "dataset/hf_quyet_dinh/raw_html/qd_042.html"
+  }
+}

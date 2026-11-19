@@ -1,8 +1,11 @@
 import { existsSync, readFileSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { basename, dirname, resolve } from "node:path";
+import { requestCodexCliResponseWithRetry } from "./codex_cli_client.mjs";
 import { buildExtractionSystemPrompt } from "./extraction_prompt.mjs";
 import { normalizeExtraction } from "./normalize_extraction.mjs";
+import { requestOpenAICompatibleResponse } from "./openai_compatible_client.mjs";
+import { dropNullOptionals, toStrictOutputSchema } from "./strict_output_schema.mjs";
 import { validateAgainstSchema } from "./validate_json_schema.mjs";
 
 const loadLocalEnv = () => {
@@ -35,15 +38,20 @@ const outputPath = resolve(args.get("--output") ?? "work/ai_extraction/qd_067.pr
 const outputName = basename(outputPath);
 const inferredSampleId = outputName.match(/^(.+?)\.predicted(?:\.|$)/u)?.[1] ?? null;
 const sampleId = args.get("--sample-id") ?? inferredSampleId;
-const apiKey = process.env.DEEPSEEK_API_KEY;
-const configuredBaseUrl = new URL(process.env.DEEPSEEK_BASE_URL ?? "https://api.deepseek.com");
+const apiKey = process.env.OPENAI_API_KEY;
+const configuredBaseUrl = new URL(
+  process.env.OPENAI_BASE_URL ?? "https://api.xingchiapi.com/v1",
+);
 configuredBaseUrl.search = "";
 configuredBaseUrl.hash = "";
 const baseUrl = configuredBaseUrl.toString().replace(/\/$/, "");
-const model = args.get("--model") ?? process.env.DEEPSEEK_MODEL ?? "deepseek-flash";
+const model = args.get("--model") ?? process.env.OPENAI_MODEL ?? "gpt-6.1-sol";
+const actorAuthorization =
+  process.env.OPENAI_ACTOR_AUTHORIZATION ?? "local-image-extension";
+const transport = process.env.OPENAI_TRANSPORT ?? "codex_cli";
 
 if (!apiKey) {
-  console.error("Thiếu DEEPSEEK_API_KEY. Sao chép .env.example thành .env và điền khóa cục bộ.");
+  console.error("Thiếu OPENAI_API_KEY. Sao chép .env.example thành .env và điền khóa cục bộ.");
   process.exit(2);
 }
 
@@ -61,34 +69,55 @@ const userPrompt = [
   sourceText,
 ].join("\n\n");
 
-const requestCompletion = async (messages) => {
-  const response = await fetch(`${baseUrl}/chat/completions`, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      model,
-      messages,
-      response_format: { type: "json_object" },
-      stream: false,
-      temperature: 0,
-      max_tokens: 16000,
-    }),
-  });
-  const payload = await response.json().catch(() => null);
-  if (!response.ok) {
-    const message = payload?.error?.message ?? `HTTP ${response.status}`;
-    throw new Error(`DeepSeek API thất bại: ${message}`);
-  }
-  const choice = payload?.choices?.[0];
-  if (!choice?.message?.content?.trim()) throw new Error("DeepSeek trả về nội dung JSON rỗng.");
-  if (choice.finish_reason === "length") throw new Error("Kết quả bị cắt do giới hạn token.");
-  return choice.message.content;
-};
+const siblingPath = (suffix) =>
+  outputPath.toLowerCase().endsWith(".json")
+    ? `${outputPath.slice(0, -5)}${suffix}`
+    : `${outputPath}${suffix}`;
+const codexDiagnosticsPath = resolve(
+  args.get("--codex-diagnostics") ?? siblingPath(".codex-diagnostics.json"),
+);
+// Provider (Structured Outputs strict) bắt mọi khóa phải nằm trong `required`,
+// nên Codex nhận bản schema strict riêng; schema gốc vẫn dùng để kiểm tra cuối.
+const codexSchemaPath = resolve(siblingPath(".codex-output-schema.json"));
 
 await mkdir(dirname(outputPath), { recursive: true });
+if (transport === "codex_cli") {
+  await writeFile(
+    codexSchemaPath,
+    `${JSON.stringify(toStrictOutputSchema(schema), null, 2)}\n`,
+    "utf8",
+  );
+}
+
+const requestCompletion = (messages) => {
+  if (transport === "codex_cli") {
+    return requestCodexCliResponseWithRetry({
+      baseUrl,
+      apiKey,
+      model,
+      messages,
+      schemaPath: codexSchemaPath,
+      actorAuthorization,
+      diagnosticsPath: codexDiagnosticsPath,
+      onStderr: (chunk) => process.stderr.write(chunk),
+      onRetry: ({ attempt, attempts, error }) =>
+        console.error(
+          `\n[codex] Lần ${attempt}/${attempts} lỗi tạm thời, gọi lại: ${error.message.split("\n").filter((line) => line.includes("ERROR")).pop() ?? error.message.slice(0, 200)}`,
+        ),
+    });
+  }
+  if (transport === "responses_api") {
+    return requestOpenAICompatibleResponse({
+      baseUrl,
+      apiKey,
+      model,
+      messages,
+      actorAuthorization,
+    });
+  }
+  throw new Error(`OPENAI_TRANSPORT không hợp lệ: ${transport}.`);
+};
+
 let rawContent = await requestCompletion([
   { role: "system", content: systemPrompt },
   { role: "user", content: userPrompt },
@@ -117,21 +146,22 @@ try {
   } catch (secondError) {
     const retryPath = outputPath.replace(/\.json$/i, ".repair-failed.txt");
     await writeFile(retryPath, rawContent, "utf8");
-    throw new Error("DeepSeek vẫn trả về JSON sai cú pháp sau một lần sửa.", { cause: secondError });
+    throw new Error("Model vẫn trả về JSON sai cú pháp sau một lần sửa.", { cause: secondError });
   }
 }
 
-const siblingPath = (suffix) =>
-  outputPath.toLowerCase().endsWith(".json")
-    ? `${outputPath.slice(0, -5)}${suffix}`
-    : `${outputPath}${suffix}`;
-const rawPath = siblingPath(".raw.json");
+// Schema strict cho phép null ở khóa tùy chọn; bỏ các null đó để khớp schema gốc.
+candidate = dropNullOptionals(candidate, schema);
+
+const rawPath = resolve(args.get("--raw-output") ?? siblingPath(".raw.json"));
+await mkdir(dirname(rawPath), { recursive: true });
 await writeFile(rawPath, `${JSON.stringify(candidate, null, 2)}\n`, "utf8");
 
 const rawSchemaErrors = validateAgainstSchema(schema, candidate);
 const { normalized, changes } = normalizeExtraction(candidate, { sampleId, sourceText });
 const schemaErrors = validateAgainstSchema(schema, normalized);
-const postprocessPath = siblingPath(".postprocess.json");
+const postprocessPath = resolve(args.get("--report") ?? siblingPath(".postprocess.json"));
+await mkdir(dirname(postprocessPath), { recursive: true });
 await writeFile(
   postprocessPath,
   `${JSON.stringify(
@@ -160,3 +190,4 @@ console.log(`PASS: AI extraction hợp lệ theo schema -> ${outputPath}`);
 console.log(`Bản thô: ${rawPath}`);
 console.log(`Hậu xử lý: ${postprocessPath} (${changes.length} thay đổi)`);
 console.log(`Model: ${model}`);
+console.log(`Transport: ${transport}`);

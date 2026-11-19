@@ -1,0 +1,43 @@
+{
+  "sample_id": "qd_072",
+  "source_id": "139832",
+  "document_type": "quyet_dinh",
+  "template_id": null,
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "source.txt",
+  "structured_file": null,
+  "draft_file": "draft.json",
+  "schema_file": "../../../schemas/texmind-document.schema.json",
+  "expected_output_file": null,
+  "preserve_original_content": true,
+  "selection_batch": "batch_2026-11-19",
+  "selection_reason": "Mức chi hội thi tay nghề: khoản 1 trỏ tới 'Phụ lục đính kèm' (không có trong text), có nơi nhận. Kiểm tra attachments chỉ tham chiếu, không bịa nội dung.",
+  "selection_features": [
+    "có nơi nhận",
+    "tham chiếu 'Phụ lục đính kèm'",
+    "5 điều",
+    "2019"
+  ],
+  "proposed_split": "test",
+  "source_metadata": {
+    "title": "Quyết định số 33/2019/QĐ-UBND Quy định nội dung và mức chi đối với hội thi tay nghề trên địa bàn tỉnh Đồng Tháp",
+    "document_number": "33/2019/QĐ-UBND",
+    "issuing_date": "16/12/2019",
+    "effective_date": "27/12/2019",
+    "issuer": "UBND Tỉnh Đồng Tháp",
+    "signer_title": "Phó Chủ tịch",
+    "signer": "Phạm Thiện Nghĩa",
+    "legal_field": "Chưa phân loại",
+    "effect_status": "Còn hiệu lực"
+  },
+  "status": "draft_pending_review",
+  "review_status": "unreviewed",
+  "reviewed_on": null,
+  "hf_files": {
+    "clean_text": "dataset/hf_quyet_dinh/clean_text/qd_072.txt",
+    "raw_html": "dataset/hf_quyet_dinh/raw_html/qd_072.html"
+  }
+}

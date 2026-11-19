@@ -1,0 +1,43 @@
+{
+  "sample_id": "qd_068",
+  "source_id": "180888",
+  "document_type": "quyet_dinh",
+  "template_id": null,
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "source.txt",
+  "structured_file": null,
+  "draft_file": "draft.json",
+  "schema_file": "../../../schemas/texmind-document.schema.json",
+  "expected_output_file": null,
+  "preserve_original_content": true,
+  "selection_batch": "batch_2026-11-19",
+  "selection_reason": "Mẫu cơ sở đơn giản nhất: chỉ 4 điều một đoạn; định mức 'ban hành kèm theo' không có trong text nên không được bịa phụ lục. Căn cứ có dấu câu không đồng nhất (',', ':', ';').",
+  "selection_features": [
+    "đơn giản: 4 điều không khoản",
+    "không nơi nhận",
+    "ban hành kèm định mức không có trong text",
+    "2025"
+  ],
+  "proposed_split": "train",
+  "source_metadata": {
+    "title": "Quyết định số 26/2025/QĐ-UBND Ban hành định mức kinh tế - kỹ thuật để lập dự toán xây dựng, điều chỉnh bảng giá đất, định giá đất cụ thể trên địa bàn tỉnh Trà Vinh",
+    "document_number": "26/2025/QĐ-UBND",
+    "issuing_date": "14/03/2025",
+    "effective_date": "24/03/2025",
+    "issuer": "UBND tỉnh Trà Vinh",
+    "signer_title": "Phó Chủ tịch",
+    "signer": "Nguyễn Quỳnh Thiện",
+    "legal_field": "Chưa phân loại",
+    "effect_status": "Còn hiệu lực"
+  },
+  "status": "draft_pending_review",
+  "review_status": "unreviewed",
+  "reviewed_on": null,
+  "hf_files": {
+    "clean_text": "dataset/hf_quyet_dinh/clean_text/qd_068.txt",
+    "raw_html": "dataset/hf_quyet_dinh/raw_html/qd_068.html"
+  }
+}

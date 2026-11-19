@@ -1,0 +1,92 @@
+{
+  "template_id": "TM-QD-002",
+  "name": "Quyết định hành chính không có bảng dữ liệu",
+  "version": "0.1",
+  "document_type": "quyet_dinh",
+  "source_sample": "qd_021",
+  "style_reference": "dataset/van_ban_hanh_chinh/output_01.docx",
+  "page": {
+    "size": "A4",
+    "orientation": "portrait",
+    "margins_cm": {
+      "top": 2.0,
+      "bottom": 2.0,
+      "left": 3.0,
+      "right": 2.0
+    }
+  },
+  "typography": {
+    "font_family": "Times New Roman",
+    "body_size_pt": 14,
+    "line_spacing": 1.15,
+    "text_color": "000000"
+  },
+  "layout": {
+    "signature_new_page": false
+  },
+  "blocks": [
+    "issuer_and_national_header",
+    "document_number_and_date",
+    "document_title",
+    "legal_bases",
+    "articles",
+    "recipients_and_signature"
+  ],
+  "capabilities": {
+    "data_tables": false,
+    "referenced_attachments_without_content": true
+  },
+  "required_fields": [
+    "issuer",
+    "document_number",
+    "issuing_place_and_date",
+    "title",
+    "legal_bases",
+    "articles",
+    "recipients",
+    "signer_title",
+    "signer"
+  ],
+  "quality_checks": [
+    "preserve_all_source_content",
+    "no_invented_facts",
+    "data_tables_must_be_empty",
+    "render_has_no_clipping_or_overlap",
+    "docx_is_editable"
+  ],
+  "validation": {
+    "sample_pair": "structured_02.json -> outputs/qd_021.rendered.docx",
+    "verified_on": "2026-11-12",
+    "render_page_count": 2,
+    "content_values_verified": 40,
+    "preserve_only_parts_verified": 8,
+    "output_sha256": "3f2893f6f1d8b5515f84bcc858ce7d7418cd48c5bd8acf1841240d5a3e1a06b4",
+    "regression_samples": [
+      {
+        "sample_id": "qd_014",
+        "input": "dataset/van_ban_hanh_chinh/structured_04.json",
+        "output": "outputs/qd_014.rendered.docx",
+        "render_page_count": 4,
+        "content_values_verified": 51,
+        "preserve_only_parts_verified": 8,
+        "nested_clauses_verified": true,
+        "empty_recipients_preserved": true,
+        "output_sha256": "8d287fe8f15098f9b52094f45fe7fdf59d35871146b9faa13cf64f2d1ca7cfc2"
+      },
+      {
+        "sample_id": "qd_067",
+        "input": "dataset/van_ban_hanh_chinh/structured_03.json",
+        "output": "outputs/qd_067.rendered.docx",
+        "render_page_count": 3,
+        "content_values_verified": 61,
+        "preserve_only_parts_verified": 8,
+        "nested_clauses_verified": true,
+        "attachment_references_verified": 12,
+        "attachment_bodies_not_invented": true,
+        "output_sha256": "2cfe30e209c675646deafbcaa7f7d1fb41e3206a7f1b7feccfef73f82d074340"
+      }
+    ],
+    "result": "prototype_verified"
+  },
+  "review_status": "prototype_verified"
+}
