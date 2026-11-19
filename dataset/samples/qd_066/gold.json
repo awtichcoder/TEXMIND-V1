@@ -1,0 +1,198 @@
+{
+  "schema_version": "1.0",
+  "sample_id": "qd_066",
+  "document_type": "quyet_dinh",
+  "language": "vi",
+  "template": {
+    "id": "TM-QD-001",
+    "version": "0.1"
+  },
+  "source": {
+    "source_id": "184046",
+    "dataset": "th1nhng0/vietnamese-legal-documents",
+    "license": "CC BY 4.0",
+    "input_file": "input_01.txt",
+    "preserve_original_content": true
+  },
+  "header": {
+    "issuer": "ỦY BAN NHÂN DÂN TỈNH GIA LAI",
+    "national_heading": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM",
+    "motto": "Độc lập - Tự do - Hạnh phúc",
+    "document_number": "60/2025/QĐ-UBND",
+    "issue_place": "Gia Lai",
+    "issue_date": "2025-11-30",
+    "issue_date_text": "Gia Lai, ngày 30 tháng 11 năm 2025"
+  },
+  "title": {
+    "document_name": "QUYẾT ĐỊNH",
+    "subject": "Quy định khung giá thuê nhà ở xã hội do cá nhân tự đầu tư xây dựng trên địa bàn tỉnh Gia Lai"
+  },
+  "legal_bases": [
+    "Căn cứ Luật Tổ chức chính quyền địa phương số 72/2025/QH15;",
+    "Căn cứ Luật Ban hành văn bản quy phạm pháp luật số 64/2025/QH15;",
+    "Căn cứ Luật Sửa đổi, bổ sung một số điều của Luật Ban hành văn bản quy phạm pháp luật số 87/2025/QH15;",
+    "Căn cứ Luật Xây dựng số 50/2014/QH13;",
+    "Căn cứ Luật Sửa đổi, bổ sung một số điều của Luật Xây dựng số 62/2020/QH14;",
+    "Căn cứ Luật Nhà ở số 27/2023/QH15;",
+    "Căn cứ Nghị định số 100/2024/NĐ-CP của Chính phủ quy định chi tiết một số điều của Luật Nhà ở về phát triển và quản lý nhà ở xã hội;",
+    "Theo đề nghị của Giám đốc Sở Xây dựng;"
+  ],
+  "enactment": "Ủy ban nhân dân ban hành Quyết định quy định khung giá thuê nhà ở xã hội do cá nhân tự đầu tư xây dựng trên địa bàn tỉnh Gia Lai.",
+  "articles": [
+    {
+      "number": 1,
+      "heading": "Phạm vi điều chỉnh",
+      "clauses": [
+        {
+          "number": "1",
+          "text": "Quyết định này quy định chi tiết khoản 5 Điều 87 Luật Nhà ở số 27/2023/QH15 về khung giá thuê nhà ở xã hội do cá nhân tự đầu tư xây dựng."
+        },
+        {
+          "number": "2",
+          "text": "Những nội dung không quy định trong Quyết định này thì thực hiện theo quy định của pháp luật hiện hành có liên quan."
+        }
+      ],
+      "related_table_ids": []
+    },
+    {
+      "number": 2,
+      "heading": "Đối tượng áp dụng",
+      "clauses": [
+        {
+          "number": "1",
+          "text": "Cá nhân tự đầu tư xây dựng nhà ở xã hội để cho thuê trên địa bàn tỉnh Gia Lai."
+        },
+        {
+          "number": "2",
+          "text": "Các đối tượng được thuê nhà ở xã hội theo quy định của Luật số 27/2023/QH15."
+        },
+        {
+          "number": "3",
+          "text": "Các cơ quan quản lý nhà nước, các tổ chức, cá nhân khác có liên quan."
+        }
+      ],
+      "related_table_ids": []
+    },
+    {
+      "number": 3,
+      "heading": "Khung giá thuê nhà ở xã hội do cá nhân tự đầu tư xây dựng",
+      "clauses": [],
+      "related_table_ids": ["price_framework"]
+    },
+    {
+      "number": 4,
+      "heading": "Điều khoản thi hành",
+      "clauses": [
+        {
+          "number": "1",
+          "text": "Quyết định này có hiệu lực kể từ ngày 10 tháng 12 năm 2025."
+        },
+        {
+          "number": "2",
+          "text": "Quyết định số 44/2024/QĐ-UBND ngày 17 tháng 8 năm 2024 của Ủy ban nhân dân tỉnh Bình Định quy định khung giá thuê nhà ở xã hội do cá nhân tự đầu tư xây dựng trên địa bàn tỉnh Bình Định hết hiệu lực kể từ ngày Quyết định này có hiệu lực thi hành."
+        },
+        {
+          "number": "3",
+          "text": "Chánh Văn phòng Ủy ban nhân dân tỉnh; Giám đốc các Sở, Thủ trưởng các ban, ngành; Chủ tịch Ủy ban nhân dân các xã, phường và các tổ chức, cá nhân có liên quan chịu trách nhiệm thi hành Quyết định này./."
+        }
+      ],
+      "related_table_ids": []
+    }
+  ],
+  "data_tables": [
+    {
+      "table_id": "price_framework",
+      "title": "Khung giá thuê nhà ở xã hội do cá nhân tự đầu tư xây dựng",
+      "unit": "đồng/m² sàn sử dụng/tháng",
+      "columns": ["Stt", "Loại nhà ở xã hội", "Giá cho thuê tối thiểu", "Giá cho thuê tối đa"],
+      "rows": [
+        {
+          "group": 1,
+          "description": "Nhà 1 tầng, căn hộ khép kín, kết cấu tường gạch chịu lực, mái bê tông cốt thép đổ tại chỗ",
+          "minimum_rent": { "source_text": "14.276", "value_vnd": 14276 },
+          "maximum_rent": { "source_text": "30.915", "value_vnd": 30915 }
+        },
+        {
+          "group": 2,
+          "description": "Nhà riêng lẻ từ 2 đến 3 tầng, kết cấu khung chịu lực bê tông cốt thép; tường bao xây gạch; sàn, mái bê tông cốt thép đổ tại chỗ không có tầng hầm",
+          "minimum_rent": { "source_text": "21.895", "value_vnd": 21895 },
+          "maximum_rent": { "source_text": "47.413", "value_vnd": 47413 }
+        },
+        {
+          "group": 3,
+          "description": "Nhà riêng lẻ từ 4 đến 5 tầng, kết cấu khung chịu lực bê tông cốt thép; tường bao xây gạch; sàn, mái bê tông cốt thép đổ tại chỗ không có tầng hầm",
+          "minimum_rent": { "source_text": "18.523", "value_vnd": 18523 },
+          "maximum_rent": { "source_text": "40.092", "value_vnd": 40092 }
+        },
+        {
+          "group": 4,
+          "description": "Nhà từ 4 đến 5 tầng, kết cấu khung chịu lực bê tông cốt thép; tường bao xây gạch; sàn, mái bê tông cốt thép đổ tại chỗ, có 1 tầng hầm. Diện tích xây dựng từ 180m² trở lên",
+          "minimum_rent": { "source_text": "22.004", "value_vnd": 22004 },
+          "maximum_rent": { "source_text": "47.621", "value_vnd": 47621 }
+        },
+        {
+          "group": 5,
+          "description": "Nhà chung cư có số tầng ≤ 5 không có tầng hầm",
+          "minimum_rent": { "source_text": "20.895", "value_vnd": 20895 },
+          "maximum_rent": { "source_text": "45.250", "value_vnd": 45250 }
+        },
+        {
+          "group": 5,
+          "description": "Có 1 tầng hầm",
+          "minimum_rent": { "source_text": "24.428", "value_vnd": 24428 },
+          "maximum_rent": { "source_text": "52.899", "value_vnd": 52899 }
+        },
+        {
+          "group": 6,
+          "description": "Nhà chung cư từ 5 < số tầng ≤ 7 không có tầng hầm",
+          "minimum_rent": { "source_text": "26.898", "value_vnd": 26898 },
+          "maximum_rent": { "source_text": "58.289", "value_vnd": 58289 }
+        },
+        {
+          "group": 6,
+          "description": "Có 1 tầng hầm",
+          "minimum_rent": { "source_text": "28.770", "value_vnd": 28770 },
+          "maximum_rent": { "source_text": "62.345", "value_vnd": 62345 }
+        }
+      ]
+    }
+  ],
+  "recipients": [
+    "Như khoản 3 Điều 4;",
+    "Vụ pháp chế - Bộ Xây dựng;",
+    "Cục KTVB&QLXLVPHC (Bộ Tư pháp);",
+    "TTTU, TTHĐND tỉnh, Đoàn ĐBQH tỉnh, UBMTTQVN tỉnh;",
+    "CT và các PCT UBND tỉnh;",
+    "Sở Tư pháp;",
+    "LĐ+CV VP UBND tỉnh;",
+    "TTPVHCC tỉnh;",
+    "Lưu: VT, X5."
+  ],
+  "signature": {
+    "authority": "TM. ỦY BAN NHÂN DÂN",
+    "delegation": "KT. CHỦ TỊCH",
+    "position": "PHÓ CHỦ TỊCH",
+    "signed_status": "(Đã ký)",
+    "signer_name": "Nguyễn Hữu Quế"
+  },
+  "legal_effect": {
+    "effective_from": "2025-12-10",
+    "supersedes": ["44/2024/QĐ-UBND ngày 17 tháng 8 năm 2024 của Ủy ban nhân dân tỉnh Bình Định"],
+    "review_note": "Trích xuất từ nội dung nguồn; chưa được chuyên gia pháp lý kiểm duyệt và không dùng thay tư vấn pháp lý."
+  },
+  "provenance": {
+    "normalizations": [
+      {
+        "source_text": "t rên địa bàn tỉnh Gia Lai",
+        "normalized_text": "trên địa bàn tỉnh Gia Lai",
+        "reason": "Ranh giới hai thẻ HTML tạo khoảng trắng giả giữa chữ t và rên."
+      }
+    ],
+    "source_anomalies": []
+  },
+  "quality": {
+    "extraction_status": "verified",
+    "content_status": "source_preserved",
+    "legal_review_status": "not_expert_reviewed"
+  }
+}

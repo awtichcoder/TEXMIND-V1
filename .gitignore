@@ -11,3 +11,4 @@ work/
 npm-debug.log*
 ~$*.docx
 .~lock.*#
+runs/

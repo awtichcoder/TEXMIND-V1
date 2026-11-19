@@ -97,6 +97,8 @@ def split_issuer(value):
     for marker in (" TỈNH ", " THÀNH PHỐ "):
         if marker in value:
             left, right = value.split(marker, 1)
+            if marker == " THÀNH PHỐ ":
+                return [left, "THÀNH PHỐ", right]
             return [left, f"{marker.strip()} {right}"]
     return [value]
 
@@ -121,9 +123,11 @@ def add_header_block(document, data):
     table = document.add_table(rows=2, cols=2)
     table.autofit = False
     set_table_borders(table, "nil")
+    table.columns[0].width = Cm(7)
+    table.columns[1].width = Cm(9)
     for row in table.rows:
-        row.cells[0].width = Cm(8)
-        row.cells[1].width = Cm(8)
+        row.cells[0].width = Cm(7)
+        row.cells[1].width = Cm(9)
         for cell in row.cells:
             set_cell_margins(cell, 0, 0, 0, 0)
     add_cell_lines(table.cell(0, 0), [*split_issuer(data["header"]["issuer"]), "-------"], bold=True)
@@ -167,7 +171,13 @@ def add_data_table(document, table_data):
         for index, cell in enumerate(row.cells):
             cell.width = widths[index]
     set_table_borders(table, "single", "000000", "8")
-    columns = table_data["columns"]
+    columns = list(table_data["columns"])
+    # Bảng 4 cột: nhóm, mô tả, tối thiểu, tối đa. Nếu chỉ có 3 tiêu đề (thiếu cột nhóm)
+    # thì thêm "TT" ở đầu ("STT" bị gãy dòng trong cột rộng 1 cm); thiếu nữa thì để trống,
+    # không để renderer lỗi IndexError.
+    if len(columns) == 3:
+        columns = ["TT", *columns]
+    columns = (columns + ["", "", "", ""])[:4]
     fill_table_cell(table.cell(0, 0), columns[0], bold=True)
     fill_table_cell(table.cell(0, 1), columns[1], bold=True)
     fill_table_cell(table.cell(0, 2), columns[2], bold=True)
@@ -200,6 +210,22 @@ def add_data_table(document, table_data):
     return table
 
 
+def add_clause(document, clause, level=0):
+    number = clause.get("number")
+    if number is None:
+        prefix = ""
+    elif level == 0:
+        prefix = f"{number}. "
+    else:
+        prefix = f"{number}) "
+    paragraph = add_text_paragraph(document, f'{prefix}{clause["text"]}')
+    if level > 0:
+        paragraph.paragraph_format.left_indent = Cm(0.75 * level)
+        paragraph.paragraph_format.first_line_indent = Cm(-0.5)
+    for child in clause.get("children", []):
+        add_clause(document, child, level + 1)
+
+
 def add_articles(document, data):
     tables_by_id = {item["table_id"]: item for item in data.get("data_tables", [])}
     for article in data["articles"]:
@@ -210,16 +236,16 @@ def add_articles(document, data):
             keep=True,
         )
         for clause in article.get("clauses", []):
-            prefix = f'{clause["number"]}. ' if clause.get("number") is not None else ""
-            add_text_paragraph(document, f'{prefix}{clause["text"]}')
+            add_clause(document, clause)
         for table_id in article.get("related_table_ids", []):
             if table_id not in tables_by_id:
                 raise ValueError(f"Không tìm thấy data_table được tham chiếu: {table_id}")
             add_data_table(document, tables_by_id[table_id])
 
 
-def add_recipients_and_signature(document, data):
-    document.add_page_break()
+def add_recipients_and_signature(document, data, template):
+    if template.get("layout", {}).get("signature_new_page", True):
+        document.add_page_break()
     table = document.add_table(rows=1, cols=2)
     table.autofit = False
     set_table_borders(table, "nil")
@@ -233,13 +259,15 @@ def add_recipients_and_signature(document, data):
 
     left = table.cell(0, 0)
     left.text = ""
-    label = left.paragraphs[0]
-    format_paragraph(label, WD_ALIGN_PARAGRAPH.LEFT, 8, 0)
-    label.paragraph_format.line_spacing = 1.0
-    set_run_font(label.add_run("Nơi nhận:"), size=11, bold=True, italic=True)
-    for recipient in data.get("recipients", []):
-        run = label.add_run(f"\n- {recipient}")
-        set_run_font(run, size=11)
+    recipients = data.get("recipients", [])
+    if recipients:
+        label = left.paragraphs[0]
+        format_paragraph(label, WD_ALIGN_PARAGRAPH.LEFT, 8, 0)
+        label.paragraph_format.line_spacing = 1.0
+        set_run_font(label.add_run("Nơi nhận:"), size=11, bold=True, italic=True)
+        for recipient in recipients:
+            run = label.add_run(f"\n- {recipient}")
+            set_run_font(run, size=11)
 
     signature = data["signature"]
     lines = [signature["authority"]]
@@ -292,7 +320,7 @@ def build_document(data, template, reference_path):
         add_text_paragraph(document, basis, italic=True)
     add_text_paragraph(document, data["enactment"], italic=True)
     add_articles(document, data)
-    add_recipients_and_signature(document, data)
+    add_recipients_and_signature(document, data, template)
     return document
 
 

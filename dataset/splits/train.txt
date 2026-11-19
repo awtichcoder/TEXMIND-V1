@@ -1,0 +1,4 @@
+# Mẫu dùng để train / làm ví dụ
+qd_066
+qd_030
+qd_010

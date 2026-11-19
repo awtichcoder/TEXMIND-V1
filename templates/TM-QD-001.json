@@ -21,6 +21,9 @@
     "line_spacing": 1.15,
     "text_color": "000000"
   },
+  "layout": {
+    "signature_new_page": true
+  },
   "blocks": [
     "issuer_and_national_header",
     "document_number_and_date",

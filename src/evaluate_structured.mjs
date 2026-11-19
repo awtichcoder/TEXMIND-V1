@@ -136,6 +136,8 @@ export function evaluateExtraction(expected, actual, schemaErrors = []) {
     [expected.header?.document_number, actual.header?.document_number],
     [expected.header?.issue_place, actual.header?.issue_place],
     [expected.header?.issue_date, actual.header?.issue_date],
+    // 2.1: thêm dòng ngày đầy đủ (renderer in nguyên dòng này; thiếu địa danh là lỗi nhìn thấy trên DOCX).
+    [expected.header?.issue_date_text, actual.header?.issue_date_text],
     [expected.title?.document_name, actual.title?.document_name],
     [expected.title?.subject, actual.title?.subject],
     [expected.enactment, actual.enactment],
@@ -202,7 +204,7 @@ export function evaluateExtraction(expected, actual, schemaErrors = []) {
   return {
     schema_valid: schemaErrors.length === 0,
     schema_errors: schemaErrors,
-    scoring_version: "2.0",
+    scoring_version: "2.1",
     ...strictEvaluation,
     strict_evaluation: strictEvaluation,
     tolerant_evaluation: tolerantEvaluation,

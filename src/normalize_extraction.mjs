@@ -33,6 +33,20 @@ const hasDataTableSignal = (sourceText) =>
     String(sourceText ?? ""),
   );
 
+// Tìm dòng nguồn có dạng "<địa danh>, <issue_date_text>" (vd. "Bình Thạnh, ngày 5 tháng 10 năm 2023")
+// khi AI chỉ giữ phần "ngày ...". Chỉ trả về khi dòng đó có trong nguồn, không tự ghép.
+export const sourceDateLineWithPlace = (sourceText, issueDateText) => {
+  const dateText = normalizedText(issueDateText);
+  if (!sourceText || !dateText || !/^ngày\b/iu.test(dateText)) return null;
+  for (const rawLine of String(sourceText).split(/\r?\n/u)) {
+    const line = normalizedText(rawLine);
+    if (line === dateText || !line.endsWith(dateText)) continue;
+    const prefix = line.slice(0, line.length - dateText.length);
+    if (/^[^,]{1,60},\s*$/u.test(prefix)) return line;
+  }
+  return null;
+};
+
 const recordChange = (changes, rule, path, before, after) => {
   changes.push({ rule, path, before: before ?? null, after });
 };
@@ -64,6 +78,18 @@ export function normalizeExtraction(candidate, { sampleId = null, sourceText = n
   if (motto && normalized.header && !normalizedText(normalized.header.motto)) {
     recordChange(changes, "motto_from_exact_source_phrase", "$.header.motto", normalized.header.motto, motto);
     normalized.header.motto = motto;
+  }
+
+  const dateLine = sourceDateLineWithPlace(sourceText, normalized.header?.issue_date_text);
+  if (dateLine) {
+    recordChange(
+      changes,
+      "issue_date_text_keeps_place_from_source_line",
+      "$.header.issue_date_text",
+      normalized.header.issue_date_text,
+      dateLine,
+    );
+    normalized.header.issue_date_text = dateLine;
   }
 
   if (Array.isArray(normalized.data_tables) && normalized.data_tables.length === 0) {

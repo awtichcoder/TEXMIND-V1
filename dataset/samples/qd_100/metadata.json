@@ -1,0 +1,43 @@
+{
+  "sample_id": "qd_100",
+  "source_id": "168304",
+  "document_type": "quyet_dinh",
+  "template_id": null,
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "source.txt",
+  "structured_file": null,
+  "draft_file": "draft.json",
+  "schema_file": "../../../schemas/texmind-document.schema.json",
+  "expected_output_file": null,
+  "preserve_original_content": true,
+  "selection_batch": "batch_2026-11-19",
+  "selection_reason": "Điều 3 'Trách nhiệm thi hành' có điểm a) b) ngay dưới điều, không qua khoản; Điều 2 có tiêu đề rồi nội dung ở dòng riêng. Nơi nhận dài. Kiểm tra mô hình không tự chế khoản.",
+  "selection_features": [
+    "điểm a) b) nằm thẳng dưới điều (không có khoản)",
+    "điều có tiêu đề + đoạn văn riêng",
+    "có nơi nhận",
+    "2024"
+  ],
+  "proposed_split": "train",
+  "source_metadata": {
+    "title": "Quyết định số 16/2024/QĐ-UBND Quy định vị trí, chức năng, nhiệm vụ, nguyên tắc hoạt động, cơ cấu tổ chức, chế độ chính sách và một số điều kiện đảm bảo hoạt động của tổ bảo vệ an ninh, trật tự trên địa bàn tỉnh Hưng Yên.",
+    "document_number": "16/2024/QĐ-UBND",
+    "issuing_date": "26/06/2024",
+    "effective_date": "06/07/2024",
+    "issuer": "UBND Tỉnh Hưng Yên",
+    "signer_title": "Chủ tịch",
+    "signer": "Nguyễn Duy Hưng",
+    "legal_field": "xây dựng lực lượng",
+    "effect_status": "Hết hiệu lực toàn bộ"
+  },
+  "status": "draft_pending_review",
+  "review_status": "unreviewed",
+  "reviewed_on": null,
+  "hf_files": {
+    "clean_text": "dataset/hf_quyet_dinh/clean_text/qd_100.txt",
+    "raw_html": "dataset/hf_quyet_dinh/raw_html/qd_100.html"
+  }
+}

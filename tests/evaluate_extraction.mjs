@@ -2,8 +2,10 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { evaluateExtraction } from "../src/evaluate_structured.mjs";
+import { normalizeExtraction } from "../src/normalize_extraction.mjs";
 
 const goldUrl = new URL("../dataset/van_ban_hanh_chinh/structured_03.json", import.meta.url);
+const qd067SourceUrl = new URL("../dataset/van_ban_hanh_chinh/input_03.txt", import.meta.url);
 const qd014GoldUrl = new URL("../dataset/van_ban_hanh_chinh/structured_04.json", import.meta.url);
 const qd014PredictionUrl = new URL("../outputs/qd_014.rerun.normalized.json", import.meta.url);
 const qd067PredictionUrl = new URL("../outputs/qd_067.predicted.normalized.json", import.meta.url);
@@ -37,7 +39,7 @@ test("qd_014 giữ riêng điểm nghiêm ngặt và điểm dung sai", async ()
     readFile(qd014PredictionUrl, "utf8").then(JSON.parse),
   ]);
   const report = evaluateExtraction(gold, prediction, []);
-  assert.equal(report.scoring_version, "2.0");
+  assert.equal(report.scoring_version, "2.1");
   assert.equal(report.clauses.matches, 28);
   assert.equal(report.tolerant_evaluation.clauses.matches, 29);
   assert.equal(report.diagnostics.clause_number_mismatches.length, 2);
@@ -46,15 +48,21 @@ test("qd_014 giữ riêng điểm nghiêm ngặt và điểm dung sai", async ()
   assert.ok(report.warnings.some((item) => item.code === "clause_number_mismatch"));
 });
 
-test("qd_067 vẫn đạt 100% sau khi nâng cấp bộ chấm", async () => {
-  const [gold, prediction] = await Promise.all([
+test("qd_067: bộ chấm 2.1 bắt lỗi dòng ngày thiếu địa danh; chuẩn hóa theo nguồn sửa được", async () => {
+  const [gold, prediction, sourceText] = await Promise.all([
     readFile(goldUrl, "utf8").then(JSON.parse),
     readFile(qd067PredictionUrl, "utf8").then(JSON.parse),
+    readFile(qd067SourceUrl, "utf8"),
   ]);
   const report = evaluateExtraction(gold, prediction, []);
-  assert.equal(report.strict_evaluation.overall_score, 1);
-  assert.equal(report.tolerant_evaluation.overall_score, 1);
+  assert.equal(prediction.header.issue_date_text, "ngày 29 tháng 12 năm 2025");
+  assert.ok(report.strict_evaluation.overall_score < 1);
   assert.deepEqual(report.warnings, []);
+
+  const { normalized } = normalizeExtraction(prediction, { sampleId: "qd_067", sourceText });
+  const fixed = evaluateExtraction(gold, normalized, []);
+  assert.equal(fixed.strict_evaluation.overall_score, 1);
+  assert.equal(fixed.tolerant_evaluation.overall_score, 1);
 });
 
 test("qd_021 tách riêng khác biệt dấu câu ở nơi nhận", async () => {
@@ -66,8 +74,19 @@ test("qd_021 tách riêng khác biệt dấu câu ở nơi nhận", async () => 
   assert.equal(report.recipients.matches, 2);
   assert.equal(report.tolerant_evaluation.recipients.matches, 12);
   assert.equal(report.attachments.matches, 1);
-  assert.equal(report.tolerant_evaluation.overall_score, 1);
+  // Chỉ còn lệch dòng ngày (thiếu "Bình Thạnh, ") – lỗi mà bộ chấm 2.0 bỏ sót.
+  assert.equal(report.tolerant_evaluation.scalar_accuracy, 14 / 15);
   assert.deepEqual(report.warnings, []);
+});
+
+test("2.1: dòng ngày thiếu địa danh bị trừ điểm trường đơn", async () => {
+  const gold = JSON.parse(await readFile(goldUrl, "utf8"));
+  const prediction = structuredClone(gold);
+  prediction.header.issue_date_text = prediction.header.issue_date_text.replace(/^[^,]+,\s*/u, "");
+  assert.notEqual(prediction.header.issue_date_text, gold.header.issue_date_text);
+  const report = evaluateExtraction(gold, prediction, []);
+  assert.ok(report.strict_evaluation.scalar_accuracy < 1);
+  assert.ok(report.strict_evaluation.overall_score < 1);
 });
 
 test("qd_010 cảnh báo số clause lệch và heading bị lặp thành clause", async () => {

@@ -1,0 +1,174 @@
+{
+  "articles": [
+    {
+      "clauses": [
+        {
+          "children": [],
+          "number": "1",
+          "text": "Phạm vi điều chỉnh: Các hoạt động có liên quan đến công tác tổ chức thi tay nghề cấp tỉnh, cấp cơ sở (tại đơn vị) để tuyển chọn thí sinh tham dự thi tay nghề cấp quốc gia."
+        },
+        {
+          "children": [],
+          "number": "2",
+          "text": "Đối tượng áp dụng: các cơ quan, đơn vị, tổ chức sử dụng nguồn vốn ngân sách nhà nước hoặc nguồn kinh phí hỗ trợ của các tổ chức, cá nhân, doanh nghiệp và các nguồn huy động tài trợ hợp pháp khác để thực hiện các hoạt động thi tay nghề cấp cơ sở và các cá nhân, tổ chức khác có liên quan."
+        }
+      ],
+      "heading": "Phạm vi điều chỉnh và đối tượng áp dụng",
+      "number": 1,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [
+        {
+          "children": [],
+          "number": "1",
+          "text": "Hội thi tay nghề cấp tỉnh: Chi tiết theo Phụ lục đính kèm."
+        },
+        {
+          "children": [
+            {
+              "children": [],
+              "number": null,
+              "text": "Căn cứ nội dung và mức chi quy định đối với Hội thi tay nghề cấp tỉnh, Thủ trưởng đơn vị quyết định nội dung và mức chi cụ thể cho Hội thi tay nghề cấp cơ sở theo quy mô cuộc thi và khả năng kinh phí của đơn vị, nhưng không vượt quá mức chi đối với Hội thi tay nghề cấp tỉnh."
+            }
+          ],
+          "number": "2",
+          "text": "Hội thi tay nghề cấp cơ sở:"
+        },
+        {
+          "children": [],
+          "number": "3",
+          "text": "Các nội dung khác có liên quan thực hiện theo quy định tại Thông tư liên tịch số 43/2012/TTLT/BTC-BLĐTBXH ngày 14 tháng 3 năm 2012 của Bộ trưởng Bộ Tài chính, Bộ trưởng Bộ Lao động - Thương binh và Xã hội quy định nội dung và mức chi hoạt động thi tay nghề các cấp."
+        }
+      ],
+      "heading": "Nội dung và mức chi đối với hội thi tay nghề",
+      "number": 2,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [
+        {
+          "children": [],
+          "number": "1",
+          "text": "Nguồn sự nghiệp đào tạo được giao hàng năm."
+        },
+        {
+          "children": [],
+          "number": "2",
+          "text": "Kinh phí hỗ trợ của các tổ chức, cá nhân, doanh nghiệp và các nguồn huy động tài trợ hợp pháp khác."
+        }
+      ],
+      "heading": "Nguồn kinh phí thực hiện",
+      "number": 3,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [],
+      "heading": "Quyết định có hiệu lực kể từ ngày 27 tháng 12 năm 2019.",
+      "number": 4,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [],
+      "heading": "Chánh Văn phòng Ủy ban nhân dân tỉnh; Thủ trưởng các Sở, ngành Tỉnh; Chủ tịch Ủy ban nhân dân các huyện, thị xã, thành phố; các cơ quan, tổ chức, cá nhân có liên quan chịu trách nhiệm thi hành Quyết định này./.",
+      "number": 5,
+      "related_table_ids": []
+    }
+  ],
+  "attachments": [
+    {
+      "id": "phu_luc",
+      "included_in_source": false,
+      "source_reference": "Điều 2 khoản 1",
+      "title": "Phụ lục đính kèm"
+    }
+  ],
+  "data_tables": [],
+  "document_type": "quyet_dinh",
+  "enactment": "QUYẾT ĐỊNH:",
+  "header": {
+    "document_number": "33/2019/QĐ-UBND",
+    "issue_date": "2019-12-16",
+    "issue_date_text": "Đồng Tháp, ngày 16 tháng 12 năm 2019",
+    "issue_place": "Đồng Tháp",
+    "issuer": "ỦY BAN NHÂN DÂN TỈNH ĐỒNG THÁP",
+    "motto": "Độc lập – Tự do – Hạnh phúc",
+    "national_heading": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM"
+  },
+  "language": "vi",
+  "legal_bases": [
+    "Căn cứ Luật giá ngày 20 tháng 6 năm 2012;",
+    "Căn cứ Luật Tổ chức chính quyền địa phương ngày 19 tháng 6 năm 2015;",
+    "Căn cứ Thông tư liên tịch số 43/2012/TTLT/BTC-BLĐTBXH ngày 14 tháng 3 năm 2012 của Bộ trưởng Bộ Tài chính, Bộ trưởng Bộ Lao động – Thương binh và Xã hội quy định nội dung và mức chi hoạt động thi tay nghề các cấp;",
+    "Theo đề nghị của Giám đốc Sở Tài chính."
+  ],
+  "legal_effect": {
+    "effective_from": "2019-12-27",
+    "review_note": "Kết quả trích xuất chưa được chuyên gia pháp lý kiểm duyệt và không thay thế tư vấn pháp lý.",
+    "supersedes": []
+  },
+  "provenance": {
+    "normalizations": [
+      {
+        "normalized_text": "2019-12-16",
+        "reason": "Chuyển ngày ban hành sang định dạng ISO 8601.",
+        "source_text": "ngày 16 tháng 12 năm 2019"
+      },
+      {
+        "normalized_text": "2019-12-27",
+        "reason": "Chuyển ngày có hiệu lực sang định dạng ISO 8601.",
+        "source_text": "ngày 27 tháng 12 năm 2019"
+      }
+    ],
+    "source_anomalies": [
+      {
+        "note": "Nguồn tham chiếu Phụ lục nhưng không cung cấp nội dung Phụ lục.",
+        "source_text": "Hội thi tay nghề cấp tỉnh: Chi tiết theo Phụ lục đính kèm."
+      }
+    ]
+  },
+  "quality": {
+    "content_status": "source_preserved",
+    "extraction_status": "verified",
+    "legal_review_status": "not_expert_reviewed",
+    "source_consistency": "warning",
+    "warnings": [
+      "Nguồn không cung cấp source_id, dataset, license và input_file; các trường này ghi nhận tình trạng không được cung cấp.",
+      "Phụ lục được tham chiếu tại Điều 2 khoản 1 không có nội dung trong nguồn."
+    ]
+  },
+  "recipients": [
+    "Như Điều 5;",
+    "Chính phủ;",
+    "Bộ Tài chính;",
+    "Cục Kiểm tra văn bản QPPL - Bộ Tư pháp;",
+    "Đoàn ĐBQH tỉnh;",
+    "TT/TU, TT/HĐND tỉnh;",
+    "CT và các PCT/UBND tỉnh;",
+    "Sở Tư pháp;",
+    "Công báo tỉnh;",
+    "LĐVP/UBND tỉnh;",
+    "Lưu: VT, KT/N.Sương."
+  ],
+  "sample_id": "qd_072",
+  "schema_version": "1.0",
+  "signature": {
+    "authority": "TM. ỦY BAN NHÂN DÂN",
+    "delegation": "KT. CHỦ TỊCH",
+    "position": "PHÓ CHỦ TỊCH",
+    "signed_status": "(Đã ký)",
+    "signer_name": "Phạm Thiện Nghĩa"
+  },
+  "source": {
+    "dataset": "Không được cung cấp trong nguồn",
+    "input_file": "Không được cung cấp trong nguồn",
+    "license": "Không được cung cấp trong nguồn",
+    "preserve_original_content": true,
+    "source_id": "Không được cung cấp trong nguồn"
+  },
+  "template": null,
+  "title": {
+    "document_name": "QUYẾT ĐỊNH",
+    "subject": "Quy định nội dung và mức chi đối với hội thi tay nghề\ntrên địa bàn tỉnh Đồng Tháp"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "sample_id": "qd_081",
+  "source_id": "166951",
+  "document_type": "quyet_dinh",
+  "template_id": null,
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "source.txt",
+  "structured_file": null,
+  "draft_file": "draft.json",
+  "schema_file": "../../../schemas/texmind-document.schema.json",
+  "expected_output_file": null,
+  "preserve_original_content": true,
+  "selection_batch": "batch_2026-11-19",
+  "selection_reason": "Định mức đất sản xuất: khoản 1, 2 chứa điểm với số đo (1.500 m2/hộ, hệ số 3,33); kiểm tra dấu thập phân kiểu Việt Nam và tham chiếu chéo 'điểm a khoản 2 Điều 1'.",
+  "selection_features": [
+    "khoản + điểm lồng nhau",
+    "số liệu m2 và hệ số quy đổi",
+    "không nơi nhận"
+  ],
+  "proposed_split": "train",
+  "source_metadata": {
+    "title": "Quyết định số 26/2023/QĐ-UBND Quy định định mức đất sản xuất làm cơ sở xác định hộ gia đình thiếu đất sản xuất trên địa bàn tỉnh Thái Nguyên",
+    "document_number": "26/2023/QĐ-UBND",
+    "issuing_date": "14/11/2023",
+    "effective_date": "25/11/2023",
+    "issuer": "UBND Tỉnh Thái Nguyên",
+    "signer_title": "Phó Chủ tịch",
+    "signer": "Đặng Xuân Trường",
+    "legal_field": "Chưa phân loại",
+    "effect_status": "Hết hiệu lực toàn bộ"
+  },
+  "status": "draft_pending_review",
+  "review_status": "unreviewed",
+  "reviewed_on": null,
+  "hf_files": {
+    "clean_text": "dataset/hf_quyet_dinh/clean_text/qd_081.txt",
+    "raw_html": "dataset/hf_quyet_dinh/raw_html/qd_081.html"
+  }
+}

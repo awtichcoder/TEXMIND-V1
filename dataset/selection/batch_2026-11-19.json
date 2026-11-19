@@ -1,0 +1,133 @@
+{
+  "batch_id": "batch_2026-11-19",
+  "created_on": "2026-11-19",
+  "source": "dataset/hf_quyet_dinh (chưa từng dùng làm gold, chưa xem khi viết prompt)",
+  "criteria": "Không có Chương; 2.000–7.000 ký tự; đa dạng về bảng, nơi nhận, khoản/điểm lồng nhau, cơ quan ban hành và năm.",
+  "excluded": [
+    {
+      "sample_id": "qd_053",
+      "reason": "Có bảng giá nước nhưng text thiếu toàn bộ phần đầu (quốc hiệu, số hiệu, ngày) và chữ ký; schema bắt buộc các trường này nên làm gold sẽ phải bịa."
+    },
+    {
+      "sample_id": "qd_017",
+      "reason": "Cấu trúc 3 cấp hay (1. → 1.1. → a)) nhưng text thiếu phần đầu (cơ quan, quốc hiệu, số hiệu, ngày); cùng lý do như qd_053."
+    },
+    {
+      "sample_id": "qd_006, qd_080, qd_016, qd_088, qd_057",
+      "reason": "Có bảng trong HTML nhưng text thiếu quốc hiệu/chữ ký hoặc không có Điều; không làm gold được với schema hiện tại."
+    }
+  ],
+  "notes": [
+    "Chỉ qd_082 vừa có bảng vừa có phần đầu đầy đủ. Schema data_tables hiện chỉ có cột minimum_rent/maximum_rent (bảng giá thuê qd_066) nên bảng khung giá của qd_082 có thể không biểu diễn được; cần người dùng quyết định có mở rộng schema hay không."
+  ],
+  "samples": [
+    {
+      "sample_id": "qd_082",
+      "proposed_split": "train",
+      "features": [
+        "bảng khung giá",
+        "có nơi nhận",
+        "có phụ lục",
+        "số bị tách '1. 200'"
+      ],
+      "reason": "Khung giá dịch vụ chung cư có bảng mức giá; con số bị tách kiểu '1. 200', '13. 500' dễ bị nhận nhầm là khoản đánh số. Có nơi nhận và tham chiếu phụ lục."
+    },
+    {
+      "sample_id": "qd_042",
+      "proposed_split": "test",
+      "features": [
+        "khoản + điểm lồng nhau",
+        "có nơi nhận",
+        "6 điều",
+        "2025"
+      ],
+      "reason": "Văn bản phân cấp mới (2025), 6 điều có tiêu đề, khoản 1/2 chứa điểm a) b) c) d); có nơi nhận. Đại diện văn bản hiện hành có cấu trúc lồng nhau."
+    },
+    {
+      "sample_id": "qd_096",
+      "proposed_split": "test",
+      "features": [
+        "nhiều điểm dưới khoản (16)",
+        "mức thu 'từ ... đến ...'",
+        "không nơi nhận"
+      ],
+      "reason": "Khung giá cảng cá: mỗi khoản có nhiều điểm a) b) c) với khoảng giá; kiểm tra giữ nguyên số tiền và thứ tự điểm. Số hiệu có khoảng trắng lạ '20 /2021/QĐ-UBND'."
+    },
+    {
+      "sample_id": "qd_081",
+      "proposed_split": "train",
+      "features": [
+        "khoản + điểm lồng nhau",
+        "số liệu m2 và hệ số quy đổi",
+        "không nơi nhận"
+      ],
+      "reason": "Định mức đất sản xuất: khoản 1, 2 chứa điểm với số đo (1.500 m2/hộ, hệ số 3,33); kiểm tra dấu thập phân kiểu Việt Nam và tham chiếu chéo 'điểm a khoản 2 Điều 1'."
+    },
+    {
+      "sample_id": "qd_035",
+      "proposed_split": "test",
+      "features": [
+        "khoản + điểm lồng nhau",
+        "dài (~7.300 ký tự)",
+        "tham chiếu phụ lục của văn bản khác",
+        "2023"
+      ],
+      "reason": "Mẫu dài nhất bộ: 5 điều có tiêu đề, khoản '2. Định mức chi phí...' chứa điểm a) b) c); nhắc 'Phụ lục V ban hành kèm theo Thông tư...' (phụ lục của văn bản khác, không phải attachment của quyết định này)."
+    },
+    {
+      "sample_id": "qd_100",
+      "proposed_split": "train",
+      "features": [
+        "điểm a) b) nằm thẳng dưới điều (không có khoản)",
+        "điều có tiêu đề + đoạn văn riêng",
+        "có nơi nhận",
+        "2024"
+      ],
+      "reason": "Điều 3 'Trách nhiệm thi hành' có điểm a) b) ngay dưới điều, không qua khoản; Điều 2 có tiêu đề rồi nội dung ở dòng riêng. Nơi nhận dài. Kiểm tra mô hình không tự chế khoản."
+    },
+    {
+      "sample_id": "qd_022",
+      "proposed_split": "test",
+      "features": [
+        "Thủ tướng Chính phủ (TTg)",
+        "gạch đầu dòng không đánh số",
+        "số tiền lớn",
+        "2000"
+      ],
+      "reason": "Quyết định của Thủ tướng về cổ phần hóa: nhiều dòng '-' không có số thứ tự (không được tự đánh số), số tiền dạng 11.600.000.000 đồng, tên tiếng Anh viết thường."
+    },
+    {
+      "sample_id": "qd_040",
+      "proposed_split": "train",
+      "features": [
+        "có nơi nhận",
+        "khoản có tiêu đề kèm nội dung cùng dòng",
+        "3 điều",
+        "2020"
+      ],
+      "reason": "Văn bản ngắn có nơi nhận dài; khoản dạng '1. Phạm vi điều chỉnh: ...' (tiêu đề và nội dung chung dòng). Có lỗi gõ trong nguồn 'p hân cấp' để kiểm tra việc giữ nguyên nguồn."
+    },
+    {
+      "sample_id": "qd_068",
+      "proposed_split": "train",
+      "features": [
+        "đơn giản: 4 điều không khoản",
+        "không nơi nhận",
+        "ban hành kèm định mức không có trong text",
+        "2025"
+      ],
+      "reason": "Mẫu cơ sở đơn giản nhất: chỉ 4 điều một đoạn; định mức 'ban hành kèm theo' không có trong text nên không được bịa phụ lục. Căn cứ có dấu câu không đồng nhất (',', ':', ';')."
+    },
+    {
+      "sample_id": "qd_072",
+      "proposed_split": "test",
+      "features": [
+        "có nơi nhận",
+        "tham chiếu 'Phụ lục đính kèm'",
+        "5 điều",
+        "2019"
+      ],
+      "reason": "Mức chi hội thi tay nghề: khoản 1 trỏ tới 'Phụ lục đính kèm' (không có trong text), có nơi nhận. Kiểm tra attachments chỉ tham chiếu, không bịa nội dung."
+    }
+  ]
+}

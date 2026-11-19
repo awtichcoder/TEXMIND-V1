@@ -1,0 +1,43 @@
+{
+  "sample_id": "qd_082",
+  "source_id": "170673",
+  "document_type": "quyet_dinh",
+  "template_id": null,
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "source.txt",
+  "structured_file": null,
+  "draft_file": "draft.json",
+  "schema_file": "../../../schemas/texmind-document.schema.json",
+  "expected_output_file": null,
+  "preserve_original_content": true,
+  "selection_batch": "batch_2026-11-19",
+  "selection_reason": "Khung giá dịch vụ chung cư có bảng mức giá; con số bị tách kiểu '1. 200', '13. 500' dễ bị nhận nhầm là khoản đánh số. Có nơi nhận và tham chiếu phụ lục.",
+  "selection_features": [
+    "bảng khung giá",
+    "có nơi nhận",
+    "có phụ lục",
+    "số bị tách '1. 200'"
+  ],
+  "proposed_split": "train",
+  "source_metadata": {
+    "title": "Quyết định số 49/2024/QĐ-UBND Quy định khung giá dịch vụ quản lý vận hành nhà chung cư trên địa bàn thành phố Đà Nẵng",
+    "document_number": "49/2024/QĐ-UBND",
+    "issuing_date": "15/10/2024",
+    "effective_date": "25/10/2024",
+    "issuer": "UBND thành phố Đà Nẵng",
+    "signer_title": "Phó Chủ tịch",
+    "signer": "Lê Quang Nam",
+    "legal_field": "Chưa phân loại",
+    "effect_status": "Hết hiệu lực toàn bộ"
+  },
+  "status": "draft_pending_review",
+  "review_status": "unreviewed",
+  "reviewed_on": null,
+  "hf_files": {
+    "clean_text": "dataset/hf_quyet_dinh/clean_text/qd_082.txt",
+    "raw_html": "dataset/hf_quyet_dinh/raw_html/qd_082.html"
+  }
+}
