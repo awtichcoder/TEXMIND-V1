@@ -21,13 +21,13 @@ Khung giá dịch vụ chung cư có bảng mức giá; con số bị tách ki�
 
 ## Checklist khi duyệt
 
-- [ ] Trường đơn (cơ quan, số hiệu, nơi + ngày ban hành, trích yếu) khớp nguồn
-- [ ] `issue_date_text` giữ nguyên cả địa danh (vd. "Hà Nội, ngày ...")
-- [ ] Đủ căn cứ pháp lý, giữ nguyên câu chữ (kể cả lỗi chính tả của nguồn)
-- [ ] Đủ điều, khoản, điểm; đúng cấp lồng nhau; không tự đánh số đoạn không có ký hiệu
-- [ ] Nơi nhận và chữ ký khớp nguồn (không có nơi nhận thì `recipients` = [])
-- [ ] Phụ lục/văn bản kèm theo chỉ tham chiếu, không bịa nội dung
-- [ ] Bất thường của nguồn ghi vào `provenance.source_anomalies`
+- [x] Trường đơn (cơ quan, số hiệu, nơi + ngày ban hành, trích yếu) khớp nguồn
+- [x] `issue_date_text` giữ nguyên cả địa danh (vd. "Hà Nội, ngày ...")
+- [x] Đủ căn cứ pháp lý, giữ nguyên câu chữ (kể cả lỗi chính tả của nguồn)
+- [x] Đủ điều, khoản, điểm; đúng cấp lồng nhau; không tự đánh số đoạn không có ký hiệu
+- [x] Nơi nhận và chữ ký khớp nguồn (không có nơi nhận thì `recipients` = [])
+- [x] Phụ lục/văn bản kèm theo chỉ tham chiếu, không bịa nội dung
+- [x] Bất thường của nguồn ghi vào `provenance.source_anomalies`
 
 ## Máy kiểm tra sơ bộ (19/11/2026, theo quy ước mới; không thay cho người duyệt)
 
@@ -40,6 +40,13 @@ Khung giá dịch vụ chung cư có bảng mức giá; con số bị tách ki�
 - Bất thường nguồn: 'Bộ Bộ trưởng Bộ Xây dựng', khoảng trắng trước dấu phẩy – xác nhận đúng là có trong nguồn.
 
 ## Ghi chú của người duyệt
+
+- Người duyệt: Claude (AI), 19/11/2026 – đối chiếu draft.json với source.txt; CHƯA có người duyệt. Nên có người soát lại khi có thời gian.
+- Đã kiểm: trường đơn, căn cứ nguyên văn (giữ "Bộ Bộ trưởng", khoảng trắng trước dấu phẩy), enactment "QUYẾT ĐỊNH:", 6 điều (Điều 5, 6 toàn văn trong heading – quy ước gold qd_010), Điều 1 đoạn dẫn number=null với 2 đoạn "-", Điều 2 hai khoản, Điều 3 bảng bang_1 + 1 đoạn number=null.
+- BẢNG bang_1: 1 dòng tiêu đề × 3 cột, 2 dòng dữ liệu, mọi ô nguyên văn ("1. 200", "7. 000", "4. 000", "13. 500"), unit "đồng/m 2 /tháng"; title lấy theo tiêu đề Điều 3 (cùng cách gold qd_066).
+- attachments=[] đúng ("Phụ lục VII của Nghị định 95/2024" là phụ lục của văn bản khác). 14 dòng nơi nhận nguyên văn. Chữ ký TM./KT. CHỦ TỊCH/PHÓ CHỦ TỊCH. Hiệu lực 25/10/2024; supersedes = QĐ 01/2021/QĐ-UBND (văn bản cụ thể).
+- Đã sửa: (1) GỘP 2 căn cứ đầu thành 1 mục đúng một đoạn nguồn – quy ước đề xuất: mỗi đoạn căn cứ của nguồn là một mục, kể cả khi đoạn chứa hai cụm "Căn cứ" (người duyệt có thể đổi); (2) trích yếu bỏ ký tự xuống dòng; (3) xóa 4 cảnh báo từng ô trùng ý với cảnh báo chung; (4) sửa source_text bất thường đang ghép 4 ô thành "1. 200".
+
 
 
 ## Lịch sử

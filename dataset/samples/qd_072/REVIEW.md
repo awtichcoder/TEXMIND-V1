@@ -21,13 +21,13 @@ Mức chi hội thi tay nghề: khoản 1 trỏ tới 'Phụ lục đính kèm' 
 
 ## Checklist khi duyệt
 
-- [ ] Trường đơn (cơ quan, số hiệu, nơi + ngày ban hành, trích yếu) khớp nguồn
-- [ ] `issue_date_text` giữ nguyên cả địa danh (vd. "Hà Nội, ngày ...")
-- [ ] Đủ căn cứ pháp lý, giữ nguyên câu chữ (kể cả lỗi chính tả của nguồn)
-- [ ] Đủ điều, khoản, điểm; đúng cấp lồng nhau; không tự đánh số đoạn không có ký hiệu
-- [ ] Nơi nhận và chữ ký khớp nguồn (không có nơi nhận thì `recipients` = [])
-- [ ] Phụ lục/văn bản kèm theo chỉ tham chiếu, không bịa nội dung
-- [ ] Bất thường của nguồn ghi vào `provenance.source_anomalies`
+- [x] Trường đơn (cơ quan, số hiệu, nơi + ngày ban hành, trích yếu) khớp nguồn
+- [x] `issue_date_text` giữ nguyên cả địa danh (vd. "Hà Nội, ngày ...")
+- [x] Đủ căn cứ pháp lý, giữ nguyên câu chữ (kể cả lỗi chính tả của nguồn)
+- [x] Đủ điều, khoản, điểm; đúng cấp lồng nhau; không tự đánh số đoạn không có ký hiệu
+- [x] Nơi nhận và chữ ký khớp nguồn (không có nơi nhận thì `recipients` = [])
+- [x] Phụ lục/văn bản kèm theo chỉ tham chiếu, không bịa nội dung
+- [x] Bất thường của nguồn ghi vào `provenance.source_anomalies`
 
 ## Máy kiểm tra sơ bộ (19/11/2026, theo quy ước mới; không thay cho người duyệt)
 
@@ -38,6 +38,12 @@ Mức chi hội thi tay nghề: khoản 1 trỏ tới 'Phụ lục đính kèm' 
 - Xóa cảnh báo/bất thường LỖI THỜI nói nguồn 'không cung cấp dataset/license/input_file/source_id' (khối source nay đã điền từ metadata).
 
 ## Ghi chú của người duyệt
+
+- Người duyệt: Claude (AI), 19/11/2026 – đối chiếu draft.json với source.txt; CHƯA có người duyệt. Nên có người soát lại khi có thời gian.
+- Đã kiểm: trường đơn, trích yếu nối 2 dòng của nguồn bằng dấu cách, 4 căn cứ (giữ "–" và "-" đúng từng chỗ như nguồn), enactment "QUYẾT ĐỊNH:", 5 điều (Điều 4, 5 không tách tiêu đề – toàn văn trong heading, cùng quy ước gold qd_010), khoản 2 Điều 2 có đoạn number=null, 11 dòng nơi nhận nguyên văn, chữ ký TM./KT. CHỦ TỊCH/PHÓ CHỦ TỊCH, hiệu lực 27/12/2019, supersedes=[].
+- Phụ lục: 1 attachment "Phụ lục" @ "Điều 2, khoản 1", included_in_source=false – đúng quy ước. Cảnh báo + bất thường về việc nguồn không kèm nội dung phụ lục: giữ (hơi trùng nhau nhưng không sai).
+- Đã sửa: xóa cảnh báo lỗi thời "Đầu vào không cung cấp mã nguồn riêng, tên bộ dữ liệu, giấy phép hoặc tên tệp."
+
 
 
 ## Lịch sử

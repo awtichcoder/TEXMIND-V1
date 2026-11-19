@@ -143,8 +143,7 @@
     "legal_review_status": "not_expert_reviewed",
     "source_consistency": "warning",
     "warnings": [
-      "Phụ lục được dẫn chiếu tại Điều 2, khoản 1 không có trong phần nguồn được cung cấp.",
-      "Đầu vào không cung cấp mã nguồn riêng, tên bộ dữ liệu, giấy phép hoặc tên tệp."
+      "Phụ lục được dẫn chiếu tại Điều 2, khoản 1 không có trong phần nguồn được cung cấp."
     ]
   },
   "recipients": [
