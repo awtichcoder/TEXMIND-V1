@@ -27,10 +27,10 @@
   ],
   "attachments": [
     {
-      "id": "dinh_muc_kinh_te_ky_thuat",
+      "id": "phu_luc_dinh_muc_kinh_te_ky_thuat",
       "included_in_source": false,
       "source_reference": "Điều 1",
-      "title": "định mức kinh tế - kỹ thuật để lập dự toán xây dựng, điều chỉnh bảng giá đất, định giá đất cụ thể trên địa bàn tỉnh Trà Vinh"
+      "title": "Định mức kinh tế - kỹ thuật để lập dự toán xây dựng, điều chỉnh bảng giá đất, định giá đất cụ thể trên địa bàn tỉnh Trà Vinh"
     }
   ],
   "data_tables": [],
@@ -62,35 +62,11 @@
     "supersedes": []
   },
   "provenance": {
-    "normalizations": [
-      {
-        "normalized_text": "ỦY BAN NHÂN DÂN TỈNH TRÀ VINH",
-        "reason": "Ghép hai dòng tên cơ quan vào cùng một trường.",
-        "source_text": "ỦY BAN NHÂN DÂN\n\nTỈNH TRÀ VINH"
-      },
-      {
-        "normalized_text": "2025-03-14",
-        "reason": "Chuyển ngày ban hành sang định dạng ISO.",
-        "source_text": "ngày 14 tháng 3 năm 2025"
-      },
-      {
-        "normalized_text": "2025-03-24",
-        "reason": "Chuyển ngày có hiệu lực sang định dạng ISO.",
-        "source_text": "ngày 24 tháng 3 năm 2025"
-      }
-    ],
+    "normalizations": [],
     "source_anomalies": [
       {
-        "note": "Căn cứ kết thúc bằng dấu phẩy, khác với dấu chấm phẩy ở phần lớn các căn cứ còn lại. Giữ nguyên dấu câu theo nguồn.",
-        "source_text": "Căn cứ Luật Tổ chức chính quyền địa phương ngày 19 tháng 02 năm 2025,"
-      },
-      {
-        "note": "Căn cứ kết thúc bằng dấu hai chấm, khác với dấu chấm phẩy ở phần lớn các căn cứ còn lại. Giữ nguyên dấu câu theo nguồn.",
+        "note": "Căn cứ này kết thúc bằng dấu hai chấm trong nguồn; giữ nguyên dấu câu.",
         "source_text": "Căn cứ Luật Đất đai ngày 18 tháng 01 năm 2024:"
-      },
-      {
-        "note": "Nguồn được cung cấp không có nội dung định mức ban hành kèm theo được dẫn tại Điều 1.",
-        "source_text": "Điều 1. Ban hành kèm theo Quyết định này định mức kinh tế - kỹ thuật để lập dự toán xây dựng, điều chỉnh bảng giá đất, định giá đất cụ thể trên địa bàn tỉnh Trà Vinh."
       }
     ]
   },
@@ -100,9 +76,8 @@
     "legal_review_status": "not_expert_reviewed",
     "source_consistency": "warning",
     "warnings": [
-      "Giữ nguyên dấu phẩy cuối căn cứ Luật Tổ chức chính quyền địa phương và dấu hai chấm cuối căn cứ Luật Đất đai theo nguồn.",
-      "Nguồn được cung cấp không có nội dung định mức ban hành kèm theo được dẫn tại Điều 1.",
-      "Nguồn không cung cấp tên bộ dữ liệu, thông tin giấy phép hoặc tên tệp đầu vào."
+      "Nguồn nêu Quyết định ban hành kèm theo định mức kinh tế - kỹ thuật nhưng không bao gồm nội dung định mức; phụ lục được ghi nhận là không có trong nguồn.",
+      "Căn cứ Luật Đất đai kết thúc bằng dấu hai chấm trong nguồn."
     ]
   },
   "recipients": [],
@@ -116,11 +91,11 @@
     "signer_name": "Nguyễn Quỳnh Thiện"
   },
   "source": {
-    "dataset": "Không được cung cấp",
-    "input_file": "Không được cung cấp",
-    "license": "Không được cung cấp",
+    "dataset": "th1nhng0/vietnamese-legal-documents",
+    "input_file": "source.txt",
+    "license": "CC BY 4.0",
     "preserve_original_content": true,
-    "source_id": "26/2025/QĐ-UBND"
+    "source_id": "180888"
   },
   "template": null,
   "title": {

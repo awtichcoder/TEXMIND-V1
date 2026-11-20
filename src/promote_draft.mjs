@@ -1,4 +1,6 @@
-// Đưa một mẫu đã được NGƯỜI duyệt từ draft.json lên gold.json.
+// Đưa một mẫu đã duyệt từ draft.json lên gold.json.
+// --review-kind human (mặc định): người duyệt. --review-kind ai: Claude/AI duyệt, ghi rõ
+// review_status "ai_reviewed" và "chưa có người duyệt" để không nhầm với gold do người duyệt.
 // Chỉ chạy khi người dùng ra lệnh, và chỉ thực hiện khi có --confirm true.
 //
 //   npm run samples:promote -- --sample qd_042 --reviewer "Tên người duyệt"                 # xem trước, không đổi gì
@@ -79,22 +81,48 @@ export async function checkPromotion({ sampleId, root = process.cwd(), schemaPat
   return { paths, problems };
 }
 
-export async function promoteDraft({ sampleId, reviewer, reviewDate, root = process.cwd(), confirm = false }) {
+// Loại duyệt: "human" (người duyệt, mặc định) hoặc "ai" (Claude/AI duyệt, CHƯA có người duyệt).
+export const REVIEW_KINDS = {
+  human: { status: "gold_human_reviewed", review_status: "human_reviewed", label: (reviewer) => reviewer },
+  ai: {
+    status: "gold_ai_reviewed",
+    review_status: "ai_reviewed",
+    label: (reviewer) => `${reviewer} – chưa có người duyệt`,
+  },
+};
+
+export function parseReviewKind(value) {
+  const kind = value ?? "human";
+  if (!Object.hasOwn(REVIEW_KINDS, kind)) {
+    throw new Error(`--review-kind không hợp lệ: ${kind} (chỉ nhận human hoặc ai).`);
+  }
+  return kind;
+}
+
+export async function promoteDraft({
+  sampleId,
+  reviewer,
+  reviewDate,
+  reviewKind = "human",
+  root = process.cwd(),
+  confirm = false,
+}) {
+  const kind = REVIEW_KINDS[parseReviewKind(reviewKind)];
   const { paths, problems } = await checkPromotion({ sampleId, root, reviewer });
   if (problems.length > 0) return { promoted: false, problems, paths };
   if (!confirm) return { promoted: false, problems: [], paths, dryRun: true };
 
   await rename(paths.draft, paths.gold);
   const review = await readFile(paths.review, "utf8");
-  const line = `- ${toVnDate(reviewDate)}: ĐÃ DUYỆT bởi ${reviewer}; draft.json → gold.json.\n`;
+  const line = `- ${toVnDate(reviewDate)}: ĐÃ DUYỆT bởi ${kind.label(reviewer)}; draft.json → gold.json.\n`;
   await writeFile(paths.review, `${review}${review.endsWith("\n") ? "" : "\n"}${line}`, "utf8");
   const metadata = JSON.parse(await readFile(paths.metadata, "utf8"));
   const updated = {
     ...metadata,
     structured_file: "gold.json",
     draft_file: null,
-    status: "gold_human_reviewed",
-    review_status: "human_reviewed",
+    status: kind.status,
+    review_status: kind.review_status,
     reviewed_on: reviewDate,
     reviewed_by: reviewer,
   };
@@ -114,15 +142,19 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
   const args = parseArgs();
   const sampleId = args.get("--sample");
   if (!sampleId) {
-    console.error('Cách dùng: npm run samples:promote -- --sample <mã> --reviewer "<tên>" [--date YYYY-MM-DD] [--confirm true]');
+    console.error(
+      'Cách dùng: npm run samples:promote -- --sample <mã> --reviewer "<tên>" [--review-kind human|ai] [--date YYYY-MM-DD] [--confirm true]',
+    );
     process.exit(2);
   }
   try {
     const reviewDate = parseReviewDate(args.get("--date"));
+    const reviewKind = parseReviewKind(args.get("--review-kind"));
     const result = await promoteDraft({
       sampleId,
       reviewer: args.get("--reviewer"),
       reviewDate,
+      reviewKind,
       confirm: args.get("--confirm") === "true",
     });
     if (result.problems.length > 0) {
@@ -136,7 +168,9 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
       console.log(`  Ghi ngày duyệt ${toVnDate(reviewDate)} vào REVIEW.md và metadata.json.`);
       console.log("  Thêm --confirm true để thực hiện.");
     } else {
-      console.log(`ĐÃ promote ${sampleId}: ${result.paths.gold} (ngày duyệt ${toVnDate(reviewDate)}).`);
+      console.log(
+        `ĐÃ promote ${sampleId}: ${result.paths.gold} (ngày duyệt ${toVnDate(reviewDate)}, loại duyệt: ${reviewKind === "ai" ? "AI – chưa có người duyệt" : "người"}).`,
+      );
     }
   } catch (error) {
     console.error(error.message);

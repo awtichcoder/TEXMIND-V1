@@ -19,3 +19,9 @@
 
 ## Ghi chú
 
+## Lịch sử thay đổi gold
+
+- 19/11/2026 (quy ước do người dùng chốt): attachments danh_muc_a: source_reference "Điều 1 khoản 1 điểm a" → "Điều 1, khoản 1, điểm a".
+- 19/11/2026 (quy ước do người dùng chốt): attachments danh_muc_b: source_reference "Điều 1 khoản 1 điểm b" → "Điều 1, khoản 1, điểm b".
+- 19/11/2026 (quy ước do người dùng chốt): attachments danh_muc_c: source_reference "Điều 1 khoản 1 điểm c" → "Điều 1, khoản 1, điểm c".
+- 19/11/2026 (quy ước do người dùng chốt): attachments danh_muc_d: source_reference "Điều 1 khoản 1 điểm d" → "Điều 1, khoản 1, điểm d".

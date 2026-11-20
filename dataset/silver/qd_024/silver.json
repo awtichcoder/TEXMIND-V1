@@ -1,0 +1,104 @@
+{
+  "articles": [
+    {
+      "clauses": [],
+      "heading": "Ban hành kèm theo Quyết định này Quy chế quản lý và sử dụng Chỉ dẫn địa lý \"Bình Thuận\" dùng cho quả thanh long.",
+      "number": 1,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [],
+      "heading": "Quyết định này có hiệu lực thi hành sau 10 ngày kể từ ngày ký và thay thế Quyết định số 14/2011/QĐ-UBND ngày 08 tháng 7 năm 2011 của UBND tỉnh Bình Thuận về việc ban hành Quy chế quản lý và sử dụng chỉ dẫn địa lý \"Bình Thuận\" đối với sản phẩm quả thanh long.",
+      "number": 2,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [],
+      "heading": "Chánh Văn phòng Ủy ban nhân dân tỉnh, Giám đốc Sở Khoa học và Công nghệ, Giám đốc Sở Nông nghiệp và Phát triển nông thôn, Giám đốc Sở Công thương, Giám đốc Sở Tài chính, Chủ tịch Hiệp hội Thanh long Bình Thuận, Chủ tịch Ủy ban nhân dân các huyện, thị xã, thành phố, thủ trưởng các sở, ban ngành, tổ chức, cá nhân có liên quan căn cứ Quyết định thi hành.",
+      "number": 3,
+      "related_table_ids": []
+    }
+  ],
+  "attachments": [
+    {
+      "id": "quy_che",
+      "included_in_source": false,
+      "source_reference": "Điều 1",
+      "title": "Quy chế quản lý và sử dụng Chỉ dẫn địa lý \"Bình Thuận\" dùng cho quả thanh long"
+    }
+  ],
+  "data_tables": [],
+  "document_type": "quyet_dinh",
+  "enactment": "QUYẾT ĐỊNH :",
+  "header": {
+    "document_number": "76 / 2015/QĐ-UBND",
+    "issue_date": "2015-12-25",
+    "issue_date_text": "Bình Thuận, ngày 25 tháng 12 năm 2015",
+    "issue_place": "Bình Thuận",
+    "issuer": "ỦY BAN NHÂN DÂN TỈNH BÌNH THUẬN",
+    "motto": "Độc lập - Tự do - Hạnh phúc",
+    "national_heading": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM"
+  },
+  "language": "vi",
+  "legal_bases": [
+    "Căn cứ Luật Tổ chức Hội đồng nhân dân và Ủy ban nhân dân ngày 26 tháng 11 năm 2003;",
+    "Căn cứ Luật Sở hữu trí tuệ ngày 29 tháng 11 năm 2005;",
+    "Căn cứ Luật Sửa đổi, bổ sung một số điều của Luật Sở hữu trí tuệ ngày 19 tháng 6 năm 2009;",
+    "Căn cứ Nghị định số 103/2006/NĐ-CP ngày 22 tháng 9 năm 2006 của Chính\nphủ quy định chi tiết và hướng dẫn thi hành một số điều của Luật Sở hữu trí tuệ về sở hữu công nghiệp;",
+    "Căn cứ Nghị định số 132/2008/NĐ-CP của Chính phủ quy định chi tiết thi hành một số điều của Luật Chất lượng sản phẩm, hàng hóa;",
+    "Căn cứ Nghị định số 67/2009/NĐ-CP ngày 03 tháng 8 năm 2009 về sửa đổi một số điều của Nghị định số 127/2007/NĐ-CP ngày 01 tháng 8 năm 2007 của Chính phủ quy định chi tiết thi hành một số điều của Luật Tiêu chuẩn và Quy chuẩn kỹ thuật;",
+    "Căn cứ Nghị định số 122/2010/NĐ-CP ngày 31 tháng 12 năm 2010 của Chính phủ về sửa đổi, bổ sung một số điều của Nghị định số 103/2006/NĐ-CP ngày 22 tháng 9 năm 2006 của Chính phủ quy định chi tiết và hướng dẫn thi hành một số điều của Luật Sở hữu trí tuệ về sở hữu công nghiệp;",
+    "Theo đề nghị của Giám đốc Sở Khoa học và Công nghệ tại Tờ trình số 1125/TTr-SKHCN ngày 27 tháng 11 năm 2015,"
+  ],
+  "legal_effect": {
+    "effective_from": "2016-01-04",
+    "review_note": "Kết quả chưa được chuyên gia pháp lý kiểm duyệt và không thay thế tư vấn pháp lý.",
+    "supersedes": [
+      "Quyết định số 14/2011/QĐ-UBND ngày 08 tháng 7 năm 2011 của UBND tỉnh Bình Thuận"
+    ]
+  },
+  "provenance": {
+    "normalizations": [
+      {
+        "normalized_text": "2015-12-25",
+        "reason": "Chuyển ngày ký sang định dạng ISO 8601.",
+        "source_text": "Bình Thuận, ngày 25 tháng 12 năm 2015"
+      },
+      {
+        "normalized_text": "2016-01-04",
+        "reason": "Tính ngày có hiệu lực sau 10 ngày kể từ ngày ký 25 tháng 12 năm 2015 theo Điều 2.",
+        "source_text": "Quyết định này có hiệu lực thi hành sau 10 ngày kể từ ngày ký"
+      }
+    ],
+    "source_anomalies": []
+  },
+  "quality": {
+    "content_status": "source_preserved",
+    "extraction_status": "verified",
+    "legal_review_status": "not_expert_reviewed",
+    "source_consistency": "passed",
+    "warnings": []
+  },
+  "recipients": [],
+  "sample_id": "qd_024",
+  "schema_version": "1.0",
+  "signature": {
+    "authority": "TM. ỦY BAN NHÂN DÂN",
+    "delegation": null,
+    "position": "CHỦ TỊCH",
+    "signed_status": "(Đã ký)",
+    "signer_name": "Lê Tiến Phương"
+  },
+  "source": {
+    "dataset": "th1nhng0/vietnamese-legal-documents",
+    "input_file": "source.txt",
+    "license": "CC BY 4.0",
+    "preserve_original_content": true,
+    "source_id": "96468"
+  },
+  "template": null,
+  "title": {
+    "document_name": "QUYẾT ĐỊNH",
+    "subject": "Về việc ban hành Quy chế quản lý và sử dụng Chỉ dẫn địa lý  “Bình Thuận” dùng cho quả thanh long."
+  }
+}

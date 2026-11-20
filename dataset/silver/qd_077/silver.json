@@ -1,0 +1,166 @@
+{
+  "articles": [
+    {
+      "clauses": [
+        {
+          "children": [
+            {
+              "number": null,
+              "text": "Theo quy định tại Điều 6 - Nghị định 67/2007/NĐ-CP ngày 13/4/2007 của Chính phủ."
+            }
+          ],
+          "number": "1",
+          "text": "Đối tượng được cứu trợ đột xuất:"
+        },
+        {
+          "children": [
+            {
+              "number": null,
+              "text": "Mức trợ cấp đột xuất đối với các đối tượng quy định tại Điều 6 Nghị định 67/2007/NĐ-CP ngày 13/4/2007 của Chính phủ, cụ thể như sau:"
+            },
+            {
+              "children": [
+                {
+                  "number": "-",
+                  "text": "Có nhà bị đổ, sập, trôi, cháy, hỏng nặng: 5.000.000 đồng đến 8.000.000 đồng/hộ;"
+                },
+                {
+                  "number": "-",
+                  "text": "Có trâu, bò cày kéo phục vụ sản xuất bị trôi, chết: 2.000.000 đồng/hộ;"
+                },
+                {
+                  "number": "-",
+                  "text": "Phải di dời khẩn cấp do nguy cơ sạt lở đất, lũ quét: 7.000.000 đồng/hộ;"
+                }
+              ],
+              "number": "a",
+              "text": "Đối với hộ gia đình:"
+            },
+            {
+              "children": [
+                {
+                  "number": null,
+                  "text": "Mức cứu trợ thực hiện theo quy định của Nghị định số 67/2007/NĐ-CP ngày 13/4/2007 của Chính phủ."
+                }
+              ],
+              "number": "b",
+              "text": "Các đối tượng còn lại:"
+            }
+          ],
+          "number": "2",
+          "text": "Chế độ trợ cấp cứu trợ đột xuất:"
+        },
+        {
+          "children": [
+            {
+              "number": "-",
+              "text": "Ngân sách địa phương tự cân đối;"
+            },
+            {
+              "number": "-",
+              "text": "Hỗ trợ từ ngân sách cấp trên;"
+            },
+            {
+              "number": "-",
+              "text": "Nguồn trợ giúp của các tổ chức, cá nhân trong và ngoài nước hỗ trợ trực tiếp cho các cấp chính quyền địa phương, các tổ chức đoàn thể xã hội."
+            }
+          ],
+          "number": "3",
+          "text": "Nguồn kinh phí để thực hiện cứu trợ đột xuất bao gồm:"
+        }
+      ],
+      "heading": "Quy định mức cứu trợ đột xuất (một lần) cho các đối tượng bảo trợ xã hội, cụ thể như sau:",
+      "number": 1,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [],
+      "heading": "Giao Giám đốc các Sở; Tài chính, Lao động Thương binh xã hội hướng dẫn các địa phương, các đơn vị thực hiện việc tiếp nhận, quản lý và sử dụng nguồn kinh phí cứu trợ đúng mục đích, đúng quy định của Luật Ngân sách Nhà nước và các văn bản quy định, hướng dẫn hiện hành.",
+      "number": 2,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [],
+      "heading": "Chánh văn phòng UBND tỉnh, Giám đốc các Sở: Tài chính; Lao động Thương binh và xã hội; Chủ tịch UBND các huyện, thị xã, thành phố; Chủ tịch UBND các xã, phường, thị trấn và Thủ trưởng các đơn vị liên quan chịu trách nhiệm thi hành Quyết định này./.",
+      "number": 3,
+      "related_table_ids": []
+    }
+  ],
+  "attachments": [],
+  "data_tables": [],
+  "document_type": "quyet_dinh",
+  "enactment": "QUYẾT ĐỊNH:",
+  "header": {
+    "document_number": "35/2007/QĐ-UBND",
+    "issue_date": "2007-08-13",
+    "issue_date_text": "Hà Tĩnh, ngày 13 tháng 8 năm 2007",
+    "issue_place": "Hà Tĩnh",
+    "issuer": "ỦY BAN NHÂN DÂN TỈNH HÀ TĨNH",
+    "motto": "Độc lập – Tự do – Hạnh phúc",
+    "national_heading": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM"
+  },
+  "language": "vi",
+  "legal_bases": [
+    "Căn cứ Luật Tổ chức HĐND và U BND ngày 26/11/2003;",
+    "Căn cứ Nghị định số 67/2007/NĐ-CP ngày 13/4/2007 của Chính phủ; Thông tư số 09/2007/TT-BLĐTBXH ngày 13/7/2007 của Bộ Lao động Thương binh và Xã hội.",
+    "Xét đề nghị của Sở Tài chính."
+  ],
+  "legal_effect": {
+    "effective_from": "2007-08-23",
+    "review_note": "Kết quả chưa được chuyên gia pháp lý kiểm duyệt và không thay thế tư vấn pháp lý. Ngày có hiệu lực được suy tính theo mốc 10 ngày kể từ ngày ký đối với quyết định cấp tỉnh, do nguồn không ghi ngày có hiệu lực.",
+    "supersedes": []
+  },
+  "provenance": {
+    "normalizations": [
+      {
+        "normalized_text": "2007-08-13",
+        "reason": "Biểu diễn ngày ban hành theo định dạng ISO.",
+        "source_text": "ngày 13 tháng 8 năm 2007"
+      }
+    ],
+    "source_anomalies": [
+      {
+        "note": "Nghi có khoảng trắng thừa trong chữ viết tắt.",
+        "source_text": "U BND"
+      },
+      {
+        "note": "Nghi sai dấu phân cách sau chữ «Sở» và thiếu từ trong tên sở.",
+        "source_text": "Giao Giám đốc các Sở; Tài chính, Lao động Thương binh xã hội"
+      }
+    ]
+  },
+  "quality": {
+    "content_status": "source_preserved",
+    "extraction_status": "verified",
+    "legal_review_status": "not_expert_reviewed",
+    "source_consistency": "warning",
+    "warnings": [
+      "Giữ nguyên «U BND» trong căn cứ pháp lý dù nghi có khoảng trắng thừa.",
+      "Giữ nguyên dấu chấm phẩy sau «Sở» và cụm «Lao động Thương binh xã hội» tại Điều 2.",
+      "Nguồn không ghi ngày có hiệu lực. Giá trị effective_from là ngày suy tính và chưa được xác minh.",
+      "Nguồn được cung cấp trực tiếp trong yêu cầu và không kèm tên bộ dữ liệu, thông tin giấy phép hoặc tên tệp."
+    ]
+  },
+  "recipients": [],
+  "sample_id": "qd_077",
+  "schema_version": "1.0",
+  "signature": {
+    "authority": "TM. ỦY BAN NHÂN DÂN",
+    "delegation": "KT. CHỦ TỊCH",
+    "position": "PHÓ CHỦ TỊCH",
+    "signed_status": "(Đã ký)",
+    "signer_name": "Trần Minh Kỳ"
+  },
+  "source": {
+    "dataset": "th1nhng0/vietnamese-legal-documents",
+    "input_file": "source.txt",
+    "license": "CC BY 4.0",
+    "preserve_original_content": true,
+    "source_id": "64967"
+  },
+  "template": null,
+  "title": {
+    "document_name": "QUYẾT ĐỊNH",
+    "subject": "Về việc quy định chế độ cứu trợ đột xuất cho các đối tượng bảo trợ xã hội"
+  }
+}

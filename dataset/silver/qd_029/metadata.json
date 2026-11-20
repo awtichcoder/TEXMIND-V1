@@ -1,0 +1,23 @@
+{
+  "sample_id": "qd_029",
+  "source_id": "162057",
+  "document_type": "quyet_dinh",
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "source.txt",
+  "silver_file": "silver.json",
+  "data_quality": "silver",
+  "note": "silver: AI tạo, chưa duyệt – chỉ dùng để train, không phải gold, không dùng để chấm điểm.",
+  "review_status": "unreviewed",
+  "usage": "train_only",
+  "source_metadata": {
+    "title": "Quyết định số 49/2023/QĐ-UBND Bãi bỏ các quyết định của Ủy ban nhân dân tỉnh Lâm Đồng ban hành thuộc lĩnh vực quản lý nhà nước của Sở Lao động, Thương binh và Xã hội",
+    "document_number": "49/2023/QĐ-UBND",
+    "issuing_date": "18/08/2023"
+  },
+  "hf_files": {
+    "clean_text": "dataset/hf_quyet_dinh/clean_text/qd_029.txt"
+  }
+}

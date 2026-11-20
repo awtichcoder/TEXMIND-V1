@@ -1,0 +1,120 @@
+{
+  "articles": [
+    {
+      "clauses": [
+        {
+          "number": null,
+          "text": "Quyết định này quy định chi tiết điểm đ khoản 2 và điểm đ khoản 3 Điều 6; khoản 3 Điều 8 Nghị định số 71/2024/NĐ-CP ngày 27 tháng 6 năm 2024 của Chính phủ quy định về giá đất, theo các Phụ lục kèm Quyết định này."
+        }
+      ],
+      "heading": "Phạm vi điều chỉnh",
+      "number": 1,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [
+        {
+          "number": "1",
+          "text": "Cơ quan thực hiện chức năng quản lý nhà nước về đất đai; cơ quan, người có thẩm quyền xác định, thẩm định, quyết định giá đất cụ thể."
+        },
+        {
+          "number": "2",
+          "text": "Tổ chức tư vấn xác định giá đất, cá nhân hành nghề tư vấn xác định giá đất."
+        },
+        {
+          "number": "3",
+          "text": "Tổ chức, cá nhân khác có liên quan."
+        }
+      ],
+      "heading": "Đối tượng áp dụng",
+      "number": 2,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [
+        {
+          "number": "1",
+          "text": "Quyết định này có hiệu lực thi hành kể từ ngày 15 tháng 11 năm 2024."
+        },
+        {
+          "number": "2",
+          "text": "Trường hợp cần thiết, Sở Tài nguyên và Môi trường chủ trì, phối hợp với các cơ quan liên quan tham mưu Ủy ban nhân dân tỉnh quyết định điều chỉnh quy định tại Quyết định này cho phù hợp với tình hình thực tế trên địa bàn tỉnh."
+        }
+      ],
+      "heading": "Hiệu lực thi hành và trách nhiệm thực hiện",
+      "number": 3,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [],
+      "heading": "Chánh Văn phòng Ủy ban nhân dân tỉnh; Chủ tịch Hội đồng thẩm định giá đất các cấp; Giám đốc các Sở: Tài nguyên và Môi trường, Tài chính, Xây dựng, Kế hoạch và Đầu tư, Công Thương; Cục trưởng Cục Thuế tỉnh; Trưởng ban Quản lý các khu công nghiệp tỉnh Bắc Kạn; Giám đốc, Thủ trưởng các sở, ban, ngành cấp tỉnh; Chủ tịch Ủy ban nhân dân các huyện, thành phố; các cơ quan, tổ chức, cá nhân có liên quan chịu trách nhiệm thi hành Quyết định này./.",
+      "number": 4,
+      "related_table_ids": []
+    }
+  ],
+  "attachments": [
+    {
+      "id": "phu_luc_1",
+      "included_in_source": false,
+      "source_reference": "Điều 1",
+      "title": "Các Phụ lục kèm Quyết định này"
+    }
+  ],
+  "data_tables": [],
+  "document_type": "quyet_dinh",
+  "enactment": "QUYẾT ĐỊNH:",
+  "header": {
+    "document_number": "25/2024/QĐ-UBND",
+    "issue_date": "2024-10-30",
+    "issue_date_text": "Bắc Kạn, ngày 30 tháng 10 năm 2024",
+    "issue_place": "Bắc Kạn",
+    "issuer": "ỦY BAN NHÂN DÂN TỈNH BẮC KẠN",
+    "motto": "Độc lập – Tự do – Hạnh phúc",
+    "national_heading": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM"
+  },
+  "language": "vi",
+  "legal_bases": [
+    "Căn cứ Luật Tổ chức chính quyền địa phương ngày 19 tháng 6 năm 2015; Luật sửa đổi, bổ sung một số điều của Luật Tổ chức Chính phủ và Luật Tổ chức chính quyền địa phương ngày 22 tháng 11 năm 2019;",
+    "Căn cứ Luật Đất đai ngày 18 tháng 01 năm 2024; Luật sửa đổi, bổ sung một số điều của Luật Đất đai, Luật Nhà ở, Luật Kinh doanh bất động sản và Luật Các tổ chức tín dụng ngày 29 tháng 6 năm 2024;",
+    "Căn cứ Nghị định số 71/2024/NĐ-CP ngày 27 tháng 6 năm 2024 của Chính phủ quy định về giá đất;",
+    "Theo đề nghị của Giám đốc Sở Tài nguyên và Môi trường."
+  ],
+  "legal_effect": {
+    "effective_from": "2024-11-15",
+    "review_note": "Kết quả trích xuất chưa được chuyên gia pháp lý kiểm duyệt và không thay thế tư vấn pháp lý.",
+    "supersedes": []
+  },
+  "provenance": {
+    "normalizations": [],
+    "source_anomalies": []
+  },
+  "quality": {
+    "content_status": "source_preserved",
+    "extraction_status": "verified",
+    "legal_review_status": "not_expert_reviewed",
+    "source_consistency": "passed",
+    "warnings": []
+  },
+  "recipients": [],
+  "sample_id": "qd_001",
+  "schema_version": "1.0",
+  "signature": {
+    "authority": "TM. ỦY BAN NHÂN DÂN",
+    "delegation": null,
+    "position": "CHỦ TỊCH",
+    "signed_status": "(Đã ký)",
+    "signer_name": "Nguyễn Đăng Bình"
+  },
+  "source": {
+    "dataset": "th1nhng0/vietnamese-legal-documents",
+    "input_file": "source.txt",
+    "license": "CC BY 4.0",
+    "preserve_original_content": true,
+    "source_id": "171699"
+  },
+  "template": null,
+  "title": {
+    "document_name": "QUYẾT ĐỊNH",
+    "subject": "Quy định một số chỉ tiêu xác định giá đất theo phương pháp thặng dư  và các yếu tố ảnh hưởng đến giá đất trên địa bàn tỉnh Bắc Kạn"
+  }
+}

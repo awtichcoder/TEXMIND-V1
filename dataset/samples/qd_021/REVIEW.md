@@ -20,3 +20,6 @@
 
 ## Ghi chú
 
+## Lịch sử thay đổi gold
+
+- 19/11/2026 (quy ước do người dùng chốt): attachments pl_01: source_reference "Ban hành kèm theo Quyết định này" → "Điều 1".

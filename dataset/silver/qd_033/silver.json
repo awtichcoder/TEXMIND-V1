@@ -1,0 +1,126 @@
+{
+  "articles": [
+    {
+      "clauses": [
+        {
+          "children": [
+            {
+              "number": null,
+              "text": "Đã in : \"Mục 7, 8, 9\"."
+            },
+            {
+              "number": null,
+              "text": "Đính chính: do đánh số thiếu mục 6 nên đổi lại thứ tự các mục trên thành \"6, 7, 8\"."
+            }
+          ],
+          "number": "1",
+          "text": "Về thứ tự các mục:"
+        },
+        {
+          "children": [
+            {
+              "number": null,
+              "text": "Đã in : \"b) Thông tư này có hiệu lực từ ngày 01 tháng 5 năm 2006... \"."
+            },
+            {
+              "number": null,
+              "text": "Đính chính : \"Thông tư này có hiệu lực sau 15 ngày, kể từ ngày đăng Công báo...\"."
+            }
+          ],
+          "number": "2",
+          "text": "Về mục b của điểm 9 (theo đánh số cũ) là mục b của điểm 8 theo đính chính ở mục 1 Điều 1 nêu trên ."
+        }
+      ],
+      "heading": "Đính chính Thông tư số 03/2006/TT-BCN ngày 14 tháng 4 năm 2006 của Bộ trưởng Bộ Công nghiệp (hướng dẫn xuất khẩu, nhập khẩu vật liệu nổ công nghiệp và nhập khẩu Nitrat Amôn hàm lượng cao) như sau:",
+      "number": 1,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [
+        {
+          "number": null,
+          "text": "Chánh Văn phòng Bộ, Chánh Thanh tra Bộ, các Vụ trưởng, Cục trưởng, thuộc Bộ chịu trách nhiệm thi hành Quyết định này./."
+        }
+      ],
+      "heading": "Quyết định này có hiệu lực thi hành kể từ ngày ký.",
+      "number": 2,
+      "related_table_ids": []
+    }
+  ],
+  "attachments": [],
+  "data_tables": [],
+  "document_type": "quyet_dinh",
+  "enactment": "QUYẾT ĐỊNH",
+  "header": {
+    "document_number": "1288/QĐ-BCN",
+    "issue_date": "2006-05-17",
+    "issue_date_text": "Hà Nội, Ngày 17 tháng 5 năm 2006",
+    "issue_place": "Hà Nội",
+    "issuer": "BỘ CÔNG NGHIỆP",
+    "motto": "Độc lập – Tự do – Hạnh phúc",
+    "national_heading": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM"
+  },
+  "language": "vi",
+  "legal_bases": [
+    "Căn cứ Nghị định số 55/2003/NĐ-CP ngày 28 tháng 5 năm 2003 của Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Bộ Công nghiệp;",
+    "Căn cứ Luật Ban hành văn bản quy phạm pháp luật ngày 12 tháng 11 năm 1996; Luật sửa đổi, bổ sung một số điều của Luật Ban hành văn bản quy phạm pháp luật ngày 16 tháng 12 năm 2002;",
+    "Căn cứ Nghị định số 104/2004/NĐ-CP ngày 23 tháng 3 năm 2004 của Chính phủ về Công báo nước Cộng hoà xã hội chủ nghĩa Việt Nam;",
+    "Theo đề nghị của Vụ trưởng Vụ Cơ khí, Luyện kim và Hoá chất."
+  ],
+  "legal_effect": {
+    "effective_from": "2006-05-17",
+    "review_note": "Kết quả trích xuất chưa được chuyên gia pháp lý kiểm duyệt và không thay thế tư vấn pháp lý.",
+    "supersedes": []
+  },
+  "provenance": {
+    "normalizations": [
+      {
+        "normalized_text": "2006-05-17",
+        "reason": "Biểu diễn ngày ban hành theo định dạng ISO 8601.",
+        "source_text": "Ngày 17 tháng 5 năm 2006"
+      }
+    ],
+    "source_anomalies": [
+      {
+        "note": "Có khoảng trắng trước dấu chấm kết câu; giữ nguyên theo nguồn.",
+        "source_text": "nêu trên ."
+      },
+      {
+        "note": "Có dấu phẩy sau «Cục trưởng» trước «thuộc Bộ»; giữ nguyên theo nguồn.",
+        "source_text": "các Vụ trưởng, Cục trưởng, thuộc Bộ"
+      }
+    ]
+  },
+  "quality": {
+    "content_status": "source_preserved",
+    "extraction_status": "verified",
+    "legal_review_status": "not_expert_reviewed",
+    "source_consistency": "warning",
+    "warnings": [
+      "Khoản 2 Điều 1 có khoảng trắng trước dấu chấm trong «nêu trên .»; đã giữ nguyên.",
+      "Đoạn cuối Điều 2 có dấu phẩy giữa «Cục trưởng» và «thuộc Bộ»; đã giữ nguyên."
+    ]
+  },
+  "recipients": [],
+  "sample_id": "qd_033",
+  "schema_version": "1.0",
+  "signature": {
+    "authority": "BỘ TRƯỞNG BỘ CÔNG NGHIỆP",
+    "delegation": "KT. BỘ TRƯỞNG",
+    "position": "THỨ TRƯỞNG",
+    "signed_status": "(Đã ký)",
+    "signer_name": "Nguyễn Xuân Thuý"
+  },
+  "source": {
+    "dataset": "th1nhng0/vietnamese-legal-documents",
+    "input_file": "source.txt",
+    "license": "CC BY 4.0",
+    "preserve_original_content": true,
+    "source_id": "16015"
+  },
+  "template": null,
+  "title": {
+    "document_name": "QUYẾT ĐỊNH",
+    "subject": "Đính chính Thông tư số 03/2006/TT-BCN ngày 14 tháng 4 năm 2006 của Bộ trưởng Bộ Công nghiệp"
+  }
+}

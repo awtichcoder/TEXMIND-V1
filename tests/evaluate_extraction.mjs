@@ -57,8 +57,10 @@ test("qd_067: bộ chấm 2.1 bắt lỗi dòng ngày thiếu địa danh; chu�
   const report = evaluateExtraction(gold, prediction, []);
   assert.equal(prediction.header.issue_date_text, "ngày 29 tháng 12 năm 2025");
   assert.ok(report.strict_evaluation.overall_score < 1);
-  assert.deepEqual(report.warnings, []);
+  // Bản dự đoán cũ ghi source_reference "Phụ lục N" (quy ước cũ) → lệch 12 phụ lục.
+  assert.ok(report.warnings.some((item) => item.code === "attachment_mismatch" && item.count === 12));
 
+  // Chuẩn hóa: khôi phục địa danh ở dòng ngày + đổi "Phụ lục N" thành vị trí duy nhất nhắc tới nó.
   const { normalized } = normalizeExtraction(prediction, { sampleId: "qd_067", sourceText });
   const fixed = evaluateExtraction(gold, normalized, []);
   assert.equal(fixed.strict_evaluation.overall_score, 1);
@@ -73,10 +75,13 @@ test("qd_021 tách riêng khác biệt dấu câu ở nơi nhận", async () => 
   const report = evaluateExtraction(gold, prediction, []);
   assert.equal(report.recipients.matches, 2);
   assert.equal(report.tolerant_evaluation.recipients.matches, 12);
-  assert.equal(report.attachments.matches, 1);
-  // Chỉ còn lệch dòng ngày (thiếu "Bình Thạnh, ") – lỗi mà bộ chấm 2.0 bỏ sót.
+  // Bản DeepSeek cũ ghi source_reference theo quy ước cũ ("Ban hành kèm theo Quyết định này"),
+  // gold nay là "Điều 1" → lệch phụ lục.
+  assert.equal(prediction.attachments[0].source_reference, "Ban hành kèm theo Quyết định này");
+  assert.equal(report.attachments.matches, 0);
+  // Lệch dòng ngày (thiếu "Bình Thạnh, ") – lỗi mà bộ chấm 2.0 bỏ sót.
   assert.equal(report.tolerant_evaluation.scalar_accuracy, 14 / 15);
-  assert.deepEqual(report.warnings, []);
+  assert.ok(report.warnings.some((item) => item.code === "attachment_mismatch"));
 });
 
 test("2.1: dòng ngày thiếu địa danh bị trừ điểm trường đơn", async () => {

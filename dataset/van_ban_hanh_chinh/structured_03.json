@@ -89,15 +89,42 @@
           "number": "2",
           "text": "Nhóm Dịch vụ chăm sóc dài hạn cho đối tượng bảo trợ xã hội (gồm 9 dịch vụ)",
           "children": [
-            { "number": "a", "text": "Dịch vụ chăm sóc đối tượng bảo trợ xã hội là trẻ em không có nguồn nuôi dưỡng (Phụ lục 4) ." },
-            { "number": "b", "text": "Dịch vụ chăm sóc đối tượng bảo trợ xã hội là trẻ em khuyết tật (Phụ lục 5) ." },
-            { "number": "c", "text": "Dịch vụ chăm sóc đối tượng bảo trợ xã hội là trẻ em tâm thần (Phụ lục 6) ." },
-            { "number": "d", "text": "Dịch vụ chăm sóc đối tượng bảo trợ xã hội là trẻ em và người từ 16 tuổi đến dưới 22 tuổi nhiễm HIV/AIDS (Phụ lục 7) ." },
-            { "number": "đ", "text": "Dịch vụ hỗ trợ trẻ em bị mắc bệnh hiểm nghèo hoặc bệnh phải điều trị dài ngày theo Nghị quyết số 13/2023/NQ-HĐND ngày 06/12/2023 của HĐND thành phố Hà Nội (Phụ lục 8) ." },
-            { "number": "e", "text": "Dịch vụ chăm sóc người cao tuổi không có người có nghĩa vụ và quyền phụng dưỡng (Phụ lục 9) ." },
-            { "number": "g", "text": "Dịch vụ nuôi dưỡng, chăm sóc người khuyết tật (Phụ lục 10) ." },
-            { "number": "h", "text": "Dịch vụ chăm sóc đối tượng bảo trợ xã hội là người bị nhiễm HIV/AIDS (Phụ lục 11) ." },
-            { "number": "i", "text": "Dịch vụ nuôi dưỡng, chăm sóc, điều trị đối tượng bảo trợ xã hội là người tâm thần (Phụ lục 12) ." }
+            {
+              "number": "a",
+              "text": "Dịch vụ chăm sóc đối tượng bảo trợ xã hội là trẻ em không có nguồn nuôi dưỡng (Phụ lục 4) ."
+            },
+            {
+              "number": "b",
+              "text": "Dịch vụ chăm sóc đối tượng bảo trợ xã hội là trẻ em khuyết tật (Phụ lục 5) ."
+            },
+            {
+              "number": "c",
+              "text": "Dịch vụ chăm sóc đối tượng bảo trợ xã hội là trẻ em tâm thần (Phụ lục 6) ."
+            },
+            {
+              "number": "d",
+              "text": "Dịch vụ chăm sóc đối tượng bảo trợ xã hội là trẻ em và người từ 16 tuổi đến dưới 22 tuổi nhiễm HIV/AIDS (Phụ lục 7) ."
+            },
+            {
+              "number": "đ",
+              "text": "Dịch vụ hỗ trợ trẻ em bị mắc bệnh hiểm nghèo hoặc bệnh phải điều trị dài ngày theo Nghị quyết số 13/2023/NQ-HĐND ngày 06/12/2023 của HĐND thành phố Hà Nội (Phụ lục 8) ."
+            },
+            {
+              "number": "e",
+              "text": "Dịch vụ chăm sóc người cao tuổi không có người có nghĩa vụ và quyền phụng dưỡng (Phụ lục 9) ."
+            },
+            {
+              "number": "g",
+              "text": "Dịch vụ nuôi dưỡng, chăm sóc người khuyết tật (Phụ lục 10) ."
+            },
+            {
+              "number": "h",
+              "text": "Dịch vụ chăm sóc đối tượng bảo trợ xã hội là người bị nhiễm HIV/AIDS (Phụ lục 11) ."
+            },
+            {
+              "number": "i",
+              "text": "Dịch vụ nuôi dưỡng, chăm sóc, điều trị đối tượng bảo trợ xã hội là người tâm thần (Phụ lục 12) ."
+            }
           ]
         },
         {
@@ -107,12 +134,12 @@
             {
               "number": null,
               "text": "Dịch vụ công tác xã hội và phát triển cộng đồng (Phụ lục 13) ."
+            },
+            {
+              "number": null,
+              "text": "(Phụ lục chi tiết kèm theo)"
             }
           ]
-        },
-        {
-          "number": null,
-          "text": "(Phụ lục chi tiết kèm theo)"
         }
       ],
       "related_table_ids": []
@@ -150,18 +177,78 @@
   ],
   "data_tables": [],
   "attachments": [
-    { "id": "appendix_02", "title": "Dịch vụ tiếp nhận, quản lý đối tượng cần sự bảo vệ khẩn cấp", "source_reference": "Phụ lục 2", "included_in_source": false },
-    { "id": "appendix_03", "title": "Dịch vụ tập trung, tiếp nhận, quản lý người lang thang", "source_reference": "Phụ lục 3", "included_in_source": false },
-    { "id": "appendix_04", "title": "Chăm sóc trẻ em không có nguồn nuôi dưỡng", "source_reference": "Phụ lục 4", "included_in_source": false },
-    { "id": "appendix_05", "title": "Chăm sóc trẻ em khuyết tật", "source_reference": "Phụ lục 5", "included_in_source": false },
-    { "id": "appendix_06", "title": "Chăm sóc trẻ em tâm thần", "source_reference": "Phụ lục 6", "included_in_source": false },
-    { "id": "appendix_07", "title": "Chăm sóc trẻ em và người từ 16 đến dưới 22 tuổi nhiễm HIV/AIDS", "source_reference": "Phụ lục 7", "included_in_source": false },
-    { "id": "appendix_08", "title": "Hỗ trợ trẻ em mắc bệnh hiểm nghèo hoặc điều trị dài ngày", "source_reference": "Phụ lục 8", "included_in_source": false },
-    { "id": "appendix_09", "title": "Chăm sóc người cao tuổi không có người phụng dưỡng", "source_reference": "Phụ lục 9", "included_in_source": false },
-    { "id": "appendix_10", "title": "Nuôi dưỡng, chăm sóc người khuyết tật", "source_reference": "Phụ lục 10", "included_in_source": false },
-    { "id": "appendix_11", "title": "Chăm sóc người bị nhiễm HIV/AIDS", "source_reference": "Phụ lục 11", "included_in_source": false },
-    { "id": "appendix_12", "title": "Nuôi dưỡng, chăm sóc, điều trị người tâm thần", "source_reference": "Phụ lục 12", "included_in_source": false },
-    { "id": "appendix_13", "title": "Công tác xã hội và phát triển cộng đồng", "source_reference": "Phụ lục 13", "included_in_source": false }
+    {
+      "id": "appendix_02",
+      "title": "Dịch vụ tiếp nhận, quản lý đối tượng cần sự bảo vệ khẩn cấp",
+      "source_reference": "Điều 3, khoản 1, điểm a",
+      "included_in_source": false
+    },
+    {
+      "id": "appendix_03",
+      "title": "Dịch vụ tập trung, tiếp nhận, quản lý người lang thang",
+      "source_reference": "Điều 3, khoản 1, điểm b",
+      "included_in_source": false
+    },
+    {
+      "id": "appendix_04",
+      "title": "Chăm sóc trẻ em không có nguồn nuôi dưỡng",
+      "source_reference": "Điều 3, khoản 2, điểm a",
+      "included_in_source": false
+    },
+    {
+      "id": "appendix_05",
+      "title": "Chăm sóc trẻ em khuyết tật",
+      "source_reference": "Điều 3, khoản 2, điểm b",
+      "included_in_source": false
+    },
+    {
+      "id": "appendix_06",
+      "title": "Chăm sóc trẻ em tâm thần",
+      "source_reference": "Điều 3, khoản 2, điểm c",
+      "included_in_source": false
+    },
+    {
+      "id": "appendix_07",
+      "title": "Chăm sóc trẻ em và người từ 16 đến dưới 22 tuổi nhiễm HIV/AIDS",
+      "source_reference": "Điều 3, khoản 2, điểm d",
+      "included_in_source": false
+    },
+    {
+      "id": "appendix_08",
+      "title": "Hỗ trợ trẻ em mắc bệnh hiểm nghèo hoặc điều trị dài ngày",
+      "source_reference": "Điều 3, khoản 2, điểm đ",
+      "included_in_source": false
+    },
+    {
+      "id": "appendix_09",
+      "title": "Chăm sóc người cao tuổi không có người phụng dưỡng",
+      "source_reference": "Điều 3, khoản 2, điểm e",
+      "included_in_source": false
+    },
+    {
+      "id": "appendix_10",
+      "title": "Nuôi dưỡng, chăm sóc người khuyết tật",
+      "source_reference": "Điều 3, khoản 2, điểm g",
+      "included_in_source": false
+    },
+    {
+      "id": "appendix_11",
+      "title": "Chăm sóc người bị nhiễm HIV/AIDS",
+      "source_reference": "Điều 3, khoản 2, điểm h",
+      "included_in_source": false
+    },
+    {
+      "id": "appendix_12",
+      "title": "Nuôi dưỡng, chăm sóc, điều trị người tâm thần",
+      "source_reference": "Điều 3, khoản 2, điểm i",
+      "included_in_source": false
+    },
+    {
+      "id": "appendix_13",
+      "title": "Công tác xã hội và phát triển cộng đồng",
+      "source_reference": "Điều 3, khoản 3",
+      "included_in_source": false
+    }
   ],
   "recipients": [
     "Như Điều 4;",

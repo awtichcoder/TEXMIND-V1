@@ -1,0 +1,94 @@
+{
+  "articles": [
+    {
+      "clauses": [
+        {
+          "number": null,
+          "text": "16 TCN 978: 2006 đến 16 TCN 985: 2006"
+        },
+        {
+          "number": null,
+          "text": "Các tiêu chuẩn này được khuyến khích áp dụng đối với các cơ sở nghiên cứu, đào tạo và các doanh nghiệp sản xuất, kinh doanh trong phạm vi cả nước."
+        }
+      ],
+      "heading": "Ban hành kèm theo Quyết định này 08 tiêu chuẩn ngành có số hiệu như sau:",
+      "number": 1,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [
+        {
+          "number": null,
+          "text": "Vụ trưởng Vụ Khoa học, Công nghệ có trách nhiệm hướng dẫn thực hiện Quyết định này."
+        }
+      ],
+      "heading": "Quyết định này có hiệu lực thi hành sau 15 ngày, kể từ ngày đăng Công báo.",
+      "number": 2,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [],
+      "heading": "Chánh Văn phòng Bộ, Chánh Thanh tra Bộ, các Vụ trưởng, Cục trưởng thuộc Bộ, Thủ trưởng các cơ quan, đơn vị có liên quan chịu trách nhiệm thi hành Quyết định này./.",
+      "number": 3,
+      "related_table_ids": []
+    }
+  ],
+  "attachments": [],
+  "data_tables": [],
+  "document_type": "quyet_dinh",
+  "enactment": "QUYẾT ĐỊNH",
+  "header": {
+    "document_number": "23/2006/QĐ-BCN",
+    "issue_date": "2006-07-14",
+    "issue_date_text": "Hà Nội, ngày 14 tháng 07 năm 2006",
+    "issue_place": "Hà Nội",
+    "issuer": "BỘ CÔNG NGHIỆP",
+    "motto": "Độc lập – Tự do – Hạnh phúc",
+    "national_heading": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM"
+  },
+  "language": "vi",
+  "legal_bases": [
+    "Căn cứ Nghị định số 55/2003/NĐ-CP ngày 28 tháng 05 năm 2003 của Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Bộ Công nghiệp.",
+    "Căn cứ Pháp lệnh Chất lượng hàng hoá ngày 24 tháng 12 năm 1999.",
+    "Căn cứ Quyết định số 2264/1999/QĐ-BKHCN&MT ngày 30 tháng 12 năm 1999 của Bộ Khoa học, Công nghệ và Môi trường (nay là Bộ Khoa học và Công nghệ) về việc ban hành các tiêu chuẩn.",
+    "Theo đề nghị của Vụ trưởng Vụ Khoa học, Công nghệ."
+  ],
+  "legal_effect": {
+    "effective_from": "2006-07-29",
+    "review_note": "Nội dung chưa được chuyên gia pháp lý kiểm duyệt và không thay thế tư vấn pháp lý.",
+    "supersedes": []
+  },
+  "provenance": {
+    "normalizations": [],
+    "source_anomalies": []
+  },
+  "quality": {
+    "content_status": "source_preserved",
+    "extraction_status": "verified",
+    "legal_review_status": "not_expert_reviewed",
+    "source_consistency": "passed",
+    "warnings": []
+  },
+  "recipients": [],
+  "sample_id": "qd_064",
+  "schema_version": "1.0",
+  "signature": {
+    "authority": "BỘ TRƯỞNG",
+    "delegation": "KT.",
+    "position": "THỨ TRƯỞNG",
+    "signed_status": "(Đã ký)",
+    "signer_name": "Đỗ Hữu Hào"
+  },
+  "source": {
+    "dataset": "th1nhng0/vietnamese-legal-documents",
+    "input_file": "source.txt",
+    "license": "CC BY 4.0",
+    "preserve_original_content": true,
+    "source_id": "15125"
+  },
+  "template": null,
+  "title": {
+    "document_name": "QUYẾT ĐỊNH",
+    "subject": "Về việc ban hành Tiêu chuẩn ngành"
+  }
+}

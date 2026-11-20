@@ -1,6 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
-import { normalizeExtraction } from "./normalize_extraction.mjs";
+import { normalizeExtraction, sourceInfoFromMetadata } from "./normalize_extraction.mjs";
 import { validateAgainstSchema } from "./validate_json_schema.mjs";
 
 const parseArgs = () => {
@@ -33,8 +33,11 @@ const [candidate, sourceText, schema] = await Promise.all([
   readFile(sourcePath, "utf8"),
   readFile(schemaPath, "utf8").then(JSON.parse),
 ]);
+const sourceInfo = args.get("--source-metadata")
+  ? sourceInfoFromMetadata(JSON.parse(await readFile(resolve(args.get("--source-metadata")), "utf8")))
+  : null;
 const rawSchemaErrors = validateAgainstSchema(schema, candidate);
-const { normalized, changes } = normalizeExtraction(candidate, { sampleId, sourceText });
+const { normalized, changes } = normalizeExtraction(candidate, { sampleId, sourceText, sourceInfo });
 const normalizedSchemaErrors = validateAgainstSchema(schema, normalized);
 
 await Promise.all([mkdir(dirname(outputPath), { recursive: true }), mkdir(dirname(reportPath), { recursive: true })]);

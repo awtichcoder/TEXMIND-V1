@@ -46,7 +46,8 @@ Khung thử nghiệm cho luồng chuyển nội dung thô thành tài liệu the
 - Kiểm thử tại thời điểm chuyển provider: 47/47; số kiểm thử hiện tại xem trong báo cáo tiến độ mới nhất.
 - 19/11/2026: đường Codex CLI chạy thật được. Smoke test đạt; pipeline `qd_067` qua `gpt-6.1-sol` cho raw/normalized 0 lỗi schema, tự chọn `TM-QD-002`, DOCX tạo thành công, manifest `completed`; điểm so gold strict 1.0 / tolerant 1.0 (lưu ý: `qd_067` đã được xem khi viết prompt nên điểm lạc quan). Để chạy được đã phải chuyển schema sang dạng strict cho provider (xem mục "Vì sao dùng `codex_cli`").
 - Đã sắp lại dữ liệu theo `dataset/samples/<mã>/` + `dataset/splits/`, thêm chế độ `--sample` ghi vào `runs/<run_id>/` có chấm điểm tự động và lệnh `npm run scoreboard`.
-- 19/11/2026 (lần 2): chạy thật qd_014 và qd_021; bộ chấm 2.1 (bắt lỗi dòng ngày thiếu địa danh). Điểm gpt-6.1-sol: qd_067 1.0, qd_014 1.0, qd_021 0.8333 (lệch quy ước tham chiếu phụ lục). 10 mẫu mới có `draft.json` chờ người duyệt (đợt `dataset/selection/batch_2026-11-19.json`). Kiểm thử: 78/78.
+- 19/11/2026 (lần 2): chạy thật qd_014 và qd_021; bộ chấm 2.1 (bắt lỗi dòng ngày thiếu địa danh). Điểm gpt-6.1-sol: qd_067 1.0, qd_014 1.0, qd_021 0.8333 (lệch quy ước tham chiếu phụ lục). 10 mẫu mới có `draft.json` chờ người duyệt (đợt `dataset/selection/batch_2026-11-19.json`).
+- 19/11/2026 (lần 3): áp 4 quy ước người dùng chốt (bảng nguyên văn số cột tự do, vị trí phụ lục "Điều X, khoản Y, điểm z", đoạn "-"/null, split mới – xem mục "Quy ước dữ liệu"); chuyển gold cũ theo quy ước; tạo lại 10 draft. Dev (qd_021, qd_067, qd_014) đạt 1.0. Sau đó chốt thêm quy ước dòng ký và supersedes (xem "Quy ước dữ liệu"). Kiểm thử: 86/86.
 
 ## Bước tiếp theo
 
@@ -154,11 +155,23 @@ Không truyền `--sample` thì pipeline giữ hành vi cũ (`work/end_to_end/<m
 ```powershell
 npm run scoreboard                    # dùng score.json đã có
 npm run scoreboard -- --rescore true  # chấm lại mọi lần chạy bằng bộ chấm hiện tại (bản cũ lưu ở score.previous.json)
+npm run scoreboard -- --rescore true --renormalize true  # chuẩn hóa lại raw.json bằng normalizer hiện tại rồi chấm (không gọi AI)
 ```
 
 Quét `runs/*/pipeline.json` + `score.json`, ghi `reports/scoreboard.md`: bảng theo từng lần chạy (có cột phiên bản bộ chấm) và điểm trung bình theo model trên tập test (không tính replay).
 
 Bộ chấm 2.1 (19/11/2026) so thêm `header.issue_date_text`. Lý do: AI hay bỏ địa danh ở dòng ngày ("ngày 5 tháng 10 năm 2023" thay vì "Bình Thạnh, ngày 5 tháng 10 năm 2023"), DOCX in thiếu địa danh mà bản 2.0 không phát hiện. Bước chuẩn hóa nay khôi phục dòng ngày đầy đủ khi nguồn có đúng dòng đó.
+
+### Quy ước dữ liệu (người dùng chốt 19/11/2026)
+
+- **Bảng** (`data_tables`): `header_rows` (các dòng tiêu đề) và `rows` (các dòng dữ liệu), mỗi dòng là mảng ô, số cột tự do nhưng mọi dòng cùng số ô. Ô chép NGUYÊN VĂN nguồn (không thêm số 0, không bỏ khoảng trắng, không quy đổi); `null` = ô gộp với ô ngay phía trên. `unit` = phần sau "Đơn vị tính:" nếu nguồn có dòng riêng, ngược lại `null`. Ô nghi lỗi gõ (vd "1. 200") giữ nguyên và được normalizer ghi vào `quality.warnings`. Renderer TM-QD-001 tự chia bề rộng cột, gộp dọc ô `null`, in dòng "Đơn vị tính" nếu có.
+- **Phụ lục / văn bản ban hành kèm theo** (`attachments[].source_reference`): vị trí chi tiết nhất trong văn bản nhắc tới nó, đúng dạng `Điều X`, `Điều X, khoản Y`, `Điều X, khoản Y, điểm z`. Phụ lục của văn bản khác chỉ được trích dẫn không phải attachment. Normalizer chuẩn hóa định dạng và đổi `Phụ lục N` thành vị trí khi chỉ có đúng một khoản/điểm nhắc tới nó.
+- **Đoạn không số**: nguồn có gạch đầu dòng "-" → `number = "-"`; nguồn không có ký hiệu → `number = null`. Normalizer sửa theo dòng nguồn khi khớp được đúng một dòng.
+- **Vị trí đoạn không số** (chốt 20/11/2026): đoạn `number = null` đứng ngay sau một khoản có số (trước khoản kế tiếp hoặc ở cuối điều) là **con** của khoản đó; đoạn trước khoản số đầu tiên hoặc ở điều không có khoản số giữ ở cấp điều. Có trong prompt và normalizer (`nest_unnumbered_paragraph_under_preceding_clause`); đã áp cho gold qd_040, qd_067, qd_096.
+- **Dòng ký** (`signature.signed_status`): nguyên văn dòng ký trong nguồn, giữ ngoặc và hoa/thường ("(Đã ký)", "(đã ký)"). Nguồn không có dòng này → `null`, kèm một cảnh báo chuẩn trong `quality.warnings`; DOCX không in gì ở vị trí đó. Không dùng câu thay thế.
+- **Văn bản bị thay thế** (`legal_effect.supersedes`): chỉ văn bản cụ thể xác định được (có số hiệu hoặc tên rõ ràng). Câu chung chung như "các quyết định trước đây trái với Quyết định này" → không đưa vào, không cảnh báo (nội dung vẫn còn nguyên văn trong điều khoản).
+- Gold cũ (qd_066, qd_021, qd_030, qd_067) đã chuyển theo quy ước này; thay đổi ghi trong REVIEW.md từng mẫu. Bản cũ trong `dataset/van_ban_hanh_chinh/structured_*.json` được sửa giống hệt để các test cũ vẫn so được.
+- **Split**: test = qd_042, qd_096, qd_035, qd_022, qd_072 (văn bản mới); dev = qd_021, qd_067, qd_014; train = qd_066, qd_030, qd_010, qd_082, qd_081, qd_100, qd_040, qd_068. Không chỉnh prompt dựa trên lỗi của mẫu test.
 
 ### Làm gold mới: nháp AI → người duyệt → promote
 
@@ -183,7 +196,55 @@ Bộ chấm 2.1 (19/11/2026) so thêm `header.issue_date_text`. Lý do: AI hay b
    ```
 
    Script kiểm tra: có `draft.json`, chưa có `gold.json`, draft hợp lệ schema, `sample_id` khớp, checklist đã tick hết. Sau đó đổi `draft.json` → `gold.json`, ghi ngày duyệt vào `REVIEW.md` và `metadata.json`.
+
+   Gold do AI duyệt, sau khi NGƯỜI tự kiểm theo mục "## Checklist người duyệt" trong REVIEW.md (tick hết), đổi sang người duyệt bằng `npm run samples:mark-human -- --sample <mã> --reviewer "<tên>" --confirm true` (không sửa gold.json; lưu lần duyệt AI cũ ở `previous_reviews`). 5 mẫu test đã có checklist này, dựa trên lỗi thật của gpt-6.1-sol.
+
+   `--review-kind human|ai` (mặc định `human`). Với `ai`: metadata ghi `review_status: "ai_reviewed"`, `status: "gold_ai_reviewed"`, lịch sử ghi "ĐÃ DUYỆT bởi Claude (AI) – chưa có người duyệt". Bảng điểm có cột "Gold duyệt bởi" (người / AI / gold cũ) để không nhầm điểm trên gold AI duyệt với gold người duyệt.
 5. Thêm mã mẫu vào `dataset/splits/*.txt` theo đề xuất trong file đợt chọn.
+
+### Train thử LoRA (Colab) – dữ liệu silver, xuất JSONL, notebook
+
+- **Silver** (`dataset/silver/<mã>/`: `source.txt`, `silver.json`, `metadata.json`): văn bản lấy từ `dataset/hf_quyet_dinh` chưa có trong `dataset/samples`, do gpt-6.1-sol trích xuất, **chưa ai duyệt** – chỉ dùng để train, không bao giờ dùng để chấm. Tiêu chí chọn: không có Chương, 1.200–7.000 ký tự, có số hiệu + quốc hiệu + khối chữ ký, ≥ 2 điều. Bản sai schema bị bỏ.
+
+  ```powershell
+  npm run silver -- --select 20     # xem danh sách đủ điều kiện
+  npm run silver -- --prepare 20    # tạo thư mục silver
+  npm run silver -- --extract       # gọi gpt-6.1-sol (file phụ ở work/silver/)
+  ```
+
+- **Xuất JSONL**: `npm run export:train` → `notebooks/data/train.jsonl` (gold split **train** + silver, định dạng chat system/user/assistant) và `notebooks/data/test_inputs.jsonl` (chỉ văn bản nguồn của mẫu test, không có gold). Script dừng nếu có mẫu dev/test (theo mã hoặc theo nội dung văn bản) lọt vào train – có test `tests/training_export.mjs`.
+- **Notebook** `notebooks/TexMind_LoRA.ipynb` (sinh bằng `npm run build:colab:lora`): Qwen2.5-1.5B (hoặc 3B) 4-bit + LoRA bằng unsloth trên GPU T4, sinh dự đoán 5 mẫu test, chấm bằng `src/score_predictions.mjs` (cùng chuẩn hóa + bộ chấm của pipeline; JSON hỏng tính 0 điểm), xuất `runs_colab/` để chép vào `runs/` rồi `npm run scoreboard`. Mỗi ô có giải thích tiếng Việt.
+- Colab lấy mã nguồn bằng `git clone` nhánh `feature-texmind-codex-samples` (repo công khai – cần push trước), hoặc tải lên `work/texmind_colab_bundle.zip` tạo bằng `npm run build:colab:lora -- --bundle` (gói chỉ gồm danh sách file cố định, **không có `.env`**; đừng tự nén cả thư mục dự án).
+
+#### Hướng dẫn từng bước: chạy `TexMind_LoRA.ipynb` trên Google Colab
+
+1. **Mở notebook từ GitHub.** Đăng nhập Google, mở link:
+   `https://colab.research.google.com/github/awtichcoder/TEXMIND-V1/blob/feature-texmind-codex-samples/notebooks/TexMind_LoRA.ipynb`
+   (cách khác: vào colab.research.google.com → **File → Open notebook** → tab **GitHub** → dán `awtichcoder/TEXMIND-V1`, chọn nhánh `feature-texmind-codex-samples`, chọn `notebooks/TexMind_LoRA.ipynb`).
+2. **Lưu bản sao** để giữ thay đổi của bạn: **File → Save a copy in Drive**, rồi làm việc trên bản sao đó.
+3. **Chọn GPU T4:** **Runtime → Change runtime type → Hardware accelerator: T4 GPU → Save**. Chạy ô Bước 1 (`!nvidia-smi`) phải thấy chữ "Tesla T4".
+4. **Chạy lần lượt từng ô** từ trên xuống (bấm vào ô rồi **Shift + Enter**, hoặc **Runtime → Run all**).
+   - Ô Bước 2 (cài thư viện) mất vài phút. Nếu Colab hiện nút **Restart session**, bấm restart rồi chạy tiếp từ ô Bước 3 (không cần cài lại).
+   - Ô Bước 3 tải mã nguồn từ GitHub; dòng cuối phải in `Có .env không? (phải là False): False`.
+   - Ô Bước 4 in số mẫu train (gold split train + silver) và 5 mẫu test; nếu báo "RÒ RỈ" thì dừng lại, báo Claude.
+   - Ô Bước 5: muốn thử 3B thì bỏ dấu `#` ở dòng `MODEL_NAME = "unsloth/Qwen2.5-3B-…"` (chậm hơn, dễ hết bộ nhớ hơn).
+   - Ô Bước 9 (train) mất khoảng 10–30 phút; cột **loss** giảm dần là đang học. Ô Bước 10 (sinh 5 dự đoán) mất khoảng 15–25 phút.
+   - Ô Bước 11 in điểm strict/tolerant từng mẫu test (chấm bằng đúng bộ chấm của pipeline).
+5. **Tải kết quả về:** ô Bước 12 tự tải `texmind_lora_results.zip` (gồm `runs_colab/`, `predictions_*.jsonl`, `lora_adapter/`). Nếu trình duyệt chặn, mở thanh bên trái **Files** của Colab, chuột phải vào file zip → **Download**.
+6. **Chép vào `runs/` trên máy** (PowerShell, tại thư mục dự án; sửa đường dẫn file zip cho đúng):
+
+   ```powershell
+   Expand-Archive "$env:USERPROFILE\Downloads\texmind_lora_results.zip" -DestinationPath work\lora_results -Force
+   Copy-Item -Recurse -Force work\lora_results\runs_colab\* runs\
+   ```
+
+7. **Cập nhật bảng điểm:** `npm run scoreboard`, mở `reports/scoreboard.md`. Model `qwen2.5-1.5b-lora` (hoặc `-3b-lora`) xuất hiện trong bảng trung bình tập test cạnh `gpt-6.1-sol`. (Không cần `--rescore`; nếu chạy `--rescore true --renormalize true` thì dự đoán LoRA cũng được chuẩn hóa lại bằng normalizer hiện tại.)
+
+Lỗi thường gặp:
+- **CUDA out of memory**: dùng bản 1.5B, hoặc giảm `MAX_SEQ_LEN` xuống 6144 ở Bước 5 rồi chạy lại từ Bước 5.
+- **JSON bị cắt cụt** (điểm 0, `failed_parse`): tăng `MAX_NEW_TOKENS` ở Bước 8 (ví dụ 8192) rồi chạy lại Bước 10–11.
+- **Colab ngắt kết nối / hết lượt GPU miễn phí**: chờ vài giờ rồi chạy lại từ đầu; kết quả chưa tải về sẽ mất.
+- **`git clone` lỗi**: nhánh chưa push hoặc sai tên → dùng cách B (`USE_UPLOAD = True` + gói zip).
 
 ## Render DOCX và chọn template tự động
 
@@ -223,6 +284,8 @@ Kết quả được lưu trong `dataset/hf_quyet_dinh/`. Các mẫu tải về 
 dataset/samples/<mã>/  Mỗi mẫu: source.txt, metadata.json, REVIEW.md và gold.json (người duyệt) hoặc draft.json (nháp AI chờ duyệt)
 dataset/splits/        train.txt, dev.txt, test.txt
 dataset/selection/     Các đợt chọn văn bản mới kèm lý do chọn
+dataset/silver/<mã>/   Dữ liệu silver (AI tạo, chưa duyệt) – chỉ để train
+notebooks/             Notebook Colab (LoRA, qd_021) và notebooks/data/*.jsonl
 dataset/               Dữ liệu cũ (van_ban_hanh_chinh/, hf_quyet_dinh/) giữ nguyên
 schemas/               JSON Schema cho dữ liệu trung gian
 templates/             Đặc tả template

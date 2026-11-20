@@ -1,3 +1,7 @@
-# Mẫu chỉ dùng để chấm điểm cuối, không đưa vào train
-qd_067
-qd_014
+# Mẫu chỉ dùng để chấm điểm cuối: văn bản mới, chưa xem khi viết prompt.
+# KHÔNG chỉnh prompt/normalizer dựa trên lỗi của các mẫu này.
+qd_042
+qd_096
+qd_035
+qd_022
+qd_072
