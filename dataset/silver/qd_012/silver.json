@@ -1,0 +1,116 @@
+{
+  "articles": [
+    {
+      "clauses": [],
+      "heading": "Ban hành kèm theo Quyết định này Quy định về phân cấp cấp Giấy phép xây dựng trên địa bàn tỉnh Điện Biên.",
+      "number": 1,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [
+        {
+          "children": [],
+          "number": null,
+          "text": "Kể từ ngày Quyết định này có hiệu lực thi hành, Quyết định số 741/QĐ-UBND ngày 01/10/2014 của UBND tỉnh quy định cụ thể một số nội dung về cấp Giấy phép xây dựng trên địa bàn tỉnh hết hiệu lực thi hành."
+        }
+      ],
+      "heading": "Quyết định này có hiệu lực thi hành kể từ ngày 01 tháng 4 năm 2017.",
+      "number": 2,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [],
+      "heading": "Chánh văn phòng Ủy ban nhân dân tỉnh; Giám đốc các Sở, Ban, ngành tỉnh; Chủ tịch Ủy ban nhân dân các huyện, thị xã, thành phố; các tổ chức, cá nhân có liên quan chịu trách nhiệm thi hành Quyết định này./.",
+      "number": 3,
+      "related_table_ids": []
+    }
+  ],
+  "attachments": [
+    {
+      "id": "quy_dinh_01",
+      "included_in_source": false,
+      "source_reference": "Điều 1",
+      "title": "Quy định về phân cấp cấp Giấy phép xây dựng trên địa bàn tỉnh Điện Biên"
+    }
+  ],
+  "data_tables": [],
+  "document_type": "quyet_dinh",
+  "enactment": "QUYẾT ĐỊNH:",
+  "header": {
+    "document_number": "05/2017/QĐ-UBND",
+    "issue_date": "2017-03-24",
+    "issue_date_text": "Điện Biên, ngày 24 tháng 3 năm 2017",
+    "issue_place": "Điện Biên",
+    "issuer": "ỦY BAN NHÂN DÂN TỈNH ĐIỆN BIÊN",
+    "motto": "Độc lập - Tự do - Hạnh phúc",
+    "national_heading": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM"
+  },
+  "language": "vi",
+  "legal_bases": [
+    "Căn cứ Luật Tổ chức chính quyền địa phương số 77/2015/QH13 ngày 19 tháng 6 năm 2015;",
+    "Căn cứ Luật Ban hành văn bản quy phạm pháp luật số 80/2015/QH13 ngày 22 tháng 6 năm 2015;",
+    "Căn cứ Luật Xây dựng số 50/2014/QH13 ngày 18 tháng 6 năm 2014;",
+    "Căn cứ Nghị định số 59/2015/NĐ-CP ngày 18 tháng 6 năm 2015 của Chính phủ về quản lý dự án đầu tư xây dựng;",
+    "Căn cứ Thông tư số 15/2016/TT-BXD ngày 30 tháng 6 năm 2016 của Bộ Xây dựng hướng dẫn về cấp phép xây dựng;",
+    "Theo đề nghị của Giám đốc Sở Xây dựng."
+  ],
+  "legal_effect": {
+    "effective_from": "2017-04-01",
+    "review_note": "Kết quả trích xuất chưa được chuyên gia pháp lý kiểm duyệt và không thay thế tư vấn pháp lý.",
+    "supersedes": [
+      "Quyết định số 741/QĐ-UBND ngày 01/10/2014 của UBND tỉnh"
+    ]
+  },
+  "provenance": {
+    "normalizations": [
+      {
+        "normalized_text": "2017-03-24",
+        "reason": "Biểu diễn ngày ban hành theo định dạng ngày của schema.",
+        "source_text": "ngày 24 tháng 3 năm 2017"
+      },
+      {
+        "normalized_text": "2017-04-01",
+        "reason": "Biểu diễn ngày có hiệu lực theo định dạng ngày của schema.",
+        "source_text": "ngày 01 tháng 4 năm 2017"
+      }
+    ],
+    "source_anomalies": [
+      {
+        "note": "Ký hiệu Điều 3 có khoảng trắng trước dấu chấm trong nguồn.",
+        "source_text": "Điều 3 ."
+      }
+    ]
+  },
+  "quality": {
+    "content_status": "source_preserved",
+    "extraction_status": "verified",
+    "legal_review_status": "not_expert_reviewed",
+    "source_consistency": "warning",
+    "warnings": [
+      "Nguồn ghi “Điều 3 .” với khoảng trắng trước dấu chấm.",
+      "Văn bản được cung cấp không có nội dung Quy định ban hành kèm theo được nêu tại Điều 1."
+    ]
+  },
+  "recipients": [],
+  "sample_id": "qd_012",
+  "schema_version": "1.0",
+  "signature": {
+    "authority": "TM. ỦY BAN NHÂN DÂN",
+    "delegation": null,
+    "position": "CHỦ TỊCH",
+    "signed_status": "(đã ký)",
+    "signer_name": "Mùa A Sơn"
+  },
+  "source": {
+    "dataset": "th1nhng0/vietnamese-legal-documents",
+    "input_file": "source.txt",
+    "license": "CC BY 4.0",
+    "preserve_original_content": true,
+    "source_id": "120511"
+  },
+  "template": null,
+  "title": {
+    "document_name": "QUYẾT ĐỊNH",
+    "subject": "Ban hành Quy định về phân cấp cấp Giấy phép xây dựng trên địa bàn tỉnh Điện Biên"
+  }
+}

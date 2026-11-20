@@ -1,0 +1,110 @@
+{
+  "articles": [
+    {
+      "clauses": [
+        {
+          "children": [],
+          "number": null,
+          "text": "Ban quy chế tạm thời này có hiệu lực thi hành kể từ ngày ký. Các văn bản của tỉnh trước đây trái với quy chế này đều được bãi bỏ."
+        }
+      ],
+      "heading": "Nay ban hành kèm theo Quyết định này bản Quy chế tạm thời về quản lý đề tài nghiên cứu KHKT trên địa bàn tỉnh Bến Tre.",
+      "number": 1,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [],
+      "heading": "Các đồng chí Chánh Văn phòng UBND tỉnh, Trưởng ban KHKT tỉnh, Giám đốc các sở ban ngành tỉnh, Chủ tịch UBND các huyện, thị xã và các cơ quan nghiên cứu KHKT, các nhà khoa học kỹ thuật hoạt động trên địa bàn tỉnh Bến Tre căn cứ Quyết định thi hành./.",
+      "number": 2,
+      "related_table_ids": []
+    }
+  ],
+  "attachments": [
+    {
+      "id": "quy_che_01",
+      "included_in_source": false,
+      "source_reference": "Điều 1",
+      "title": "Quy chế tạm thời về quản lý đề tài nghiên cứu KHKT trên địa bàn tỉnh Bến Tre"
+    }
+  ],
+  "data_tables": [],
+  "document_type": "quyet_dinh",
+  "enactment": "QUYẾT ĐỊNH:",
+  "header": {
+    "document_number": "1202/UB-QĐ",
+    "issue_date": "1989-10-26",
+    "issue_date_text": "Bến Tre, ngày 26 tháng 10 năm 1989",
+    "issue_place": "Bến Tre",
+    "issuer": "ỦY BAN NHÂN DÂN TỈNH BẾN TRE",
+    "motto": "Độc lập – Tự do – Hạnh phúc",
+    "national_heading": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM"
+  },
+  "language": "vi",
+  "legal_bases": [
+    "Căn cứ Luật Tổ chức Hội đồng nhân dân và Uỷ ban nhân dân được HĐNN, Nước Cộng hoà xã hội chủ nghĩa Việt Nam công bố ngày 11/7/1989;",
+    "Căn cứ Quyết định số 134/HĐBT ngày 31/8/1987 của Hội đồng Bộ trưởng và Thông tư số 2388/QLKH ngày 04/01/1988 của Uỷ ban KHKT Nhà nước hướng dẫn thực hiện các chính sách và nghiên cứu KHKT ban hành kèm theo Quyết định số 134/HĐBT ;",
+    "Nhằm tăng cường công tác quản lý KHKT trong tình hình mới, phù hợp với các chính sách mở rộng hoạt động KHKT phục vụ cho các thành phần kinh tế và xã hội;",
+    "Xét đề nghị của Ban khoa học kỹ thuật tỉnh,"
+  ],
+  "legal_effect": {
+    "effective_from": "1989-10-26",
+    "review_note": "Kết quả trích xuất chưa được chuyên gia pháp lý kiểm duyệt và không thay thế tư vấn pháp lý.",
+    "supersedes": []
+  },
+  "provenance": {
+    "normalizations": [
+      {
+        "normalized_text": "1989-10-26",
+        "reason": "Biểu diễn ngày ban hành theo định dạng ISO.",
+        "source_text": "ngày 26 tháng 10 năm 1989"
+      },
+      {
+        "normalized_text": "1989-10-26",
+        "reason": "Điều 1 xác định hiệu lực của Quy chế kể từ ngày ký; dùng ngày ghi trên Quyết định.",
+        "source_text": "kể từ ngày ký"
+      }
+    ],
+    "source_anomalies": [
+      {
+        "note": "Tên tỉnh trong tên văn bản ghi “BÊN TRE”, khác với “BẾN TRE” ở tên cơ quan ban hành.",
+        "source_text": "QUYẾT ĐỊNH CỦA UBND TỈNH BÊN TRE"
+      },
+      {
+        "note": "Nguồn có khoảng trắng trước dấu chấm phẩy; giữ nguyên.",
+        "source_text": "Quyết định số 134/HĐBT ;"
+      }
+    ]
+  },
+  "quality": {
+    "content_status": "source_preserved",
+    "extraction_status": "verified",
+    "legal_review_status": "not_expert_reviewed",
+    "source_consistency": "warning",
+    "warnings": [
+      "Tên văn bản ghi “BÊN TRE”, khác với “BẾN TRE” ở tên cơ quan ban hành; giữ nguyên.",
+      "Nguồn có khoảng trắng trước dấu chấm phẩy trong “Quyết định số 134/HĐBT ;”; giữ nguyên."
+    ]
+  },
+  "recipients": [],
+  "sample_id": "qd_092",
+  "schema_version": "1.0",
+  "signature": {
+    "authority": "TM. ỦY BAN NHÂN DÂN",
+    "delegation": "KT. CHỦ TỊCH",
+    "position": "PHÓ CHỦ TỊCH",
+    "signed_status": "(Đã ký)",
+    "signer_name": "Nguyễn Văn Ba"
+  },
+  "source": {
+    "dataset": "th1nhng0/vietnamese-legal-documents",
+    "input_file": "source.txt",
+    "license": "CC BY 4.0",
+    "preserve_original_content": true,
+    "source_id": "103999"
+  },
+  "template": null,
+  "title": {
+    "document_name": "QUYẾT ĐỊNH CỦA UBND TỈNH BÊN TRE",
+    "subject": "Ban hành Quy chế tạm thời về quản lý đề tài nghiên cứu khoa học kỹ thuật trên địa bàn tỉnh Bến Tre"
+  }
+}

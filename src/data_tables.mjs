@@ -31,6 +31,7 @@ export const SUSPICIOUS_NUMBER_CELL = /^\s*\d{1,3}(?:\.\s*\d{3})*\.\s+\d{3}(?:\.
 export function suspiciousNumberCells(table) {
   const cells = [];
   for (const row of [...(table?.header_rows ?? []), ...(table?.rows ?? [])]) {
+    if (!Array.isArray(row)) continue; // định dạng bảng cũ/sai: để kiểm tra schema báo lỗi
     for (const cell of row) {
       if (typeof cell === "string" && SUSPICIOUS_NUMBER_CELL.test(cell) && !cells.includes(cell)) cells.push(cell);
     }

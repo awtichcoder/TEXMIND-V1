@@ -1,0 +1,23 @@
+{
+  "sample_id": "qd_062",
+  "source_id": "144886",
+  "document_type": "quyet_dinh",
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "source.txt",
+  "silver_file": "silver.json",
+  "data_quality": "silver",
+  "note": "silver: AI tạo, chưa duyệt – chỉ dùng để train, không phải gold, không dùng để chấm điểm.",
+  "review_status": "unreviewed",
+  "usage": "train_only",
+  "source_metadata": {
+    "title": "Quyết định số 33/2020/QĐ-UBND Quy định thời gian hưởng, mức trợ cấp tiền mua, vận chuyển nước ngọt và sạch đối với vùng thiếu nước ngọt và sạch trên địa bàn tỉnh Ninh Thuận",
+    "document_number": "33/2020/QĐ-UBND",
+    "issuing_date": "26/08/2020"
+  },
+  "hf_files": {
+    "clean_text": "dataset/hf_quyet_dinh/clean_text/qd_062.txt"
+  }
+}

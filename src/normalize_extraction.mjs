@@ -41,6 +41,41 @@ export function canonicalLocation(value) {
     .join(", ");
 }
 
+// Quy ước 20/11/2026: đoạn không số (number=null) đứng ngay sau một khoản có số – trước khoản kế tiếp
+// hoặc ở cuối điều – là CON của khoản đó. Đoạn không số trước khoản số đầu tiên, hoặc ở điều không có
+// khoản số, giữ ở cấp điều. Trả về số đoạn đã chuyển (sửa trực tiếp mảng clauses của từng điều).
+export function nestUnnumberedParagraphs(articles) {
+  const moved = [];
+  for (const article of articles ?? []) {
+    if (!Array.isArray(article.clauses)) continue;
+    const kept = [];
+    let parent = null;
+    for (const clause of article.clauses) {
+      if (typeof clause.number === "string" && /^\d+$/u.test(clause.number)) {
+        parent = clause;
+        kept.push(clause);
+      } else if (clause.number === null && parent) {
+        parent.children = [...(parent.children ?? []), clause];
+        moved.push({ article: article.number, clause: parent.number, text: clause.text });
+      } else {
+        kept.push(clause);
+      }
+    }
+    article.clauses = kept;
+  }
+  return moved;
+}
+
+// Ghi chú lỗi thời về thông tin quản lý dữ liệu (bộ dữ liệu, giấy phép, tên tệp, source_id)
+// – chỉ đúng khi khối source chưa được điền từ metadata.
+export function isStaleSourceMetadataNote(text) {
+  const value = normalizedText(text);
+  const aboutSourceInfo =
+    /(bộ dữ liệu|dataset|giấy phép|license|tên tệp|input_file|source_id|mã nguồn riêng|mã định danh)/iu.test(value);
+  const saysMissing = /(không\s+(được\s+)?(cung cấp|có|thể hiện)|thiếu)/iu.test(value);
+  return aboutSourceInfo && saysMissing;
+}
+
 export const SIGNED_STATUS_MISSING_WARNING =
   "Nguồn không có dòng ký (kiểu \"(Đã ký)\"); signature.signed_status = null.";
 
@@ -162,6 +197,42 @@ export function normalizeExtraction(candidate, { sampleId = null, sourceText = n
       recordChange(changes, "source_from_sample_metadata", `$.source.${key}`, normalized.source[key], value);
       normalized.source[key] = value;
     }
+    // Khối source đã điền từ metadata → cảnh báo/bất thường AI viết kiểu "nguồn không cung cấp
+    // bộ dữ liệu/giấy phép/tên tệp/source_id" không còn đúng: xóa.
+    if (Array.isArray(normalized.quality?.warnings)) {
+      const kept = normalized.quality.warnings.filter((warning) => !isStaleSourceMetadataNote(warning));
+      if (kept.length !== normalized.quality.warnings.length) {
+        recordChange(changes, "drop_stale_source_metadata_warning", "$.quality.warnings", normalized.quality.warnings, kept);
+        normalized.quality.warnings = kept;
+      }
+    }
+    if (Array.isArray(normalized.provenance?.source_anomalies)) {
+      const kept = normalized.provenance.source_anomalies.filter(
+        (anomaly) => !isStaleSourceMetadataNote(`${anomaly?.note ?? ""} ${anomaly?.source_text ?? ""}`),
+      );
+      if (kept.length !== normalized.provenance.source_anomalies.length) {
+        recordChange(
+          changes,
+          "drop_stale_source_metadata_anomaly",
+          "$.provenance.source_anomalies",
+          normalized.provenance.source_anomalies,
+          kept,
+        );
+        normalized.provenance.source_anomalies = kept;
+      }
+    }
+  }
+
+  // Tên cơ quan và trích yếu bị ngắt dòng trong nguồn: nối bằng dấu cách (quy ước gold).
+  for (const [path, holder, key] of [
+    ["$.header.issuer", normalized.header, "issuer"],
+    ["$.title.subject", normalized.title, "subject"],
+  ]) {
+    const value = holder?.[key];
+    if (typeof value !== "string" || !/\n/u.test(value)) continue;
+    const joined = value.replace(/[ \t]*\r?\n[ \t]*/gu, " ").trim();
+    recordChange(changes, "join_line_breaks_in_heading_text", path, value, joined);
+    holder[key] = joined;
   }
 
   if (sampleId && normalized.sample_id !== sampleId) {
@@ -354,6 +425,17 @@ export function normalizeExtraction(candidate, { sampleId = null, sourceText = n
       kept.length,
     );
     article.clauses = kept;
+  }
+
+  // Đoạn không số ngay sau khoản có số là con của khoản đó (quy ước người dùng chốt 20/11/2026).
+  for (const item of nestUnnumberedParagraphs(normalized.articles)) {
+    recordChange(
+      changes,
+      "nest_unnumbered_paragraph_under_preceding_clause",
+      `$.articles[Điều ${item.article}].clauses[khoản ${item.clause}].children`,
+      null,
+      item.text,
+    );
   }
 
   // Đoạn không số: nguồn có gạch đầu dòng → "-", nguồn không có ký hiệu → null.

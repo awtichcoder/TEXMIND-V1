@@ -1,0 +1,23 @@
+{
+  "sample_id": "qd_024",
+  "source_id": "96468",
+  "document_type": "quyet_dinh",
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "source.txt",
+  "silver_file": "silver.json",
+  "data_quality": "silver",
+  "note": "silver: AI tạo, chưa duyệt – chỉ dùng để train, không phải gold, không dùng để chấm điểm.",
+  "review_status": "unreviewed",
+  "usage": "train_only",
+  "source_metadata": {
+    "title": "Quyết định số 76/2015/QĐ-UBND Về việc ban hành Quy chế quản lý và sử dụng Chỉ dẫn địa lý “Bình Thuận” dùng cho quả thanh long.",
+    "document_number": "76/2015/QĐ-UBND",
+    "issuing_date": "25/12/2015"
+  },
+  "hf_files": {
+    "clean_text": "dataset/hf_quyet_dinh/clean_text/qd_024.txt"
+  }
+}

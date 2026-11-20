@@ -1,0 +1,26 @@
+{
+  "sample_id": "qd_027",
+  "source_id": "54273",
+  "document_type": "quyet_dinh",
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "source.txt",
+  "silver_file": "silver.json",
+  "data_quality": "silver",
+  "note": "silver: AI tạo, chưa duyệt – chỉ dùng để train, không phải gold, không dùng để chấm điểm.",
+  "review_status": "unreviewed",
+  "usage": "train_only",
+  "source_metadata": {
+    "title": "Quyết định số 139/2002/QĐ-UB V/v giao nhiệm vụ quản lý đầu tư Chương trình mục tiêu quốc gia nước sạch và vệ sinh nông thôn cho sở Nông nghiệp - phát trển nông thôn, Chi cục quản lý nước phòng chống lụt bão - nước sạch và vệ sinh môi trường Nông thôn tỉnh Bình Dương",
+    "document_number": "139/2002/QĐ-UB",
+    "issuing_date": "27/11/2002"
+  },
+  "hf_files": {
+    "clean_text": "dataset/hf_quyet_dinh/clean_text/qd_027.txt"
+  },
+  "silver_status": "rejected_schema",
+  "rejected_on": "2026-11-20",
+  "rejected_reason": "AI không tìm được ngày hiệu lực cụ thể (effective_from = null) nhưng schema bắt buộc ngày → sai schema, bỏ."
+}

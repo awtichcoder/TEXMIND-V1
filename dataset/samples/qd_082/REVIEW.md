@@ -56,3 +56,4 @@ Khung giá dịch vụ chung cư có bảng mức giá; con số bị tách ki�
 - 19/11/2026: AI (gpt-6.1-sol) tạo draft.json từ runs/2026-11-19_1016_gpt-6.1-sol_qd_082/normalized.json. CHƯA DUYỆT.
 - 19/11/2026: thêm luật điền khối source (source_id, dataset, license, input_file) từ metadata.json → tạo lại draft.json từ raw của runs/2026-11-19_1016_gpt-6.1-sol_qd_082 (cùng output gpt-6.1-sol, không gọi AI lại).
 - 19/11/2026: AI (replay) tạo draft.json từ runs/2026-11-19_1030_replay_qd_082/normalized.json. CHƯA DUYỆT.
+- 20/11/2026: ĐÃ DUYỆT bởi Claude (AI) – chưa có người duyệt; draft.json → gold.json.

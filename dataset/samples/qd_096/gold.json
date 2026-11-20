@@ -131,14 +131,15 @@
           "text": "Đối với hàng hóa qua cảng"
         },
         {
-          "children": [],
+          "children": [
+            {
+              "children": [],
+              "number": null,
+              "text": "Thời gian vào, ra cảng 01 lần đối với các phương tiện quy định tại khoản 1, khoản 2 và khoản 3 Điều này không quá 24 giờ. Sau thời gian này, các phương tiện vẫn tiếp tục sử dụng cảng cá thì giá dịch vụ sử dụng cảng cá được tính 01 ngày bằng 01 lượt vào, ra cảng."
+            }
+          ],
           "number": "5",
           "text": "Khung giá dịch vụ sử dụng cảng cá quy định tại Điều này đã bao gồm thuế giá trị gia tăng"
-        },
-        {
-          "children": [],
-          "number": null,
-          "text": "Thời gian vào, ra cảng 01 lần đối với các phương tiện quy định tại khoản 1, khoản 2 và khoản 3 Điều này không quá 24 giờ. Sau thời gian này, các phương tiện vẫn tiếp tục sử dụng cảng cá thì giá dịch vụ sử dụng cảng cá được tính 01 ngày bằng 01 lượt vào, ra cảng."
         }
       ],
       "heading": "Khung giá dịch vụ sử dụng cảng cá trên địa bàn tỉnh Kiên Giang",

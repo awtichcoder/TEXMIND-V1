@@ -30,8 +30,13 @@ test("structured_03 hỗ trợ khoản lồng nhau, phụ lục và cảnh báo 
 
   const article3 = data.articles.find((article) => article.number === 3);
   const nestedClauses = flattenClauses(article3.clauses);
-  assert.equal(article3.clauses.length, 5);
+  // Quy ước 20/11/2026: "(Phụ lục chi tiết kèm theo)" (không số, sau khoản 3) là con của khoản 3.
+  assert.equal(article3.clauses.length, 4);
   assert.equal(article3.clauses.find((clause) => clause.number === "2").children.length, 9);
+  assert.equal(
+    article3.clauses.find((clause) => clause.number === "3").children.at(-1).text,
+    "(Phụ lục chi tiết kèm theo)",
+  );
   assert.equal(nestedClauses.length, 17);
   for (const clause of data.articles.flatMap((article) => flattenClauses(article.clauses))) {
     assert.ok(sourceText.includes(clause.text));

@@ -253,7 +253,9 @@ test("bỏ dấu dính vào ký hiệu khoản/điểm và xóa đoạn lặp ng
   assert.equal(normalized.articles[1].clauses[0].number, "a");
   assert.equal(normalized.articles[1].clauses[1].number, "2");
   assert.equal(normalized.articles[1].clauses[1].children[0].number, "b");
-  assert.equal(normalized.articles[1].clauses.length, 3, "chỉ xóa đoạn trùng nguyên văn tiêu đề");
+  // Đoạn khác tiêu đề không bị xóa; theo quy ước 20/11 nó là con của khoản 2 đứng trước.
+  assert.equal(normalized.articles[1].clauses.length, 2, "chỉ xóa đoạn trùng nguyên văn tiêu đề");
+  assert.equal(normalized.articles[1].clauses[1].children.at(-1).text, "Đoạn khác tiêu đề.");
   assert.equal(changes.filter((c) => c.rule === "strip_marker_punctuation_from_clause_number").length, 3);
   assert.equal(changes.filter((c) => c.rule === "remove_clause_duplicating_article_heading").length, 1);
 });
@@ -297,4 +299,66 @@ test("supersedes chỉ giữ văn bản cụ thể; bỏ câu chung chung không
     "Các văn bản số 12/2010/QĐ-UB và 13/2010/QĐ-UB",
   ]);
   assert.deepEqual(normalized.quality.warnings, []);
+});
+
+test("khối source điền từ metadata thì xóa cảnh báo lỗi thời; nối xuống dòng ở issuer và subject", async () => {
+  const { isStaleSourceMetadataNote } = await import("../src/normalize_extraction.mjs");
+  const candidate = {
+    source: { source_id: "x", dataset: "Không được cung cấp", license: "x", input_file: "x", preserve_original_content: true },
+    header: { issuer: "ỦY BAN NHÂN DÂN\nTỈNH ĐẮK NÔNG" },
+    title: { subject: "Về việc quy định phân cấp, quản lý và sử dụng\nQuỹ phòng, chống thiên tai" },
+    provenance: {
+      source_anomalies: [
+        { source_text: "p hân cấp", note: "Nghi có khoảng trắng thừa." },
+        { source_text: "", note: "Nguồn không cung cấp dataset, license và input_file." },
+      ],
+    },
+    quality: {
+      warnings: [
+        "Nguồn không cung cấp tên bộ dữ liệu, giấy phép hoặc tên tệp đầu vào.",
+        "Phụ lục được dẫn chiếu tại Điều 2, khoản 1 không có trong phần nguồn được cung cấp.",
+      ],
+    },
+  };
+  const sourceInfo = { source_id: "1", dataset: "th1nhng0/vietnamese-legal-documents", license: "CC BY 4.0", input_file: "source.txt" };
+  const { normalized, changes } = normalizeExtraction(candidate, { sourceInfo });
+  assert.deepEqual(normalized.quality.warnings, [
+    "Phụ lục được dẫn chiếu tại Điều 2, khoản 1 không có trong phần nguồn được cung cấp.",
+  ]);
+  assert.deepEqual(normalized.provenance.source_anomalies, [{ source_text: "p hân cấp", note: "Nghi có khoảng trắng thừa." }]);
+  assert.equal(normalized.header.issuer, "ỦY BAN NHÂN DÂN TỈNH ĐẮK NÔNG");
+  assert.equal(normalized.title.subject, "Về việc quy định phân cấp, quản lý và sử dụng Quỹ phòng, chống thiên tai");
+  assert.ok(changes.some((c) => c.rule === "join_line_breaks_in_heading_text"));
+
+  // Không có metadata (chưa điền source) thì KHÔNG xóa các cảnh báo này.
+  const noMeta = normalizeExtraction(candidate);
+  assert.equal(noMeta.normalized.quality.warnings.length, 2);
+  assert.equal(isStaleSourceMetadataNote("Căn cứ Luật Đất đai kết thúc bằng dấu hai chấm trong nguồn."), false);
+});
+
+test("đoạn không số ngay sau khoản có số thành con của khoản; trước khoản đầu hoặc điều không có khoản thì giữ cấp điều", () => {
+  const candidate = {
+    articles: [
+      {
+        number: 3,
+        heading: "Nội dung",
+        clauses: [
+          { number: null, text: "Đoạn dẫn trước khoản đầu." },
+          { number: "1", text: "Khoản một.", children: [{ number: "a", text: "Điểm a." }] },
+          { number: null, text: "Tiếp khoản một." },
+          { number: "2", text: "Khoản hai." },
+          { number: null, text: "Đoạn cuối điều." },
+        ],
+      },
+      { number: 4, heading: "Không có khoản", clauses: [{ number: null, text: "Đoạn duy nhất." }] },
+    ],
+  };
+  const { normalized, changes } = normalizeExtraction(candidate);
+  const [article3, article4] = normalized.articles;
+  assert.deepEqual(article3.clauses.map((c) => c.number), [null, "1", "2"]);
+  assert.deepEqual(article3.clauses[1].children.map((c) => c.text), ["Điểm a.", "Tiếp khoản một."]);
+  assert.deepEqual(article3.clauses[2].children.map((c) => c.text), ["Đoạn cuối điều."]);
+  assert.deepEqual(article4.clauses, [{ number: null, text: "Đoạn duy nhất." }]);
+  assert.equal(changes.filter((c) => c.rule === "nest_unnumbered_paragraph_under_preceding_clause").length, 2);
+  assert.equal(normalizeExtraction(normalized).changes.length, 0, "chạy lại không đổi gì");
 });

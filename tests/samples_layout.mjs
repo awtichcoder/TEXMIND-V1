@@ -77,8 +77,13 @@ test("mẫu đợt mới: source giống hệt clean_text HF, chưa tự có gol
       await readText(join(root, metadata.hf_files.clean_text)),
       `${item.sample_id}: source khác clean_text`,
     );
-    if (metadata.review_status !== "human_reviewed") {
-      assert.equal(existsSync(paths.gold), false, `${item.sample_id} có gold khi chưa duyệt`);
+    // Có gold.json thì metadata phải ghi rõ ai duyệt (người hoặc AI); chưa duyệt thì không được có gold.
+    if (existsSync(paths.gold)) {
+      assert.ok(
+        ["human_reviewed", "ai_reviewed"].includes(metadata.review_status),
+        `${item.sample_id} có gold nhưng review_status = ${metadata.review_status}`,
+      );
+      assert.ok(metadata.reviewed_on && metadata.reviewed_by, `${item.sample_id} thiếu ngày/người duyệt`);
     }
   }
 });
@@ -225,7 +230,7 @@ test("renderScoreboard tạo bảng theo lần chạy và trung bình theo model
   const markdown = renderScoreboard(rows, { generatedAt: "2026-11-19T00:00:00Z" });
   assert.match(markdown, /^# Bảng điểm TexMind/u);
   assert.match(markdown, /\| m1 \| 2 \| 2 \| 0\.7000 \| 0\.8000 \|/u);
-  assert.match(markdown, /\| 2026-11-19_0920_m2_qd_067 \| qd_067 \| test \| m2 .*\| LỖI \| – \| 0\.5000 \| 0\.6000 \|/u);
+  assert.match(markdown, /\| 2026-11-19_0920_m2_qd_067 \| qd_067 \| test \| m2 .*\| LỖI \| – \| – \| 0\.5000 \| 0\.6000 \|/u);
   assert.match(markdown, /không phải gold/u);
   // Bảng theo lần chạy sắp theo run_id.
   assert.ok(markdown.indexOf("0900_m1_qd_067") < markdown.indexOf("0930_m1_qd_021"));
@@ -292,4 +297,64 @@ test("bảng điểm dùng split hiện tại thay cho split cũ ghi trong pipel
   assert.equal(buildScoreboardRow("r", pipeline, null, "dev").split, "dev");
   assert.equal(buildScoreboardRow("r", pipeline, null, null).split, null);
   assert.equal(buildScoreboardRow("r", pipeline, null).split, "test");
+});
+
+test("bảng điểm: nhãn loại duyệt gold (người / AI / gold cũ)", async () => {
+  const { reviewKindLabel } = await import("../src/build_scoreboard.mjs");
+  assert.equal(reviewKindLabel({ review_status: "ai_reviewed" }), "AI");
+  assert.equal(reviewKindLabel({ review_status: "human_reviewed" }), "người");
+  assert.equal(reviewKindLabel({ review_status: "not_expert_reviewed" }), "gold cũ");
+  assert.equal(reviewKindLabel(null), null);
+  const row = buildScoreboardRow("r", { sample_id: "qd_042", status: "completed" }, { strict_evaluation: { overall_score: 1 } }, "test", "AI");
+  assert.equal(row.review_kind, "AI");
+  assert.match(renderScoreboard([{ ...row, run_id: "r", model: "m", mode: "ai_extract" }]), /| AI | 1.0000 |/u);
+});
+
+test("trung bình theo model chỉ tính lần chạy mới nhất của mỗi mẫu", () => {
+  const base = { split: "test", model: "m", mode: "ai_extract", status: "completed" };
+  const averages = averageByModel([
+    { ...base, run_id: "2026-11-19_0947_m_qd_042", sample_id: "qd_042", strict: 0.2, tolerant: 0.2 },
+    { ...base, run_id: "2026-11-19_1017_m_qd_042", sample_id: "qd_042", strict: 0.9, tolerant: 0.9 },
+    { ...base, run_id: "2026-11-19_1018_m_qd_096", sample_id: "qd_096", strict: 0.7, tolerant: 0.8 },
+  ]);
+  assert.equal(averages[0].runs, 2);
+  assert.equal(averages[0].samples, 2);
+  assert.ok(Math.abs(averages[0].strict - 0.8) < 1e-9, "lần 0947 (cũ) không được tính");
+});
+
+test("rescore --renormalize: áp normalizer hiện tại lên raw.json, giữ normalized cũ ở normalized.previous.json", async () => {
+  const { mkdtemp, mkdir, copyFile, writeFile, readFile, rm } = await import("node:fs/promises");
+  const { tmpdir } = await import("node:os");
+  const { rescoreRuns } = await import("../src/build_scoreboard.mjs");
+  const work = await mkdtemp(join(tmpdir(), "texmind-renorm-"));
+  try {
+    const sampleDir = join(work, "dataset", "samples", "qd_096");
+    await mkdir(sampleDir, { recursive: true });
+    for (const name of ["gold.json", "source.txt", "metadata.json"]) {
+      await copyFile(join(root, "dataset", "samples", "qd_096", name), join(sampleDir, name));
+    }
+    // raw cũ: đoạn không số còn nằm ngang hàng sau khoản 5 (trước quy ước 20/11).
+    const gold = JSON.parse(await readFile(join(sampleDir, "gold.json"), "utf8"));
+    const raw = structuredClone(gold);
+    const article = raw.articles.find((item) => item.number === 3);
+    const clause5 = article.clauses.find((item) => item.number === "5");
+    const moved = clause5.children.pop();
+    if (clause5.children.length === 0) delete clause5.children;
+    article.clauses.push(moved);
+    const runDir = join(work, "runs", "2026-11-19_1018_m_qd_096");
+    await mkdir(runDir, { recursive: true });
+    await writeFile(join(runDir, "pipeline.json"), JSON.stringify({ sample_id: "qd_096", run_id: "r", model: "m", mode: "ai_extract" }));
+    await writeFile(join(runDir, "raw.json"), JSON.stringify(raw));
+    await writeFile(join(runDir, "normalized.json"), JSON.stringify(raw));
+
+    await rescoreRuns(work);
+    const before = JSON.parse(await readFile(join(runDir, "score.json"), "utf8"));
+    assert.ok(before.strict_evaluation.overall_score < 1, "chưa chuẩn hóa lại thì lệch cấu trúc");
+    await rescoreRuns(work, { renormalize: true });
+    const after = JSON.parse(await readFile(join(runDir, "score.json"), "utf8"));
+    assert.equal(after.strict_evaluation.overall_score, 1);
+    assert.ok(existsSync(join(runDir, "normalized.previous.json")));
+  } finally {
+    await rm(work, { recursive: true, force: true });
+  }
 });

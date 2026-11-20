@@ -48,6 +48,23 @@ Mẫu dài nhất bộ: 5 điều có tiêu đề, khoản '2. Định mức chi
 
 
 
+## Checklist người duyệt (cho NGƯỜI tự kiểm – mẫu TEST, 20/11/2026)
+
+Dựa trên lỗi thật của gpt-6.1-sol ở các lần chạy trước. Tick [x] từng mục sau khi tự kiểm, sửa `gold.json` nếu sai,
+rồi bảo Claude (hoặc tự chạy) `npm run samples:mark-human -- --sample qd_035 --reviewer "<tên bạn>" --confirm true`.
+
+- [ ] Mở `source.txt` và `gold.json` cạnh nhau; đối chiếu với NGUỒN, không tin gold (gold do AI tạo và AI duyệt).
+- [ ] `header.issue_date_text` có đủ địa danh ở đầu (AI bỏ địa danh ở 4/5 mẫu test; máy đã tự sửa – xác nhận lại).
+- [ ] Đếm lại so với nguồn: số căn cứ, số điều, số khoản/điểm/đoạn, số nơi nhận. Không đoạn nào bị gộp vào đoạn khác hoặc bỏ sót (AI từng gộp tiêu đề khoản với đoạn sau và làm mất 1 đoạn ở qd_042).
+- [ ] Câu chữ NGUYÊN VĂN, kể cả lỗi chính tả và khoảng trắng lạ của nguồn; soi kỹ chỗ nguồn bị ngắt dòng (trích yếu, căn cứ dài).
+- [ ] Cấp lồng: điểm a), b)… và đoạn không số đứng ngay sau một khoản nằm trong `children` của khoản đó; đoạn trước khoản đầu hoặc ở điều không có khoản thì ở cấp điều.
+- [ ] `number` chỉ là "1", "a", "-" hoặc null (không dính dấu "." hay ")" – AI từng ghi "1.", "a)").
+- [ ] Chữ ký (authority/delegation/position/signed_status/signer_name), ngày hiệu lực `effective_from`, `supersedes` (chỉ văn bản cụ thể) đúng nguồn.
+- [ ] Không còn cảnh báo/bất thường lỗi thời hoặc sai sự thật trong `quality.warnings`, `provenance.source_anomalies`.
+- [ ] (qd_035) `attachments` = [] (lần chạy đầu AI ghi nhầm "Phụ lục V ban hành kèm theo Thông tư 11/2021/TT-BXD" – phụ lục của văn bản khác).
+- [ ] (qd_035) 4 chỗ lỗi nguồn giữ nguyên và có trong bất thường: "xây dưng", "đối với các đối với", "phí thẩm dự án đầu tư xây dựng", dấu phẩy thừa sau "kiểm tra".
+- [ ] (qd_035) 26 khoản/điểm, đặc biệt Điều 2–3 khoản 2 có điểm a), b), c).
+
 ## Lịch sử
 
 - 19/11/2026: AI (gpt-6.1-sol) tạo draft.json từ runs/2026-11-19_0951_gpt-6.1-sol_qd_035/normalized.json. CHƯA DUYỆT.
@@ -55,3 +72,4 @@ Mẫu dài nhất bộ: 5 điều có tiêu đề, khoản '2. Định mức chi
 - 19/11/2026: AI (gpt-6.1-sol) tạo draft.json từ runs/2026-11-19_1021_gpt-6.1-sol_qd_035/normalized.json. CHƯA DUYỆT.
 - 19/11/2026: thêm luật điền khối source (source_id, dataset, license, input_file) từ metadata.json → tạo lại draft.json từ raw của runs/2026-11-19_1021_gpt-6.1-sol_qd_035 (cùng output gpt-6.1-sol, không gọi AI lại).
 - 19/11/2026: AI (replay) tạo draft.json từ runs/2026-11-19_1031_replay_qd_035/normalized.json. CHƯA DUYỆT.
+- 20/11/2026: ĐÃ DUYỆT bởi Claude (AI) – chưa có người duyệt; draft.json → gold.json.

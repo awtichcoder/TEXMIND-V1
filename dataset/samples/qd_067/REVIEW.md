@@ -33,3 +33,4 @@
 - 19/11/2026 (quy ước do người dùng chốt): attachments appendix_11: source_reference "Phụ lục 11" → "Điều 3, khoản 2, điểm h".
 - 19/11/2026 (quy ước do người dùng chốt): attachments appendix_12: source_reference "Phụ lục 12" → "Điều 3, khoản 2, điểm i".
 - 19/11/2026 (quy ước do người dùng chốt): attachments appendix_13: source_reference "Phụ lục 13" → "Điều 3, khoản 3".
+- 20/11/2026 (quy ước do người dùng chốt: đoạn không số ngay sau khoản có số là con của khoản đó): Điều 3 – chuyển đoạn "(Phụ lục chi tiết kèm theo)" (number=null) vào children của khoản 3.

@@ -46,6 +46,24 @@ Khung giá cảng cá: mỗi khoản có nhiều điểm a) b) c) với khoảng
 
 
 
+## Checklist người duyệt (cho NGƯỜI tự kiểm – mẫu TEST, 20/11/2026)
+
+Dựa trên lỗi thật của gpt-6.1-sol ở các lần chạy trước. Tick [x] từng mục sau khi tự kiểm, sửa `gold.json` nếu sai,
+rồi bảo Claude (hoặc tự chạy) `npm run samples:mark-human -- --sample qd_096 --reviewer "<tên bạn>" --confirm true`.
+
+- [ ] Mở `source.txt` và `gold.json` cạnh nhau; đối chiếu với NGUỒN, không tin gold (gold do AI tạo và AI duyệt).
+- [ ] `header.issue_date_text` có đủ địa danh ở đầu (AI bỏ địa danh ở 4/5 mẫu test; máy đã tự sửa – xác nhận lại).
+- [ ] Đếm lại so với nguồn: số căn cứ, số điều, số khoản/điểm/đoạn, số nơi nhận. Không đoạn nào bị gộp vào đoạn khác hoặc bỏ sót (AI từng gộp tiêu đề khoản với đoạn sau và làm mất 1 đoạn ở qd_042).
+- [ ] Câu chữ NGUYÊN VĂN, kể cả lỗi chính tả và khoảng trắng lạ của nguồn; soi kỹ chỗ nguồn bị ngắt dòng (trích yếu, căn cứ dài).
+- [ ] Cấp lồng: điểm a), b)… và đoạn không số đứng ngay sau một khoản nằm trong `children` của khoản đó; đoạn trước khoản đầu hoặc ở điều không có khoản thì ở cấp điều.
+- [ ] `number` chỉ là "1", "a", "-" hoặc null (không dính dấu "." hay ")" – AI từng ghi "1.", "a)").
+- [ ] Chữ ký (authority/delegation/position/signed_status/signer_name), ngày hiệu lực `effective_from`, `supersedes` (chỉ văn bản cụ thể) đúng nguồn.
+- [ ] Không còn cảnh báo/bất thường lỗi thời hoặc sai sự thật trong `quality.warnings`, `provenance.source_anomalies`.
+- [ ] (qd_096) Điều 3: đoạn "Thời gian vào, ra cảng 01 lần…" là con (number=null) của khoản 5 (AI để sai cấp ở cả 2 lần chạy; đã sửa theo quy ước 20/11).
+- [ ] (qd_096) Từng mức thu "từ … đồng đến … đồng" ở các điểm của Điều 3 khớp nguồn (số, dấu chấm, đơn vị).
+- [ ] (qd_096) Giữ nguyên khoảng trắng lạ của nguồn: "20 /2021/QĐ-UBND", "q uy định", "565 /TTr- SNNPTNT", "20 21".
+- [ ] (qd_096) Hiệu lực 01/6/2022 và supersedes = Quyết định số 04/2017/QĐ-UBND khớp câu cuối Điều 5.
+
 ## Lịch sử
 
 - 19/11/2026: AI (gpt-6.1-sol) tạo draft.json từ runs/2026-11-19_0949_gpt-6.1-sol_qd_096/normalized.json. CHƯA DUYỆT.
@@ -53,3 +71,5 @@ Khung giá cảng cá: mỗi khoản có nhiều điểm a) b) c) với khoảng
 - 19/11/2026: AI (gpt-6.1-sol) tạo draft.json từ runs/2026-11-19_1018_gpt-6.1-sol_qd_096/normalized.json. CHƯA DUYỆT.
 - 19/11/2026: thêm luật điền khối source (source_id, dataset, license, input_file) từ metadata.json → tạo lại draft.json từ raw của runs/2026-11-19_1018_gpt-6.1-sol_qd_096 (cùng output gpt-6.1-sol, không gọi AI lại).
 - 19/11/2026: AI (replay) tạo draft.json từ runs/2026-11-19_1030_replay_qd_096/normalized.json. CHƯA DUYỆT.
+- 20/11/2026: ĐÃ DUYỆT bởi Claude (AI) – chưa có người duyệt; draft.json → gold.json.
+- 20/11/2026 (quy ước do người dùng chốt: đoạn không số ngay sau khoản có số là con của khoản đó): Điều 3 – chuyển đoạn "Thời gian vào, ra cảng 01 lần đối với các phương tiện quy đị…" (number=null) vào children của khoản 5.

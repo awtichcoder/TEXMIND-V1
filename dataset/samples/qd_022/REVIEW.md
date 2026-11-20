@@ -47,6 +47,24 @@ Quyết định của Thủ tướng về cổ phần hóa: nhiều dòng '-' kh
 
 
 
+## Checklist người duyệt (cho NGƯỜI tự kiểm – mẫu TEST, 20/11/2026)
+
+Dựa trên lỗi thật của gpt-6.1-sol ở các lần chạy trước. Tick [x] từng mục sau khi tự kiểm, sửa `gold.json` nếu sai,
+rồi bảo Claude (hoặc tự chạy) `npm run samples:mark-human -- --sample qd_022 --reviewer "<tên bạn>" --confirm true`.
+
+- [ ] Mở `source.txt` và `gold.json` cạnh nhau; đối chiếu với NGUỒN, không tin gold (gold do AI tạo và AI duyệt).
+- [ ] `header.issue_date_text` có đủ địa danh ở đầu (AI bỏ địa danh ở 4/5 mẫu test; máy đã tự sửa – xác nhận lại).
+- [ ] Đếm lại so với nguồn: số căn cứ, số điều, số khoản/điểm/đoạn, số nơi nhận. Không đoạn nào bị gộp vào đoạn khác hoặc bỏ sót (AI từng gộp tiêu đề khoản với đoạn sau và làm mất 1 đoạn ở qd_042).
+- [ ] Câu chữ NGUYÊN VĂN, kể cả lỗi chính tả và khoảng trắng lạ của nguồn; soi kỹ chỗ nguồn bị ngắt dòng (trích yếu, căn cứ dài).
+- [ ] Cấp lồng: điểm a), b)… và đoạn không số đứng ngay sau một khoản nằm trong `children` của khoản đó; đoạn trước khoản đầu hoặc ở điều không có khoản thì ở cấp điều.
+- [ ] `number` chỉ là "1", "a", "-" hoặc null (không dính dấu "." hay ")" – AI từng ghi "1.", "a)").
+- [ ] Chữ ký (authority/delegation/position/signed_status/signer_name), ngày hiệu lực `effective_from`, `supersedes` (chỉ văn bản cụ thể) đúng nguồn.
+- [ ] Không còn cảnh báo/bất thường lỗi thời hoặc sai sự thật trong `quality.warnings`, `provenance.source_anomalies`.
+- [ ] (qd_022) `supersedes` = [] (AI ghi câu chung chung "các quyết định trước đây trái với Quyết định này"; nội dung vẫn ở Điều 6).
+- [ ] (qd_022) Chữ ký: authority "THỦ TƯỚNG CHÍNH PHỦ", delegation "KT. THỦ TƯỚNG", position "PHÓ THỦ TƯỚNG", tên người ký.
+- [ ] (qd_022) Điều 1: các gạch đầu dòng (number "-") nằm trong đúng khoản 1/3/4; Điều 2–5 (không có khoản số) gạch đầu dòng ở cấp điều. Không đoạn nào bị tự đánh số.
+- [ ] (qd_022) Tiêu đề Điều 5 giữ nguyên "Công ty cổ phần Giấy Viễn Đông :" (có khoảng trắng trước dấu hai chấm); số tiền dạng 11.600.000.000 đồng đúng từng chữ số.
+
 ## Lịch sử
 
 - 19/11/2026: AI (gpt-6.1-sol) tạo draft.json từ runs/2026-11-19_0954_gpt-6.1-sol_qd_022/normalized.json. CHƯA DUYỆT.
@@ -56,3 +74,4 @@ Quyết định của Thủ tướng về cổ phần hóa: nhiều dòng '-' kh
 - 19/11/2026: AI (replay) tạo draft.json từ runs/2026-11-19_1031_replay_qd_022/normalized.json. CHƯA DUYỆT.
 - 19/11/2026: quy ước mới signed_status (nguyên văn dòng ký, không có → null + cảnh báo) và supersedes (chỉ văn bản cụ thể) → tạo lại draft.json từ raw của runs/2026-11-19_1025_gpt-6.1-sol_qd_022 (cùng output gpt-6.1-sol, không gọi AI lại).
 - 19/11/2026: AI (replay) tạo draft.json từ runs/2026-11-19_1040_replay_qd_022/normalized.json. CHƯA DUYỆT.
+- 20/11/2026: ĐÃ DUYỆT bởi Claude (AI) – chưa có người duyệt; draft.json → gold.json.

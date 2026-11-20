@@ -8,8 +8,8 @@
   "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
   "license": "CC BY 4.0",
   "input_file": "source.txt",
-  "structured_file": null,
-  "draft_file": "draft.json",
+  "structured_file": "gold.json",
+  "draft_file": null,
   "schema_file": "../../../schemas/texmind-document.schema.json",
   "expected_output_file": null,
   "preserve_original_content": true,
@@ -33,11 +33,12 @@
     "legal_field": "Chưa phân loại",
     "effect_status": "Còn hiệu lực"
   },
-  "status": "draft_pending_review",
-  "review_status": "unreviewed",
-  "reviewed_on": null,
+  "status": "gold_ai_reviewed",
+  "review_status": "ai_reviewed",
+  "reviewed_on": "2026-11-20",
   "hf_files": {
     "clean_text": "dataset/hf_quyet_dinh/clean_text/qd_068.txt",
     "raw_html": "dataset/hf_quyet_dinh/raw_html/qd_068.html"
-  }
+  },
+  "reviewed_by": "Claude (AI)"
 }

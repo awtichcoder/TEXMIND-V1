@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0",
+  "sample_id": "qd_039",
+  "document_type": "quyet_dinh",
+  "language": "vi",
+  "template": null,
+  "source": {
+    "source_id": "162844",
+    "dataset": "th1nhng0/vietnamese-legal-documents",
+    "license": "CC BY 4.0",
+    "input_file": "source.txt",
+    "preserve_original_content": true
+  },
+  "header": {
+    "issuer": "ỦY BAN NHÂN DÂN TỈNH VĨNH PHÚC",
+    "national_heading": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM",
+    "motto": "Độc lập – Tự do – Hạnh phúc",
+    "document_number": "26/2023/QĐ-UBND",
+    "issue_place": "Vĩnh Phúc",
+    "issue_date": "2023-07-14",
+    "issue_date_text": "Vĩnh Phúc, ngày 14 tháng 7 năm 2023"
+  },
+  "title": {
+    "document_name": "QUYẾT ĐỊNH",
+    "subject": "Ban hành Quy chế quản lý và sử dụng viện trợ không hoàn lại không thuộc hỗ trợ phát triển chính thức của các cơ quan, tổ chức, cá nhân nước ngoài dành cho Việt Nam trên địa bàn tỉnh Vĩnh Phúc"
+  },
+  "legal_bases": [
+    "Căn cứ Luật Tổ chức chính quyền địa phương ngày 19 tháng 6 năm 2015;",
+    "Căn cứ Luật sửa đổi, bổ sung một số điều của Luật Tổ chức chính phủ và Luật Tổ chức chính quyền địa phương ngày 22 tháng 11 năm 2019;",
+    "Căn cứ Luật Ban hành văn bản quy phạm pháp luật ngày 22 tháng 6 năm 2015;",
+    "Căn cứ Luật sửa đổi, bổ sung một số điều của Luật Ban hành văn bản quy phạm pháp luật ngày 18 tháng 6 năm 2020;",
+    "Căn cứ Nghị định số 80/2020/NĐ-CP ngày 08 tháng 7 năm 2020 của Chính phủ về Quản lý và sử dụng viện trợ không hoàn lại không thuộc hỗ trợ phát triển chính thức của các cơ quan, tổ chức, cá nhân nước ngoài dành cho Việt Nam;",
+    "Căn cứ Thông tư số 23/2022/TT-BTC ngày 06 tháng 4 năm 2022 của Bộ trưởng Bộ Tài chính Hướng dẫn quản lý tài chính Nhà nước đối với viện trợ không hoàn lại của nước ngoài thuộc nguồn thu ngân sách nhà nước;",
+    "Căn cứ ý kiến thống nhất của Lãnh đạo UBND tỉnh Vĩnh Phúc;",
+    "Theo đề nghị của Giám đốc Sở Kế hoạch và Đầu tư tại Tờ trình số 43/TTr- SKHĐT ngày 27/3/2023 và Báo cáo thẩm định số 59/BC-STP ngày 24/3/2023 của Sở Tư pháp,"
+  ],
+  "enactment": "QUYẾT ĐỊNH:",
+  "articles": [
+    {
+      "number": 1,
+      "heading": "Ban hành kèm theo Quyết định này Quy chế quản lý và sử dụng viện trợ không hoàn lại không thuộc hỗ trợ phát triển chính thức của các cơ quan, tổ chức, cá nhân nước ngoài dành cho Việt Nam trên địa bàn tỉnh Vĩnh Phúc.",
+      "clauses": [],
+      "related_table_ids": []
+    },
+    {
+      "number": 2,
+      "heading": "Quyết định này có hiệu lực kể từ ngày 25 tháng 7 năm 2023 và thay thế Quyết định số 41/2015/QĐ-UBND ngày 23 tháng 11 năm 2015 của UBND tỉnh ban hành Quy chế quản lý và sử dụng viện trợ phi chính phủ nước ngoài trên địa bàn tỉnh Vĩnh Phúc.",
+      "clauses": [],
+      "related_table_ids": []
+    },
+    {
+      "number": 3,
+      "heading": "Giám đốc sở, thủ trưởng cơ quan thuộc UBND tỉnh; các cơ quan được tổ chức theo ngành dọc Trung ương đóng trên địa bàn; Chủ tịch UBND huyện, thành phố và các tổ chức, cá nhân có liên quan căn cứ Quyết định thi hành./.",
+      "clauses": [],
+      "related_table_ids": []
+    }
+  ],
+  "data_tables": [],
+  "attachments": [
+    {
+      "id": "attachment_1",
+      "title": "Quy chế quản lý và sử dụng viện trợ không hoàn lại không thuộc hỗ trợ phát triển chính thức của các cơ quan, tổ chức, cá nhân nước ngoài dành cho Việt Nam trên địa bàn tỉnh Vĩnh Phúc",
+      "source_reference": "Điều 1",
+      "included_in_source": false
+    }
+  ],
+  "recipients": [],
+  "signature": {
+    "authority": "TM. ỦY BAN NHÂN DÂN",
+    "delegation": "KT. CHỦ TỊCH",
+    "position": "PHÓ CHỦ TỊCH",
+    "signed_status": "(Đã ký)",
+    "signer_name": "Vũ Chí Giang"
+  },
+  "legal_effect": {
+    "effective_from": "2023-07-25",
+    "supersedes": [
+      "Quyết định số 41/2015/QĐ-UBND ngày 23 tháng 11 năm 2015 của UBND tỉnh ban hành Quy chế quản lý và sử dụng viện trợ phi chính phủ nước ngoài trên địa bàn tỉnh Vĩnh Phúc"
+    ],
+    "review_note": "Kết quả chưa được chuyên gia pháp lý kiểm duyệt và không thay thế tư vấn pháp lý."
+  },
+  "provenance": {
+    "normalizations": [
+      {
+        "source_text": "ngày 14 tháng 7 năm 2023",
+        "normalized_text": "2023-07-14",
+        "reason": "Biểu diễn ngày ban hành theo định dạng ISO 8601 trong trường issue_date."
+      },
+      {
+        "source_text": "ngày 25 tháng 7 năm 2023",
+        "normalized_text": "2023-07-25",
+        "reason": "Biểu diễn ngày có hiệu lực theo định dạng ISO 8601 trong trường effective_from."
+      }
+    ],
+    "source_anomalies": []
+  },
+  "quality": {
+    "extraction_status": "verified",
+    "content_status": "source_preserved",
+    "legal_review_status": "not_expert_reviewed",
+    "source_consistency": "passed",
+    "warnings": [
+      "Quy chế ban hành kèm theo được nhắc tại Điều 1 nhưng không có nội dung trong nguồn."
+    ]
+  }
+}

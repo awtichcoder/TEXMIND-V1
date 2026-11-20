@@ -1,0 +1,23 @@
+{
+  "sample_id": "qd_001",
+  "source_id": "171699",
+  "document_type": "quyet_dinh",
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "source.txt",
+  "silver_file": "silver.json",
+  "data_quality": "silver",
+  "note": "silver: AI tạo, chưa duyệt – chỉ dùng để train, không phải gold, không dùng để chấm điểm.",
+  "review_status": "unreviewed",
+  "usage": "train_only",
+  "source_metadata": {
+    "title": "Quyết định số 25/2024/QĐ-UBND Quy định một số chỉ tiêu xác định giá đất theo phương pháp thặng dư và các yếu tố ảnh hưởng đến giá đất trên địa bàn tỉnh Bắc Kạn",
+    "document_number": "25/2024/QĐ-UBND",
+    "issuing_date": "30/10/2024"
+  },
+  "hf_files": {
+    "clean_text": "dataset/hf_quyet_dinh/clean_text/qd_001.txt"
+  }
+}

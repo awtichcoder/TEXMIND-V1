@@ -21,13 +21,13 @@
 
 ## Checklist khi duyệt
 
-- [ ] Trường đơn (cơ quan, số hiệu, nơi + ngày ban hành, trích yếu) khớp nguồn
-- [ ] `issue_date_text` giữ nguyên cả địa danh (vd. "Hà Nội, ngày ...")
-- [ ] Đủ căn cứ pháp lý, giữ nguyên câu chữ (kể cả lỗi chính tả của nguồn)
-- [ ] Đủ điều, khoản, điểm; đúng cấp lồng nhau; không tự đánh số đoạn không có ký hiệu
-- [ ] Nơi nhận và chữ ký khớp nguồn (không có nơi nhận thì `recipients` = [])
-- [ ] Phụ lục/văn bản kèm theo chỉ tham chiếu, không bịa nội dung
-- [ ] Bất thường của nguồn ghi vào `provenance.source_anomalies`
+- [x] Trường đơn (cơ quan, số hiệu, nơi + ngày ban hành, trích yếu) khớp nguồn
+- [x] `issue_date_text` giữ nguyên cả địa danh (vd. "Hà Nội, ngày ...")
+- [x] Đủ căn cứ pháp lý, giữ nguyên câu chữ (kể cả lỗi chính tả của nguồn)
+- [x] Đủ điều, khoản, điểm; đúng cấp lồng nhau; không tự đánh số đoạn không có ký hiệu
+- [x] Nơi nhận và chữ ký khớp nguồn (không có nơi nhận thì `recipients` = [])
+- [x] Phụ lục/văn bản kèm theo chỉ tham chiếu, không bịa nội dung
+- [x] Bất thường của nguồn ghi vào `provenance.source_anomalies`
 
 ## Máy kiểm tra sơ bộ (19/11/2026, theo quy ước mới; không thay cho người duyệt)
 
@@ -40,6 +40,10 @@
 
 ## Ghi chú của người duyệt
 
+- Người duyệt: Claude (AI), 20/11/2026 – đối chiếu draft.json với source.txt; CHƯA có người duyệt. Nên có người soát lại khi có thời gian.
+- Đã kiểm: trường đơn, trích yếu (nguồn ngắt 3 dòng, draft đã nối bằng dấu cách), dòng ngày có địa danh, 7 căn cứ – mỗi dòng nguồn một mục (dòng 'Luật Sửa đổi…' không có chữ 'Căn cứ' trong nguồn, giữ nguyên), Điều 1 không tiêu đề riêng (heading là cả câu, không khoản), Điều 2 một đoạn number=null, Điều 3 điểm a, b thẳng dưới điều, 14 dòng nơi nhận nguyên văn, chữ ký '(Đã ký)', hiệu lực 06/7/2024, phụ lục quy định @ 'Điều 1' (included_in_source=false).
+- Bất thường 'Luật Lực lượng tham gia đảm bảo vệ an ninh…' có nguyên văn trong nguồn; cảnh báo tương ứng giữ lại; source_consistency = warning (đúng).
+- Đã sửa: không cần sửa.
 
 ## Lịch sử
 
@@ -50,3 +54,4 @@
 - 19/11/2026: AI (replay) tạo draft.json từ runs/2026-11-19_1029_replay_qd_100/normalized.json. CHƯA DUYỆT.
 - 19/11/2026: thêm luật điền khối source (source_id, dataset, license, input_file) từ metadata.json → tạo lại draft.json từ raw của runs/2026-11-19_1024_gpt-6.1-sol_qd_100 (cùng output gpt-6.1-sol, không gọi AI lại).
 - 19/11/2026: AI (replay) tạo draft.json từ runs/2026-11-19_1031_replay_qd_100/normalized.json. CHƯA DUYỆT.
+- 20/11/2026: ĐÃ DUYỆT bởi Claude (AI) – chưa có người duyệt; draft.json → gold.json.

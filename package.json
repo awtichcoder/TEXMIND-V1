@@ -10,6 +10,10 @@
     "smoke:codex": "node ./src/codex_smoke_test.mjs",
     "normalize:saved": "node ./src/normalize_saved_extraction.mjs",
     "build:colab:qd021": "node ./src/build_colab_qd021.mjs",
+    "build:colab:lora": "node ./src/build_colab_lora.mjs",
+    "export:train": "node ./src/export_training_data.mjs",
+    "silver": "node ./src/silver.mjs",
+    "score:predictions": "node ./src/score_predictions.mjs",
     "evaluate:ai": "node ./src/evaluate_structured.mjs",
     "analyze:diff": "node ./src/analyze_extraction_diff.mjs",
     "render:docx": "node ./src/render_structured_docx.mjs",
@@ -17,6 +21,7 @@
     "samples:migrate": "node ./src/migrate_samples.mjs",
     "samples:prepare": "node ./src/prepare_draft_samples.mjs",
     "samples:promote": "node ./src/promote_draft.mjs",
+    "samples:mark-human": "node ./src/mark_human_reviewed.mjs",
     "scoreboard": "node ./src/build_scoreboard.mjs",
     "test": "node --test ./tests/*.mjs"
   },

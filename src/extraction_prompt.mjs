@@ -10,6 +10,7 @@ export function buildExtractionSystemPrompt(sampleId = null) {
     "heading của mỗi điều phải được chép nguyên văn từ dòng tiêu đề trong nguồn, giữ nguyên hoa/thường, dấu câu và lỗi nguồn; không viết lại hoặc suy diễn tiêu đề.",
     "Nếu nguồn viết toàn bộ nội dung ngay trên dòng 'Điều N.' mà không có tiêu đề tách riêng, giữ toàn bộ phần sau 'Điều N.' trong heading và không lặp lại cùng văn bản thành một clause.",
     "Đoạn không đánh số nằm sau một điều được ghi thành clause number=null của điều trước đó khi ngữ cảnh cho thấy đó là phần tiếp tục; không tự tạo điều mới.",
+    "Đoạn không số (number=null) đứng ngay sau một khoản có số – trước khoản kế tiếp hoặc ở cuối điều – là children của khoản đó. Đoạn không số trước khoản số đầu tiên, hoặc ở điều không có khoản số, giữ ở cấp điều.",
     "Mỗi legal_bases phải chứa nguyên văn toàn bộ một căn cứ từ đầu đến dấu kết thúc, kể cả cụm 'Căn cứ' hoặc 'Theo đề nghị'; không rút gọn thành tên hoặc số văn bản.",
     "Không bỏ sót căn cứ cuối cùng bắt đầu bằng 'Theo đề nghị' nếu có trong nguồn.",
     "Chỉ điền motto bằng đúng tiêu ngữ có trong nguồn; không tìm thấy thì phải xem lại nguồn, không trả chuỗi rỗng.",

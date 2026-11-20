@@ -13,7 +13,36 @@ File này ghi trạng thái để phiên Claude Code tiếp quản. Đọc hết
 - Xem DOCX: LibreOffice headless (`C:\Program Files\LibreOffice\program\soffice.exe --headless --convert-to pdf`) chạy tốt. Word COM (automation) bị treo do hộp thoại ẩn → không dùng.
 - Template: `TM-QD-001` (có bảng, mẫu qd_066, nay cả qd_082 nháp), `TM-QD-002` (không bảng; qd_021, qd_014, qd_067).
 
-## 00. CẬP NHẬT MỚI NHẤT – phiên 19/11 (lần 3): người dùng chốt 4 quy ước
+## 0000. CẬP NHẬT MỚI NHẤT – 20/11/2026 (lần 2, đã commit + push theo yêu cầu)
+
+1. Quy ước mới (người dùng chốt): đoạn không số ngay sau khoản có số (trước khoản kế tiếp hoặc cuối điều) là CON (number=null) của khoản đó; đoạn trước khoản số đầu tiên hoặc ở điều không có khoản số giữ cấp điều. Có trong prompt + normalizer (`nestUnnumberedParagraphs`, luật `nest_unnumbered_paragraph_under_preceding_clause`). Quét 16 gold: sửa qd_040 (Điều 2 → khoản 3), qd_096 (Điều 3 → khoản 5), qd_067 (Điều 3 → khoản 3, sửa cả `structured_03.json`), ghi REVIEW.md. Không có gạch đầu dòng/điểm chữ nào nằm ngang hàng khoản.
+2. `npm run scoreboard -- --rescore true --renormalize true`: áp normalizer hiện tại lên raw.json của mọi run (không gọi AI; normalized cũ lưu `normalized.previous.json`). Kết quả: test 5/5 = 1.0, dev 3/3 = 1.0 (chỉ rescore không renormalize: qd_096 0.994, qd_067 0.993 vì output cũ trước quy ước). Nhắc lại: điểm test KHÔNG độc lập (gold làm từ output gpt-6.1-sol).
+3. Hướng dẫn chạy Colab từng bước: README mục "Hướng dẫn từng bước: chạy TexMind_LoRA.ipynb trên Google Colab".
+4. Checklist cho NGƯỜI duyệt 5 mẫu test: mục "## Checklist người duyệt" trong REVIEW.md (8 mục chung + 2–4 mục riêng từ lỗi thật: bỏ địa danh dòng ngày 4/5 mẫu; qd_042 gộp tiêu đề khoản 1 với đoạn sau + mất 1 đoạn, đoạn lặp câu chữ giữa Điều 2–5; qd_096 sai cấp đoạn khoản 5; qd_035 ghi nhầm phụ lục Thông tư; qd_022 supersedes chung chung, chữ ký Thủ tướng, gạch đầu dòng; qd_072 tên phụ lục). Khi người dùng duyệt xong mẫu nào: `npm run samples:mark-human -- --sample <mã> --reviewer "<tên người>" --confirm true` (yêu cầu tick hết checklist người duyệt, tên không phải AI; đổi review_status → human_reviewed, lưu lần duyệt AI ở `previous_reviews`, không sửa gold).
+5. `npm test` 100/100, `git diff --check` sạch.
+
+## 000. 20/11/2026 (lần 1)
+
+Môi trường: phiên này PATH thiếu Node → mỗi lệnh thêm `C:\nvm4w\nodejs` vào PATH (PowerShell: `$env:Path = "C:\nvm4w\nodejs;" + $env:Path`; Git Bash: `export PATH="/c/nvm4w/nodejs:$PATH"`). Node vẫn ở `C:\nvm4w\nodejs` (symlink tới `C:\nodejs\nvm\v25.9.0`).
+
+PHẦN 1 – duyệt & promote 10 mẫu mới (người dùng yêu cầu, loại duyệt AI):
+1. Claude (AI) duyệt nốt qd_081 (sửa lỗi cấu trúc: điểm a/b/c lồng vào khoản cha; đoạn không số sau "1. Phạm vi điều chỉnh" là con khoản 1), qd_040 (nối trích yếu, xóa cảnh báo lỗi thời), qd_100 và qd_068 (không cần sửa). Ghi chú + checklist trong REVIEW.md. 6 mẫu đã duyệt trước (qd_042, qd_096, qd_035, qd_022, qd_072, qd_082) không đụng.
+   - Chỗ để người cân nhắc: qd_040 đoạn "Riêng mức hỗ trợ… 3%" để NGANG HÀNG khoản (giống qd_096), không lồng vào khoản 3.
+2. `promote_draft.mjs --review-kind human|ai` (mặc định human). ai → metadata `review_status: "ai_reviewed"`, `status: "gold_ai_reviewed"`, lịch sử "ĐÃ DUYỆT bởi Claude (AI) – chưa có người duyệt". Bảng điểm có cột "Gold duyệt bởi" (người / AI / gold cũ).
+3. Đã promote 10 mẫu (ai). Hiện 16 gold: 6 gold cũ + 10 gold AI duyệt. KHÔNG còn draft.
+4. Điểm test (5 mẫu, lần chạy gpt-6.1-sol mới nhất, không gọi AI lại): cả 5 = 1.0. KHÔNG phải phép đo độc lập: gold test làm từ chính output các lần chạy này rồi AI duyệt sửa nhẹ. Lần chạy cũ (prompt cũ 09:4x): qd_042 0.955 (ký hiệu dính dấu + bỏ sót đoạn dẫn không số ở Điều 1 khoản 1), qd_035 0.833 (ghi nhầm Phụ lục V của Thông tư là phụ lục), qd_072 strict 0.833 (vị trí phụ lục thiếu dấu phẩy). Bảng trung bình nay chỉ tính lần chạy MỚI NHẤT mỗi (model, mẫu). Không sửa prompt/normalizer theo lỗi mẫu test.
+5. Normalizer (lỗi chung, không theo mẫu test): `drop_stale_source_metadata_warning/anomaly` (xóa ghi chú "nguồn không cung cấp bộ dữ liệu/giấy phép/tên tệp/source_id" khi khối source đã điền từ metadata; đã kiểm không khớp nhầm gold nào), `join_line_breaks_in_heading_text` (issuer, subject).
+   - Gợi ý chưa làm: luật tự lồng điểm a/b/c vào khoản số đứng trước (lỗi qd_081 – mẫu train).
+
+PHẦN 2 – chuẩn bị LoRA:
+6. Silver: `src/silver.mjs` chọn đúng 20 văn bản đủ điều kiện (64 bị loại: thiếu quốc hiệu/số hiệu/chữ ký, quá dài, có Chương...), gpt-6.1-sol trích xuất → **18/20 đạt** (`dataset/silver/<mã>/silver.json`); qd_027 (không có ngày hiệu lực cụ thể) và qd_056 (không có địa danh) sai schema → bỏ, lý do ghi trong metadata (`silver_status: rejected_schema`). Silver = AI tạo, chưa duyệt, chỉ để train.
+7. `src/export_training_data.mjs` (`npm run export:train`) → `notebooks/data/train.jsonl` (8 gold train + 18 silver = 26 mẫu, mẫu dài nhất ≈ 6.2k token) và `test_inputs.jsonl` (5 mẫu test, chỉ văn bản nguồn). `assertNoLeak` chặn mã dev/test và văn bản trùng nội dung dev/test; test `tests/training_export.mjs`.
+8. `src/score_predictions.mjs`: chấm dự đoán model ngoài bằng đúng chuẩn hóa + bộ chấm pipeline, ghi `runs/<run_id>/`, JSON hỏng = 0 điểm. Notebook `notebooks/TexMind_LoRA.ipynb` (sinh bằng `src/build_colab_lora.mjs`): unsloth Qwen2.5-1.5B 4-bit (+ tùy chọn 3B), LoRA r=16, train_on_responses_only, 3 epoch, sinh 5 dự đoán test, chấm, zip `runs_colab/` tải về. Colab clone nhánh `feature-texmind-codex-samples` (repo công khai → CẦN PUSH trước) hoặc tải `work/texmind_colab_bundle.zip` (`npm run build:colab:lora -- --bundle`, không có .env). Notebook CHƯA chạy thử trên Colab.
+9. `npm test` 97/97, `git diff --check` sạch.
+
+Việc tiếp theo: (1) người dùng cho phép commit/push để Colab clone được; (2) chạy notebook trên Colab T4, tải `texmind_lora_results.zip`, chép `runs_colab/*` vào `runs/`, `npm run scoreboard`; (3) người duyệt soát lại 10 gold AI duyệt (đổi sang human bằng cách sửa metadata khi đã duyệt); (4) cân nhắc luật lồng điểm vào khoản; (5) rotate API key.
+
+## 00. Phiên 19/11 (lần 3): người dùng chốt 4 quy ước
 
 Thay đổi sau commit `e3b493c`; đã commit và push tiếp lên nhánh `feature-texmind-codex-samples` (19/11, theo yêu cầu người dùng):
 
@@ -91,7 +120,7 @@ Việc nhỏ còn treo (không gấp):
 
 ## 4. Kiểm tra cuối phiên
 
-- `npm test`: **86/86 đạt** (cuối phiên 19/11 lần 4); `git diff --check` sạch.
+- `npm test`: **100/100 đạt** (20/11/2026 lần 2); `git diff --check` sạch.
 - Gold: 6 (qd_010, qd_014, qd_021, qd_030, qd_066, qd_067). Draft chờ duyệt: 10. Điểm dev mới nhất (gpt-6.1-sol): qd_021 1.0, qd_067 1.0, qd_014 1.0. Test: chưa có điểm (chưa có gold). Chi tiết: `reports/scoreboard.md` (`runs/` không lên git).
 
 ## 5. Kế hoạch tới 30/11/2026 (người dùng đã đồng ý hướng này)

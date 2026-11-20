@@ -22,7 +22,7 @@
   },
   "title": {
     "document_name": "QUYẾT ĐỊNH",
-    "subject": "Về việc quy định phân cấp, quản lý và sử dụng\nQuỹ phòng, chống thiên tai tỉnh Đắk Nông"
+    "subject": "Về việc quy định phân cấp, quản lý và sử dụng Quỹ phòng, chống thiên tai tỉnh Đắk Nông"
   },
   "legal_bases": [
     "Căn cứ Luật Tổ chức chính quyền địa phương ngày 19 tháng 6 năm 2015;",
@@ -63,11 +63,13 @@
         },
         {
           "number": "3",
-          "text": "Các nội dung chi không trái với quy định tại Khoản 3, Điều 9, Nghị định số 94/2014/NĐ-CP ngày 17 tháng 10 năm 2014 và tại Khoản 4, Điều 1, Nghị định số 83/2019/NĐ-CP ngày 12 tháng 11 năm 2019 của Chính phủ sửa đổi, bổ sung một số điều của Nghị định số 94/2014/NĐ-CP ngày 17 tháng 10 năm 2014 của Chính phủ quy định về thành lập và quản lý Quỹ phòng, chống thiên tai."
-        },
-        {
-          "number": null,
-          "text": "Riêng mức hỗ trợ chi thù lao cho lực lượng trực tiếp thu và các chi phí hành chính phát sinh liên quan đến công tác thu Quỹ trên địa bàn tỉnh quy định là 3% tổng số thu."
+          "text": "Các nội dung chi không trái với quy định tại Khoản 3, Điều 9, Nghị định số 94/2014/NĐ-CP ngày 17 tháng 10 năm 2014 và tại Khoản 4, Điều 1, Nghị định số 83/2019/NĐ-CP ngày 12 tháng 11 năm 2019 của Chính phủ sửa đổi, bổ sung một số điều của Nghị định số 94/2014/NĐ-CP ngày 17 tháng 10 năm 2014 của Chính phủ quy định về thành lập và quản lý Quỹ phòng, chống thiên tai.",
+          "children": [
+            {
+              "number": null,
+              "text": "Riêng mức hỗ trợ chi thù lao cho lực lượng trực tiếp thu và các chi phí hành chính phát sinh liên quan đến công tác thu Quỹ trên địa bàn tỉnh quy định là 3% tổng số thu."
+            }
+          ]
         },
         {
           "number": "4",
@@ -143,7 +145,6 @@
     "legal_review_status": "not_expert_reviewed",
     "source_consistency": "warning",
     "warnings": [
-      "Nguồn không cung cấp source_id, dataset, license và input_file; các trường bắt buộc này được ghi nhận bằng giá trị 'Không được cung cấp', không phải dữ liệu trích từ văn bản.",
       "Tiêu đề Điều 2 có cụm 'p hân cấp' nghi có khoảng trắng thừa; đã giữ nguyên.",
       "Khoản 2 Điều 2 có cụm 'thành phổ' nghi lỗi gõ hoặc OCR; đã giữ nguyên.",
       "Nguồn không có dòng ký (kiểu \"(Đã ký)\"); signature.signed_status = null."

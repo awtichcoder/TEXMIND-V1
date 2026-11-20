@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { existsSync } from "node:fs";
-import { copyFile, mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, mkdtemp, readFile, rename, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import test from "node:test";
@@ -137,4 +137,76 @@ test("REVIEW.md mẫu mới nhắc rõ draft chưa phải gold và có checklist
   assert.match(note, /CHƯA phải gold/u);
   assert.ok(uncheckedItems(note).length >= 5);
   assert.match(note, /samples:promote -- --sample qd_999/u);
+});
+
+test("promote --review-kind ai: ghi rõ AI duyệt, chưa có người duyệt", async () => {
+  const { parseReviewKind } = await import("../src/promote_draft.mjs");
+  const { root, paths } = await makeFixture();
+  try {
+    const done = await promoteDraft({
+      sampleId: "qd_067",
+      reviewer: "Claude (AI)",
+      reviewDate: "2026-11-20",
+      reviewKind: "ai",
+      root,
+      confirm: true,
+    });
+    assert.equal(done.promoted, true);
+    assert.equal(existsSync(paths.gold), true);
+    const metadata = JSON.parse(await readFile(paths.metadata, "utf8"));
+    assert.equal(metadata.review_status, "ai_reviewed");
+    assert.equal(metadata.status, "gold_ai_reviewed");
+    assert.equal(metadata.reviewed_by, "Claude (AI)");
+    assert.match(
+      await readFile(paths.review, "utf8"),
+      /- 20\/11\/2026: ĐÃ DUYỆT bởi Claude \(AI\) – chưa có người duyệt; draft\.json → gold\.json\.\n$/u,
+    );
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+  assert.equal(parseReviewKind(undefined), "human");
+  assert.equal(parseReviewKind("ai"), "ai");
+  assert.throws(() => parseReviewKind("robot"), /human hoặc ai/u);
+});
+
+test("đổi gold AI duyệt sang người duyệt: cần checklist người duyệt tick hết, tên người thật, --confirm", async () => {
+  const { markHumanReviewed, humanChecklistSection } = await import("../src/mark_human_reviewed.mjs");
+  const { root, paths } = await makeFixture();
+  try {
+    await rename(paths.draft, paths.gold);
+    await writeFile(
+      paths.metadata,
+      `${JSON.stringify({ sample_id: "qd_067", review_status: "ai_reviewed", status: "gold_ai_reviewed", reviewed_by: "Claude (AI)", reviewed_on: "2026-11-20" })}\n`,
+    );
+    const reviewWithOpen = "# Duyệt\n\n- [x] Checklist AI\n\n## Checklist người duyệt (test)\n\n- [x] Mục 1\n- [ ] Mục 2\n\n## Lịch sử\n\n";
+    await writeFile(paths.review, reviewWithOpen);
+    assert.match(humanChecklistSection(reviewWithOpen), /Mục 2/u);
+    assert.doesNotMatch(humanChecklistSection(reviewWithOpen), /Lịch sử/u);
+
+    let result = await markHumanReviewed({ sampleId: "qd_067", reviewer: "Claude (AI)", reviewDate: "2026-11-21", root, confirm: true });
+    assert.equal(result.marked, false);
+    assert.ok(result.problems.some((p) => p.includes("NGƯỜI duyệt")));
+    assert.ok(result.problems.some((p) => p.includes("Mục 2")));
+
+    await writeFile(paths.review, reviewWithOpen.replace("- [ ] Mục 2", "- [x] Mục 2"));
+    result = await markHumanReviewed({ sampleId: "qd_067", reviewer: "Kiệt", reviewDate: "2026-11-21", root });
+    assert.equal(result.dryRun, true, "không có --confirm thì chỉ xem trước");
+    assert.equal(JSON.parse(await readFile(paths.metadata, "utf8")).review_status, "ai_reviewed");
+
+    const goldBefore = await readFile(paths.gold, "utf8");
+    result = await markHumanReviewed({ sampleId: "qd_067", reviewer: "Kiệt", reviewDate: "2026-11-21", root, confirm: true });
+    assert.equal(result.marked, true);
+    const metadata = JSON.parse(await readFile(paths.metadata, "utf8"));
+    assert.equal(metadata.review_status, "human_reviewed");
+    assert.equal(metadata.status, "gold_human_reviewed");
+    assert.equal(metadata.reviewed_by, "Kiệt");
+    assert.deepEqual(metadata.previous_reviews, [{ kind: "ai", review_status: "ai_reviewed", reviewed_by: "Claude (AI)", reviewed_on: "2026-11-20" }]);
+    assert.equal(await readFile(paths.gold, "utf8"), goldBefore, "script không sửa gold.json");
+    assert.match(await readFile(paths.review, "utf8"), /21\/11\/2026: NGƯỜI DUYỆT Kiệt .*human_reviewed/u);
+
+    result = await markHumanReviewed({ sampleId: "qd_067", reviewer: "Kiệt", reviewDate: "2026-11-21", root, confirm: true });
+    assert.ok(result.problems.some((p) => p.includes("đã là human_reviewed")));
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
 });

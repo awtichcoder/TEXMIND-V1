@@ -1,0 +1,23 @@
+{
+  "sample_id": "qd_003",
+  "source_id": "83414",
+  "document_type": "quyet_dinh",
+  "language": "vi",
+  "source_dataset": "th1nhng0/vietnamese-legal-documents",
+  "source_page": "https://huggingface.co/datasets/th1nhng0/vietnamese-legal-documents",
+  "license": "CC BY 4.0",
+  "input_file": "source.txt",
+  "silver_file": "silver.json",
+  "data_quality": "silver",
+  "note": "silver: AI tạo, chưa duyệt – chỉ dùng để train, không phải gold, không dùng để chấm điểm.",
+  "review_status": "unreviewed",
+  "usage": "train_only",
+  "source_metadata": {
+    "title": "Quyết định số 2786/2012/QĐ-UBND Về việc ban hành Quy chế phối hợp tăng cường quản lý phát triển cơ sở hạ tầng kỹ thuật viễn thông thụ động trên địa bàn tỉnh Thanh Hóa.",
+    "document_number": "2786/2012/QĐ-UBND",
+    "issuing_date": "29/08/2012"
+  },
+  "hf_files": {
+    "clean_text": "dataset/hf_quyet_dinh/clean_text/qd_003.txt"
+  }
+}

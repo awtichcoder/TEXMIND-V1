@@ -4,23 +4,27 @@
       "clauses": [
         {
           "number": "1",
-          "text": "Phạm vi điều chỉnh"
-        },
-        {
-          "number": null,
-          "text": "Quyết định này quy định về định mức đất sản xuất làm cơ sở xác định hộ gia đình thiếu đất sản xuất trên địa bàn tỉnh Thái Nguyên để thực hiện Dự án 1: Giải quyết tình trạng thiếu đất ở, nhà ở, đất sản xuất, nước sinh hoạt theo Quyết định số 1719/QĐ-TTg ngày 14 tháng 10 năm 2021 của Thủ tướng Chính phủ phê duyệt Chương trình mục tiêu quốc gia phát triển kinh tế - xã hội vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2021 - 2030."
+          "text": "Phạm vi điều chỉnh",
+          "children": [
+            {
+              "number": null,
+              "text": "Quyết định này quy định về định mức đất sản xuất làm cơ sở xác định hộ gia đình thiếu đất sản xuất trên địa bàn tỉnh Thái Nguyên để thực hiện Dự án 1: Giải quyết tình trạng thiếu đất ở, nhà ở, đất sản xuất, nước sinh hoạt theo Quyết định số 1719/QĐ-TTg ngày 14 tháng 10 năm 2021 của Thủ tướng Chính phủ phê duyệt Chương trình mục tiêu quốc gia phát triển kinh tế - xã hội vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2021 - 2030."
+            }
+          ]
         },
         {
           "number": "2",
-          "text": "Đối tượng áp dụng"
-        },
-        {
-          "number": "a",
-          "text": "Các hộ đồng bào dân tộc thiểu số nghèo sinh sống trên địa bàn vùng dân tộc thiểu số và miền núi; hộ nghèo dân tộc Kinh sinh sống ở xã đặc biệt khó khăn, thôn đặc biệt khó khăn vùng dân tộc thiểu số và miền núi, sinh sống bằng nghề nông, lâm nghiệp, ngư nghiệp;"
-        },
-        {
-          "number": "b",
-          "text": "Các cơ quan, tổ chức, cá nhân có liên quan."
+          "text": "Đối tượng áp dụng",
+          "children": [
+            {
+              "number": "a",
+              "text": "Các hộ đồng bào dân tộc thiểu số nghèo sinh sống trên địa bàn vùng dân tộc thiểu số và miền núi; hộ nghèo dân tộc Kinh sinh sống ở xã đặc biệt khó khăn, thôn đặc biệt khó khăn vùng dân tộc thiểu số và miền núi, sinh sống bằng nghề nông, lâm nghiệp, ngư nghiệp;"
+            },
+            {
+              "number": "b",
+              "text": "Các cơ quan, tổ chức, cá nhân có liên quan."
+            }
+          ]
         }
       ],
       "heading": "Phạm vi điều chỉnh và đối tượng áp dụng",
@@ -31,31 +35,35 @@
       "clauses": [
         {
           "number": "1",
-          "text": "Định mức đất sản xuất cho 01 hộ quy định tại điểm a khoản 2 Điều 1 Quyết định này là một trong các định mức sau:"
-        },
-        {
-          "number": "a",
-          "text": "Đất chuyên trồng lúa nước: 1.500 m2/hộ;"
-        },
-        {
-          "number": "b",
-          "text": "Đất trồng lúa nước còn lại: 2.500 m2/hộ;"
-        },
-        {
-          "number": "c",
-          "text": "Đất trồng rừng sản xuất, đất trồng cây lâu năm, đất nuôi, trồng thủy sản và các loại đất hàng năm khác: 5.000 m2/hộ."
+          "text": "Định mức đất sản xuất cho 01 hộ quy định tại điểm a khoản 2 Điều 1 Quyết định này là một trong các định mức sau:",
+          "children": [
+            {
+              "number": "a",
+              "text": "Đất chuyên trồng lúa nước: 1.500 m2/hộ;"
+            },
+            {
+              "number": "b",
+              "text": "Đất trồng lúa nước còn lại: 2.500 m2/hộ;"
+            },
+            {
+              "number": "c",
+              "text": "Đất trồng rừng sản xuất, đất trồng cây lâu năm, đất nuôi, trồng thủy sản và các loại đất hàng năm khác: 5.000 m2/hộ."
+            }
+          ]
         },
         {
           "number": "2",
-          "text": "Trường hợp hộ có từ hai loại đất trở lên thì quy đổi về loại đất trồng rừng sản xuất, đất trồng cây lâu năm, đất nuôi, trồng thủy sản và các loại đất hàng năm khác, cụ thể như sau:"
-        },
-        {
-          "number": "a",
-          "text": "01 m2 đất chuyên trồng lúa nước được tính bằng 3,33 m2 đất trồng rừng sản xuất, đất trồng cây lâu năm, đất nuôi, trồng thủy sản và các loại đất hàng năm khác;"
-        },
-        {
-          "number": "b",
-          "text": "01 m2 đất trồng lúa nước còn lại được tính bằng 02 m2 đất trồng rừng sản xuất, đất trồng cây lâu năm, đất nuôi, trồng thủy sản và các loại đất hàng năm khác."
+          "text": "Trường hợp hộ có từ hai loại đất trở lên thì quy đổi về loại đất trồng rừng sản xuất, đất trồng cây lâu năm, đất nuôi, trồng thủy sản và các loại đất hàng năm khác, cụ thể như sau:",
+          "children": [
+            {
+              "number": "a",
+              "text": "01 m2 đất chuyên trồng lúa nước được tính bằng 3,33 m2 đất trồng rừng sản xuất, đất trồng cây lâu năm, đất nuôi, trồng thủy sản và các loại đất hàng năm khác;"
+            },
+            {
+              "number": "b",
+              "text": "01 m2 đất trồng lúa nước còn lại được tính bằng 02 m2 đất trồng rừng sản xuất, đất trồng cây lâu năm, đất nuôi, trồng thủy sản và các loại đất hàng năm khác."
+            }
+          ]
         }
       ],
       "heading": "Định mức đất sản xuất",

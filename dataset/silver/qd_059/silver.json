@@ -1,0 +1,170 @@
+{
+  "articles": [
+    {
+      "clauses": [
+        {
+          "children": [
+            {
+              "children": [],
+              "number": "a",
+              "text": "Phạm vi điều chỉnh: Quyết định này quy định về cách tính học viên bình quân, tỷ lệ hao hụt học viên hàng năm và không giảm trừ dự toán đối với tỷ lệ hao hụt số lượng học viên dưới 10% tại các đơn vị đào tạo, dạy nghề công lập thuộc tỉnh Đồng Nai quản lý."
+            },
+            {
+              "children": [],
+              "number": "b",
+              "text": "Đối tượng áp dụng: Áp dụng đối với cơ sở giáo dục đại học và giáo dục nghề nghiệp thuộc các ngành đào tạo, dạy nghề công lập gồm các ngành sư phạm, ngoài ngành sư phạm, ngành kỹ thuật và các ngành đào tạo khác thuộc tỉnh quản lý; các cơ quan, tổ chức liên quan đến việc xác định tỷ lệ hao hụt."
+            }
+          ],
+          "number": "1",
+          "text": "Phạm vi điều chỉnh và đối tượng áp dụng"
+        },
+        {
+          "children": [
+            {
+              "children": [],
+              "number": "-",
+              "text": "Số học viên bình quân của từng ngành = Số học viên có mặt đầu năm học trước của từng ngành - Số học viên tốt nghiệp năm trước của từng ngành/4 + Số học viên tuyển mới trong năm trước của từng ngành/4 - Số học viên bỏ học trong năm của từng ngành."
+            },
+            {
+              "children": [],
+              "number": "-",
+              "text": "Số học viên có mặt đầu năm = Số học viên có mặt đầu năm học trước - Số học viên tốt nghiệp năm trước + Số học viên tuyển mới trong năm trước."
+            }
+          ],
+          "number": "2",
+          "text": "Cách tính số học viên bình quân của từng ngành:"
+        },
+        {
+          "children": [],
+          "number": "3",
+          "text": "Không thực hiện giảm trừ dự toán trong năm đối với các ngành đào tạo, dạy nghề công lập có tỷ lệ hao hụt số học viên dưới 10%."
+        },
+        {
+          "children": [],
+          "number": null,
+          "text": "Cách tính tỷ lệ hao hụt học viên từng ngành = Số học viên nghỉ học trong năm/Tổng số học viên có mặt đầu năm của ngành đó * 100%."
+        }
+      ],
+      "heading": "Quy định về cách tính học viên bình quân, tỷ lệ hao hụt học viên hàng năm và không giảm trừ dự toán đối với tỷ lệ hao hụt số lượng học viên dưới 10% trên địa bàn tỉnh Đồng Nai, cụ thể như sau:",
+      "number": 1,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [
+        {
+          "children": [],
+          "number": "1",
+          "text": "Trách nhiệm của Sở Tài chính: Về công tác hướng dẫn cách tính tỷ lệ, tổng hợp các khó khăn vướng mắc trong quá trình thực hiện quy định, từ đó có cơ sở tham mưu UBND tỉnh kịp thời điều chỉnh các quy định."
+        },
+        {
+          "children": [],
+          "number": "2",
+          "text": "Trách nhiệm của Sở Lao động - Thương binh và Xã hội: Kiểm tra sỉ số và tính số học viên bình quân, tỷ lệ hao hụt học viên hàng năm."
+        },
+        {
+          "children": [],
+          "number": "3",
+          "text": "Trách nhiệm của các cơ sở giáo dục đại học và giáo dục nghề nghiệp: Triển khai thực hiện các quy định, xây dựng dự toán chi sự nghiệp, báo cáo."
+        }
+      ],
+      "heading": "Trách nhiệm thực hiện",
+      "number": 2,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [],
+      "heading": "Quyết định này có hiệu lực kể từ ngày 15 tháng 01 năm 2020.",
+      "number": 3,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [],
+      "heading": "Chánh Văn phòng UBND tỉnh, Giám đốc các Sở: Tài chính, Giáo dục và Đào tạo, Lao động -Thương binh và Xã hội, Hiệu trưởng các cơ sở giáo dục đại học và giáo dục nghề nghiệp trên địa bàn tỉnh và Thủ trưởng các đơn vị có liên quan chịu trách nhiệm thi hành Quyết định này./.",
+      "number": 4,
+      "related_table_ids": []
+    }
+  ],
+  "attachments": [],
+  "data_tables": [],
+  "document_type": "quyet_dinh",
+  "enactment": "QUYẾT ĐỊNH:",
+  "header": {
+    "document_number": "46/2019/QĐ-UBND",
+    "issue_date": "2019-12-27",
+    "issue_date_text": "Đồng Nai, ngày 27 tháng 12 năm 2019",
+    "issue_place": "Đồng Nai",
+    "issuer": "ỦY BAN NHÂN DÂN TỈNH ĐỒNG NAI",
+    "motto": "Độc lập – Tự do – Hạnh phúc",
+    "national_heading": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM"
+  },
+  "language": "vi",
+  "legal_bases": [
+    "Căn cứ Luật Tổ chức chính quyền địa phương ngày 19 tháng 6 năm 2015;",
+    "Căn cứ Luật Ban hành văn bản quy phạm pháp luật ngày 22 tháng 6 năm 2015;",
+    "Căn cứ Nghị định số 34/2016/NĐ-CP ngày 14 tháng 5 năm 2016 của Chính phủ quy định chi tiết một số điều và biện pháp thi hành Luật Ban hành văn bản quy phạm pháp luật;",
+    "Căn cứ Nghị định số 86/2015/NĐ-CP ngày 02 tháng 10 năm 2015 của Chính phủ quy định về cơ chế thu, quản lý học phí đối với cơ sở giáo dục thuộc hệ thống giáo dục quốc dân;",
+    "Căn cứ Nghị quyết số 33/2016/NQ-HĐND ngày 09 tháng 12 năm 2016 của HĐND tỉnh Đồng Nai ban hành quy định về định mức phân bổ dự toán chi thường xuyên ngân sách tỉnh Đồng Nai năm 2017, giai đoạn 2017 - 2020;",
+    "Theo đề nghị của Sở Tài chính tại Tờ trình số 7007/ TTr-UBND ngày 10 tháng 12 năm 2019."
+  ],
+  "legal_effect": {
+    "effective_from": "2020-01-15",
+    "review_note": "Kết quả trích xuất chưa được chuyên gia pháp lý kiểm duyệt và không thay thế tư vấn pháp lý.",
+    "supersedes": []
+  },
+  "provenance": {
+    "normalizations": [],
+    "source_anomalies": [
+      {
+        "note": "Tiêu đề có khoảng trắng nghi thừa sau chữ Q.",
+        "source_text": "Q uy định"
+      },
+      {
+        "note": "Số hiệu tờ trình có khoảng trắng nghi thừa sau dấu gạch chéo.",
+        "source_text": "7007/ TTr-UBND"
+      },
+      {
+        "note": "Cách viết nghi lỗi chính tả tại Điều 2, khoản 2.",
+        "source_text": "sỉ số"
+      },
+      {
+        "note": "Cách đặt khoảng trắng quanh dấu gạch nối tại Điều 4 khác với cách viết tại Điều 2, khoản 2.",
+        "source_text": "Lao động -Thương binh và Xã hội"
+      }
+    ]
+  },
+  "quality": {
+    "content_status": "source_preserved",
+    "extraction_status": "verified",
+    "legal_review_status": "not_expert_reviewed",
+    "source_consistency": "warning",
+    "warnings": [
+      "Giữ nguyên khoảng trắng nghi thừa trong “Q uy định” và “7007/ TTr-UBND”.",
+      "Giữ nguyên cách viết nghi lỗi “sỉ số” tại Điều 2, khoản 2.",
+      "Giữ nguyên cách đặt khoảng trắng trong “Lao động -Thương binh và Xã hội” tại Điều 4.",
+      "Nguồn không có dòng ghi tình trạng ký.",
+      "Nguồn không có dòng ký (kiểu \"(Đã ký)\"); signature.signed_status = null."
+    ]
+  },
+  "recipients": [],
+  "sample_id": "qd_059",
+  "schema_version": "1.0",
+  "signature": {
+    "authority": "TM. ỦY BAN NHÂN DÂN",
+    "delegation": "KT. CHỦ TỊCH",
+    "position": "PHÓ CHỦ TỊCH",
+    "signed_status": null,
+    "signer_name": "Nguyễn Quốc Hùng"
+  },
+  "source": {
+    "dataset": "th1nhng0/vietnamese-legal-documents",
+    "input_file": "source.txt",
+    "license": "CC BY 4.0",
+    "preserve_original_content": true,
+    "source_id": "140656"
+  },
+  "template": null,
+  "title": {
+    "document_name": "QUYẾT ĐỊNH",
+    "subject": "Q uy định cách tính học viên bình quân, tỷ lệ hao hụt học viên hàng năm và không giảm trừ dự toán  đối với tỷ lệ hao hụt số lượng học viên dưới 10% trên địa bàn tỉnh Đồng Nai"
+  }
+}

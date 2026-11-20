@@ -1,0 +1,121 @@
+{
+  "articles": [
+    {
+      "clauses": [],
+      "heading": "- Giao cho các Bộ, các Uỷ ban Nhà nước, các cơ quan khác thuộc Hội đồng Bộ trưởng, Uỷ ban Nhân dân các tỉnh, thành phố, đặc khu trực thuộc Trung ương có trường dạy nghề, trường trung học chuyên nghiệp, trường cao đẳng, trường đại học, có nhiệm vụ đào tạo cán bộ, nhân viên chuyên môn kỹ thuật cho quân đội trong 5 năm 1986 - 1990 theo chỉ tiêu số lượng và ngành nghề kèm theo.",
+      "number": 1,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [
+        {
+          "children": [],
+          "number": null,
+          "text": "Căn cứ vào chỉ tiêu đã được phân bố, Bộ Quốc phòng được gọi những sinh viên, học sinh, nhân viên chuyên môn kỹ thuật đã tốt nghiệp tại các trường đào tạo, có đủ điều kiện nhập ngũ vào phục vụ trong quân đội, sau khi các khoá đào tạo kết thúc."
+        }
+      ],
+      "heading": "- Trong kế hoạch hàng năm, khi Uỷ ban kế hoạch Nhà nước giao chỉ tiêu đào tạo cán bộ, nhân viên kỹ thuật cho các ngành, các địa phương, cần phân rõ chỉ tiêu đào tạo cán bộ, nhân viên kỹ thuật cho quân đội.",
+      "number": 2,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [],
+      "heading": "- Uỷ ban Kế hoạch Nhà nước, Bộ Quốc phòng, Bộ Đại học và trung học chuyên nghiệp, Tổng cục Dạy nghề có nhiệm vụ bàn bạc thống nhất nội dung, phương pháp tiến hành, kế hoạch giao nhận sau khi học sinh đã tốt nghiệp; kế hoạch tiếp nhận sử dụng những cán bộ, nhân viên chuyên môn kỹ thuật sau khi đã hết hạn phục vụ tại ngũ.",
+      "number": 3,
+      "related_table_ids": []
+    },
+    {
+      "clauses": [],
+      "heading": "- Bộ trưởng các Bộ, Chủ nhiệm Uỷ ban Nhà nước, Thủ trưởng các cơ quan khác thuộc Hội đồng Bộ trưởng, Chủ tịch Uỷ ban Nhân dân các tỉnh, thành phố, đặc khu trực thuộc Trung ương chịu trách nhiệm thi hành Quyết định này.",
+      "number": 4,
+      "related_table_ids": []
+    }
+  ],
+  "attachments": [
+    {
+      "id": "attachment_1",
+      "included_in_source": false,
+      "source_reference": "Điều 1",
+      "title": "chỉ tiêu số lượng và ngành nghề"
+    }
+  ],
+  "data_tables": [],
+  "document_type": "quyet_dinh",
+  "enactment": "QUYẾT ĐỊNH:",
+  "header": {
+    "document_number": "102-CT",
+    "issue_date": "1986-04-18",
+    "issue_date_text": "Hà Nội, ngày 18 tháng 4 năm 1986",
+    "issue_place": "Hà Nội",
+    "issuer": "CHỦ TỊCH HỘI ĐỒNG BỘ TRƯỞNG",
+    "motto": "Độc lập – Tự do – Hạnh phúc",
+    "national_heading": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM"
+  },
+  "language": "vi",
+  "legal_bases": [
+    "Căn cứ điều 18 chương 3 Luật nghĩa vụ quân sự ngày 30 tháng 12 năm 1981;",
+    "Căn cứ Luật tổ chức Hội đồng Bộ trưởng ngày 4-7-1981;",
+    "Theo đề nghị của Chủ nhiệm Uỷ ban Kế hoạch Nhà nước, Bộ trưởng Bộ Quốc phòng,"
+  ],
+  "legal_effect": {
+    "effective_from": "1986-04-18",
+    "review_note": "Kết quả trích xuất chưa được chuyên gia pháp lý kiểm duyệt và không thay thế tư vấn pháp lý. Văn bản nguồn không nêu ngày có hiệu lực. Trường effective_from dùng ngày ban hành để đáp ứng định dạng bắt buộc của lược đồ và không xác nhận ngày có hiệu lực.",
+    "supersedes": []
+  },
+  "provenance": {
+    "normalizations": [
+      {
+        "normalized_text": "CHỦ TỊCH HỘI ĐỒNG BỘ TRƯỞNG",
+        "reason": "Nối hai dòng của tên cơ quan ban hành.",
+        "source_text": "CHỦ TỊCH HỘI ĐỒNG BỘ\n\nTRƯỞNG"
+      },
+      {
+        "normalized_text": "1986-04-18",
+        "reason": "Biểu diễn ngày ban hành theo định dạng ISO 8601.",
+        "source_text": "ngày 18 tháng 4 năm 1986"
+      }
+    ],
+    "source_anomalies": [
+      {
+        "note": "Nguồn có dẫn chiếu tài liệu kèm theo nhưng không cung cấp nội dung.",
+        "source_text": "theo chỉ tiêu số lượng và ngành nghề kèm theo."
+      },
+      {
+        "note": "Nguồn ghi ngày ban hành nhưng không nêu ngày có hiệu lực.",
+        "source_text": "Hà Nội, ngày 18 tháng 4 năm 1986"
+      }
+    ]
+  },
+  "quality": {
+    "content_status": "source_preserved",
+    "extraction_status": "verified",
+    "legal_review_status": "not_expert_reviewed",
+    "source_consistency": "warning",
+    "warnings": [
+      "Nguồn không có nội dung chỉ tiêu số lượng và ngành nghề được dẫn chiếu tại Điều 1.",
+      "Nguồn không nêu ngày có hiệu lực. Giá trị effective_from là ngày ban hành dùng để đáp ứng trường ngày bắt buộc."
+    ]
+  },
+  "recipients": [],
+  "sample_id": "qd_095",
+  "schema_version": "1.0",
+  "signature": {
+    "authority": "CHỦ TỊCH HỘI ĐỒNG BỘ TRƯỞNG",
+    "delegation": "KT. CHỦ TỊCH HỘI ĐỒNG BỘ TRƯỞNG",
+    "position": "PHÓ CHỦ TỊCH",
+    "signed_status": "(Đã ký)",
+    "signer_name": "Tố Hữu"
+  },
+  "source": {
+    "dataset": "th1nhng0/vietnamese-legal-documents",
+    "input_file": "source.txt",
+    "license": "CC BY 4.0",
+    "preserve_original_content": true,
+    "source_id": "2977"
+  },
+  "template": null,
+  "title": {
+    "document_name": "QUYẾT ĐỊNH",
+    "subject": "CỦA CHỦ TỊCH HỘI ĐỒNG BỘ TRƯỞNG SỐ 102-CT NGÀY 18-4-1986 VỀ VIỆC GIAO NHIỆM VỤ CHO CÁC CƠ QUAN NHÀ NƯỚC VÀ CÁC ĐỊA PHƯƠNG ĐÀO TẠO CÁN BỘ, NHÂN VIÊN CHUYÊN MÔN KỸ THUẬT PHỤC VỤ QUÂN ĐỘI NHÂN DÂN VIỆT NAM"
+  }
+}
